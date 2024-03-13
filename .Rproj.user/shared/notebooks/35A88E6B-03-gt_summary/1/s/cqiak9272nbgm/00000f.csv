@@ -1,0 +1,8 @@
+"0","tbl_merge(list("
+"0","  tbl_regression("
+"0","    lm(totalechelle~sexe+vitaux+dureeopmin,data=patient[patient$Hopital==""A"",])"
+"0","  ),"
+"0","  tbl_regression("
+"0","    lm(totalechelle~sexe+vitaux+dureeopmin,data=patient[patient$Hopital==""B"",])"
+"0","  ))"
+"0",")"

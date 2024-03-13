@@ -1,0 +1,3 @@
+"0","iris %>% tbl_summary(by=Species) %>%"
+"0","  gtsummary::as_tibble() %>% "
+"0","  writexl::write_xlsx(., ""example_gtsummary1.xlsx"")"

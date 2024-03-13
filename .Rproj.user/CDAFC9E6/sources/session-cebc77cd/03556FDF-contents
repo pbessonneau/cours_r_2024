@@ -1,0 +1,58 @@
+---
+title: "Importation de données"
+output: html_document
+date: "2024-03-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+```
+
+## Données de Parcoursup
+
+Les données de ParcourSup viennent de là :
+[Parcoursup 2023 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements](https://data.education.gouv.fr/explore/embed/dataset/fr-esr-parcoursup/table/?sort=tri)
+
+sinon vous avez les métiers en tensions :
+[Taux de pression et d'emploi pour les diplômes de la voie professionnelle](https://data.education.gouv.fr/explore/embed/dataset/fr-en-taux-de-pression-et-demploi/table/?disjunctive.diplome&disjunctive.type_dip_lib&disjunctive.filiere&disjunctive.specialite_lib)
+
+En suivant les liens vous pouvez télécharger les fichiers Excel.
+
+Déplacer le fichier Excel à la racine de votre projet. puis
+```{r,eval=FALSE}
+library(readxl)
+```
+
+```{r}
+parcours <- read_excel("fr-esr-parcoursup.xlsx")
+```
+
+Je viens de créer une data.frame du nom de parcours avec le contenu du fichier
+Excel.
+
+Pour sélectionner les variables, utiliser le raccourci TAB. 
+
+Pour charger un fichier SPSS, il faut aussi un paquet supplémentaire :
+```{r,message=F,warning=F}
+require(haven)
+```
+
+```{r}
+patient.sav <- read_sav("patient.sav")
+```
+
+C'est le même paquet pour les formats __SAS__ (__sas7bdat__) et __STATA__. On 
+trouve le chargement des mêmes types de fichier dans le paquet __foreign__
+mais attention ce sont pour les vieux formats de fichiers.
+
+```{r}
+
+```
+
+
+
+
+
+
+

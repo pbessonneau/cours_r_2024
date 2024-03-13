@@ -1,0 +1,128 @@
+---
+title: "gt_summary"
+output: html_document
+date: "2024-03-09"
+---
+
+# Résumés rapides descriptives
+
+
+
+```{r setup, include=FALSE,message=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+library(readr)
+patient <- read_csv("data/patient.csv")
+```
+
+## Les premières tables
+
+```{r,message=FALSE}
+library(gtsummary)
+```
+
+
+
+```{r}
+tbl_summary(mtcars)
+```
+
+```{r}
+tbl_summary(iris)
+```
+
+Plus fort, 
+
+
+```{r}
+tbl_summary(iris,by="Species")
+```
+
+
+On peut rajouter un test statistique:
+
+
+
+```{r}
+tbl_summary(iris,by="Species" ) %>% add_p()
+```
+
+
+```{r}
+trial %>%
+  tbl_cross(row = stage, col = trt, percent = "cell") %>%
+  add_p() %>%
+  bold_labels()
+```
+
+
+## Tableaux croisés
+
+On peut faire des tris croisés et choisir le sens des pourcentages : par cellule,
+ par ligne ou par colonne.
+
+
+```{r}
+patient %>%
+  tbl_cross(row = Hopital, col = sexe, percent = "col") %>%
+  add_p() %>%
+  bold_labels()
+```
+
+## Themes
+
+```{r}
+theme_gtsummary_compact(set_theme = TRUE, font_size = NULL)
+
+patient %>%
+  tbl_cross(row = Hopital, col = sexe, percent = "col") %>%
+  add_p() %>%
+  bold_labels()
+
+reset_gtsummary_theme()
+
+```
+
+## Exportation 
+
+Pour les exporter avec le paquet __writexl__ :
+
+
+```{r}
+iris %>% tbl_summary(by=Species) %>%
+  gtsummary::as_tibble() %>% 
+  writexl::write_xlsx(., "example_gtsummary1.xlsx")
+```
+
+Sinon 
+
+```{r}
+iris %>% tbl_summary(by=Species) %>%
+  gtsummary::as_gt() %>% 
+  gt::gtsave(., "example_gtsummary3.rtf")
+```
+
+
+On peut faire aussi des modèles avec gtsummary :
+
+
+```{r}
+tbl_merge(list(
+  tbl_regression(
+    lm(totalechelle~sexe+vitaux+dureeopmin,data=patient[patient$Hopital=="A",])
+  ),
+  tbl_regression(
+    lm(totalechelle~sexe+vitaux+dureeopmin,data=patient[patient$Hopital=="B",])
+  ))
+)
+
+
+```
+
+
+Une liste des fonctionnalités est disponible là :
+[Ici](https://www.danieldsjoberg.com/gtsummary/reference/theme_gtsummary.html#examples)
+
+
+
+

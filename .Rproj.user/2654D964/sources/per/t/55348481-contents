@@ -1,0 +1,343 @@
+# Le langage R 
+
+## Introduction
+
+Le but est d'aborder des notions et de voir quelques exemples.
+
+R ne fonctionne pas comme JASP, Jamovi, SAS ou SPSS. Par exemple SPSS, vous ouvrez une 
+source de données et vous voyez vos données sur un tableur.
+
+Quand vous passez une commande sur SPSS, il n'y a pas d'ambiguité, le traitement
+se fait sur le tableur actif.
+
+Avec SAS, on ajoute une dose de complexité, car vous avez des bibliothèques
+et des tables. 
+
+Dans les deux cas, quand vous lancez une procédure statistique vous récupérez
+les résultats dans une fenêtre dédié car il y a une séparation des données
+et des résultats (dans la quasi-totalité des cas).
+
+Avec R, c'est différent. R est un langage de programmation comme Python, Pascal,
+Rust, etc.
+
+La force de R et ce qui le rend compliqué est qu'il n'y a pas de séparation aussi
+stricte entre données et résultats. 
+
+Vous avez des objets en mémoire dans R et ces objets peuvent servir aussi bien 
+de sources de données, d'arguments pour sélectionner une partie des résultats ou 
+bien être des résultats d'une opérations statistiques.
+
+## Un exemple de traitement de données
+
+On va travailler sur une base de données qui sont les iris de Fisher. C'est
+plus simple car c'est un jeu de données qui est en mémoire dans R, on verra 
+comment charger une source de données plus tard.
+
+
+```{r}
+data(iris)
+```
+
+Vous pouvez cliquer sur **iris** qui est apparu dans la fenêtre en haut
+à droite de RStudio. Elle ouvre un tableur assez frustre mais qui permet
+de visualiser les données.
+
+Mais c'est une très mauvaise habitude d'utiliser ce tableur pour visualiser
+les données. 
+
+Il vaut mieux taper : 
+
+```{r}
+str(iris)
+```
+
+**str** c'est pour __structure__. Enfin je crois. Elle vous décrit quelle est la
+nature de l'objet et de quoi il est composé. Ca peut être rudemment complexe.
+
+Mais là non. Il nous dit que c'est une **data.frame**. Le type **data.frame**
+est ce qui se rapproche le plus d'un tableau de données comme dans SPSS ou Jamovi.
+
+R nous dit que la data.frame a 150 observations et 5 variables. La structure est
+tabulaire comme dans Jamovi ou JASP: on a 150 relevés de plante (individus) et
+on a gardé 5 éléments caractérisant l'individu.
+
+- Sepal.Length : **num** veut dire **numeric**, c'est une taille de Sépale.
+- Sepal.Width : **num** veut dire **numeric**, c'est une taille de Sépale.
+- ...
+- Species : c'est l'espèce, qui peut prendre 3 valeurs. Dans un type appelé
+**Factor**
+
+On voit que R sépare bien chacune des variables. Pour schématiser dans notre cas
+nous avons des individus en ligne et des observations en colonne. Comme Jamovi.
+
+## Vecteurs
+
+### Exemple de vecteurs
+
+Là où ça devient différent c'est que la **data.frame** est en fait un aggrégat
+d'élements plus simples.
+
+Vous pouvez extraire par exemple la longueur des sépales pour tous les individus:
+```{r}
+iris[,"Sepal.Length"]
+```
+
+Vous regardez par colonne, vous obtenez les valeurs pour les 150 individus.
+
+Si vous regardez la structure de ce que vous avez obtenu :
+```{r}
+str(iris[,"Sepal.Length"])
+```
+
+Vous voyez que ce qui s'affichait tout à l'heure sur la **data.frame**.
+
+Vous pouvez calculer la moyenne des longueurs:
+```{r}
+mean(iris[,"Sepal.Length"])
+```
+
+Vous venez de faire une opération sur un vecteur. C'est un ensemble qui est typé
+ici des numériques mais ça peut être du texte, des entiers, etc. respectivement 
+**character**, **integer**, etc.
+
+Vous pouvez extraire ce vecteur :
+```{r}
+longueur.sepale <- iris[,"Sepal.Length"]
+```
+
+Vous remarquez que R n'affiche pas le résultat de l'opération car on ne lui demande
+pas de résultat. On affecte la partie à droite de "<-" à la partie gauche.
+
+Si on fait:
+```{r}
+longueur.sepale
+```
+On retrouve bien nos longueurs.
+
+On peut en calculer la moyenne :
+```{r}
+mean(longueur.sepale)
+```
+
+Qu'est ce qui se passe ? En fait on a indexé notre **data.frame**.
+
+On a dit à R, renvoie nous la variable "Sepal.Length" et nous avons décidé de le
+stocker dans une variable autre.
+
+### Création de vecteurs
+
+Pour créer un vecteur, il faut utiliser la fonction **c** pour __concatenate__.
+
+Exemple :
+```{r}
+c("Sepal.Length","Petal.Length")
+```
+
+On peut l'affecter à une variable:
+```{r}
+longueurs <- c("Sepal.Length","Petal.Length")
+```
+
+C'est un vecteur :
+```{r}
+str(longueurs)
+```
+
+
+Maintenant on peut faire:
+
+```{r}
+iris[,longueurs]
+```
+
+On vient d'indexer iris avec un vecteur composé de deux noms qui sont les noms
+des variables.
+
+R lit la partie droite de la virgule et comprends que nous voulons les deux variables.
+Quelle est la structure de ce que l'on récupère :
+
+```{r}
+str(iris[,longueurs])
+```
+
+C'est une **data.frame** les informations sur nos 150 individus pour les longueurs.
+
+on peut faire:
+```{r}
+iris.longueurs <- iris[,longueurs]
+str(iris.longueurs)
+```
+
+```{r}
+iris.longueurs[,"Sepal.Length"]
+```
+
+```{r}
+mean(iris.longueurs[,"Sepal.Length"])
+```
+
+### Les types de vecteurs
+
+les vecteurs en résumé peuvent être :
+- des numéros entiers, **int**
+- des chaines de caractères, **chr**
+- des logiques, **logi**
+- des réels, **num**
+- ...
+
+On peut créer un vecteur d'entiers
+```{r}
+c(1,3)
+```
+
+Un vecteur de logique: (T pour vrai, F pour faux) 
+```{r}
+c(T,F,T,F,F)
+```
+
+Et là surprise : si on demande à R de nous retourner la première et la troisième
+variable de iris 
+```{r}
+str(iris[,c(1,3)])
+```
+
+Plus compliqué. On sait qu'il y a 5 variables dans iris ? On est d'accord ?
+Donc si on lui demande de nous renvoyer la variable quand c'est vrai et de ne pas
+nous la renvoyer quand c'est faux ?
+
+```{r}
+str(iris[,c(T,F,T,F,F)])
+```
+
+En fait les **data.frame**s sont des agrégats de vecteurs que l'on peut indexer
+avec des vecteurs.
+
+Pourquoi on ne peut pas faire :
+```{r,eval=F}
+mean(iris.longueurs)
+```
+
+parce qu'on a deux variables ? R refuse de faire ce qui n'a pas de sens.
+
+Après tout on voudrait faire la moyenne de sépale et de pétale. Déjà mais
+ça pourrait être pire :
+
+```{r,eval=FALSE}
+mean(iris[,c("Sepal.Length","Species")])
+```
+
+C'est la catastrophe. Vous essayez de faire une moyenne sur une variable texte
+et une variable continue. C'est faux.
+
+Pour faire le résumer d'une variable texte:
+```{r}
+table(iris[,"Species"])
+```
+
+### Pour résumé
+
+On a les **data.frame**, on a les **vector** de différents types. On sait qu'on
+peut sélectionner les variables par l'intermédiaire de vecteurs.
+
+## Sélection des individus
+
+Intuitivement, comment sélectionner des individus ?
+
+Ca marche comme pour les variables, on utilise des vecteurs ?
+
+On veut les individus de 1 et 5.
+```{r}
+str(iris[c(1,5),])
+```
+
+Attention à la place de la virgule. Cette fois on sélectionne des lignes. A gauche
+de la virgule pour des lignes et à droite pour les colonnes.
+
+C'est tout bon. 
+
+On a vu qu'il y avait trois espèces. Si on veut sélectionner ceux qui sont du type
+__versicolor__ ?
+
+On se rappele des vecteurs de logique: là où iris[,"Species"] vaudra __versicolor__
+on sélectionne et là où ce n'est pas __versicolor__ on ne sélectionne pas.
+
+On ne va pas le faire à la main. On ne fait rien à la main sous R.
+
+```{r}
+especes <- c("versicolor","truc","versicolor","setosa")
+especes
+```
+
+```{r}
+especes=="versicolor"
+```
+
+On l'adapte pour notre cas :
+```{r}
+iris[,"Species"]=="versicolor"
+```
+
+Donc on indexe les individus :
+```{r}
+versicolor <- iris[iris[,"Species"]=="versicolor",]
+```
+
+Faites un point pour voir si tout est conforme dans votre esprit sur la place
+des accolades, etc. En fait c'est le __old-fashioned__ R.
+
+En fait ça commence à devenir compliqué, alors des gens on fait des fonctions
+qui génère des vecteurs... à partir de mots anglais.
+
+On va créer ainsi de gauche à droite des sous espaces pour ne retenir que ce 
+qui nous intéresse.
+
+Exemple :
+from iris, filter Species=="versicolor", 
+```{r,message=F,warning=FALSE}
+require(tidyverse)
+```
+
+```{r}
+iris |> filter(Species=="setosa")
+```
+
+### Calcul de la moyenne et nouveaux générateurs
+
+Pour la moyenne des longueurs de sépales ?
+
+```{r}
+iris |> summarise(moyenne=mean(Sepal.Length))  
+```
+Ce qui devient :
+```{r}
+iris |> filter(Species=="setosa") |> summarise(moyenne=mean(Sepal.Length))
+```
+
+Mais y'a des choses plus pratique.
+
+```{r}
+iris |> group_by(Species) |> summarise(moyenne=mean(Sepal.Length))
+
+quantile(iris[,"Sepal.Length"])
+
+iris |> group_by(Species) |> summarise(moy.Sepal.Length=mean(Sepal.Length),ec=sd(Sepal.Length),mediane=quantile(Sepal.Length,probs=0.5))
+
+iris |> group_by(Species) |> summarise(moy.Sepal.Length=mean(Sepal.Length),ec=sd(Sepal.Length),mediane=quantile(Sepal.Length,probs=0.5),q90=quantile(Sepal.Length,probs=0.9))
+
+```
+Etc...
+
+Ah au fait c'est quoi comme vient de retourner ?
+
+```{r}
+str(iris |> group_by(Species) |> summarise(sepal.length=mean(Sepal.Length),
+                                       sepal.width=mean(Sepal.Width)))
+```
+
+Calculer la moyenne de toutes les colonnes sauf Species ? 
+
+```{r}
+iris |> group_by(Species) |> summarise(across(Sepal.Length:Petal.Width,mean))
+```
+
+  

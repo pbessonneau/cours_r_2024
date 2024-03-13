@@ -1,0 +1,2 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Les \IeC {\'e}tudes pr\IeC {\'e}liminaires}{1}{section.1}

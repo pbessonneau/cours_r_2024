@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Architecture de R | Gestion des paquets</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Architecture de R | Gestion des paquets" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Architecture de R | Gestion des paquets" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Pascal Bessonneau" />
+
+
+<meta name="date" content="2024-03-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="le-langage-r.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="le-langage-r.html"><a href="le-langage-r.html"><i class="fa fa-check"></i><b>2</b> Le langage R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="le-langage-r.html"><a href="le-langage-r.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="le-langage-r.html"><a href="le-langage-r.html#un-exemple-de-traitement-de-données"><i class="fa fa-check"></i><b>2.2</b> Un exemple de traitement de données</a></li>
+<li class="chapter" data-level="2.3" data-path="le-langage-r.html"><a href="le-langage-r.html#vecteurs"><i class="fa fa-check"></i><b>2.3</b> Vecteurs</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="le-langage-r.html"><a href="le-langage-r.html#exemple-de-vecteurs"><i class="fa fa-check"></i><b>2.3.1</b> Exemple de vecteurs</a></li>
+<li class="chapter" data-level="2.3.2" data-path="le-langage-r.html"><a href="le-langage-r.html#création-de-vecteurs"><i class="fa fa-check"></i><b>2.3.2</b> Création de vecteurs</a></li>
+<li class="chapter" data-level="2.3.3" data-path="le-langage-r.html"><a href="le-langage-r.html#les-types-de-vecteurs"><i class="fa fa-check"></i><b>2.3.3</b> Les types de vecteurs</a></li>
+<li class="chapter" data-level="2.3.4" data-path="le-langage-r.html"><a href="le-langage-r.html#pour-résumé"><i class="fa fa-check"></i><b>2.3.4</b> Pour résumé</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="le-langage-r.html"><a href="le-langage-r.html#sélection-des-individus"><i class="fa fa-check"></i><b>2.4</b> Sélection des individus</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="le-langage-r.html"><a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs"><i class="fa fa-check"></i><b>2.4.1</b> Calcul de la moyenne et nouveaux générateurs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="architecture-de-r.html"><a href="architecture-de-r.html"><i class="fa fa-check"></i><b>3</b> Architecture de R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="architecture-de-r.html"><a href="architecture-de-r.html#paquets"><i class="fa fa-check"></i><b>3.1</b> Paquets</a></li>
+<li class="chapter" data-level="3.2" data-path="architecture-de-r.html"><a href="architecture-de-r.html#données-de-parcoursup"><i class="fa fa-check"></i><b>3.2</b> Données de Parcoursup</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Gestion des paquets</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="architecture-de-r" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Architecture de R<a href="architecture-de-r.html#architecture-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>R est à l’origine un logiciel de statistiques. Pour en faciliter l’usage il y
+avait une interface très rugueuse qui était livré avec sous Windows.</p>
+<p>Pour l’utiliser, en fait, il fallait écrire le code dans un bloc-notes (le code
+est du texte brut) et le coller dans la console de R.</p>
+<p>Vous pouvez toujours voir ce que ça donne en lançant R et non pas RStudio
+sur votre bureau. En prenant la mesure qu’il y a eu beaucoup de progrès de fait.</p>
+<p>Maintenant il existe RStudio, racheté par Posit. En fait c’est éditeur de texte
+grandement amélioré.</p>
+<p>Vous tapez le script dans la fenêtre en haut à gauche et vous l’exécutez en
+cliquant sur l’icone ou CTRL+ENTREE. Vous pouvez limiter ce que vous exécutez
+en sélectionnant du texte dans l’éditeur, seul le texte sélectionné sera soumis.</p>
+<p>En clair, comme RStudio est un éditeur amélioré :
+- le code qui n’est pas soumis, R ne le reconnait pas. Si vous créez une variable
+en ligne 4 mais que vous ne le soumettez pas, quand vous aurez besoin de la
+variable en ligne 30, elle n’existera pas.
+- l’éditeur de texte peut contenir autre chose que du texte simple. Par exemple
+du RMarkdown comme c’est le cas pour ce document. C’est un langage qui produit
+de l’HTML c’est-à-dire des pages web. Le Markdown est très simple, le langage
+tient sur une feuille : <a href="https://www.markdownguide.org/cheat-sheet/">ici</a>.
+- ou du LaTeX avec le mode knitr
+- On peut des graphiques R dans la fenêtre RStudio (en bas à droite)
+- RStudio peut servir pour la gestion de paquets
+- …</p>
+<p>RStudio fait donc beaucoup de choses.</p>
+<p>A noter que Jamovi et JASP utilisent aussi R sauf que pour eux ce n’est presque
+plus visible. A part dans les extensions et/ou les modules. Il y a des modules
+Jamovi pour écrire du code R ou pour faire des modèles structuraux directement
+en R dans Jamovi.</p>
+<p>Vous allez avoir une démonstration enregistré pour l’utilisation de RStudio.</p>
+<p>Les autres choses à rappeler, c’est que R est un langage cassee dépendant :
+- les noms de fonctions de R sont à écrire en <strong>minuscules</strong>
+- un objet n’est pas le même si une ou plusieurs lettres sont en majuscule au lieu
+d’être en minuscule.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="architecture-de-r.html#cb3-1" tabindex="-1"></a>aAa <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb3-2"><a href="architecture-de-r.html#cb3-2" tabindex="-1"></a>AAa <span class="ot">&lt;-</span> <span class="dv">4</span></span></code></pre></div>
+<p>donc</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="architecture-de-r.html#cb4-1" tabindex="-1"></a>AAa</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<p>et</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="architecture-de-r.html#cb6-1" tabindex="-1"></a>aAa</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Les commentaires dans R sont à noter avec des #. Tout ce qui suit le # est un
+commentaire.</p>
+<p>Comme RStudio vous l’aurez remarqué vous aide en analysant et en colorant le
+code, n’utilisez pas un script R pour mettre des remarques (et non du code) en
+dehors de commentaires. Sinon c’est la catastrophe…</p>
+<p><strong>Utiliser toujours RStudio en mode Projet</strong></p>
+<div id="paquets" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Paquets<a href="architecture-de-r.html#paquets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Les fonctionnalités de R sont finalement assez limitées. Il fait un certain
+nombre de statistiques et surtout fourni des outils mathématiques puissants
+mais ça grande force est de proposer des paquets qui ajoute des fonctionnalités.</p>
+<p>Ces paquets sont développés par des gens (qui font ça sur leur temps personnel
+ou professionnel), des entreprises, des fondations, …</p>
+<p>La liste des paquets officiels est <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html">là</a></p>
+<p>Ils sont maintenant pléthoriques et je vous conseille de vous reportez <a href="https://cran.r-project.org/web/views/">à cette page</a>.</p>
+<p>Elles répertorient les paquets utiles par domaine d’application. De plus les
+paquets un peu douteux en qualité n’y figure pas. Donc c’est du solide.</p>
+<p>Pour cela je vous recommande de l’utiliser pour se faire, suivez les instructions ci-dessous:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="architecture-de-r.html#cb8-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ctv&quot;</span>)</span></code></pre></div>
+<p>Puis quand vous voulez installer une vue (SocialSciences par exemple) :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="architecture-de-r.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(ctv)</span>
+<span id="cb9-2"><a href="architecture-de-r.html#cb9-2" tabindex="-1"></a><span class="fu">install.views</span>(<span class="st">&quot;SocialSciences&quot;</span>)</span></code></pre></div>
+<p>On vient de voir comment appeler un paquet :</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="architecture-de-r.html#cb10-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>ou</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="architecture-de-r.html#cb11-1" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span></code></pre></div>
+<p>Cela revient presque au même. Presque. Pour commencer vous pouvez utiliser
+<strong>library</strong> en priorité.</p>
+<p>Essayez d’installer un paquet :</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="architecture-de-r.html#cb12-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span></code></pre></div>
+<p>Maintenant vous pouvez lire les fichiers Excel. Vous n’avez besoin d’installer
+le paquet qu’une fois mais vous devez le réclamer avec <strong>library</strong> la première
+fois que vous l’utilisez dans un script. La politique est de charger tous les
+paquets que vous utilisez <strong>en tête du script</strong>.</p>
+<p>Maintenant on va faire des statistiques.</p>
+</div>
+<div id="données-de-parcoursup" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Données de Parcoursup<a href="architecture-de-r.html#données-de-parcoursup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Les données de ParcourSup viennent de là :
+<a href="https://data.education.gouv.fr/explore/embed/dataset/fr-esr-parcoursup/table/?sort=tri">Parcoursup 2023 - vœux de poursuite d’études et de réorientation dans l’enseignement supérieur et réponses des établissements</a></p>
+<p>sinon vous avez les métiers en tensions :
+<a href="https://data.education.gouv.fr/explore/embed/dataset/fr-en-taux-de-pression-et-demploi/table/?disjunctive.diplome&amp;disjunctive.type_dip_lib&amp;disjunctive.filiere&amp;disjunctive.specialite_lib">Taux de pression et d’emploi pour les diplômes de la voie professionnelle</a></p>
+<p>En suivant les liens vous pouvez télécharger les fichiers Excel.</p>
+<p>Déplacer le fichier Excel à la racine de votre projet. puis</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="architecture-de-r.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb13-2"><a href="architecture-de-r.html#cb13-2" tabindex="-1"></a>parcours <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;fr-esr-parcoursup.xlsx&quot;</span>)</span></code></pre></div>
+<p>Je viens de créer une data.frame du nom de parcours avec le contenu du fichier
+Excel.</p>
+<p>Pour les métiers en tension :
+Par exemple vous pouvez regarder par année et par discipline la somme (<strong>sum</strong>)
+des “Effectif total des candidats ayant reçu une proposition d’admission de la part de l’établissement”
+avec “Effectif total des candidats ayant accepté la proposition de l’établissement (admis)”, ou
+plus dur calculer les admis parmi les mentions, etc.</p>
+<p>Pour séléctionner les variables, utiliser TAB.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="le-langage-r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-Importation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

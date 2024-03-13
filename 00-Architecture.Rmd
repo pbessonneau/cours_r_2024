@@ -1,0 +1,150 @@
+---
+title: "Gestion des paquets"
+author: "Pascal Bessonneau"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE,message=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tidyverse)
+library(readxl)
+```
+
+```{r}
+parcours <- read_excel("fr-esr-parcoursup.xlsx")
+```
+
+# Architecture de R
+
+R est à l'origine un logiciel de statistiques. Pour en faciliter l'usage il y
+avait une interface très rugueuse qui était livré avec sous Windows.
+
+Pour l'utiliser, en fait,  il fallait écrire le code dans un bloc-notes (le code
+est du texte brut) et le coller dans la console de R.
+
+Vous pouvez toujours voir ce que ça donne en lançant R et non pas RStudio
+sur votre bureau. En prenant la mesure qu'il y a eu beaucoup de progrès de fait.
+
+Maintenant il existe RStudio, racheté par Posit. En fait c'est éditeur de texte
+grandement amélioré. 
+
+Vous tapez le script dans la fenêtre en haut à gauche et vous l'exécutez en 
+cliquant sur l'icone ou CTRL+ENTREE. Vous pouvez limiter ce que vous exécutez
+en sélectionnant du texte dans l'éditeur, seul le texte sélectionné sera soumis.
+
+En clair, comme RStudio est un éditeur amélioré :
+- le code qui n'est pas soumis, R ne le reconnait pas. Si vous créez une variable
+en ligne 4 mais que vous ne le soumettez pas, quand vous aurez besoin de la 
+variable en ligne 30, elle n'existera pas.
+- l'éditeur de texte peut contenir autre chose que du texte simple. Par exemple
+du RMarkdown comme c'est le cas pour ce document. C'est un langage qui produit
+de l'HTML c'est-à-dire des pages web. Le Markdown est très simple, le langage
+tient sur une feuille : [ici](https://www.markdownguide.org/cheat-sheet/).
+- ou du LaTeX avec le mode knitr
+- On peut des graphiques R dans la fenêtre RStudio (en bas à droite)
+- RStudio peut servir pour la gestion de paquets
+- ...
+
+RStudio fait donc beaucoup de choses. 
+
+A noter que Jamovi et JASP utilisent aussi R sauf que pour eux ce n'est presque 
+plus visible. A part dans les extensions et/ou les modules. Il y a des modules 
+Jamovi pour écrire du code R ou pour faire des modèles structuraux directement 
+en R dans Jamovi.
+
+Vous allez avoir une démonstration enregistré pour l'utilisation de RStudio.
+
+Les autres choses à rappeler, c'est que R est un langage cassee dépendant :
+- les noms de fonctions de R sont à écrire en **minuscules**
+- un objet n'est pas le même si une ou plusieurs lettres sont en majuscule au lieu
+d'être en minuscule.
+
+```{r}
+aAa <- 2
+AAa <- 4
+```
+
+donc 
+```{r}
+AAa
+```
+
+et
+```{r}
+aAa
+```
+
+Les commentaires dans R sont à noter avec des #. Tout ce qui suit le # est un 
+commentaire.
+
+Comme RStudio vous l'aurez remarqué vous aide en analysant et en colorant le 
+code, n'utilisez pas un script R pour mettre des remarques (et non du code) en
+dehors de commentaires. Sinon c'est la catastrophe...
+
+**Utiliser toujours RStudio en mode Projet**
+
+## Paquets
+
+Les fonctionnalités de R sont finalement assez limitées. Il fait un certain 
+nombre de statistiques et surtout fourni des outils mathématiques puissants
+mais ça grande force est de proposer des paquets qui ajoute des fonctionnalités.
+
+Ces paquets sont développés par des gens (qui font ça sur leur temps personnel
+ou professionnel), des entreprises, des fondations, ...
+
+La liste des paquets officiels est [là](https://cran.r-project.org/web/packages/available_packages_by_name.html)
+
+Ils sont maintenant pléthoriques et je vous conseille de vous reportez [à cette page](https://cran.r-project.org/web/views/).
+
+Elles répertorient les paquets utiles par domaine d'application. De plus les
+paquets un peu douteux en qualité n'y figure pas. Donc c'est du solide.
+
+
+Pour cela je vous recommande de l'utiliser pour se faire, suivez les instructions ci-dessous:
+```{r,eval=FALSE}
+install.packages("ctv")
+```
+
+Puis quand vous voulez installer une vue (SocialSciences par exemple) : 
+
+```{r,eval=FALSE}
+library(ctv)
+install.views("SocialSciences")
+```
+
+On vient de voir comment appeler un paquet :
+```{r}
+library(tidyverse)
+```
+
+
+ou
+
+
+```{r}
+require(tidyverse)
+```
+
+Cela revient presque au même. Presque. Pour commencer vous pouvez utiliser 
+__library__ en priorité.
+
+Essayez d'installer un paquet :
+
+```{r,eval=FALSE}
+install.packages("readxl")
+```
+
+Maintenant vous pouvez lire les fichiers Excel. Vous n'avez besoin d'installer
+le paquet qu'une fois mais vous devez le réclamer avec __library__ la première
+fois que vous l'utilisez dans un script. La politique est de charger tous les 
+paquets que vous utilisez **en tête du script**.
+
+Maintenant on va faire des statistiques.
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+"0","theme_gtsummary_compact(set_theme = TRUE, font_size = NULL)"
+"2","Setting theme `Compact`"
+"0","patient %>%"
+"0","  tbl_cross(row = Hopital, col = sexe, percent = ""col"") %>%"
+"0","  add_p() %>%"
+"0","  bold_labels()"
