@@ -24,3 +24,7 @@ les-premières-tables
 tableaux-croisés
 themes
 exportation
+personnaliser-les-fonctions
+analyse-de-la-table-patient
+chargement
+importation

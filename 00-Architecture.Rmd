@@ -12,7 +12,7 @@ library(readxl)
 ```
 
 ```{r}
-parcours <- read_excel("fr-esr-parcoursup.xlsx")
+parcours <- read_excel("data/fr-esr-parcoursup.xlsx")
 ```
 
 # Architecture de R

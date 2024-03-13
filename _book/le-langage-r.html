@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Le langage R | A Minimal Book Example</title>
+  <title>Chapter 3 Le langage R | A Minimal Book Example</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Le langage R | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 3 Le langage R | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Le langage R | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 3 Le langage R | A Minimal Book Example" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -29,15 +29,15 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="John Doe" />
 
 
-<meta name="date" content="2024-03-07" />
+<meta name="date" content="2024-03-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="architecture-de-r.html"/>
+<link rel="prev" href="architecture-de-r.html"/>
+<link rel="next" href="importation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -150,28 +150,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.1</b> Preview book</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="le-langage-r.html"><a href="le-langage-r.html"><i class="fa fa-check"></i><b>2</b> Le langage R</a>
+<li class="chapter" data-level="2" data-path="architecture-de-r.html"><a href="architecture-de-r.html"><i class="fa fa-check"></i><b>2</b> Architecture de R</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="le-langage-r.html"><a href="le-langage-r.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
-<li class="chapter" data-level="2.2" data-path="le-langage-r.html"><a href="le-langage-r.html#un-exemple-de-traitement-de-données"><i class="fa fa-check"></i><b>2.2</b> Un exemple de traitement de données</a></li>
-<li class="chapter" data-level="2.3" data-path="le-langage-r.html"><a href="le-langage-r.html#vecteurs"><i class="fa fa-check"></i><b>2.3</b> Vecteurs</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="le-langage-r.html"><a href="le-langage-r.html#exemple-de-vecteurs"><i class="fa fa-check"></i><b>2.3.1</b> Exemple de vecteurs</a></li>
-<li class="chapter" data-level="2.3.2" data-path="le-langage-r.html"><a href="le-langage-r.html#création-de-vecteurs"><i class="fa fa-check"></i><b>2.3.2</b> Création de vecteurs</a></li>
-<li class="chapter" data-level="2.3.3" data-path="le-langage-r.html"><a href="le-langage-r.html#les-types-de-vecteurs"><i class="fa fa-check"></i><b>2.3.3</b> Les types de vecteurs</a></li>
-<li class="chapter" data-level="2.3.4" data-path="le-langage-r.html"><a href="le-langage-r.html#pour-résumé"><i class="fa fa-check"></i><b>2.3.4</b> Pour résumé</a></li>
+<li class="chapter" data-level="2.1" data-path="architecture-de-r.html"><a href="architecture-de-r.html#paquets"><i class="fa fa-check"></i><b>2.1</b> Paquets</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="le-langage-r.html"><a href="le-langage-r.html#sélection-des-individus"><i class="fa fa-check"></i><b>2.4</b> Sélection des individus</a>
+<li class="chapter" data-level="3" data-path="le-langage-r.html"><a href="le-langage-r.html"><i class="fa fa-check"></i><b>3</b> Le langage R</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="le-langage-r.html"><a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs"><i class="fa fa-check"></i><b>2.4.1</b> Calcul de la moyenne et nouveaux générateurs</a></li>
+<li class="chapter" data-level="3.1" data-path="le-langage-r.html"><a href="le-langage-r.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="le-langage-r.html"><a href="le-langage-r.html#un-exemple-de-traitement-de-données"><i class="fa fa-check"></i><b>3.2</b> Un exemple de traitement de données</a></li>
+<li class="chapter" data-level="3.3" data-path="le-langage-r.html"><a href="le-langage-r.html#vecteurs"><i class="fa fa-check"></i><b>3.3</b> Vecteurs</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="le-langage-r.html"><a href="le-langage-r.html#exemple-de-vecteurs"><i class="fa fa-check"></i><b>3.3.1</b> Exemple de vecteurs</a></li>
+<li class="chapter" data-level="3.3.2" data-path="le-langage-r.html"><a href="le-langage-r.html#création-de-vecteurs"><i class="fa fa-check"></i><b>3.3.2</b> Création de vecteurs</a></li>
+<li class="chapter" data-level="3.3.3" data-path="le-langage-r.html"><a href="le-langage-r.html#les-types-de-vecteurs"><i class="fa fa-check"></i><b>3.3.3</b> Les types de vecteurs</a></li>
+<li class="chapter" data-level="3.3.4" data-path="le-langage-r.html"><a href="le-langage-r.html#pour-résumé"><i class="fa fa-check"></i><b>3.3.4</b> Pour résumé</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="le-langage-r.html"><a href="le-langage-r.html#sélection-des-individus"><i class="fa fa-check"></i><b>3.4</b> Sélection des individus</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="le-langage-r.html"><a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs"><i class="fa fa-check"></i><b>3.4.1</b> Calcul de la moyenne et nouveaux générateurs</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="architecture-de-r.html"><a href="architecture-de-r.html"><i class="fa fa-check"></i><b>3</b> Architecture de R</a>
+<li class="chapter" data-level="4" data-path="importation.html"><a href="importation.html"><i class="fa fa-check"></i><b>4</b> Importation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="architecture-de-r.html"><a href="architecture-de-r.html#paquets"><i class="fa fa-check"></i><b>3.1</b> Paquets</a></li>
-<li class="chapter" data-level="3.2" data-path="architecture-de-r.html"><a href="architecture-de-r.html#données-de-parcoursup"><i class="fa fa-check"></i><b>3.2</b> Données de Parcoursup</a></li>
-<li class="chapter" data-level="3.3" data-path="architecture-de-r.html"><a href="architecture-de-r.html#r-markdown"><i class="fa fa-check"></i><b>3.3</b> R Markdown</a></li>
-<li class="chapter" data-level="3.4" data-path="architecture-de-r.html"><a href="architecture-de-r.html#including-plots"><i class="fa fa-check"></i><b>3.4</b> Including Plots</a></li>
+<li class="chapter" data-level="4.1" data-path="importation.html"><a href="importation.html#données-de-parcoursup"><i class="fa fa-check"></i><b>4.1</b> Données de Parcoursup</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html"><i class="fa fa-check"></i><b>5</b> Résumés rapides descriptives</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#les-premières-tables"><i class="fa fa-check"></i><b>5.1</b> Les premières tables</a></li>
+<li class="chapter" data-level="5.2" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#tableaux-croisés"><i class="fa fa-check"></i><b>5.2</b> Tableaux croisés</a></li>
+<li class="chapter" data-level="5.3" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#themes"><i class="fa fa-check"></i><b>5.3</b> Themes</a></li>
+<li class="chapter" data-level="5.4" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#exportation"><i class="fa fa-check"></i><b>5.4</b> Exportation</a></li>
+<li class="chapter" data-level="5.5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#personnaliser-les-fonctions"><i class="fa fa-check"></i><b>5.5</b> Personnaliser les fonctions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="analyse-de-la-table-patient.html"><a href="analyse-de-la-table-patient.html"><i class="fa fa-check"></i><b>6</b> Analyse de la table Patient</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="analyse-de-la-table-patient.html"><a href="analyse-de-la-table-patient.html#chargement"><i class="fa fa-check"></i><b>6.1</b> Chargement</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -193,10 +206,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="le-langage-r" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Le langage R<a href="le-langage-r.html#le-langage-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Introduction<a href="le-langage-r.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="le-langage-r" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Le langage R<a href="le-langage-r.html#le-langage-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Introduction<a href="le-langage-r.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Le but est d’aborder des notions et de voir quelques exemples.</p>
 <p>R ne fonctionne pas comme JASP, Jamovi, SAS ou SPSS. Par exemple SPSS, vous ouvrez une
 source de données et vous voyez vos données sur un tableur.</p>
@@ -215,8 +228,8 @@ stricte entre données et résultats.</p>
 de sources de données, d’arguments pour sélectionner une partie des résultats ou
 bien être des résultats d’une opérations statistiques.</p>
 </div>
-<div id="un-exemple-de-traitement-de-données" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Un exemple de traitement de données<a href="le-langage-r.html#un-exemple-de-traitement-de-données" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="un-exemple-de-traitement-de-données" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Un exemple de traitement de données<a href="le-langage-r.html#un-exemple-de-traitement-de-données" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On va travailler sur une base de données qui sont les iris de Fisher. C’est
 plus simple car c’est un jeu de données qui est en mémoire dans R, on verra
 comment charger une source de données plus tard.</p>
@@ -251,10 +264,10 @@ on a gardé 5 éléments caractérisant l’individu.</p>
 <p>On voit que R sépare bien chacune des variables. Pour schématiser dans notre cas
 nous avons des individus en ligne et des observations en colonne. Comme Jamovi.</p>
 </div>
-<div id="vecteurs" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Vecteurs<a href="le-langage-r.html#vecteurs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="exemple-de-vecteurs" class="section level3 hasAnchor" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Exemple de vecteurs<a href="le-langage-r.html#exemple-de-vecteurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="vecteurs" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Vecteurs<a href="le-langage-r.html#vecteurs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exemple-de-vecteurs" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Exemple de vecteurs<a href="le-langage-r.html#exemple-de-vecteurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Là où ça devient différent c’est que la <strong>data.frame</strong> est en fait un aggrégat
 d’élements plus simples.</p>
 <p>Vous pouvez extraire par exemple la longueur des sépales pour tous les individus:</p>
@@ -302,8 +315,8 @@ pas de résultat. On affecte la partie à droite de “&lt;-” à la partie gau
 <p>On a dit à R, renvoie nous la variable “Sepal.Length” et nous avons décidé de le
 stocker dans une variable autre.</p>
 </div>
-<div id="création-de-vecteurs" class="section level3 hasAnchor" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Création de vecteurs<a href="le-langage-r.html#création-de-vecteurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="création-de-vecteurs" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Création de vecteurs<a href="le-langage-r.html#création-de-vecteurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pour créer un vecteur, il faut utiliser la fonction <strong>c</strong> pour <strong>concatenate</strong>.</p>
 <p>Exemple :</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="le-langage-r.html#cb15-1" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;Sepal.Length&quot;</span>,<span class="st">&quot;Petal.Length&quot;</span>)</span></code></pre></div>
@@ -494,8 +507,8 @@ Quelle est la structure de ce que l’on récupère :</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="le-langage-r.html#cb28-1" tabindex="-1"></a><span class="fu">mean</span>(iris.longueurs[,<span class="st">&quot;Sepal.Length&quot;</span>])</span></code></pre></div>
 <pre><code>## [1] 5.843333</code></pre>
 </div>
-<div id="les-types-de-vecteurs" class="section level3 hasAnchor" number="2.3.3">
-<h3><span class="header-section-number">2.3.3</span> Les types de vecteurs<a href="le-langage-r.html#les-types-de-vecteurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="les-types-de-vecteurs" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Les types de vecteurs<a href="le-langage-r.html#les-types-de-vecteurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>les vecteurs en résumé peuvent être :
 - des numéros entiers, <strong>int</strong>
 - des chaines de caractères, <strong>chr</strong>
@@ -537,14 +550,14 @@ et une variable continue. C’est faux.</p>
 ##     setosa versicolor  virginica 
 ##         50         50         50</code></pre>
 </div>
-<div id="pour-résumé" class="section level3 hasAnchor" number="2.3.4">
-<h3><span class="header-section-number">2.3.4</span> Pour résumé<a href="le-langage-r.html#pour-résumé" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="pour-résumé" class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Pour résumé<a href="le-langage-r.html#pour-résumé" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On a les <strong>data.frame</strong>, on a les <strong>vector</strong> de différents types. On sait qu’on
 peut sélectionner les variables par l’intermédiaire de vecteurs.</p>
 </div>
 </div>
-<div id="sélection-des-individus" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Sélection des individus<a href="le-langage-r.html#sélection-des-individus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sélection-des-individus" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Sélection des individus<a href="le-langage-r.html#sélection-des-individus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Intuitivement, comment sélectionner des individus ?</p>
 <p>Ca marche comme pour les variables, on utilise des vecteurs ?</p>
 <p>On veut les individus de 1 et 5.</p>
@@ -594,87 +607,103 @@ qui nous intéresse.</p>
 <p>Exemple :
 from iris, filter Species==“versicolor”,</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="le-langage-r.html#cb51-1" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span></code></pre></div>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="le-langage-r.html#cb52-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">filter</span>(Species<span class="sc">==</span><span class="st">&quot;versicolor&quot;</span>)</span></code></pre></div>
-<pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1           7.0         3.2          4.7         1.4 versicolor
-## 2           6.4         3.2          4.5         1.5 versicolor
-## 3           6.9         3.1          4.9         1.5 versicolor
-## 4           5.5         2.3          4.0         1.3 versicolor
-## 5           6.5         2.8          4.6         1.5 versicolor
-## 6           5.7         2.8          4.5         1.3 versicolor
-## 7           6.3         3.3          4.7         1.6 versicolor
-## 8           4.9         2.4          3.3         1.0 versicolor
-## 9           6.6         2.9          4.6         1.3 versicolor
-## 10          5.2         2.7          3.9         1.4 versicolor
-## 11          5.0         2.0          3.5         1.0 versicolor
-## 12          5.9         3.0          4.2         1.5 versicolor
-## 13          6.0         2.2          4.0         1.0 versicolor
-## 14          6.1         2.9          4.7         1.4 versicolor
-## 15          5.6         2.9          3.6         1.3 versicolor
-## 16          6.7         3.1          4.4         1.4 versicolor
-## 17          5.6         3.0          4.5         1.5 versicolor
-## 18          5.8         2.7          4.1         1.0 versicolor
-## 19          6.2         2.2          4.5         1.5 versicolor
-## 20          5.6         2.5          3.9         1.1 versicolor
-## 21          5.9         3.2          4.8         1.8 versicolor
-## 22          6.1         2.8          4.0         1.3 versicolor
-## 23          6.3         2.5          4.9         1.5 versicolor
-## 24          6.1         2.8          4.7         1.2 versicolor
-## 25          6.4         2.9          4.3         1.3 versicolor
-## 26          6.6         3.0          4.4         1.4 versicolor
-## 27          6.8         2.8          4.8         1.4 versicolor
-## 28          6.7         3.0          5.0         1.7 versicolor
-## 29          6.0         2.9          4.5         1.5 versicolor
-## 30          5.7         2.6          3.5         1.0 versicolor
-## 31          5.5         2.4          3.8         1.1 versicolor
-## 32          5.5         2.4          3.7         1.0 versicolor
-## 33          5.8         2.7          3.9         1.2 versicolor
-## 34          6.0         2.7          5.1         1.6 versicolor
-## 35          5.4         3.0          4.5         1.5 versicolor
-## 36          6.0         3.4          4.5         1.6 versicolor
-## 37          6.7         3.1          4.7         1.5 versicolor
-## 38          6.3         2.3          4.4         1.3 versicolor
-## 39          5.6         3.0          4.1         1.3 versicolor
-## 40          5.5         2.5          4.0         1.3 versicolor
-## 41          5.5         2.6          4.4         1.2 versicolor
-## 42          6.1         3.0          4.6         1.4 versicolor
-## 43          5.8         2.6          4.0         1.2 versicolor
-## 44          5.0         2.3          3.3         1.0 versicolor
-## 45          5.6         2.7          4.2         1.3 versicolor
-## 46          5.7         3.0          4.2         1.2 versicolor
-## 47          5.7         2.9          4.2         1.3 versicolor
-## 48          6.2         2.9          4.3         1.3 versicolor
-## 49          5.1         2.5          3.0         1.1 versicolor
-## 50          5.7         2.8          4.1         1.3 versicolor</code></pre>
-<div id="calcul-de-la-moyenne-et-nouveaux-générateurs" class="section level3 hasAnchor" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> Calcul de la moyenne et nouveaux générateurs<a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="le-langage-r.html#cb52-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">filter</span>(Species<span class="sc">==</span><span class="st">&quot;setosa&quot;</span>)</span></code></pre></div>
+<pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1           5.1         3.5          1.4         0.2  setosa
+## 2           4.9         3.0          1.4         0.2  setosa
+## 3           4.7         3.2          1.3         0.2  setosa
+## 4           4.6         3.1          1.5         0.2  setosa
+## 5           5.0         3.6          1.4         0.2  setosa
+## 6           5.4         3.9          1.7         0.4  setosa
+## 7           4.6         3.4          1.4         0.3  setosa
+## 8           5.0         3.4          1.5         0.2  setosa
+## 9           4.4         2.9          1.4         0.2  setosa
+## 10          4.9         3.1          1.5         0.1  setosa
+## 11          5.4         3.7          1.5         0.2  setosa
+## 12          4.8         3.4          1.6         0.2  setosa
+## 13          4.8         3.0          1.4         0.1  setosa
+## 14          4.3         3.0          1.1         0.1  setosa
+## 15          5.8         4.0          1.2         0.2  setosa
+## 16          5.7         4.4          1.5         0.4  setosa
+## 17          5.4         3.9          1.3         0.4  setosa
+## 18          5.1         3.5          1.4         0.3  setosa
+## 19          5.7         3.8          1.7         0.3  setosa
+## 20          5.1         3.8          1.5         0.3  setosa
+## 21          5.4         3.4          1.7         0.2  setosa
+## 22          5.1         3.7          1.5         0.4  setosa
+## 23          4.6         3.6          1.0         0.2  setosa
+## 24          5.1         3.3          1.7         0.5  setosa
+## 25          4.8         3.4          1.9         0.2  setosa
+## 26          5.0         3.0          1.6         0.2  setosa
+## 27          5.0         3.4          1.6         0.4  setosa
+## 28          5.2         3.5          1.5         0.2  setosa
+## 29          5.2         3.4          1.4         0.2  setosa
+## 30          4.7         3.2          1.6         0.2  setosa
+## 31          4.8         3.1          1.6         0.2  setosa
+## 32          5.4         3.4          1.5         0.4  setosa
+## 33          5.2         4.1          1.5         0.1  setosa
+## 34          5.5         4.2          1.4         0.2  setosa
+## 35          4.9         3.1          1.5         0.2  setosa
+## 36          5.0         3.2          1.2         0.2  setosa
+## 37          5.5         3.5          1.3         0.2  setosa
+## 38          4.9         3.6          1.4         0.1  setosa
+## 39          4.4         3.0          1.3         0.2  setosa
+## 40          5.1         3.4          1.5         0.2  setosa
+## 41          5.0         3.5          1.3         0.3  setosa
+## 42          4.5         2.3          1.3         0.3  setosa
+## 43          4.4         3.2          1.3         0.2  setosa
+## 44          5.0         3.5          1.6         0.6  setosa
+## 45          5.1         3.8          1.9         0.4  setosa
+## 46          4.8         3.0          1.4         0.3  setosa
+## 47          5.1         3.8          1.6         0.2  setosa
+## 48          4.6         3.2          1.4         0.2  setosa
+## 49          5.3         3.7          1.5         0.2  setosa
+## 50          5.0         3.3          1.4         0.2  setosa</code></pre>
+<div id="calcul-de-la-moyenne-et-nouveaux-générateurs" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Calcul de la moyenne et nouveaux générateurs<a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pour la moyenne des longueurs de sépales ?</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="le-langage-r.html#cb54-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">m=</span><span class="fu">mean</span>(Sepal.Length))  </span></code></pre></div>
-<pre><code>##          m
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="le-langage-r.html#cb54-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">moyenne=</span><span class="fu">mean</span>(Sepal.Length))  </span></code></pre></div>
+<pre><code>##    moyenne
 ## 1 5.843333</code></pre>
 <p>Ce qui devient :</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="le-langage-r.html#cb56-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">filter</span>(Species<span class="sc">==</span><span class="st">&quot;versicolor&quot;</span>) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">m_versicolor=</span><span class="fu">mean</span>(Sepal.Length))</span></code></pre></div>
-<pre><code>##   m_versicolor
-## 1        5.936</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="le-langage-r.html#cb56-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">filter</span>(Species<span class="sc">==</span><span class="st">&quot;setosa&quot;</span>) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">moyenne=</span><span class="fu">mean</span>(Sepal.Length))</span></code></pre></div>
+<pre><code>##   moyenne
+## 1   5.006</code></pre>
 <p>Mais y’a des choses plus pratique.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="le-langage-r.html#cb58-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">sepal.length=</span><span class="fu">mean</span>(Sepal.Length),</span>
-<span id="cb58-2"><a href="le-langage-r.html#cb58-2" tabindex="-1"></a>                                       <span class="at">sepal.width=</span><span class="fu">mean</span>(Sepal.Width))</span></code></pre></div>
-<pre><code>## # A tibble: 3 × 3
-##   Species    sepal.length sepal.width
-##   &lt;fct&gt;             &lt;dbl&gt;       &lt;dbl&gt;
-## 1 setosa             5.01        3.43
-## 2 versicolor         5.94        2.77
-## 3 virginica          6.59        2.97</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="le-langage-r.html#cb58-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">moyenne=</span><span class="fu">mean</span>(Sepal.Length))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   Species    moyenne
+##   &lt;fct&gt;        &lt;dbl&gt;
+## 1 setosa        5.01
+## 2 versicolor    5.94
+## 3 virginica     6.59</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="le-langage-r.html#cb60-1" tabindex="-1"></a><span class="fu">quantile</span>(iris[,<span class="st">&quot;Sepal.Length&quot;</span>])</span></code></pre></div>
+<pre><code>##   0%  25%  50%  75% 100% 
+##  4.3  5.1  5.8  6.4  7.9</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="le-langage-r.html#cb62-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">moy.Sepal.Length=</span><span class="fu">mean</span>(Sepal.Length),<span class="at">ec=</span><span class="fu">sd</span>(Sepal.Length),<span class="at">mediane=</span><span class="fu">quantile</span>(Sepal.Length,<span class="at">probs=</span><span class="fl">0.5</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 4
+##   Species    moy.Sepal.Length    ec mediane
+##   &lt;fct&gt;                 &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+## 1 setosa                 5.01 0.352     5  
+## 2 versicolor             5.94 0.516     5.9
+## 3 virginica              6.59 0.636     6.5</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="le-langage-r.html#cb64-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">moy.Sepal.Length=</span><span class="fu">mean</span>(Sepal.Length),<span class="at">ec=</span><span class="fu">sd</span>(Sepal.Length),<span class="at">mediane=</span><span class="fu">quantile</span>(Sepal.Length,<span class="at">probs=</span><span class="fl">0.5</span>),<span class="at">q90=</span><span class="fu">quantile</span>(Sepal.Length,<span class="at">probs=</span><span class="fl">0.9</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 5
+##   Species    moy.Sepal.Length    ec mediane   q90
+##   &lt;fct&gt;                 &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+## 1 setosa                 5.01 0.352     5    5.41
+## 2 versicolor             5.94 0.516     5.9  6.7 
+## 3 virginica              6.59 0.636     6.5  7.61</code></pre>
 <p>Etc…</p>
 <p>Ah au fait c’est quoi comme vient de retourner ?</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="le-langage-r.html#cb60-1" tabindex="-1"></a><span class="fu">str</span>(iris <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">sepal.length=</span><span class="fu">mean</span>(Sepal.Length),</span>
-<span id="cb60-2"><a href="le-langage-r.html#cb60-2" tabindex="-1"></a>                                       <span class="at">sepal.width=</span><span class="fu">mean</span>(Sepal.Width)))</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="le-langage-r.html#cb66-1" tabindex="-1"></a><span class="fu">str</span>(iris <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">sepal.length=</span><span class="fu">mean</span>(Sepal.Length),</span>
+<span id="cb66-2"><a href="le-langage-r.html#cb66-2" tabindex="-1"></a>                                       <span class="at">sepal.width=</span><span class="fu">mean</span>(Sepal.Width)))</span></code></pre></div>
 <pre><code>## tibble [3 × 3] (S3: tbl_df/tbl/data.frame)
 ##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 2 3
 ##  $ sepal.length: num [1:3] 5.01 5.94 6.59
 ##  $ sepal.width : num [1:3] 3.43 2.77 2.97</code></pre>
 <p>Calculer la moyenne de toutes les colonnes sauf Species ?</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="le-langage-r.html#cb62-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(Sepal.Length<span class="sc">:</span>Petal.Width,mean))</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="le-langage-r.html#cb68-1" tabindex="-1"></a>iris <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(Sepal.Length<span class="sc">:</span>Petal.Width,mean))</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 5
 ##   Species    Sepal.Length Sepal.Width Petal.Length Petal.Width
 ##   &lt;fct&gt;             &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
@@ -690,8 +719,8 @@ from iris, filter Species==“versicolor”,</p>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="architecture-de-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="architecture-de-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="importation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -9,6 +9,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readxl)
 ```
 
+# Importation 
+
 ## Données de Parcoursup
 
 Les données de ParcourSup viennent de là :
@@ -25,7 +27,7 @@ library(readxl)
 ```
 
 ```{r}
-parcours <- read_excel("fr-esr-parcoursup.xlsx")
+parcours <- read_excel("data/fr-esr-parcoursup.xlsx")
 
 ```
 
@@ -135,8 +137,8 @@ Ceux sont eux qui vont décider du type de variable que vous importez. Pour le
 faire vous même, il suffit de spécificier chaque à la main :
 
 
-```{r}
-read_csv("iris.csv", col_types = list(
+```{r,eval=FALSE}
+read_csv("data/iris.csv", col_types = list(
   Sepal.Length = col_double(),
   Sepal.Width = col_double(),
   Petal.Length = col_double(),
