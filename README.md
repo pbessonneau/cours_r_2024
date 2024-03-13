@@ -2,7 +2,7 @@ Welcome!
 
 This is a minimal example of a draft on R 
 
-[Aperçu du cours](https://pbessonneau.github.io/cours_r_2024/_book/)
+[Aperçu du cours](_book/)
 
 Additional resources:
 
