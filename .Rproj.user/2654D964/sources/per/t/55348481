@@ -1,6 +1,6 @@
 {
     "id": "55348481",
-    "path": "~/Doctorants/Cours_INETOP/01-intro.Rmd",
+    "path": "~/Doctorants/Cours_R_2024/01-intro.Rmd",
     "project_path": "01-intro.Rmd",
     "type": "r_markdown",
     "hash": "2364509823",
@@ -12,8 +12,8 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "9,9",
-        "scrollLine": "23"
+        "cursorPosition": "0,0",
+        "scrollLine": "0"
     },
     "folds": "",
     "lastKnownWriteTime": 1709985894,

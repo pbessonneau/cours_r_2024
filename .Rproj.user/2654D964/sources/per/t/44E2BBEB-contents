@@ -1,21 +1,15 @@
----
-title: "Gestion des paquets"
-author: "Pascal Bessonneau"
-date: "`r Sys.Date()`"
-output: html_document
----
 
-```{r setup, include=FALSE,message=FALSE,warning=FALSE}
+# Architecture de R
+
+```{r setup_architecture, include=FALSE,message=FALSE,warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 require(tidyverse)
 library(readxl)
 ```
 
-```{r}
-parcours <- read_excel("fr-esr-parcoursup.xlsx")
+```{r,echo=FALSE}
+parcours <- read_excel("data/fr-esr-parcoursup.xlsx")
 ```
-
-# Architecture de R
 
 R est à l'origine un logiciel de statistiques. Pour en faciliter l'usage il y
 avait une interface très rugueuse qui était livré avec sous Windows.

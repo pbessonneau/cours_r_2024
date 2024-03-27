@@ -1,0 +1,2478 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Graphiques et ggplot2},
+  pdfauthor={Pascal Bessonneau},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Graphiques et ggplot2}
+\author{Pascal Bessonneau}
+\date{2024-03-20}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{about}{%
+\chapter{About}\label{about}}
+
+This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
+
+Each \textbf{bookdown} chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter \emph{must} start with a first-level heading: \texttt{\#\ A\ good\ chapter}, and can contain one (and only one) first-level heading.
+
+Use second-level and higher headings within chapters like: \texttt{\#\#\ A\ short\ section} or \texttt{\#\#\#\ An\ even\ shorter\ section}.
+
+The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book.
+
+You can render the HTML version of this example book without changing anything:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Find the \textbf{Build} pane in the RStudio IDE, and
+\item
+  Click on \textbf{Build Book}, then select your output format, or select ``All formats'' if you'd like to use multiple formats from the same book source files.
+\end{enumerate}
+
+Or build the book from the R console:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
+
+\hypertarget{preview-book}{%
+\section{Preview book}\label{preview-book}}
+
+As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{parcours }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"fr{-}esr{-}parcoursup.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{architecture-de-r}{%
+\chapter{Architecture de R}\label{architecture-de-r}}
+
+R est à l'origine un logiciel de statistiques. Pour en faciliter l'usage il y
+avait une interface très rugueuse qui était livré avec sous Windows.
+
+Pour l'utiliser, en fait, il fallait écrire le code dans un bloc-notes (le code
+est du texte brut) et le coller dans la console de R.
+
+Vous pouvez toujours voir ce que ça donne en lançant R et non pas RStudio
+sur votre bureau. En prenant la mesure qu'il y a eu beaucoup de progrès de fait.
+
+Maintenant il existe RStudio, racheté par Posit. En fait c'est éditeur de texte
+grandement amélioré.
+
+Vous tapez le script dans la fenêtre en haut à gauche et vous l'exécutez en
+cliquant sur l'icone ou CTRL+ENTREE. Vous pouvez limiter ce que vous exécutez
+en sélectionnant du texte dans l'éditeur, seul le texte sélectionné sera soumis.
+
+En clair, comme RStudio est un éditeur amélioré :
+- le code qui n'est pas soumis, R ne le reconnait pas. Si vous créez une variable
+en ligne 4 mais que vous ne le soumettez pas, quand vous aurez besoin de la
+variable en ligne 30, elle n'existera pas.
+- l'éditeur de texte peut contenir autre chose que du texte simple. Par exemple
+du RMarkdown comme c'est le cas pour ce document. C'est un langage qui produit
+de l'HTML c'est-à-dire des pages web. Le Markdown est très simple, le langage
+tient sur une feuille : \href{https://www.markdownguide.org/cheat-sheet/}{ici}.
+- ou du LaTeX avec le mode knitr
+- On peut des graphiques R dans la fenêtre RStudio (en bas à droite)
+- RStudio peut servir pour la gestion de paquets
+- \ldots{}
+
+RStudio fait donc beaucoup de choses.
+
+A noter que Jamovi et JASP utilisent aussi R sauf que pour eux ce n'est presque
+plus visible. A part dans les extensions et/ou les modules. Il y a des modules
+Jamovi pour écrire du code R ou pour faire des modèles structuraux directement
+en R dans Jamovi.
+
+Vous allez avoir une démonstration enregistré pour l'utilisation de RStudio.
+
+Les autres choses à rappeler, c'est que R est un langage cassee dépendant :
+- les noms de fonctions de R sont à écrire en \textbf{minuscules}
+- un objet n'est pas le même si une ou plusieurs lettres sont en majuscule au lieu
+d'être en minuscule.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aAa }\OtherTok{\textless{}{-}} \DecValTok{2}
+\NormalTok{AAa }\OtherTok{\textless{}{-}} \DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+donc
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{AAa}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+et
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aAa}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+Les commentaires dans R sont à noter avec des \#. Tout ce qui suit le \# est un
+commentaire.
+
+Comme RStudio vous l'aurez remarqué vous aide en analysant et en colorant le
+code, n'utilisez pas un script R pour mettre des remarques (et non du code) en
+dehors de commentaires. Sinon c'est la catastrophe\ldots{}
+
+\textbf{Utiliser toujours RStudio en mode Projet}
+
+\hypertarget{paquets}{%
+\section{Paquets}\label{paquets}}
+
+Les fonctionnalités de R sont finalement assez limitées. Il fait un certain
+nombre de statistiques et surtout fourni des outils mathématiques puissants
+mais ça grande force est de proposer des paquets qui ajoute des fonctionnalités.
+
+Ces paquets sont développés par des gens (qui font ça sur leur temps personnel
+ou professionnel), des entreprises, des fondations, \ldots{}
+
+La liste des paquets officiels est \href{https://cran.r-project.org/web/packages/available_packages_by_name.html}{là}
+
+Ils sont maintenant pléthoriques et je vous conseille de vous reportez \href{https://cran.r-project.org/web/views/}{à cette page}.
+
+Elles répertorient les paquets utiles par domaine d'application. De plus les
+paquets un peu douteux en qualité n'y figure pas. Donc c'est du solide.
+
+Pour cela je vous recommande de l'utiliser pour se faire, suivez les instructions ci-dessous:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ctv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Puis quand vous voulez installer une vue (SocialSciences par exemple) :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ctv)}
+\FunctionTok{install.views}\NormalTok{(}\StringTok{"SocialSciences"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+On vient de voir comment appeler un paquet :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+ou
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+Cela revient presque au même. Presque. Pour commencer vous pouvez utiliser
+\textbf{library} en priorité.
+
+Essayez d'installer un paquet :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"readxl"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Maintenant vous pouvez lire les fichiers Excel. Vous n'avez besoin d'installer
+le paquet qu'une fois mais vous devez le réclamer avec \textbf{library} la première
+fois que vous l'utilisez dans un script. La politique est de charger tous les
+paquets que vous utilisez \textbf{en tête du script}.
+
+Maintenant on va faire des statistiques.
+
+\hypertarget{le-langage-r}{%
+\chapter{Le langage R}\label{le-langage-r}}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Le but est d'aborder des notions et de voir quelques exemples.
+
+R ne fonctionne pas comme JASP, Jamovi, SAS ou SPSS. Par exemple SPSS, vous ouvrez une
+source de données et vous voyez vos données sur un tableur.
+
+Quand vous passez une commande sur SPSS, il n'y a pas d'ambiguité, le traitement
+se fait sur le tableur actif.
+
+Avec SAS, on ajoute une dose de complexité, car vous avez des bibliothèques
+et des tables.
+
+Dans les deux cas, quand vous lancez une procédure statistique vous récupérez
+les résultats dans une fenêtre dédié car il y a une séparation des données
+et des résultats (dans la quasi-totalité des cas).
+
+Avec R, c'est différent. R est un langage de programmation comme Python, Pascal,
+Rust, etc.
+
+La force de R et ce qui le rend compliqué est qu'il n'y a pas de séparation aussi
+stricte entre données et résultats.
+
+Vous avez des objets en mémoire dans R et ces objets peuvent servir aussi bien
+de sources de données, d'arguments pour sélectionner une partie des résultats ou
+bien être des résultats d'une opérations statistiques.
+
+\hypertarget{un-exemple-de-traitement-de-donnuxe9es}{%
+\section{Un exemple de traitement de données}\label{un-exemple-de-traitement-de-donnuxe9es}}
+
+On va travailler sur une base de données qui sont les iris de Fisher. C'est
+plus simple car c'est un jeu de données qui est en mémoire dans R, on verra
+comment charger une source de données plus tard.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+Vous pouvez cliquer sur \textbf{iris} qui est apparu dans la fenêtre en haut
+à droite de RStudio. Elle ouvre un tableur assez frustre mais qui permet
+de visualiser les données.
+
+Mais c'est une très mauvaise habitude d'utiliser ce tableur pour visualiser
+les données.
+
+Il vaut mieux taper :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+\end{verbatim}
+
+\textbf{str} c'est pour \textbf{structure}. Enfin je crois. Elle vous décrit quelle est la
+nature de l'objet et de quoi il est composé. Ca peut être rudemment complexe.
+
+Mais là non. Il nous dit que c'est une \textbf{data.frame}. Le type \textbf{data.frame}
+est ce qui se rapproche le plus d'un tableau de données comme dans SPSS ou Jamovi.
+
+R nous dit que la data.frame a 150 observations et 5 variables. La structure est
+tabulaire comme dans Jamovi ou JASP: on a 150 relevés de plante (individus) et
+on a gardé 5 éléments caractérisant l'individu.
+
+\begin{itemize}
+\tightlist
+\item
+  Sepal.Length : \textbf{num} veut dire \textbf{numeric}, c'est une taille de Sépale.
+\item
+  Sepal.Width : \textbf{num} veut dire \textbf{numeric}, c'est une taille de Sépale.
+\item
+  \ldots{}
+\item
+  Species : c'est l'espèce, qui peut prendre 3 valeurs. Dans un type appelé
+  \textbf{Factor}
+\end{itemize}
+
+On voit que R sépare bien chacune des variables. Pour schématiser dans notre cas
+nous avons des individus en ligne et des observations en colonne. Comme Jamovi.
+
+\hypertarget{vecteurs}{%
+\section{Vecteurs}\label{vecteurs}}
+
+\hypertarget{exemple-de-vecteurs}{%
+\subsection{Exemple de vecteurs}\label{exemple-de-vecteurs}}
+
+Là où ça devient différent c'est que la \textbf{data.frame} est en fait un aggrégat
+d'élements plus simples.
+
+Vous pouvez extraire par exemple la longueur des sépales pour tous les individus:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris[,}\StringTok{"Sepal.Length"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
+##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
+##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
+##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
+## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
+## [146] 6.7 6.3 6.5 6.2 5.9
+\end{verbatim}
+
+Vous regardez par colonne, vous obtenez les valeurs pour les 150 individus.
+
+Si vous regardez la structure de ce que vous avez obtenu :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(iris[,}\StringTok{"Sepal.Length"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+\end{verbatim}
+
+Vous voyez que ce qui s'affichait tout à l'heure sur la \textbf{data.frame}.
+
+Vous pouvez calculer la moyenne des longueurs:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(iris[,}\StringTok{"Sepal.Length"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.843333
+\end{verbatim}
+
+Vous venez de faire une opération sur un vecteur. C'est un ensemble qui est typé
+ici des numériques mais ça peut être du texte, des entiers, etc. respectivement
+\textbf{character}, \textbf{integer}, etc.
+
+Vous pouvez extraire ce vecteur :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{longueur.sepale }\OtherTok{\textless{}{-}}\NormalTok{ iris[,}\StringTok{"Sepal.Length"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+Vous remarquez que R n'affiche pas le résultat de l'opération car on ne lui demande
+pas de résultat. On affecte la partie à droite de ``\textless-'' à la partie gauche.
+
+Si on fait:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{longueur.sepale}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
+##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
+##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
+##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
+## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
+## [146] 6.7 6.3 6.5 6.2 5.9
+\end{verbatim}
+
+On retrouve bien nos longueurs.
+
+On peut en calculer la moyenne :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(longueur.sepale)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.843333
+\end{verbatim}
+
+Qu'est ce qui se passe ? En fait on a indexé notre \textbf{data.frame}.
+
+On a dit à R, renvoie nous la variable ``Sepal.Length'' et nous avons décidé de le
+stocker dans une variable autre.
+
+\hypertarget{cruxe9ation-de-vecteurs}{%
+\subsection{Création de vecteurs}\label{cruxe9ation-de-vecteurs}}
+
+Pour créer un vecteur, il faut utiliser la fonction \textbf{c} pour \textbf{concatenate}.
+
+Exemple :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{c}\NormalTok{(}\StringTok{"Sepal.Length"}\NormalTok{,}\StringTok{"Petal.Length"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Sepal.Length" "Petal.Length"
+\end{verbatim}
+
+On peut l'affecter à une variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{longueurs }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Sepal.Length"}\NormalTok{,}\StringTok{"Petal.Length"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+C'est un vecteur :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(longueurs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  chr [1:2] "Sepal.Length" "Petal.Length"
+\end{verbatim}
+
+Maintenant on peut faire:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris[,longueurs]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     Sepal.Length Petal.Length
+## 1            5.1          1.4
+## 2            4.9          1.4
+## 3            4.7          1.3
+## 4            4.6          1.5
+## 5            5.0          1.4
+## 6            5.4          1.7
+## 7            4.6          1.4
+## 8            5.0          1.5
+## 9            4.4          1.4
+## 10           4.9          1.5
+## 11           5.4          1.5
+## 12           4.8          1.6
+## 13           4.8          1.4
+## 14           4.3          1.1
+## 15           5.8          1.2
+## 16           5.7          1.5
+## 17           5.4          1.3
+## 18           5.1          1.4
+## 19           5.7          1.7
+## 20           5.1          1.5
+## 21           5.4          1.7
+## 22           5.1          1.5
+## 23           4.6          1.0
+## 24           5.1          1.7
+## 25           4.8          1.9
+## 26           5.0          1.6
+## 27           5.0          1.6
+## 28           5.2          1.5
+## 29           5.2          1.4
+## 30           4.7          1.6
+## 31           4.8          1.6
+## 32           5.4          1.5
+## 33           5.2          1.5
+## 34           5.5          1.4
+## 35           4.9          1.5
+## 36           5.0          1.2
+## 37           5.5          1.3
+## 38           4.9          1.4
+## 39           4.4          1.3
+## 40           5.1          1.5
+## 41           5.0          1.3
+## 42           4.5          1.3
+## 43           4.4          1.3
+## 44           5.0          1.6
+## 45           5.1          1.9
+## 46           4.8          1.4
+## 47           5.1          1.6
+## 48           4.6          1.4
+## 49           5.3          1.5
+## 50           5.0          1.4
+## 51           7.0          4.7
+## 52           6.4          4.5
+## 53           6.9          4.9
+## 54           5.5          4.0
+## 55           6.5          4.6
+## 56           5.7          4.5
+## 57           6.3          4.7
+## 58           4.9          3.3
+## 59           6.6          4.6
+## 60           5.2          3.9
+## 61           5.0          3.5
+## 62           5.9          4.2
+## 63           6.0          4.0
+## 64           6.1          4.7
+## 65           5.6          3.6
+## 66           6.7          4.4
+## 67           5.6          4.5
+## 68           5.8          4.1
+## 69           6.2          4.5
+## 70           5.6          3.9
+## 71           5.9          4.8
+## 72           6.1          4.0
+## 73           6.3          4.9
+## 74           6.1          4.7
+## 75           6.4          4.3
+## 76           6.6          4.4
+## 77           6.8          4.8
+## 78           6.7          5.0
+## 79           6.0          4.5
+## 80           5.7          3.5
+## 81           5.5          3.8
+## 82           5.5          3.7
+## 83           5.8          3.9
+## 84           6.0          5.1
+## 85           5.4          4.5
+## 86           6.0          4.5
+## 87           6.7          4.7
+## 88           6.3          4.4
+## 89           5.6          4.1
+## 90           5.5          4.0
+## 91           5.5          4.4
+## 92           6.1          4.6
+## 93           5.8          4.0
+## 94           5.0          3.3
+## 95           5.6          4.2
+## 96           5.7          4.2
+## 97           5.7          4.2
+## 98           6.2          4.3
+## 99           5.1          3.0
+## 100          5.7          4.1
+## 101          6.3          6.0
+## 102          5.8          5.1
+## 103          7.1          5.9
+## 104          6.3          5.6
+## 105          6.5          5.8
+## 106          7.6          6.6
+## 107          4.9          4.5
+## 108          7.3          6.3
+## 109          6.7          5.8
+## 110          7.2          6.1
+## 111          6.5          5.1
+## 112          6.4          5.3
+## 113          6.8          5.5
+## 114          5.7          5.0
+## 115          5.8          5.1
+## 116          6.4          5.3
+## 117          6.5          5.5
+## 118          7.7          6.7
+## 119          7.7          6.9
+## 120          6.0          5.0
+## 121          6.9          5.7
+## 122          5.6          4.9
+## 123          7.7          6.7
+## 124          6.3          4.9
+## 125          6.7          5.7
+## 126          7.2          6.0
+## 127          6.2          4.8
+## 128          6.1          4.9
+## 129          6.4          5.6
+## 130          7.2          5.8
+## 131          7.4          6.1
+## 132          7.9          6.4
+## 133          6.4          5.6
+## 134          6.3          5.1
+## 135          6.1          5.6
+## 136          7.7          6.1
+## 137          6.3          5.6
+## 138          6.4          5.5
+## 139          6.0          4.8
+## 140          6.9          5.4
+## 141          6.7          5.6
+## 142          6.9          5.1
+## 143          5.8          5.1
+## 144          6.8          5.9
+## 145          6.7          5.7
+## 146          6.7          5.2
+## 147          6.3          5.0
+## 148          6.5          5.2
+## 149          6.2          5.4
+## 150          5.9          5.1
+\end{verbatim}
+
+On vient d'indexer iris avec un vecteur composé de deux noms qui sont les noms
+des variables.
+
+R lit la partie droite de la virgule et comprends que nous voulons les deux variables.
+Quelle est la structure de ce que l'on récupère :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(iris[,longueurs])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    150 obs. of  2 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+\end{verbatim}
+
+C'est une \textbf{data.frame} les informations sur nos 150 individus pour les longueurs.
+
+on peut faire:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris.longueurs }\OtherTok{\textless{}{-}}\NormalTok{ iris[,longueurs]}
+\FunctionTok{str}\NormalTok{(iris.longueurs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    150 obs. of  2 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris.longueurs[,}\StringTok{"Sepal.Length"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
+##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
+##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
+##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
+## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
+## [146] 6.7 6.3 6.5 6.2 5.9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(iris.longueurs[,}\StringTok{"Sepal.Length"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.843333
+\end{verbatim}
+
+\hypertarget{les-types-de-vecteurs}{%
+\subsection{Les types de vecteurs}\label{les-types-de-vecteurs}}
+
+les vecteurs en résumé peuvent être :
+- des numéros entiers, \textbf{int}
+- des chaines de caractères, \textbf{chr}
+- des logiques, \textbf{logi}
+- des réels, \textbf{num}
+- \ldots{}
+
+On peut créer un vecteur d'entiers
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 3
+\end{verbatim}
+
+Un vecteur de logique: (T pour vrai, F pour faux)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{c}\NormalTok{(T,F,T,F,F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE FALSE  TRUE FALSE FALSE
+\end{verbatim}
+
+Et là surprise : si on demande à R de nous retourner la première et la troisième
+variable de iris
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(iris[,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    150 obs. of  2 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+\end{verbatim}
+
+Plus compliqué. On sait qu'il y a 5 variables dans iris ? On est d'accord ?
+Donc si on lui demande de nous renvoyer la variable quand c'est vrai et de ne pas
+nous la renvoyer quand c'est faux ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(iris[,}\FunctionTok{c}\NormalTok{(T,F,T,F,F)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    150 obs. of  2 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+\end{verbatim}
+
+En fait les \textbf{data.frame}s sont des agrégats de vecteurs que l'on peut indexer
+avec des vecteurs.
+
+Pourquoi on ne peut pas faire :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(iris.longueurs)}
+\end{Highlighting}
+\end{Shaded}
+
+parce qu'on a deux variables ? R refuse de faire ce qui n'a pas de sens.
+
+Après tout on voudrait faire la moyenne de sépale et de pétale. Déjà mais
+ça pourrait être pire :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(iris[,}\FunctionTok{c}\NormalTok{(}\StringTok{"Sepal.Length"}\NormalTok{,}\StringTok{"Species"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+C'est la catastrophe. Vous essayez de faire une moyenne sur une variable texte
+et une variable continue. C'est faux.
+
+Pour faire le résumer d'une variable texte:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(iris[,}\StringTok{"Species"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##     setosa versicolor  virginica 
+##         50         50         50
+\end{verbatim}
+
+\hypertarget{pour-ruxe9sumuxe9}{%
+\subsection{Pour résumé}\label{pour-ruxe9sumuxe9}}
+
+On a les \textbf{data.frame}, on a les \textbf{vector} de différents types. On sait qu'on
+peut sélectionner les variables par l'intermédiaire de vecteurs.
+
+\hypertarget{suxe9lection-des-individus}{%
+\section{Sélection des individus}\label{suxe9lection-des-individus}}
+
+Intuitivement, comment sélectionner des individus ?
+
+Ca marche comme pour les variables, on utilise des vecteurs ?
+
+On veut les individus de 1 et 5.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(iris[}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{),])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    2 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 5
+##  $ Sepal.Width : num  3.5 3.6
+##  $ Petal.Length: num  1.4 1.4
+##  $ Petal.Width : num  0.2 0.2
+##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1
+\end{verbatim}
+
+Attention à la place de la virgule. Cette fois on sélectionne des lignes. A gauche
+de la virgule pour des lignes et à droite pour les colonnes.
+
+C'est tout bon.
+
+On a vu qu'il y avait trois espèces. Si on veut sélectionner ceux qui sont du type
+\textbf{versicolor} ?
+
+On se rappele des vecteurs de logique: là où iris{[},``Species''{]} vaudra \textbf{versicolor}
+on sélectionne et là où ce n'est pas \textbf{versicolor} on ne sélectionne pas.
+
+On ne va pas le faire à la main. On ne fait rien à la main sous R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{especes }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"versicolor"}\NormalTok{,}\StringTok{"truc"}\NormalTok{,}\StringTok{"versicolor"}\NormalTok{,}\StringTok{"setosa"}\NormalTok{)}
+\NormalTok{especes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "versicolor" "truc"       "versicolor" "setosa"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{especes}\SpecialCharTok{==}\StringTok{"versicolor"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE FALSE  TRUE FALSE
+\end{verbatim}
+
+On l'adapte pour notre cas :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris[,}\StringTok{"Species"}\NormalTok{]}\SpecialCharTok{==}\StringTok{"versicolor"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [20] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [39] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [58]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [77]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [96]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [115] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [134] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+\end{verbatim}
+
+Donc on indexe les individus :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{versicolor }\OtherTok{\textless{}{-}}\NormalTok{ iris[iris[,}\StringTok{"Species"}\NormalTok{]}\SpecialCharTok{==}\StringTok{"versicolor"}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+Faites un point pour voir si tout est conforme dans votre esprit sur la place
+des accolades, etc. En fait c'est le \textbf{old-fashioned} R.
+
+En fait ça commence à devenir compliqué, alors des gens on fait des fonctions
+qui génère des vecteurs\ldots{} à partir de mots anglais.
+
+On va créer ainsi de gauche à droite des sous espaces pour ne retenir que ce
+qui nous intéresse.
+
+Exemple :
+from iris, filter Species==``versicolor'',
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(Species}\SpecialCharTok{==}\StringTok{"setosa"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1           5.1         3.5          1.4         0.2  setosa
+## 2           4.9         3.0          1.4         0.2  setosa
+## 3           4.7         3.2          1.3         0.2  setosa
+## 4           4.6         3.1          1.5         0.2  setosa
+## 5           5.0         3.6          1.4         0.2  setosa
+## 6           5.4         3.9          1.7         0.4  setosa
+## 7           4.6         3.4          1.4         0.3  setosa
+## 8           5.0         3.4          1.5         0.2  setosa
+## 9           4.4         2.9          1.4         0.2  setosa
+## 10          4.9         3.1          1.5         0.1  setosa
+## 11          5.4         3.7          1.5         0.2  setosa
+## 12          4.8         3.4          1.6         0.2  setosa
+## 13          4.8         3.0          1.4         0.1  setosa
+## 14          4.3         3.0          1.1         0.1  setosa
+## 15          5.8         4.0          1.2         0.2  setosa
+## 16          5.7         4.4          1.5         0.4  setosa
+## 17          5.4         3.9          1.3         0.4  setosa
+## 18          5.1         3.5          1.4         0.3  setosa
+## 19          5.7         3.8          1.7         0.3  setosa
+## 20          5.1         3.8          1.5         0.3  setosa
+## 21          5.4         3.4          1.7         0.2  setosa
+## 22          5.1         3.7          1.5         0.4  setosa
+## 23          4.6         3.6          1.0         0.2  setosa
+## 24          5.1         3.3          1.7         0.5  setosa
+## 25          4.8         3.4          1.9         0.2  setosa
+## 26          5.0         3.0          1.6         0.2  setosa
+## 27          5.0         3.4          1.6         0.4  setosa
+## 28          5.2         3.5          1.5         0.2  setosa
+## 29          5.2         3.4          1.4         0.2  setosa
+## 30          4.7         3.2          1.6         0.2  setosa
+## 31          4.8         3.1          1.6         0.2  setosa
+## 32          5.4         3.4          1.5         0.4  setosa
+## 33          5.2         4.1          1.5         0.1  setosa
+## 34          5.5         4.2          1.4         0.2  setosa
+## 35          4.9         3.1          1.5         0.2  setosa
+## 36          5.0         3.2          1.2         0.2  setosa
+## 37          5.5         3.5          1.3         0.2  setosa
+## 38          4.9         3.6          1.4         0.1  setosa
+## 39          4.4         3.0          1.3         0.2  setosa
+## 40          5.1         3.4          1.5         0.2  setosa
+## 41          5.0         3.5          1.3         0.3  setosa
+## 42          4.5         2.3          1.3         0.3  setosa
+## 43          4.4         3.2          1.3         0.2  setosa
+## 44          5.0         3.5          1.6         0.6  setosa
+## 45          5.1         3.8          1.9         0.4  setosa
+## 46          4.8         3.0          1.4         0.3  setosa
+## 47          5.1         3.8          1.6         0.2  setosa
+## 48          4.6         3.2          1.4         0.2  setosa
+## 49          5.3         3.7          1.5         0.2  setosa
+## 50          5.0         3.3          1.4         0.2  setosa
+\end{verbatim}
+
+\hypertarget{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}{%
+\subsection{Calcul de la moyenne et nouveaux générateurs}\label{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}}
+
+Pour la moyenne des longueurs de sépales ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{|\textgreater{}} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{moyenne=}\FunctionTok{mean}\NormalTok{(Sepal.Length))  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    moyenne
+## 1 5.843333
+\end{verbatim}
+
+Ce qui devient :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(Species}\SpecialCharTok{==}\StringTok{"setosa"}\NormalTok{) }\SpecialCharTok{|\textgreater{}} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{moyenne=}\FunctionTok{mean}\NormalTok{(Sepal.Length))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   moyenne
+## 1   5.006
+\end{verbatim}
+
+Mais y'a des choses plus pratique.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{|\textgreater{}} \FunctionTok{group\_by}\NormalTok{(Species) }\SpecialCharTok{|\textgreater{}} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{moyenne=}\FunctionTok{mean}\NormalTok{(Sepal.Length))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+##   Species    moyenne
+##   <fct>        <dbl>
+## 1 setosa        5.01
+## 2 versicolor    5.94
+## 3 virginica     6.59
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{quantile}\NormalTok{(iris[,}\StringTok{"Sepal.Length"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   0%  25%  50%  75% 100% 
+##  4.3  5.1  5.8  6.4  7.9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{|\textgreater{}} \FunctionTok{group\_by}\NormalTok{(Species) }\SpecialCharTok{|\textgreater{}} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{moy.Sepal.Length=}\FunctionTok{mean}\NormalTok{(Sepal.Length),}\AttributeTok{ec=}\FunctionTok{sd}\NormalTok{(Sepal.Length),}\AttributeTok{mediane=}\FunctionTok{quantile}\NormalTok{(Sepal.Length,}\AttributeTok{probs=}\FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 4
+##   Species    moy.Sepal.Length    ec mediane
+##   <fct>                 <dbl> <dbl>   <dbl>
+## 1 setosa                 5.01 0.352     5  
+## 2 versicolor             5.94 0.516     5.9
+## 3 virginica              6.59 0.636     6.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{|\textgreater{}} \FunctionTok{group\_by}\NormalTok{(Species) }\SpecialCharTok{|\textgreater{}} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{moy.Sepal.Length=}\FunctionTok{mean}\NormalTok{(Sepal.Length),}\AttributeTok{ec=}\FunctionTok{sd}\NormalTok{(Sepal.Length),}\AttributeTok{mediane=}\FunctionTok{quantile}\NormalTok{(Sepal.Length,}\AttributeTok{probs=}\FloatTok{0.5}\NormalTok{),}\AttributeTok{q90=}\FunctionTok{quantile}\NormalTok{(Sepal.Length,}\AttributeTok{probs=}\FloatTok{0.9}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 5
+##   Species    moy.Sepal.Length    ec mediane   q90
+##   <fct>                 <dbl> <dbl>   <dbl> <dbl>
+## 1 setosa                 5.01 0.352     5    5.41
+## 2 versicolor             5.94 0.516     5.9  6.7 
+## 3 virginica              6.59 0.636     6.5  7.61
+\end{verbatim}
+
+Etc\ldots{}
+
+Ah au fait c'est quoi comme vient de retourner ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(iris }\SpecialCharTok{|\textgreater{}} \FunctionTok{group\_by}\NormalTok{(Species) }\SpecialCharTok{|\textgreater{}} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{sepal.length=}\FunctionTok{mean}\NormalTok{(Sepal.Length),}
+                                       \AttributeTok{sepal.width=}\FunctionTok{mean}\NormalTok{(Sepal.Width)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [3 x 3] (S3: tbl_df/tbl/data.frame)
+##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 2 3
+##  $ sepal.length: num [1:3] 5.01 5.94 6.59
+##  $ sepal.width : num [1:3] 3.43 2.77 2.97
+\end{verbatim}
+
+Calculer la moyenne de toutes les colonnes sauf Species ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{|\textgreater{}} \FunctionTok{group\_by}\NormalTok{(Species) }\SpecialCharTok{|\textgreater{}} \FunctionTok{summarise}\NormalTok{(}\FunctionTok{across}\NormalTok{(Sepal.Length}\SpecialCharTok{:}\NormalTok{Petal.Width,mean))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 5
+##   Species    Sepal.Length Sepal.Width Petal.Length Petal.Width
+##   <fct>             <dbl>       <dbl>        <dbl>       <dbl>
+## 1 setosa             5.01        3.43         1.46       0.246
+## 2 versicolor         5.94        2.77         4.26       1.33 
+## 3 virginica          6.59        2.97         5.55       2.03
+\end{verbatim}
+
+\hypertarget{donnuxe9es-de-parcoursup}{%
+\section{Données de Parcoursup}\label{donnuxe9es-de-parcoursup}}
+
+Les données de ParcourSup viennent de là :
+\href{https://data.education.gouv.fr/explore/embed/dataset/fr-esr-parcoursup/table/?sort=tri}{Parcoursup 2023 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements}
+
+sinon vous avez les métiers en tensions :
+\href{https://data.education.gouv.fr/explore/embed/dataset/fr-en-taux-de-pression-et-demploi/table/?disjunctive.diplome\&disjunctive.type_dip_lib\&disjunctive.filiere\&disjunctive.specialite_lib}{Taux de pression et d'emploi pour les diplômes de la voie professionnelle}
+
+En suivant les liens vous pouvez télécharger les fichiers Excel.
+
+Déplacer le fichier Excel à la racine de votre projet. puis
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readxl)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{parcours }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/fr{-}esr{-}parcoursup.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## New names:
+## * `Filière de formation` -> `Filière de formation...10`
+## * `Filière de formation` -> `Filière de formation...14`
+\end{verbatim}
+
+Je viens de créer une data.frame du nom de parcours avec le contenu du fichier
+Excel.
+
+Pour sélectionner les variables, utiliser le raccourci TAB.
+
+Pour charger un fichier SPSS, il faut aussi un paquet supplémentaire :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(haven)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{patient }\OtherTok{\textless{}{-}} \FunctionTok{read\_sav}\NormalTok{(}\StringTok{"data/patient.sav"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+C'est le même paquet pour les formats \textbf{SAS} (\textbf{sas7bdat}) et \textbf{STATA}. On
+trouve le chargement des mêmes types de fichier dans le paquet \textbf{foreign}
+mais attention ce sont pour les vieux formats de fichiers.
+
+Par exemple pour SAS, il suffit de changer de fonction :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{patient }\OtherTok{\textless{}{-}} \FunctionTok{read\_sas}\NormalTok{(}\StringTok{"patient.sas7bdat"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Lors de l'import, de SAS, SPSS, il conserve le type de la variable. Quand on veux
+importer un fichier Excel ou un fichier texte, cela est différent.
+
+On va prendre l'exemple de fichier texte : l'importation se fait en fait en
+trois temps.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readr)}
+\NormalTok{patient }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/patient.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 200 Columns: 17
+## -- Column specification -------------------------------------------------------------------------------------------------
+## Delimiter: ","
+## chr  (5): UID, Hopital, sexe, scoliose, drepano
+## dbl (12): poids, vitaux, CIM2, age, dureeopmin, postopj, ACP, peridurale, periACP, nbttt, totalechelle, nbechelle
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{scoliose)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  ante autre  post 
+##     3     2    20
+\end{verbatim}
+
+Dans un premier temps, la fonction \textbf{read\_csv} va parcourir les 1000 premières
+lignes du fichier à la découverte de :
+- du séparateur entre les champs
+- du séparateur de décimales
+- le type de chaque colonne.
+
+Si par exemple il trouve que des chiffres dans une colonne, le type sera \textbf{dbl}.
+Par contre s'il trouve un mélange de charactères et de chiffres, là rien ne va
+plus. Ca peut se produire par exemple lorsque vous avez des chiffres mélangés
+à des valeurs manquantes qui sont représentés par des valeurs textes ou bien des
+symboles textuels.
+
+Les petites machines qui transforment les données en données typées sont des
+parser. Elles sont d'ailleurs disponible à part :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(}\FunctionTok{parse\_double}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"1.56"}\NormalTok{, }\StringTok{"NA"}\NormalTok{, }\StringTok{"NA"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  num [1:3] 1.56 NA NA
+\end{verbatim}
+
+NA est reconnu comme valeur manquante alors pas de souci, le 1.56 est reconnu.
+
+et si on mettait 1,56 ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(}\FunctionTok{parse\_double}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"1,56"}\NormalTok{, }\StringTok{"NA"}\NormalTok{, }\StringTok{"NA"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: 1 parsing failure.
+## row col               expected actual
+##   1  -- no trailing characters   1,56
+\end{verbatim}
+
+\begin{verbatim}
+##  num [1:3] NA NA NA
+##  - attr(*, "problems")= tibble [1 x 4] (S3: tbl_df/tbl/data.frame)
+##   ..$ row     : int 1
+##   ..$ col     : int NA
+##   ..$ expected: chr "no trailing characters"
+##   ..$ actual  : chr "1,56"
+\end{verbatim}
+
+pas terrible ce qui suit :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(}\FunctionTok{parse\_double}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"1.56"}\NormalTok{, }\StringTok{"NR"}\NormalTok{, }\StringTok{"NR"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: 2 parsing failures.
+## row col expected actual
+##   2  -- a double     NR
+##   3  -- a double     NR
+\end{verbatim}
+
+\begin{verbatim}
+##  num [1:3] 1.56 NA NA
+##  - attr(*, "problems")= tibble [2 x 4] (S3: tbl_df/tbl/data.frame)
+##   ..$ row     : int [1:2] 2 3
+##   ..$ col     : int [1:2] NA NA
+##   ..$ expected: chr [1:2] "a double" "a double"
+##   ..$ actual  : chr [1:2] "NR" "NR"
+\end{verbatim}
+
+On rétablit la situation normale en mettant na = NR :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(}\FunctionTok{parse\_double}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"1.56"}\NormalTok{, }\StringTok{"NA"}\NormalTok{, }\StringTok{"NA"}\NormalTok{),}\AttributeTok{na =} \StringTok{"NR"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: 2 parsing failures.
+## row col expected actual
+##   2  -- a double     --
+##   3  -- a double     --
+\end{verbatim}
+
+\begin{verbatim}
+##  num [1:3] 1.56 NA NA
+##  - attr(*, "problems")= tibble [2 x 4] (S3: tbl_df/tbl/data.frame)
+##   ..$ row     : int [1:2] 2 3
+##   ..$ col     : int [1:2] NA NA
+##   ..$ expected: chr [1:2] "a double" "a double"
+##   ..$ actual  : chr [1:2] "NA" "NA"
+\end{verbatim}
+
+Dans la jungle des parsers, on a les parsers :
+- parse\_logical()
+- parse\_integer()
+- parse\_double()
+- parse\_character()
+- parse\_number()
+- parse\_factor()
+- parse\_datetime() (may be the force with you)
+- \ldots{}
+
+Si vous avez bien suivi, la machine va lire les n premières lignes et à chaque
+colonne essayer de deviner le type de variable et appeler le parser qui va
+bien : ce sont les fonctions \textbf{guess\_}.
+
+Ceux sont eux qui vont décider du type de variable que vous importez. Pour le
+faire vous même, il suffit de spécificier chaque à la main :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/iris.csv"}\NormalTok{, }\AttributeTok{col\_types =} \FunctionTok{list}\NormalTok{(}
+  \AttributeTok{Sepal.Length =} \FunctionTok{col\_double}\NormalTok{(),}
+  \AttributeTok{Sepal.Width =} \FunctionTok{col\_double}\NormalTok{(),}
+  \AttributeTok{Petal.Length =} \FunctionTok{col\_double}\NormalTok{(),}
+  \AttributeTok{Petal.Width =} \FunctionTok{col\_double}\NormalTok{(),}
+  \AttributeTok{Species =} \FunctionTok{col\_factor}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"setosa"}\NormalTok{, }\StringTok{"versicolor"}\NormalTok{, }\StringTok{"virginica"}\NormalTok{))}
+\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: The following named parsers don't match the column names: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width,
+## Species
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: One or more parsing issues, call `problems()` on your data frame for details, e.g.:
+##   dat <- vroom(...)
+##   problems(dat)
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 150 x 1
+##    `Sepal.Length;Sepal.Width;Petal.Length;Petal.Width;Species`
+##    <chr>                                                      
+##  1 5,1;3,5;1,4;NA;setosa                                      
+##  2 4,9;3;1,4;NA;setosa                                        
+##  3 4,7;3,2;1,3;NA;setosa                                      
+##  4 4,6;3,1;1,5;NA;setosa                                      
+##  5 5;3,6;1,4;NA;setosa                                        
+##  6 5,4;3,9;1,7;0,4;setosa                                     
+##  7 4,6;3,4;1,4;0,3;setosa                                     
+##  8 5;3,4;1,5;0,2;setosa                                       
+##  9 4,4;2,9;1,4;0,2;setosa                                     
+## 10 4,9;3,1;1,5;0,1;setosa                                     
+## # i 140 more rows
+\end{verbatim}
+
+Sur cette ligne, c'est un peu complexe et surtout cela fait appel à deux élements
+que vous connaissez pas. Les \textbf{list}s et les \textbf{factor}s.
+
+Un \textbf{factor} est un ensemble de valeurs fini : c'est comme ça que vous pouvez
+coder un ensemble de valeurs que vous pouvez énumérer et que vous utiliseriez
+par exemple dans une expérience. Par exemple, on peut avoir comme facteur :
+
+\begin{itemize}
+\tightlist
+\item
+  le nombre de cylindres de mtcars 4, 6 ou 8
+\item
+  les médicaments dans une expérience en double aveugle: A, B, C
+\item
+  \ldots{}
+\end{itemize}
+
+L'idée est qu'un facteur est à utiliser dans une ANOVA (un test de différences de
+moyennes sur 1 à k groupes).
+
+La liste est une \textbf{data.frame} libertaire : par libértaire j'entends qu'on peut
+mettre n'importe objet et l'indexer (presque) comme une \textbf{data.frame}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(iris,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{),LETTERS,mtcars[,}\FunctionTok{c}\NormalTok{(}\StringTok{"cyl"}\NormalTok{,}\StringTok{"mpg"}\NormalTok{)])}
+\FunctionTok{str}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 4
+##  $ :'data.frame':    150 obs. of  5 variables:
+##   ..$ Sepal.Length: num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##   ..$ Sepal.Width : num [1:150] 3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##   ..$ Petal.Length: num [1:150] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##   ..$ Petal.Width : num [1:150] 0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##   ..$ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ : num [1:3] 1 2 3
+##  $ : chr [1:26] "A" "B" "C" "D" ...
+##  $ :'data.frame':    32 obs. of  2 variables:
+##   ..$ cyl: num [1:32] 6 6 4 6 8 6 8 4 4 6 ...
+##   ..$ mpg: num [1:32] 21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+\end{verbatim}
+
+On voit que c'est un type \textbf{list}, les \textbf{data.frame}.
+
+\hypertarget{ruxe9sumuxe9s-rapides-descriptives}{%
+\chapter{Résumés rapides descriptives}\label{ruxe9sumuxe9s-rapides-descriptives}}
+
+\hypertarget{les-premiuxe8res-tables}{%
+\section{Les premières tables}\label{les-premiuxe8res-tables}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(gtsummary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tbl\_summary}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Table printed with `knitr::kable()`, not {gt}. Learn why at
+## https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html
+## To suppress this message, include `message = FALSE` in code chunk header.
+\end{verbatim}
+
+\begin{tabular}{l|c}
+\hline
+**Characteristic** & **N = 32**\\
+\hline
+mpg & 19.2 (15.4, 22.8)\\
+\hline
+cyl & \\
+\hline
+4 & 11 (34\%)\\
+\hline
+6 & 7 (22\%)\\
+\hline
+8 & 14 (44\%)\\
+\hline
+disp & 196 (121, 326)\\
+\hline
+hp & 123 (97, 180)\\
+\hline
+drat & 3.70 (3.08, 3.92)\\
+\hline
+wt & 3.33 (2.58, 3.61)\\
+\hline
+qsec & 17.71 (16.89, 18.90)\\
+\hline
+vs & 14 (44\%)\\
+\hline
+am & 13 (41\%)\\
+\hline
+gear & \\
+\hline
+3 & 15 (47\%)\\
+\hline
+4 & 12 (38\%)\\
+\hline
+5 & 5 (16\%)\\
+\hline
+carb & \\
+\hline
+1 & 7 (22\%)\\
+\hline
+2 & 10 (31\%)\\
+\hline
+3 & 3 (9.4\%)\\
+\hline
+4 & 10 (31\%)\\
+\hline
+6 & 1 (3.1\%)\\
+\hline
+8 & 1 (3.1\%)\\
+\hline
+\end{tabular}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tbl\_summary}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Table printed with `knitr::kable()`, not {gt}. Learn why at
+## https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html
+## To suppress this message, include `message = FALSE` in code chunk header.
+\end{verbatim}
+
+\begin{tabular}{l|c}
+\hline
+**Characteristic** & **N = 150**\\
+\hline
+Sepal.Length & 5.80 (5.10, 6.40)\\
+\hline
+Sepal.Width & 3.00 (2.80, 3.30)\\
+\hline
+Petal.Length & 4.35 (1.60, 5.10)\\
+\hline
+Petal.Width & 1.30 (0.30, 1.80)\\
+\hline
+Species & \\
+\hline
+setosa & 50 (33\%)\\
+\hline
+versicolor & 50 (33\%)\\
+\hline
+virginica & 50 (33\%)\\
+\hline
+\end{tabular}
+
+Plus fort,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tbl\_summary}\NormalTok{(iris,}\AttributeTok{by=}\StringTok{"Species"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Table printed with `knitr::kable()`, not {gt}. Learn why at
+## https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html
+## To suppress this message, include `message = FALSE` in code chunk header.
+\end{verbatim}
+
+\begin{tabular}{l|c|c|c}
+\hline
+**Characteristic** & **setosa**, N = 50 & **versicolor**, N = 50 & **virginica**, N = 50\\
+\hline
+Sepal.Length & 5.00 (4.80, 5.20) & 5.90 (5.60, 6.30) & 6.50 (6.23, 6.90)\\
+\hline
+Sepal.Width & 3.40 (3.20, 3.68) & 2.80 (2.53, 3.00) & 3.00 (2.80, 3.18)\\
+\hline
+Petal.Length & 1.50 (1.40, 1.58) & 4.35 (4.00, 4.60) & 5.55 (5.10, 5.88)\\
+\hline
+Petal.Width & 0.20 (0.20, 0.30) & 1.30 (1.20, 1.50) & 2.00 (1.80, 2.30)\\
+\hline
+\end{tabular}
+
+On peut rajouter un test statistique:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tbl\_summary}\NormalTok{(iris,}\AttributeTok{by=}\StringTok{"Species"}\NormalTok{ ) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{add\_p}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{add\_overall}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Table printed with `knitr::kable()`, not {gt}. Learn why at
+## https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html
+## To suppress this message, include `message = FALSE` in code chunk header.
+\end{verbatim}
+
+\begin{tabular}{l|c|c|c|c|c}
+\hline
+**Characteristic** & **Overall**, N = 150 & **setosa**, N = 50 & **versicolor**, N = 50 & **virginica**, N = 50 & **p-value**\\
+\hline
+Sepal.Length & 5.80 (5.10, 6.40) & 5.00 (4.80, 5.20) & 5.90 (5.60, 6.30) & 6.50 (6.23, 6.90) & <0.001\\
+\hline
+Sepal.Width & 3.00 (2.80, 3.30) & 3.40 (3.20, 3.68) & 2.80 (2.53, 3.00) & 3.00 (2.80, 3.18) & <0.001\\
+\hline
+Petal.Length & 4.35 (1.60, 5.10) & 1.50 (1.40, 1.58) & 4.35 (4.00, 4.60) & 5.55 (5.10, 5.88) & <0.001\\
+\hline
+Petal.Width & 1.30 (0.30, 1.80) & 0.20 (0.20, 0.30) & 1.30 (1.20, 1.50) & 2.00 (1.80, 2.30) & <0.001\\
+\hline
+\end{tabular}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trial }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tbl\_cross}\NormalTok{(}\AttributeTok{row =}\NormalTok{ stage, }\AttributeTok{col =}\NormalTok{ trt, }\AttributeTok{percent =} \StringTok{"cell"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{add\_p}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{bold\_labels}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Table printed with `knitr::kable()`, not {gt}. Learn why at
+## https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html
+## To suppress this message, include `message = FALSE` in code chunk header.
+\end{verbatim}
+
+\begin{tabular}{l|c|c|c|c}
+\hline
+ & Drug A & Drug B & **Total** & **p-value**\\
+\hline
+\_\_T Stage\_\_ &  &  &  & 0.9\\
+\hline
+T1 & 28 (14\%) & 25 (13\%) & 53 (27\%) & \\
+\hline
+T2 & 25 (13\%) & 29 (15\%) & 54 (27\%) & \\
+\hline
+T3 & 22 (11\%) & 21 (11\%) & 43 (22\%) & \\
+\hline
+T4 & 23 (12\%) & 27 (14\%) & 50 (25\%) & \\
+\hline
+\_\_Total\_\_ & 98 (49\%) & 102 (51\%) & 200 (100\%) & \\
+\hline
+\end{tabular}
+
+\hypertarget{tableaux-croisuxe9s}{%
+\section{Tableaux croisés}\label{tableaux-croisuxe9s}}
+
+On peut faire des tris croisés et choisir le sens des pourcentages : par cellule,
+par ligne ou par colonne.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{patient }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tbl\_cross}\NormalTok{(}\AttributeTok{row =}\NormalTok{ Hopital, }\AttributeTok{col =}\NormalTok{ sexe, }\AttributeTok{percent =} \StringTok{"col"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{add\_p}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{bold\_labels}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Table printed with `knitr::kable()`, not {gt}. Learn why at
+## https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html
+## To suppress this message, include `message = FALSE` in code chunk header.
+\end{verbatim}
+
+\begin{tabular}{l|c|c|c|c}
+\hline
+ & Feminin & Masculin & **Total** & **p-value**\\
+\hline
+\_\_Hopital\_\_ &  &  &  & 0.007\\
+\hline
+A & 48 (42\%) & 52 (61\%) & 100 (50\%) & \\
+\hline
+B & 67 (58\%) & 33 (39\%) & 100 (50\%) & \\
+\hline
+\_\_Total\_\_ & 115 (100\%) & 85 (100\%) & 200 (100\%) & \\
+\hline
+\end{tabular}
+
+\hypertarget{themes}{%
+\section{Themes}\label{themes}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{theme\_gtsummary\_compact}\NormalTok{(}\AttributeTok{set\_theme =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{font\_size =} \ConstantTok{NULL}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Setting theme `Compact`
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{patient }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tbl\_cross}\NormalTok{(}\AttributeTok{row =}\NormalTok{ Hopital, }\AttributeTok{col =}\NormalTok{ sexe, }\AttributeTok{percent =} \StringTok{"col"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{add\_p}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{bold\_labels}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Table printed with `knitr::kable()`, not {gt}. Learn why at
+## https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html
+## To suppress this message, include `message = FALSE` in code chunk header.
+\end{verbatim}
+
+\begin{tabular}{l|c|c|c|c}
+\hline
+ & Feminin & Masculin & **Total** & **p-value**\\
+\hline
+\_\_Hopital\_\_ &  &  &  & 0.007\\
+\hline
+A & 48 (42\%) & 52 (61\%) & 100 (50\%) & \\
+\hline
+B & 67 (58\%) & 33 (39\%) & 100 (50\%) & \\
+\hline
+\_\_Total\_\_ & 115 (100\%) & 85 (100\%) & 200 (100\%) & \\
+\hline
+\end{tabular}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{reset\_gtsummary\_theme}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exportation}{%
+\section{Exportation}\label{exportation}}
+
+Pour les exporter avec le paquet \textbf{writexl} :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{tbl\_summary}\NormalTok{(}\AttributeTok{by=}\NormalTok{Species) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  gtsummary}\SpecialCharTok{::}\FunctionTok{as\_tibble}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  writexl}\SpecialCharTok{::}\FunctionTok{write\_xlsx}\NormalTok{(., }\StringTok{"example\_gtsummary1.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Sinon
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{tbl\_summary}\NormalTok{(}\AttributeTok{by=}\NormalTok{Species) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  gtsummary}\SpecialCharTok{::}\FunctionTok{as\_gt}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  gt}\SpecialCharTok{::}\FunctionTok{gtsave}\NormalTok{(., }\StringTok{"example\_gtsummary3.rtf"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+On peut faire aussi des modèles avec gtsummary :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tbl\_merge}\NormalTok{(}\FunctionTok{list}\NormalTok{(}
+  \FunctionTok{tbl\_regression}\NormalTok{(}
+    \FunctionTok{lm}\NormalTok{(totalechelle}\SpecialCharTok{\textasciitilde{}}\NormalTok{sexe}\SpecialCharTok{+}\NormalTok{vitaux}\SpecialCharTok{+}\NormalTok{dureeopmin,}\AttributeTok{data=}\NormalTok{patient[patient}\SpecialCharTok{$}\NormalTok{Hopital}\SpecialCharTok{==}\StringTok{"A"}\NormalTok{,])}
+\NormalTok{  ),}
+  \FunctionTok{tbl\_regression}\NormalTok{(}
+    \FunctionTok{lm}\NormalTok{(totalechelle}\SpecialCharTok{\textasciitilde{}}\NormalTok{sexe}\SpecialCharTok{+}\NormalTok{vitaux}\SpecialCharTok{+}\NormalTok{dureeopmin,}\AttributeTok{data=}\NormalTok{patient[patient}\SpecialCharTok{$}\NormalTok{Hopital}\SpecialCharTok{==}\StringTok{"B"}\NormalTok{,])}
+\NormalTok{  ))}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Table printed with `knitr::kable()`, not {gt}. Learn why at
+## https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html
+## To suppress this message, include `message = FALSE` in code chunk header.
+\end{verbatim}
+
+\begin{tabular}{l|c|c|c|c|c|c}
+\hline
+**Characteristic** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value**\\
+\hline
+sexe &  &  &  &  &  & \\
+\hline
+Feminin & — & — &  & — & — & \\
+\hline
+Masculin & -345 & -528, -162 & <0.001 & -314 & -634, 6.3 & 0.055\\
+\hline
+vitaux & 18 & 11, 25 & <0.001 & 4.0 & -7.8, 16 & 0.5\\
+\hline
+dureeopmin & 0.29 & -0.58, 1.2 & 0.5 & 1.2 & -0.16, 2.5 & 0.084\\
+\hline
+\end{tabular}
+
+Une liste des fonctionnalités est disponible là :
+\href{https://www.danieldsjoberg.com/gtsummary/reference/theme_gtsummary.html\#examples}{Ici}
+
+\hypertarget{graphiques-et-ggplot}{%
+\chapter{Graphiques et ggplot}\label{graphiques-et-ggplot}}
+
+Les graphiques sont une composante de R qui est en partie à l'origine de son
+succès car on peut de très beaux et ce depuis la création de R.
+
+\hypertarget{les-graphiques-de-base}{%
+\section{Les graphiques de base}\label{les-graphiques-de-base}}
+
+Certaines sont très simples d'autres un peu plus compliquées. Nous verrons dans
+un premier temps les graphiques de base c'est-à-dire qui ne nécessitent pas de
+charger un \textbf{package}.
+
+\hypertarget{pour-les-graphiques-de-chiffres}{%
+\subsection{Pour les graphiques de chiffres}\label{pour-les-graphiques-de-chiffres}}
+
+Les premières fonctions présentées sont les plus usuelles comme les histogrammes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids1-1.pdf}
+
+Ce n'est pas très esthétique. Il y a des arguments aux fonctions qui permettent
+d'améliorer les choses.
+
+Déjà changer les noms des axes X et y, notamment se débarasser de \textbf{Frequency}
+qui est un faux ami en français.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,}\AttributeTok{xlab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Effectifs"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids2-1.pdf}
+Ensuite le titre :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,}\AttributeTok{xlab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Effectifs"}\NormalTok{,}\AttributeTok{main=}\StringTok{"Poids des patients"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids3-1.pdf}
+
+Pour la couleur, c'est un peu plus compliqué. En effet il y a simple des couleurs
+qui répondent à leurs mots en anglais, la liste est \href{https://www.datanovia.com/en/blog/awesome-list-of-657-r-color-names/}{là}.
+
+Mais les couleurs correspondent au codage web des couleurs qui sont en fait des
+hexadécimaux. Si vous voulez personnaliser plus les couleurs, je vous conseille
+le paquet \textbf{RColorBrewer} qui possède de jolis (et intelligents) assortiments
+de couleurs et \href{https://larmarange.github.io/analyse-R/couleurs.html}{de la lecture}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,}\AttributeTok{xlab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Effectifs"}\NormalTok{,}\AttributeTok{main=}\StringTok{"Poids des patients"}\NormalTok{,}\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-72-1.pdf}
+Ensuite il y a les boxplots ou boîtes à moustache pour les variables continues.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids4-1.pdf}
+
+De même on arrange un peu :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,}\AttributeTok{ylab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{main=}\StringTok{"Poids des patients"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids5-1.pdf}
+Pour les boxplots on peut faire un peu mieux, par exemple pour segmenter par type
+de pathologies.
+
+On passe la \textbf{data.frame} patient et on précise le nom de la variable qualitative
+qui doit ``séparer'' les tracés.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(poids }\SpecialCharTok{\textasciitilde{}}\NormalTok{ CIM2, }\AttributeTok{data =}\NormalTok{ patient,}\AttributeTok{ylab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{main=}\StringTok{"Poids des patients en fonction du CIM2"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids6-1.pdf}
+Le premier argument doit vous paraître un peu abstrait. En fait c'est une formule
+sous R. C'est l'équivalent de ``patient=CIM2''.
+
+A gauche du \textasciitilde{} on place la variable à expliquer et à droite la ou les variables
+explicatives. Ici on en a une de chaque côté.
+
+Le graphique le plus simple serait le \textbf{scatterplot}. On aurait pu commencer
+par lui :
+
+Cette fois on a deux arguments qui sont la variable numérique des x en premier
+et la variable numérique des y en second.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,patient}\SpecialCharTok{$}\NormalTok{dureeopmin)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,patient}\SpecialCharTok{$}\NormalTok{dureeopmin,}\AttributeTok{xlab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Durée opération en minutes"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids8-1.pdf}
+Qui aurait pu s'écrire :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(dureeopmin }\SpecialCharTok{\textasciitilde{}}\NormalTok{ poids,}\AttributeTok{data=}\NormalTok{patient,}\AttributeTok{xlab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Durée opération en minutes"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids9-1.pdf}
+Si on veut tracer une ligne pour la régression linéaire, il faut faire appel
+à la fonction \textbf{lm} qui calcule la régression et R se charge du reste.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{coefficients }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(dureeopmin}\SpecialCharTok{\textasciitilde{}}\NormalTok{poids,}\AttributeTok{data=}\NormalTok{patient)}
+\FunctionTok{plot}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,patient}\SpecialCharTok{$}\NormalTok{dureeopmin,}\AttributeTok{xlab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Durée opération en minutes"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(coefficients)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids10-1.pdf}
+On voit ici que j'ai appellé \textbf{abline} après le plot. En effet, il est nécessaire
+de faire un \textbf{plot}, un \textbf{hist} ou une \textbf{boxplot} avant pour que R initialise
+le graphique notamment le calcul des coordonnées maximales et minimales.
+
+D'ailleurs on peut les spécifier nous mêmes :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{coefficients }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(dureeopmin}\SpecialCharTok{\textasciitilde{}}\NormalTok{poids,}\AttributeTok{data=}\NormalTok{patient)}
+\FunctionTok{plot}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,patient}\SpecialCharTok{$}\NormalTok{dureeopmin,}\AttributeTok{xlab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Durée opération en minutes"}\NormalTok{,}
+     \AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{),}\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{600}\NormalTok{))}
+\FunctionTok{abline}\NormalTok{(coefficients)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/poids11-1.pdf}
+
+Pour sauvegarder un graphique, on doit le faire avant d'appeler la fonction
+\textbf{principale} et refermer le fichier avec la commande \textbf{dev.off}:
+
+La dernière fonction à connaître pour les graphiques de base est le \textbf{barplot}.
+
+Il s'agit de représenter des tableaux de contingence, le plus simple étant à une
+dimension :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tableau }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{sexe)}
+\FunctionTok{barplot}\NormalTok{(tableau, }\AttributeTok{main =} \StringTok{"CIM2"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Effectifs"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/sexe1-1.pdf}
+On peut lui passer un argument à deux dimensions mais la table devient tout de
+suite difficile à lire.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tableau }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{CIM2,patient}\SpecialCharTok{$}\NormalTok{sexe)}
+\FunctionTok{barplot}\NormalTok{(tableau, }\AttributeTok{main =} \StringTok{"CIM2"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Effectifs"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/sexe2-1.pdf}
+\#\# le tidyverse et ggplot
+
+\hypertarget{introduction-1}{%
+\subsection{Introduction}\label{introduction-1}}
+
+Vous pourrez comme précédemment entendre parler des graphiques de base de même
+que des graphiques \textbf{lattice} mais le choucou du \textbf{tidyverse} c'est \textbf{ggplot2}.
+
+C'est un éco-système de \textbf{packages} qui permet de faire la plupart des graphiques
+plus simplement et qui est basé sur le paquet \textbf{gplot2}.
+
+Un livre gratuit lui est consacré \href{https://ggplot2-book.org/}{là} et une page
+en français \href{https://larmarange.github.io/analyse-R/graphiques-bivaries-ggplot2.html}{là}
+
+On va reprendre notre grammaire. Il faut saisir que \textbf{ggplot2} fonctionne par
+couche. Sur une base, vous additionner des couches qui apporte la personnalisation
+des graphiques.
+
+\hypertarget{la-base}{%
+\subsection{La base}\label{la-base}}
+
+Au tout départ, il faut lui passer une \textbf{data.frame}, c'est le passage obligé.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot1-1.pdf}
+Ensuite on précise les variables de travail. Pour l'histogramme, on en a qu'une :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot2-1.pdf}
+
+Vous pouvez constater, que le logiciel a calculé et positionner les légendes
+pour créer un graphique avec poids comme variable des abscisses (horizontal).
+
+On personnalise en demandant un graphique de type histogramme. En additionnant
+littéralement:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/ggplot3-1.pdf}
+
+Pour modifier les limtes du graphiques, on rajoute :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 4 rows containing missing values (`geom_bar()`).
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/ggplot4-1.pdf}
+
+Si on veut modifier le nombre de barres verticales (la précision de l'histogramme),
+on précise l'option dans la couche de l'histogramme :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins=}\DecValTok{10}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 2 rows containing missing values (`geom_bar()`).
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/ggplot5-1.pdf}
+Pour les titres, c'est pareil, on ajoute des couches :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Poids des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Effectifs"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 2 rows containing missing values (`geom_bar()`).
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/ggplot6-1.pdf}
+On peut ajouter des propriétés esthétiques comme la couleur, par exemple :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill =}\StringTok{"lightblue"}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Poids des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Effectifs"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 2 rows containing missing values (`geom_bar()`).
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/ggplot7-1.pdf}
+
+Là où \textbf{ggplot2} sort du lot, c'est sa capacité à segmenter et à représenter
+avec \href{https://link.springer.com/book/10.1007/0-387-28695-0}{une bonne grammaire graphique}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids,}\AttributeTok{fill=}\NormalTok{sexe))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Poids des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Effectifs"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 4 rows containing missing values (`geom_bar()`).
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/ggplot8-1.pdf}
+
+On a l'ajout de couleurs ou alors deux graphiques avec des unités bien choisies:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids,}\AttributeTok{fill=}\NormalTok{sexe))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Poids des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Effectifs"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(sexe }\SpecialCharTok{\textasciitilde{}}\NormalTok{ .)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 4 rows containing missing values (`geom_bar()`).
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/ggplot9-1.pdf}
+
+On a de nouveau une formule. Cette fois, c'est à gauche du \textasciitilde{} les lignes et
+à droite les colonnes :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Poids des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Effectifs"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(sexe }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Hopital)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 8 rows containing missing values (`geom_bar()`).
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/ggplot10-1.pdf}
+
+On peut vouloir calculer la \textbf{densité} et non les effectifs dans ce cas :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ ..density..),}\AttributeTok{color=}\StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Poids des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Densité"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(sexe }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Hopital)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
+## i Please use `after_stat(density)` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+\end{verbatim}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 8 rows containing missing values (`geom_bar()`).
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/ggplot11-1.pdf}
+
+\hypertarget{les-autres-graphiques}{%
+\subsection{Les autres graphiques}\label{les-autres-graphiques}}
+
+Le boxplot :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{poids,}\AttributeTok{fill=}\NormalTok{sexe))}\SpecialCharTok{+}\FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Poids des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Densité"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(Hopital }\SpecialCharTok{\textasciitilde{}}\NormalTok{ .)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot12-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{sexe,}\AttributeTok{y=}\NormalTok{poids))}\SpecialCharTok{+}\FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Poids des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Densité"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(Hopital }\SpecialCharTok{\textasciitilde{}}\NormalTok{ .)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot13-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(poids))}\SpecialCharTok{+}\FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Poids des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Densité"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(sexe }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Hopital)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot14-1.pdf}
+
+D'où des graphiques en \textbf{scatterplot} comme :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{poids,}\AttributeTok{y=}\NormalTok{dureeopmin))}\SpecialCharTok{+}\FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{col=}\NormalTok{sexe))}\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Caractéristiques des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Durée de l\textquotesingle{}opération en minutes"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot15-1.pdf}
+
+ou en rajoutant plein de trucs :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{poids,}\AttributeTok{y=}\NormalTok{dureeopmin))}\SpecialCharTok{+}\FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{col=}\NormalTok{sexe))}\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Caractéristiques des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Durée de l\textquotesingle{}opération en minutes"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(CIM2 }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Hopital)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot16-1.pdf}
+
+Pour les tableaux de fréquences, on peut faire très simple :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(sexe))}\SpecialCharTok{+}\FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot17-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(sexe))}\SpecialCharTok{+}\FunctionTok{geom\_bar}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(CIM2}\SpecialCharTok{\textasciitilde{}}\NormalTok{Hopital)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot18-1.pdf}
+Là où \textbf{ggplot2} commence à devenir compliqué, c'est que \textbf{geom\_bar} ne va pas
+marcher car il faut lui fournir la \textbf{data.frame} avec les statistiques \textbf{en ligne}.
+
+Soit :
+
+\begin{verbatim}
+## Le chargement a nécessité le package : reshape2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attachement du package : 'reshape2'
+\end{verbatim}
+
+\begin{verbatim}
+## L'objet suivant est masqué depuis 'package:tidyr':
+## 
+##     smiths
+\end{verbatim}
+
+\begin{verbatim}
+##       sexe CIM2 value
+## 1  Feminin    1    20
+## 2 Masculin    1    30
+## 3  Feminin    2    26
+## 4 Masculin    2    24
+## 5  Feminin    3    28
+## 6 Masculin    3    22
+## 7  Feminin    4    41
+## 8 Masculin    4     9
+\end{verbatim}
+
+Pour faire ce tableau, il faut faire appel au \textbf{package} \textbf{reshape2}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(reshape2)}
+\NormalTok{tableau }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{sexe,patient}\SpecialCharTok{$}\NormalTok{CIM2)}
+\NormalTok{tableau}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           
+##             1  2  3  4
+##   Feminin  20 26 28 41
+##   Masculin 30 24 22  9
+\end{verbatim}
+
+De ce tableau on passe au long en une commande :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{long }\OtherTok{\textless{}{-}} \FunctionTok{melt}\NormalTok{(tableau,}\AttributeTok{varnames =} \FunctionTok{c}\NormalTok{(}\StringTok{"sexe"}\NormalTok{,}\StringTok{"CIM2"}\NormalTok{),}\AttributeTok{value.name =} \StringTok{"value"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Il faut spécifier le nom à donner aux deux variables et spécifier le résultat
+du croisement des deux variables qui est le nombre d'observations c'est-à-dire
+le contenu de chaque cellule de \textbf{tableau}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(long,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{sexe,}\AttributeTok{y=}\NormalTok{value,}\AttributeTok{fill=}\NormalTok{CIM2))}\SpecialCharTok{+}\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"stack"}\NormalTok{,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot20-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(long,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{CIM2,}\AttributeTok{y=}\NormalTok{value,}\AttributeTok{fill=}\NormalTok{sexe))}\SpecialCharTok{+}\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot21-1.pdf}
+
+D'où le graphique :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tableau }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{Hopital,patient}\SpecialCharTok{$}\NormalTok{sexe,patient}\SpecialCharTok{$}\NormalTok{CIM2)}
+\NormalTok{long }\OtherTok{\textless{}{-}} \FunctionTok{melt}\NormalTok{(tableau,}\AttributeTok{varnames =} \FunctionTok{c}\NormalTok{(}\StringTok{"Hopital"}\NormalTok{,}\StringTok{"sexe"}\NormalTok{,}\StringTok{"CIM2"}\NormalTok{),}\AttributeTok{value.name =} \StringTok{"value"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(long,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{CIM2,}\AttributeTok{y=}\NormalTok{value,}\AttributeTok{fill=}\NormalTok{sexe))}\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(Hopital }\SpecialCharTok{\textasciitilde{}}\NormalTok{ . )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/ggplot22-1.pdf}
+
+Pour sauvegarder un graphique \textbf{ggplot2}, la syntaxe est différente et surtout
+on l'appelle une fois que le graphique est terminé, c'est-à-dire en dernier :
+
+Et ainsi de suite\ldots{}
+
+\hypertarget{liens}{%
+\section{Liens}\label{liens}}
+
+Il y a de nombreuses galleries sur le web avec toutes les possiblités offertes
+par les graphiques de base comme les graphiques avec \textbf{ggplot2}.
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://r-graph-gallery.com/}{r-graph-gallery}
+\item
+  \href{https://r-charts.com/ggplot2/}{r-chart}
+\item
+  \ldots{}
+\end{itemize}
+
+On peut en parcourir ensemble\ldots{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tableau }\OtherTok{\textless{}{-}} \FunctionTok{dcast}\NormalTok{(patient, UID }\SpecialCharTok{+}\NormalTok{ sexe }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Hopital, }\AttributeTok{value.var =} \StringTok{"nbechelle"}\NormalTok{)}
+\NormalTok{tableau}\SpecialCharTok{$}\NormalTok{poids }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(tableau}\SpecialCharTok{$}\NormalTok{A),tableau}\SpecialCharTok{$}\NormalTok{A,tableau}\SpecialCharTok{$}\NormalTok{B)}
+
+\FunctionTok{ggplot}\NormalTok{(tableau, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{nbechelle) ) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{( }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ A, }\AttributeTok{y =}\NormalTok{ ..density..), }\AttributeTok{fill=}\StringTok{"\#69b3a2"}\NormalTok{ ) }\SpecialCharTok{+}
+  \FunctionTok{geom\_label}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\DecValTok{90}\NormalTok{, }\AttributeTok{y=}\FloatTok{0.01}\NormalTok{, }\AttributeTok{label=}\StringTok{"Hopital A"}\NormalTok{), }\AttributeTok{color=}\StringTok{"\#69b3a2"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{( }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ B, }\AttributeTok{y =} \SpecialCharTok{{-}}\NormalTok{..density..), }\AttributeTok{fill=} \StringTok{"\#404080"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_label}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\DecValTok{90}\NormalTok{,}\AttributeTok{y=}\SpecialCharTok{{-}}\FloatTok{0.01}\NormalTok{, }\AttributeTok{label=}\StringTok{"Hopital B"}\NormalTok{), }\AttributeTok{color=}\StringTok{"\#404080"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 100 rows containing non-finite values (`stat_density()`).
+## Removed 100 rows containing non-finite values (`stat_density()`).
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-79-1.pdf}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

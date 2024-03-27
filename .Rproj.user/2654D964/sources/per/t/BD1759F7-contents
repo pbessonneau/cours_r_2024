@@ -1,15 +1,8 @@
----
-title: "gt_summary"
-output: html_document
-date: "2024-03-09"
----
 
 # Résumés rapides descriptives
 
-
-
-```{r setup, include=FALSE,message=FALSE,warning=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup_gt_summary, include=FALSE,message=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning = FALSE)
 library(readxl)
 library(readr)
 patient <- read_csv("data/patient.csv")
@@ -26,6 +19,8 @@ library(gtsummary)
 ```{r}
 tbl_summary(mtcars)
 ```
+
+
 
 ```{r}
 tbl_summary(iris)
@@ -44,7 +39,7 @@ On peut rajouter un test statistique:
 
 
 ```{r}
-tbl_summary(iris,by="Species" ) %>% add_p()
+tbl_summary(iris,by="Species" ) %>% add_p() %>% add_overall()
 ```
 
 
@@ -102,6 +97,80 @@ iris %>% tbl_summary(by=Species) %>%
   gt::gtsave(., "example_gtsummary3.rtf")
 ```
 
+
+## Personnalisation des statistiques
+
+Sans qu'il soit nécessaire de fonction, vous pouvez personnaliser les sortie.
+
+Il suffit de changer la valeur de **statistic**.
+
+Les mots-clefs sont, pour les variables quantitatives et qualtitatives :
+- **{N_obs}** total number of observations
+- **{N_miss}** number of missing observations
+- **{N_nonmiss}** number of non-missing observations
+- **{p_miss}** percentage of observations missing
+- **{p_nonmiss}** percentage of observations not missing
+
+Pour les variables quantitatives :
+- **{mean}**
+- **{median}** 
+- **{sd}**
+- les quantiles **{pDD}** avec DD un chiffre sur 100 comme **{p25}**
+- **{min}**
+- **{max}**
+
+Pour les variables qualitatives :
+- **{p}** le pourcentage
+- **{n}**, nombre d'observations dans la cellule
+- nombre total **{N}**
+
+Il suffit alors de préciser les statistiques à afficher :
+
+```{r}
+iris %>% tbl_summary(statistic = list(
+  all_continuous() ~ "{mean} ({sd}) {min} {max}",
+  all_categorical() ~ "{n} / {N} ({p}%)")) %>%
+  modify_footnote( all_stat_cols() ~ "Moyenne (EC) Min. Max.; Effectif cellule / Total (%)")
+
+  
+```
+
+Vous pouvez également le faire sur plusieurs lignes en spécifiant que vous voulez
+les statistiques sur plusieurs lignes avec un argument supplémentaire :
+
+```{r}
+iris %>%
+  tbl_summary(
+    type = all_continuous() ~ "continuous2",
+    statistic = list(all_continuous() ~ c(
+      "{N_nonmiss}",
+      "{mean} ({sd})",
+      "{median} ({p25}, {p75})",
+      "{min}, {max}"
+    ), all_categorical() ~ "{n} / {N} ({p}%)"))
+
+```
+
+Vous pouvez de même personnaliser en adaptant la langue :
+
+
+```{r}
+theme_gtsummary_language(language = "fr", decimal.mark = ",", big.mark = " ")
+iris %>%
+  tbl_summary(
+    type = all_continuous() ~ "continuous2",
+    statistic = list(all_continuous() ~ c(
+      "{N_nonmiss}",
+      "{mean} ({sd})",
+      "{median} ({p25}, {p75})",
+      "{min}, {max}"
+    ), all_categorical() ~ "{n} / {N} ({p}%)"))
+```
+
+## Modèles
+
+
+### Exemple de modèle de régression linéaire
 
 On peut faire aussi des modèles avec gtsummary :
 

@@ -1,9 +1,9 @@
 {
     "id": "44E2BBEB",
-    "path": "~/Doctorants/Cours_INETOP/00-Architecture.Rmd",
+    "path": "~/Doctorants/Cours_R_2024/00-Architecture.Rmd",
     "project_path": "00-Architecture.Rmd",
     "type": "r_markdown",
-    "hash": "1111244502",
+    "hash": "2770585249",
     "contents": "",
     "dirty": false,
     "created": 1710252746053.0,
@@ -11,14 +11,16 @@
     "relative_order": 5,
     "properties": {
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "9,16",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1709986132,
+    "lastKnownWriteTime": 1711370627,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1709986132,
+    "last_content_update": 1711370627914,
     "read_only": false,
     "read_only_alternatives": []
 }

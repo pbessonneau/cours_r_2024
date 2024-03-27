@@ -1,17 +1,10 @@
----
-title: "Importation de données"
-output: html_document
-date: "2024-03-09"
----
 
-```{r setup, include=FALSE}
+```{r packages,include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(readxl)
 ```
 
-# Importation 
-
-## Données de Parcoursup
+# Données de Parcoursup
 
 Les données de ParcourSup viennent de là :
 [Parcoursup 2023 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements](https://data.education.gouv.fr/explore/embed/dataset/fr-esr-parcoursup/table/?sort=tri)
@@ -137,7 +130,7 @@ Ceux sont eux qui vont décider du type de variable que vous importez. Pour le
 faire vous même, il suffit de spécificier chaque à la main :
 
 
-```{r,eval=FALSE}
+```{r}
 read_csv("data/iris.csv", col_types = list(
   Sepal.Length = col_double(),
   Sepal.Width = col_double(),

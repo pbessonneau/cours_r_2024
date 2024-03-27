@@ -4,32 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Minimal Book Example</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <title>A Minimal Book on R</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Minimal Book Example" />
+  <meta property="og:title" content="A Minimal Book on R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
+  <meta name="github-repo" content="pbessonneau/Cours_R_2024" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Minimal Book Example" />
+  <meta name="twitter:title" content="A Minimal Book on R" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
   
 
-<meta name="author" content="John Doe" />
+<meta name="author" content="Pascal Bessonneau" />
 
 
-<meta name="date" content="2024-03-06" />
+<meta name="date" content="2024-03-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +31,7 @@ set in the _output.yml file.</p>" />
   
   
 
-<link rel="next" href="le-langage-r.html"/>
+<link rel="next" href="architecture-de-r.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -146,30 +140,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Objectif</a></li>
+<li class="chapter" data-level="2" data-path="architecture-de-r.html"><a href="architecture-de-r.html"><i class="fa fa-check"></i><b>2</b> Architecture de R</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.1</b> Preview book</a></li>
+<li class="chapter" data-level="2.1" data-path="architecture-de-r.html"><a href="architecture-de-r.html#paquets"><i class="fa fa-check"></i><b>2.1</b> Paquets</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="le-langage-r.html"><a href="le-langage-r.html"><i class="fa fa-check"></i><b>2</b> Le langage R</a>
+<li class="chapter" data-level="3" data-path="le-langage-r.html"><a href="le-langage-r.html"><i class="fa fa-check"></i><b>3</b> Le langage R</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="le-langage-r.html"><a href="le-langage-r.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
-<li class="chapter" data-level="2.2" data-path="le-langage-r.html"><a href="le-langage-r.html#un-exemple-de-traitement-de-données"><i class="fa fa-check"></i><b>2.2</b> Un exemple de traitement de données</a></li>
-<li class="chapter" data-level="2.3" data-path="le-langage-r.html"><a href="le-langage-r.html#vecteurs"><i class="fa fa-check"></i><b>2.3</b> Vecteurs</a>
+<li class="chapter" data-level="3.1" data-path="le-langage-r.html"><a href="le-langage-r.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="le-langage-r.html"><a href="le-langage-r.html#un-exemple-de-traitement-de-données"><i class="fa fa-check"></i><b>3.2</b> Un exemple de traitement de données</a></li>
+<li class="chapter" data-level="3.3" data-path="le-langage-r.html"><a href="le-langage-r.html#vecteurs"><i class="fa fa-check"></i><b>3.3</b> Vecteurs</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="le-langage-r.html"><a href="le-langage-r.html#exemple-de-vecteurs"><i class="fa fa-check"></i><b>2.3.1</b> Exemple de vecteurs</a></li>
-<li class="chapter" data-level="2.3.2" data-path="le-langage-r.html"><a href="le-langage-r.html#création-de-vecteurs"><i class="fa fa-check"></i><b>2.3.2</b> Création de vecteurs</a></li>
-<li class="chapter" data-level="2.3.3" data-path="le-langage-r.html"><a href="le-langage-r.html#les-types-de-vecteurs"><i class="fa fa-check"></i><b>2.3.3</b> Les types de vecteurs</a></li>
-<li class="chapter" data-level="2.3.4" data-path="le-langage-r.html"><a href="le-langage-r.html#pour-résumé"><i class="fa fa-check"></i><b>2.3.4</b> Pour résumé</a></li>
+<li class="chapter" data-level="3.3.1" data-path="le-langage-r.html"><a href="le-langage-r.html#exemple-de-vecteurs"><i class="fa fa-check"></i><b>3.3.1</b> Exemple de vecteurs</a></li>
+<li class="chapter" data-level="3.3.2" data-path="le-langage-r.html"><a href="le-langage-r.html#création-de-vecteurs"><i class="fa fa-check"></i><b>3.3.2</b> Création de vecteurs</a></li>
+<li class="chapter" data-level="3.3.3" data-path="le-langage-r.html"><a href="le-langage-r.html#les-types-de-vecteurs"><i class="fa fa-check"></i><b>3.3.3</b> Les types de vecteurs</a></li>
+<li class="chapter" data-level="3.3.4" data-path="le-langage-r.html"><a href="le-langage-r.html#pour-résumé"><i class="fa fa-check"></i><b>3.3.4</b> Pour résumé</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="le-langage-r.html"><a href="le-langage-r.html#sélection-des-individus"><i class="fa fa-check"></i><b>2.4</b> Sélection des individus</a>
+<li class="chapter" data-level="3.4" data-path="le-langage-r.html"><a href="le-langage-r.html#sélection-des-individus"><i class="fa fa-check"></i><b>3.4</b> Sélection des individus</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="le-langage-r.html"><a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs"><i class="fa fa-check"></i><b>2.4.1</b> Calcul de la moyenne et nouveaux générateurs</a></li>
+<li class="chapter" data-level="3.4.1" data-path="le-langage-r.html"><a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs"><i class="fa fa-check"></i><b>3.4.1</b> Calcul de la moyenne et nouveaux générateurs</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="architecture-de-r.html"><a href="architecture-de-r.html"><i class="fa fa-check"></i><b>3</b> Architecture de R</a>
+<li class="chapter" data-level="4" data-path="données-de-parcoursup.html"><a href="données-de-parcoursup.html"><i class="fa fa-check"></i><b>4</b> Données de Parcoursup</a></li>
+<li class="chapter" data-level="5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html"><i class="fa fa-check"></i><b>5</b> Résumés rapides descriptives</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="architecture-de-r.html"><a href="architecture-de-r.html#paquets"><i class="fa fa-check"></i><b>3.1</b> Paquets</a></li>
-<li class="chapter" data-level="3.2" data-path="architecture-de-r.html"><a href="architecture-de-r.html#données-de-parcoursup"><i class="fa fa-check"></i><b>3.2</b> Données de Parcoursup</a></li>
+<li class="chapter" data-level="5.1" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#les-premières-tables"><i class="fa fa-check"></i><b>5.1</b> Les premières tables</a></li>
+<li class="chapter" data-level="5.2" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#tableaux-croisés"><i class="fa fa-check"></i><b>5.2</b> Tableaux croisés</a></li>
+<li class="chapter" data-level="5.3" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#themes"><i class="fa fa-check"></i><b>5.3</b> Themes</a></li>
+<li class="chapter" data-level="5.4" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#exportation"><i class="fa fa-check"></i><b>5.4</b> Exportation</a></li>
+<li class="chapter" data-level="5.5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#personnalisation-des-statistiques"><i class="fa fa-check"></i><b>5.5</b> Personnalisation des statistiques</a></li>
+<li class="chapter" data-level="5.6" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#modèles"><i class="fa fa-check"></i><b>5.6</b> Modèles</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#exemple-de-modèle-de-régression-linéaire"><i class="fa fa-check"></i><b>5.6.1</b> Exemple de modèle de régression linéaire</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html"><i class="fa fa-check"></i><b>6</b> Graphiques et ggplot</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-graphiques-de-base"><i class="fa fa-check"></i><b>6.1</b> Les graphiques de base</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#pour-les-graphiques-de-chiffres"><i class="fa fa-check"></i><b>6.1.1</b> Pour les graphiques de chiffres</a></li>
+<li class="chapter" data-level="6.1.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#introduction-1"><i class="fa fa-check"></i><b>6.1.2</b> Introduction</a></li>
+<li class="chapter" data-level="6.1.3" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#la-base"><i class="fa fa-check"></i><b>6.1.3</b> La base</a></li>
+<li class="chapter" data-level="6.1.4" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-autres-graphiques"><i class="fa fa-check"></i><b>6.1.4</b> Les autres graphiques</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#liens"><i class="fa fa-check"></i><b>6.2</b> Liens</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -183,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book on R</a>
           </h1>
         </div>
 
@@ -192,32 +206,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">A Minimal Book Example</h1>
-<p class="author"><em>John Doe</em></p>
-<p class="date"><em>2024-03-06</em></p>
+<h1 class="title">A Minimal Book on R</h1>
+<p class="author"><em>Pascal Bessonneau</em></p>
+<p class="date"><em>2024-03-25</em></p>
 </div>
-<div id="about" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports; for example, a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<!-- ## Usage  -->
-<p>Each <strong>bookdown</strong> chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter <em>must</em> start with a first-level heading: <code># A good chapter</code>, and can contain one (and only one) first-level heading.</p>
-<p>Use second-level and higher headings within chapters like: <code>## A short section</code> or <code>### An even shorter section</code>.</p>
-<p>The <code>index.Rmd</code> file is required, and is also your first book chapter. It will be the homepage when you render the book.</p>
-<!-- ## Render book -->
-<p>You can render the HTML version of this example book without changing anything:</p>
-<ol style="list-style-type: decimal">
-<li><p>Find the <strong>Build</strong> pane in the RStudio IDE, and</p></li>
-<li><p>Click on <strong>Build Book</strong>, then select your output format, or select “All formats” if you’d like to use multiple formats from the same book source files.</p></li>
-</ol>
-<p>Or build the book from the R console:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>()</span></code></pre></div>
-<p>To render this example to PDF as a <code>bookdown::pdf_book</code>, you’ll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
-<div id="preview-book" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Preview book<a href="index.html#preview-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in “Preview book”, or from the R console:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">serve_book</span>()</span></code></pre></div>
+<div id="objectif" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Objectif<a href="index.html#objectif" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Ce document constitue la trame du cours sur R pour les doctorants “orientation”
+du CRTD du CNAM.</p>
+<p>Il n’est pas exhaustif et se place plutôt en appui du cours de M. Kilani. Il est
+construit sur les bases et sur les difficultés du langage.</p>
 
-</div>
 </div>
             </section>
 
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 
-<a href="le-langage-r.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="architecture-de-r.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -279,20 +278,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

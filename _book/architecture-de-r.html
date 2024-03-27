@@ -4,32 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Architecture de R | Gestion des paquets</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <title>Chapter 2 Architecture de R | A Minimal Book on R</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Architecture de R | Gestion des paquets" />
+  <meta property="og:title" content="Chapter 2 Architecture de R | A Minimal Book on R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
+  <meta name="github-repo" content="pbessonneau/Cours_R_2024" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Architecture de R | Gestion des paquets" />
+  <meta name="twitter:title" content="Chapter 2 Architecture de R | A Minimal Book on R" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
   
 
 <meta name="author" content="Pascal Bessonneau" />
 
 
-<meta name="date" content="2024-03-13" />
+<meta name="date" content="2024-03-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -62,7 +56,7 @@ set in the _output.yml file.</p>" />
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -146,10 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.1</b> Preview book</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Objectif</a></li>
 <li class="chapter" data-level="2" data-path="architecture-de-r.html"><a href="architecture-de-r.html"><i class="fa fa-check"></i><b>2</b> Architecture de R</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="architecture-de-r.html"><a href="architecture-de-r.html#paquets"><i class="fa fa-check"></i><b>2.1</b> Paquets</a></li>
@@ -170,21 +161,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4.1" data-path="le-langage-r.html"><a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs"><i class="fa fa-check"></i><b>3.4.1</b> Calcul de la moyenne et nouveaux générateurs</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="importation.html"><a href="importation.html"><i class="fa fa-check"></i><b>4</b> Importation</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="importation.html"><a href="importation.html#données-de-parcoursup"><i class="fa fa-check"></i><b>4.1</b> Données de Parcoursup</a></li>
-</ul></li>
+<li class="chapter" data-level="4" data-path="données-de-parcoursup.html"><a href="données-de-parcoursup.html"><i class="fa fa-check"></i><b>4</b> Données de Parcoursup</a></li>
 <li class="chapter" data-level="5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html"><i class="fa fa-check"></i><b>5</b> Résumés rapides descriptives</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#les-premières-tables"><i class="fa fa-check"></i><b>5.1</b> Les premières tables</a></li>
 <li class="chapter" data-level="5.2" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#tableaux-croisés"><i class="fa fa-check"></i><b>5.2</b> Tableaux croisés</a></li>
 <li class="chapter" data-level="5.3" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#themes"><i class="fa fa-check"></i><b>5.3</b> Themes</a></li>
 <li class="chapter" data-level="5.4" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#exportation"><i class="fa fa-check"></i><b>5.4</b> Exportation</a></li>
-<li class="chapter" data-level="5.5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#personnaliser-les-fonctions"><i class="fa fa-check"></i><b>5.5</b> Personnaliser les fonctions</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="analyse-de-la-table-patient.html"><a href="analyse-de-la-table-patient.html"><i class="fa fa-check"></i><b>6</b> Analyse de la table Patient</a>
+<li class="chapter" data-level="5.5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#personnalisation-des-statistiques"><i class="fa fa-check"></i><b>5.5</b> Personnalisation des statistiques</a></li>
+<li class="chapter" data-level="5.6" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#modèles"><i class="fa fa-check"></i><b>5.6</b> Modèles</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="analyse-de-la-table-patient.html"><a href="analyse-de-la-table-patient.html#chargement"><i class="fa fa-check"></i><b>6.1</b> Chargement</a></li>
+<li class="chapter" data-level="5.6.1" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#exemple-de-modèle-de-régression-linéaire"><i class="fa fa-check"></i><b>5.6.1</b> Exemple de modèle de régression linéaire</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html"><i class="fa fa-check"></i><b>6</b> Graphiques et ggplot</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-graphiques-de-base"><i class="fa fa-check"></i><b>6.1</b> Les graphiques de base</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#pour-les-graphiques-de-chiffres"><i class="fa fa-check"></i><b>6.1.1</b> Pour les graphiques de chiffres</a></li>
+<li class="chapter" data-level="6.1.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#introduction-1"><i class="fa fa-check"></i><b>6.1.2</b> Introduction</a></li>
+<li class="chapter" data-level="6.1.3" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#la-base"><i class="fa fa-check"></i><b>6.1.3</b> La base</a></li>
+<li class="chapter" data-level="6.1.4" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-autres-graphiques"><i class="fa fa-check"></i><b>6.1.4</b> Les autres graphiques</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#liens"><i class="fa fa-check"></i><b>6.2</b> Liens</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -198,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Gestion des paquets</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book on R</a>
           </h1>
         </div>
 
@@ -208,6 +207,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="architecture-de-r" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Architecture de R<a href="architecture-de-r.html#architecture-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<pre><code>## New names:
+## • `Filière de formation` -&gt; `Filière de formation...10`
+## • `Filière de formation` -&gt; `Filière de formation...14`</code></pre>
 <p>R est à l’origine un logiciel de statistiques. Pour en faciliter l’usage il y
 avait une interface très rugueuse qui était livré avec sous Windows.</p>
 <p>Pour l’utiliser, en fait, il fallait écrire le code dans un bloc-notes (le code
@@ -241,13 +243,13 @@ en R dans Jamovi.</p>
 - les noms de fonctions de R sont à écrire en <strong>minuscules</strong>
 - un objet n’est pas le même si une ou plusieurs lettres sont en majuscule au lieu
 d’être en minuscule.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="architecture-de-r.html#cb3-1" tabindex="-1"></a>aAa <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb3-2"><a href="architecture-de-r.html#cb3-2" tabindex="-1"></a>AAa <span class="ot">&lt;-</span> <span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="architecture-de-r.html#cb2-1" tabindex="-1"></a>aAa <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb2-2"><a href="architecture-de-r.html#cb2-2" tabindex="-1"></a>AAa <span class="ot">&lt;-</span> <span class="dv">4</span></span></code></pre></div>
 <p>donc</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="architecture-de-r.html#cb4-1" tabindex="-1"></a>AAa</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="architecture-de-r.html#cb3-1" tabindex="-1"></a>AAa</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p>et</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="architecture-de-r.html#cb6-1" tabindex="-1"></a>aAa</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="architecture-de-r.html#cb5-1" tabindex="-1"></a>aAa</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Les commentaires dans R sont à noter avec des #. Tout ce qui suit le # est un
 commentaire.</p>
@@ -267,18 +269,18 @@ ou professionnel), des entreprises, des fondations, …</p>
 <p>Elles répertorient les paquets utiles par domaine d’application. De plus les
 paquets un peu douteux en qualité n’y figure pas. Donc c’est du solide.</p>
 <p>Pour cela je vous recommande de l’utiliser pour se faire, suivez les instructions ci-dessous:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="architecture-de-r.html#cb8-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ctv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="architecture-de-r.html#cb7-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ctv&quot;</span>)</span></code></pre></div>
 <p>Puis quand vous voulez installer une vue (SocialSciences par exemple) :</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="architecture-de-r.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(ctv)</span>
-<span id="cb9-2"><a href="architecture-de-r.html#cb9-2" tabindex="-1"></a><span class="fu">install.views</span>(<span class="st">&quot;SocialSciences&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="architecture-de-r.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(ctv)</span>
+<span id="cb8-2"><a href="architecture-de-r.html#cb8-2" tabindex="-1"></a><span class="fu">install.views</span>(<span class="st">&quot;SocialSciences&quot;</span>)</span></code></pre></div>
 <p>On vient de voir comment appeler un paquet :</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="architecture-de-r.html#cb10-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="architecture-de-r.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p>ou</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="architecture-de-r.html#cb11-1" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="architecture-de-r.html#cb10-1" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span></code></pre></div>
 <p>Cela revient presque au même. Presque. Pour commencer vous pouvez utiliser
 <strong>library</strong> en priorité.</p>
 <p>Essayez d’installer un paquet :</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="architecture-de-r.html#cb12-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="architecture-de-r.html#cb11-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span></code></pre></div>
 <p>Maintenant vous pouvez lire les fichiers Excel. Vous n’avez besoin d’installer
 le paquet qu’une fois mais vous devez le réclamer avec <strong>library</strong> la première
 fois que vous l’utilisez dans un script. La politique est de charger tous les

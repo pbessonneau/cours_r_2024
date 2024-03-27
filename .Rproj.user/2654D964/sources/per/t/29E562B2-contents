@@ -1,15 +1,10 @@
----
-title: "Importation de données"
-output: html_document
-date: "2024-03-09"
----
 
-```{r setup, include=FALSE}
+```{r packages,include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(readxl)
 ```
 
-## Données de Parcoursup
+# Données de Parcoursup
 
 Les données de ParcourSup viennent de là :
 [Parcoursup 2023 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements](https://data.education.gouv.fr/explore/embed/dataset/fr-esr-parcoursup/table/?sort=tri)
@@ -25,7 +20,7 @@ library(readxl)
 ```
 
 ```{r}
-parcours <- read_excel("fr-esr-parcoursup.xlsx")
+parcours <- read_excel("data/fr-esr-parcoursup.xlsx")
 
 ```
 
@@ -136,7 +131,7 @@ faire vous même, il suffit de spécificier chaque à la main :
 
 
 ```{r}
-read_csv("iris.csv", col_types = list(
+read_csv("data/iris.csv", col_types = list(
   Sepal.Length = col_double(),
   Sepal.Width = col_double(),
   Petal.Length = col_double(),

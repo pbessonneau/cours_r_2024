@@ -1,0 +1,465 @@
+
+# Graphiques et ggplot
+
+```{r setup_ggplot, include=FALSE,message=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tidyverse)
+patient <- read_csv("data/patient.csv")
+```
+
+Les graphiques sont une composante de R qui est en partie à l'origine de son 
+succès car on peut de très beaux et ce depuis la création de R.
+
+## Les graphiques de base
+
+Certaines sont très simples d'autres un peu plus compliquées. Nous verrons dans
+un premier temps les graphiques de base c'est-à-dire qui ne nécessitent pas de
+charger un __package__.
+
+### Pour les graphiques de chiffres
+
+Les premières fonctions présentées sont les plus usuelles comme les histogrammes.
+
+```{r poids1}
+hist(patient$poids)
+```
+
+Ce n'est pas très esthétique. Il y a des arguments aux fonctions qui permettent
+d'améliorer les choses. 
+
+Déjà changer les noms des axes X et y, notamment se débarasser de **Frequency**
+qui est un faux ami en français.
+
+```{r poids2}
+hist(patient$poids,xlab="Poids",ylab="Effectifs")
+```
+Ensuite le titre :
+
+```{r poids3}
+hist(patient$poids,xlab="Poids",ylab="Effectifs",main="Poids des patients")
+```
+
+Pour la couleur, c'est un peu plus compliqué. En effet il y a simple des couleurs
+qui répondent à leurs mots en anglais, la liste est [là](https://www.datanovia.com/en/blog/awesome-list-of-657-r-color-names/).
+
+Mais les couleurs correspondent au codage web des couleurs qui sont en fait des
+hexadécimaux. Si vous voulez personnaliser plus les couleurs, je vous conseille
+le paquet **RColorBrewer** qui possède de jolis (et intelligents) assortiments
+de couleurs et [de la lecture](https://larmarange.github.io/analyse-R/couleurs.html)
+
+```{r}
+hist(patient$poids,xlab="Poids",ylab="Effectifs",main="Poids des patients",col="lightblue")
+```
+Ensuite il y a les boxplots ou boîtes à moustache pour les variables continues.
+
+```{r poids4}
+boxplot(patient$poids)
+```
+
+De même on arrange un peu :
+
+```{r poids5}
+boxplot(patient$poids,ylab="Poids",main="Poids des patients")
+
+```
+Pour les boxplots on peut faire un peu mieux, par exemple pour segmenter par type
+de pathologies.
+
+On passe la **data.frame** patient et on précise le nom de la variable qualitative
+qui doit "séparer" les tracés.
+
+```{r poids6}
+boxplot(poids ~ CIM2, data = patient,ylab="Poids",main="Poids des patients en fonction du CIM2") 
+```
+Le premier argument doit vous paraître un peu abstrait. En fait c'est une formule
+sous R. C'est l'équivalent de "patient=CIM2".
+
+A gauche du ~ on place la variable à expliquer et à droite la ou les variables
+explicatives. Ici on en a une de chaque côté.
+
+Le graphique le plus simple serait le **scatterplot**. On aurait pu commencer
+par lui :
+
+Cette fois on a deux arguments qui sont la variable numérique des x en premier
+et la variable numérique des y en second.
+
+```{r poids7}
+plot(patient$poids,patient$dureeopmin)
+```
+
+
+```{r poids8}
+plot(patient$poids,patient$dureeopmin,xlab="Poids",ylab="Durée opération en minutes")
+```
+Qui aurait pu s'écrire :
+
+```{r poids9}
+plot(dureeopmin ~ poids,data=patient,xlab="Poids",ylab="Durée opération en minutes")
+```
+Si on veut tracer une ligne pour la régression linéaire, il faut faire appel
+à la fonction **lm** qui calcule la régression et R se charge du reste.
+
+```{r poids10}
+coefficients <- lm(dureeopmin~poids,data=patient)
+plot(patient$poids,patient$dureeopmin,xlab="Poids",ylab="Durée opération en minutes")
+abline(coefficients)
+```
+On voit ici que j'ai appellé **abline** après le plot. En effet, il est nécessaire
+de faire un **plot**, un **hist** ou une **boxplot** avant pour que R initialise
+le graphique notamment le calcul des coordonnées maximales et minimales.
+
+D'ailleurs on peut les spécifier nous mêmes :
+
+```{r poids11}
+coefficients <- lm(dureeopmin~poids,data=patient)
+plot(patient$poids,patient$dureeopmin,xlab="Poids",ylab="Durée opération en minutes",
+     xlim=c(0,150),ylim=c(0,600))
+abline(coefficients)
+```
+
+Pour sauvegarder un graphique, on doit le faire avant d'appeler la fonction 
+__principale__ et refermer le fichier avec la commande __dev.off__:
+
+```{r,include=FALSE}
+png("figure-1.png")
+coefficients <- lm(dureeopmin~poids,data=patient)
+plot(patient$poids,patient$dureeopmin,xlab="Poids",ylab="Durée opération en minutes",
+     xlim=c(0,150),ylim=c(0,600))
+abline(coefficients)
+dev.off()
+```
+
+La dernière fonction à connaître pour les graphiques de base est le **barplot**.
+
+Il s'agit de représenter des tableaux de contingence, le plus simple étant à une
+dimension :
+
+```{r sexe1}
+tableau <- table(patient$sexe)
+barplot(tableau, main = "CIM2", ylab = "Effectifs")
+```
+On peut lui passer un argument à deux dimensions mais la table devient tout de 
+suite difficile à lire.
+
+```{r sexe2}
+tableau <- table(patient$CIM2,patient$sexe)
+barplot(tableau, main = "CIM2", ylab = "Effectifs")
+```
+## le tidyverse et ggplot
+
+### Introduction
+
+Vous pourrez comme précédemment entendre parler des graphiques de base de même
+que des graphiques __lattice__ mais le choucou du **tidyverse** c'est **ggplot2**.
+
+C'est un éco-système de **packages** qui permet de faire la plupart des graphiques
+plus simplement et qui est basé sur le paquet **gplot2**.
+
+Un livre gratuit lui est consacré [là](https://ggplot2-book.org/) et une page
+en français [là](https://larmarange.github.io/analyse-R/graphiques-bivaries-ggplot2.html)
+
+```{r,include=FALSE}
+library(ggplot2)
+```
+
+On va reprendre notre grammaire. Il faut saisir que **ggplot2** fonctionne par 
+couche. Sur une base, vous additionner des couches qui apporte la personnalisation
+des graphiques.
+
+### La base
+
+Au tout départ, il faut lui passer une **data.frame**, c'est le passage obligé.
+
+```{r ggplot1}
+ggplot(patient)
+```
+Ensuite on précise les variables de travail. Pour l'histogramme, on en a qu'une :
+
+```{r ggplot2}
+ggplot(patient,aes(poids))
+```
+
+Vous pouvez constater, que le logiciel a calculé et positionner les légendes
+pour créer un graphique avec poids comme variable des abscisses (horizontal).
+
+On personnalise en demandant un graphique de type histogramme. En additionnant
+littéralement:
+
+```{r ggplot3}
+ggplot(patient,aes(poids))+geom_histogram()
+```
+
+Pour modifier les limtes du graphiques, on rajoute :
+
+```{r ggplot4}
+ggplot(patient,aes(poids))+geom_histogram()+
+  scale_x_continuous(limits = c(0,150)) +
+  scale_y_continuous(limits = c(0,20))
+```
+
+
+Si on veut modifier le nombre de barres verticales (la précision de l'histogramme), 
+on précise l'option dans la couche de l'histogramme :
+
+
+```{r ggplot5}
+ggplot(patient,aes(poids))+geom_histogram(bins=10)+
+  scale_x_continuous(limits = c(0,150))
+```
+Pour les titres, c'est pareil, on ajoute des couches :
+
+```{r ggplot6}
+ggplot(patient,aes(poids))+geom_histogram()+
+  scale_x_continuous(limits = c(0,150)) + 
+  ggtitle("Poids des patients") + 
+  xlab("Poids") + 
+  ylab("Effectifs")
+```
+On peut ajouter des propriétés esthétiques comme la couleur, par exemple :
+
+```{r ggplot7}
+ggplot(patient,aes(poids))+geom_histogram(fill ="lightblue", colour = "black")+
+  scale_x_continuous(limits = c(0,150)) + 
+  ggtitle("Poids des patients") + 
+  xlab("Poids") + 
+  ylab("Effectifs")
+```
+
+Là où **ggplot2** sort du lot, c'est sa capacité à segmenter et à représenter
+avec [une bonne grammaire graphique](https://link.springer.com/book/10.1007/0-387-28695-0)
+
+```{r ggplot8}
+ggplot(patient,aes(poids,fill=sexe))+geom_histogram(color="black")+
+  scale_x_continuous(limits = c(0,150)) + 
+  ggtitle("Poids des patients") + 
+  xlab("Poids") + 
+  ylab("Effectifs")
+```
+
+On a l'ajout de couleurs ou alors deux graphiques avec des unités bien choisies:
+
+
+```{r ggplot9}
+ggplot(patient,aes(poids,fill=sexe))+geom_histogram(color="black")+
+  scale_x_continuous(limits = c(0,150)) + 
+  ggtitle("Poids des patients") + 
+  xlab("Poids") + 
+  ylab("Effectifs") +
+  facet_grid(sexe ~ .)
+```
+
+
+On a de nouveau une formule. Cette fois, c'est à gauche du ~ les lignes et
+à droite les colonnes :
+
+
+
+```{r ggplot10}
+ggplot(patient,aes(poids))+geom_histogram(color="black")+
+  scale_x_continuous(limits = c(0,150)) + 
+  ggtitle("Poids des patients") + 
+  xlab("Poids") + 
+  ylab("Effectifs") +
+  facet_grid(sexe ~ Hopital)
+```
+
+On peut vouloir calculer la **densité** et non les effectifs dans ce cas :
+
+```{r ggplot11}
+ggplot(patient,aes(poids))+geom_histogram(aes(y = ..density..),color="black")+
+  scale_x_continuous(limits = c(0,150)) + 
+  ggtitle("Poids des patients") + 
+  xlab("Poids") + 
+  ylab("Densité") +
+  facet_grid(sexe ~ Hopital)
+
+```
+
+
+
+
+### Les autres graphiques
+
+Le boxplot :
+
+```{r ggplot12}
+ggplot(patient,aes(x=poids,fill=sexe))+geom_boxplot()+
+  ggtitle("Poids des patients") + 
+  xlab("Poids") + 
+  ylab("Densité") +
+  facet_grid(Hopital ~ .)
+```
+
+
+
+```{r ggplot13}
+ggplot(patient,aes(x=sexe,y=poids))+geom_boxplot()+
+  ggtitle("Poids des patients") + 
+  xlab("Poids") + 
+  ylab("Densité") +
+  facet_grid(Hopital ~ .)
+```
+
+
+```{r ggplot14}
+ggplot(patient,aes(poids))+geom_boxplot()+
+  ggtitle("Poids des patients") + 
+  xlab("Poids") + 
+  ylab("Densité") +
+  facet_grid(sexe ~ Hopital)
+```
+
+D'où des graphiques en **scatterplot** comme :
+
+```{r ggplot15}
+ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
+  ggtitle("Caractéristiques des patients") + 
+  xlab("Poids") + 
+  ylab("Durée de l'opération en minutes") 
+```
+
+ou en rajoutant plein de trucs :
+
+```{r ggplot16}
+ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
+  ggtitle("Caractéristiques des patients") + 
+  xlab("Poids") + 
+  ylab("Durée de l'opération en minutes") +
+  facet_grid(CIM2 ~ Hopital)
+
+```
+
+Pour rajouter une droite de régression :
+
+```{r ggplot16}
+ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
+  geom_smooth(method="lm") +
+  ggtitle("Caractéristiques des patients") + 
+  xlab("Poids") + 
+  ylab("Durée de l'opération en minutes") +
+  facet_grid(CIM2 ~ Hopital)
+```
+Des courbes de tendances :
+
+```{r}
+ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
+  geom_smooth() +
+  ggtitle("Caractéristiques des patients") + 
+  xlab("Poids") + 
+  ylab("Durée de l'opération en minutes") +
+  facet_grid(CIM2 ~ Hopital)
+```
+
+Sans l'intervalle de confiance :
+
+```{r}
+ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
+  geom_smooth(se=FALSE) +
+  ggtitle("Caractéristiques des patients") + 
+  xlab("Poids") + 
+  ylab("Durée de l'opération en minutes") +
+  facet_grid(CIM2 ~ Hopital)
+```
+
+Avec l'intervalle de confiance et la droite de régression :
+
+```{r}
+ggplot(patient,aes(x=dureeopmin,y=totalechelle))+geom_point(aes(col=sexe))+
+  geom_smooth(method="lm",se=FALSE) +
+  ggtitle("Total des échelles de douleur et durée opération") + 
+  xlab("Durée de l'opération en minutes") + 
+  ylab("Total des échelles de douleur") +
+  facet_grid(CIM2 ~ Hopital)
+```
+
+Pour les tableaux de fréquences, on peut faire très simple :
+
+```{r ggplot17}
+ggplot(patient,aes(sexe))+geom_bar()
+```
+
+```{r ggplot18}
+ggplot(patient,aes(sexe))+geom_bar()+
+  facet_grid(CIM2~Hopital)
+```
+Là où **ggplot2** commence à devenir compliqué, c'est que **geom_bar** ne va pas
+marcher car il faut lui fournir la **data.frame** avec les statistiques **en ligne**.
+
+Soit :
+
+```{r,echo=FALSE}
+require(reshape2)
+tableau <- table(patient$sexe,patient$CIM2)
+long <- melt(tableau,varnames = c("sexe","CIM2"),value.name = "value")
+long
+```
+
+Pour faire ce tableau, il faut faire appel au **package** **reshape2**.
+
+```{r}
+require(reshape2)
+tableau <- table(patient$sexe,patient$CIM2)
+tableau
+```
+
+De ce tableau on passe au long en une commande :
+
+```{r}
+long <- melt(tableau,varnames = c("sexe","CIM2"),value.name = "value")
+```
+
+Il faut spécifier le nom à donner aux deux variables et spécifier le résultat
+du croisement des deux variables qui est le nombre d'observations c'est-à-dire
+le contenu de chaque cellule de __tableau__.
+
+```{r ggplot20}
+ggplot(long,aes(x=sexe,y=value,fill=CIM2))+geom_bar(position = "stack",stat="identity")
+```
+
+```{r ggplot21}
+ggplot(long,aes(x=CIM2,y=value,fill=sexe))+geom_bar(position = "dodge",stat="identity")
+```
+
+D'où le graphique :
+
+```{r ggplot22}
+tableau <- table(patient$Hopital,patient$sexe,patient$CIM2)
+long <- melt(tableau,varnames = c("Hopital","sexe","CIM2"),value.name = "value")
+ggplot(long,aes(x=CIM2,y=value,fill=sexe))+
+  geom_bar(position = "dodge",stat="identity")+
+  facet_grid(Hopital ~ . )
+```
+
+Pour sauvegarder un graphique **ggplot2**, la syntaxe est différente et surtout 
+on l'appelle une fois que le graphique est terminé, c'est-à-dire en dernier :
+
+```{r,include=FALSE}
+ggplot(long,aes(x=CIM2,y=value,fill=sexe))+geom_bar(position = "dodge",stat="identity")
+ggsave("mon-graphique.png")
+```
+
+Et ainsi de suite...
+
+## Liens
+
+Il y a de nombreuses galleries sur le web avec toutes les possiblités offertes
+par les graphiques de base comme les graphiques avec **ggplot2**.
+
+- [r-graph-gallery](https://r-graph-gallery.com/)
+- [r-chart](https://r-charts.com/ggplot2/)
+- ...
+
+On peut en parcourir ensemble...
+
+```{r}
+tableau <- dcast(patient, UID + sexe ~ Hopital, value.var = "nbechelle")
+tableau$poids <- ifelse(!is.na(tableau$A),tableau$A,tableau$B)
+
+ggplot(tableau, aes(x=nbechelle) ) +
+  geom_density( aes(x = A, y = ..density..), fill="#69b3a2" ) +
+  geom_label(aes(x=90, y=0.01, label="Hopital A"), color="#69b3a2") +
+  geom_density( aes(x = B, y = -..density..), fill= "#404080") +
+  geom_label(aes(x=90,y=-0.01, label="Hopital B"), color="#404080")
+
+```
+

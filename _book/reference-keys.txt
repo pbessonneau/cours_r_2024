@@ -24,7 +24,10 @@ les-premières-tables
 tableaux-croisés
 themes
 exportation
-personnaliser-les-fonctions
-analyse-de-la-table-patient
-chargement
-importation
+graphiques-et-ggplot
+les-graphiques-de-base
+pour-les-graphiques-de-chiffres
+introduction-1
+la-base
+les-autres-graphiques
+liens
