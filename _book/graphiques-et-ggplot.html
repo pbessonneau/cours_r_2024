@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Graphiques et ggplot | Patient</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Graphiques et ggplot | Patient" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="résumés-rapides-descriptives.html"/>
-
+<link rel="next" href="manipulation-avancée-mettre-en-forme-vos-données.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -185,7 +185,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.5" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#tableaux-de-contingences"><i class="fa fa-check"></i><b>6.1.5</b> Tableaux de contingences</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#liens"><i class="fa fa-check"></i><b>6.2</b> Liens</a></li>
-<li class="chapter" data-level="6.3" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#chargement"><i class="fa fa-check"></i><b>6.3</b> Chargement</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html"><i class="fa fa-check"></i><b>7</b> Manipulation avancée (mettre en forme vos données)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#transformation-de-plusieurs-variables"><i class="fa fa-check"></i><b>7.1</b> Transformation de plusieurs variables</a></li>
+<li class="chapter" data-level="7.2" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#opérateurs-et-case_when"><i class="fa fa-check"></i><b>7.2</b> Opérateurs et case_when</a></li>
+<li class="chapter" data-level="7.3" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#réutilisation-de-statistiques"><i class="fa fa-check"></i><b>7.3</b> Réutilisation de statistiques</a></li>
+<li class="chapter" data-level="7.4" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#chargement"><i class="fa fa-check"></i><b>7.4</b> Chargement</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -526,68 +532,6 @@ par les graphiques de base comme les graphiques avec <strong>ggplot2</strong>.</
 <span id="cb167-8"><a href="graphiques-et-ggplot.html#cb167-8" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">90</span>,<span class="at">y=</span><span class="sc">-</span><span class="fl">0.01</span>, <span class="at">label=</span><span class="st">&quot;Hopital B&quot;</span>), <span class="at">color=</span><span class="st">&quot;#404080&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
 
-<!-- # Analyse de la table Patient -->
-</div>
-<div id="chargement" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Chargement<a href="graphiques-et-ggplot.html#chargement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<pre><code>## spc_tbl_ [200 × 17] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
-##  $ UID         : chr [1:200] &quot;100A&quot; &quot;100B&quot; &quot;101A&quot; &quot;101B&quot; ...
-##  $ Hopital     : chr [1:200] &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; ...
-##  $ sexe        : chr [1:200] &quot;Masculin&quot; &quot;Feminin&quot; &quot;Masculin&quot; &quot;Masculin&quot; ...
-##  $ poids       : num [1:200] 45 80 37 28 18 13.7 16 35 40 32 ...
-##  $ vitaux      : num [1:200] 22 8 17 28 6 21 9 10 17 11 ...
-##  $ CIM2        : num [1:200] 2 2 1 2 3 3 3 1 2 1 ...
-##  $ age         : num [1:200] 13.54 15.72 10.94 11.14 4.05 ...
-##  $ dureeopmin  : num [1:200] 90 125 50 133 250 180 260 15 90 55 ...
-##  $ postopj     : num [1:200] 2.208 1.014 4.667 2.24 0.938 ...
-##  $ scoliose    : chr [1:200] NA NA NA NA ...
-##  $ drepano     : chr [1:200] NA &quot;rien&quot; NA &quot;drepanocytose&quot; ...
-##  $ ACP         : num [1:200] 0 0 0 0 0 0 0 0 0 0 ...
-##  $ peridurale  : num [1:200] 0 0 0 0 0 1 0 0 0 0 ...
-##  $ periACP     : num [1:200] 0 0 0 0 0 2 0 0 0 0 ...
-##  $ nbttt       : num [1:200] 3 4 4 5 3 10 3 2 3 7 ...
-##  $ totalechelle: num [1:200] 463 503 146 306 40 200 0 110 0 NA ...
-##  $ nbechelle   : num [1:200] 16 17 12 17 6 27 4 7 6 0 ...
-##  - attr(*, &quot;spec&quot;)=
-##   .. cols(
-##   ..   UID = col_character(),
-##   ..   Hopital = col_character(),
-##   ..   sexe = col_character(),
-##   ..   poids = col_double(),
-##   ..   vitaux = col_double(),
-##   ..   CIM2 = col_double(),
-##   ..   age = col_double(),
-##   ..   dureeopmin = col_double(),
-##   ..   postopj = col_double(),
-##   ..   scoliose = col_character(),
-##   ..   drepano = col_character(),
-##   ..   ACP = col_double(),
-##   ..   peridurale = col_double(),
-##   ..   periACP = col_double(),
-##   ..   nbttt = col_double(),
-##   ..   totalechelle = col_double(),
-##   ..   nbechelle = col_double()
-##   .. )
-##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
-<p>Ouch… Remettre en factor, les variables qui doivent l’être. Lequelles ?</p>
-<p>Scoliose ça sera plus propre avec les différents champs et “non” en l’absence
-de scoliose…</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="graphiques-et-ggplot.html#cb169-1" tabindex="-1"></a>patient<span class="sc">$</span>scoliose[<span class="fu">is.na</span>(patient<span class="sc">$</span>scoliose)] <span class="ot">&lt;-</span> <span class="st">&quot;Non&quot;</span></span>
-<span id="cb169-2"><a href="graphiques-et-ggplot.html#cb169-2" tabindex="-1"></a><span class="fu">table</span>(patient<span class="sc">$</span>scoliose)</span></code></pre></div>
-<pre><code>## 
-##  ante autre   Non  post 
-##     3     2   175    20</code></pre>
-<p>Ca serait bien de faire <strong>scoliose2</strong></p>
-<p>Et pareil avec les drépanocytose donc avec <strong>drepano</strong> et <strong>drepano2</strong>:</p>
-<p>Calculer la variable <strong>moyechelle</strong> qui fait la moyenne des échelles de douleur :</p>
-<pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -8.31250 -1.94531 -0.79167 -0.08893  0.46875 40.60417</code></pre>
-<p>Juste pour voir <strong>case</strong> : faire des catégories quand nbttt &lt; 0, entre 0 et 10
-et est supérieur à 10</p>
-<pre><code>## 
-## Entre 0 et -5      Inf à -5       Sup à 0 
-##           127             7            66</code></pre>
-
 </div>
 </div>
             </section>
@@ -595,8 +539,8 @@ et est supérieur à 10</p>
           </div>
         </div>
       </div>
-<a href="résumés-rapides-descriptives.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="résumés-rapides-descriptives.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="manipulation-avancée-mettre-en-forme-vos-données.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

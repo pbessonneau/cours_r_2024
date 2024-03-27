@@ -129,8 +129,7 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{objectif}{%
-\chapter{Objectif}\label{objectif}}
+\chapter{Objectif}\label{objectif}
 
 Ce document constitue la trame du cours sur R pour les doctorants ``orientation''
 du CRTD du CNAM.
@@ -138,8 +137,7 @@ du CRTD du CNAM.
 Il n'est pas exhaustif et se place plutôt en appui du cours de M. Kilani. Il est
 construit sur les bases et sur les difficultés du langage.
 
-\hypertarget{architecture-de-r}{%
-\chapter{Architecture de R}\label{architecture-de-r}}
+\chapter{Architecture de R}\label{architecture-de-r}
 
 \begin{verbatim}
 ## New names:
@@ -230,8 +228,7 @@ dehors de commentaires. Sinon c'est la catastrophe\ldots{}
 
 \textbf{Utiliser toujours RStudio en mode Projet}
 
-\hypertarget{paquets}{%
-\section{Paquets}\label{paquets}}
+\section{Paquets}\label{paquets}
 
 Les fonctionnalités de R sont finalement assez limitées. Il fait un certain
 nombre de statistiques et surtout fourni des outils mathématiques puissants
@@ -298,11 +295,9 @@ paquets que vous utilisez \textbf{en tête du script}.
 
 Maintenant on va faire des statistiques.
 
-\hypertarget{le-langage-r}{%
-\chapter{Le langage R}\label{le-langage-r}}
+\chapter{Le langage R}\label{le-langage-r}
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\section{Introduction}\label{introduction}
 
 Le but est d'aborder des notions et de voir quelques exemples.
 
@@ -329,8 +324,7 @@ Vous avez des objets en mémoire dans R et ces objets peuvent servir aussi bien
 de sources de données, d'arguments pour sélectionner une partie des résultats ou
 bien être des résultats d'une opérations statistiques.
 
-\hypertarget{un-exemple-de-traitement-de-donnuxe9es}{%
-\section{Un exemple de traitement de données}\label{un-exemple-de-traitement-de-donnuxe9es}}
+\section{Un exemple de traitement de données}\label{un-exemple-de-traitement-de-donnuxe9es}
 
 On va travailler sur une base de données qui sont les iris de Fisher. C'est
 plus simple car c'est un jeu de données qui est en mémoire dans R, on verra
@@ -392,11 +386,9 @@ on a gardé 5 éléments caractérisant l'individu.
 On voit que R sépare bien chacune des variables. Pour schématiser dans notre cas
 nous avons des individus en ligne et des observations en colonne. Comme Jamovi.
 
-\hypertarget{vecteurs}{%
-\section{Vecteurs}\label{vecteurs}}
+\section{Vecteurs}\label{vecteurs}
 
-\hypertarget{exemple-de-vecteurs}{%
-\subsection{Exemple de vecteurs}\label{exemple-de-vecteurs}}
+\subsection{Exemple de vecteurs}\label{exemple-de-vecteurs}
 
 Là où ça devient différent c'est que la \textbf{data.frame} est en fait un aggrégat
 d'élements plus simples.
@@ -410,12 +402,12 @@ Vous pouvez extraire par exemple la longueur des sépales pour tous les individu
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
-##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
-##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
-##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
-## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
-## [146] 6.7 6.3 6.5 6.2 5.9
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
+##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
+##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
+##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
+## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
+## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
 \end{verbatim}
 
 Vous regardez par colonne, vous obtenez les valeurs pour les 150 individus.
@@ -470,12 +462,12 @@ Si on fait:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
-##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
-##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
-##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
-## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
-## [146] 6.7 6.3 6.5 6.2 5.9
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
+##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
+##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
+##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
+## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
+## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
 \end{verbatim}
 
 On retrouve bien nos longueurs.
@@ -497,8 +489,7 @@ Qu'est ce qui se passe ? En fait on a indexé notre \textbf{data.frame}.
 On a dit à R, renvoie nous la variable ``Sepal.Length'' et nous avons décidé de le
 stocker dans une variable autre.
 
-\hypertarget{cruxe9ation-de-vecteurs}{%
-\subsection{Création de vecteurs}\label{cruxe9ation-de-vecteurs}}
+\subsection{Création de vecteurs}\label{cruxe9ation-de-vecteurs}
 
 Pour créer un vecteur, il faut utiliser la fonction \textbf{c} pour \textbf{concatenate}.
 
@@ -738,12 +729,12 @@ on peut faire:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
-##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
-##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
-##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
-## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
-## [146] 6.7 6.3 6.5 6.2 5.9
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
+##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
+##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
+##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
+## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
+## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
 \end{verbatim}
 
 \begin{Shaded}
@@ -756,8 +747,7 @@ on peut faire:
 ## [1] 5.843333
 \end{verbatim}
 
-\hypertarget{les-types-de-vecteurs}{%
-\subsection{Les types de vecteurs}\label{les-types-de-vecteurs}}
+\subsection{Les types de vecteurs}\label{les-types-de-vecteurs}
 
 les vecteurs en résumé peuvent être :
 - des numéros entiers, \textbf{int}
@@ -860,14 +850,12 @@ Pour faire le résumer d'une variable texte:
 ##         50         50         50
 \end{verbatim}
 
-\hypertarget{pour-ruxe9sumuxe9}{%
-\subsection{Pour résumé}\label{pour-ruxe9sumuxe9}}
+\subsection{Pour résumé}\label{pour-ruxe9sumuxe9}
 
 On a les \textbf{data.frame}, on a les \textbf{vector} de différents types. On sait qu'on
 peut sélectionner les variables par l'intermédiaire de vecteurs.
 
-\hypertarget{suxe9lection-des-individus}{%
-\section{Sélection des individus}\label{suxe9lection-des-individus}}
+\section{Sélection des individus}\label{suxe9lection-des-individus}
 
 Intuitivement, comment sélectionner des individus ?
 
@@ -933,14 +921,15 @@ On l'adapte pour notre cas :
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [20] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [39] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [58]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [77]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [96]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [115] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [134] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [19] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [55]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [73]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [91]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [127] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [145] FALSE FALSE FALSE FALSE FALSE FALSE
 \end{verbatim}
 
 Donc on indexe les individus :
@@ -1029,8 +1018,7 @@ from iris, filter Species==``versicolor'',
 ## 50          5.0         3.3          1.4         0.2  setosa
 \end{verbatim}
 
-\hypertarget{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}{%
-\subsection{Calcul de la moyenne et nouveaux générateurs}\label{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}}
+\subsection{Calcul de la moyenne et nouveaux générateurs}\label{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}
 
 Pour la moyenne des longueurs de sépales ?
 
@@ -1151,14 +1139,13 @@ Calculer la moyenne de toutes les colonnes sauf Species ?
 ## 3 virginica          6.59        2.97         5.55       2.03
 \end{verbatim}
 
-\hypertarget{donnuxe9es-de-parcoursup}{%
-\chapter{Données de Parcoursup}\label{donnuxe9es-de-parcoursup}}
+\chapter{Données de Parcoursup}\label{donnuxe9es-de-parcoursup}
 
 Les données de ParcourSup viennent de là :
 \href{https://data.education.gouv.fr/explore/embed/dataset/fr-esr-parcoursup/table/?sort=tri}{Parcoursup 2023 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements}
 
 sinon vous avez les métiers en tensions :
-\href{https://data.education.gouv.fr/explore/embed/dataset/fr-en-taux-de-pression-et-demploi/table/?disjunctive.diplome\&disjunctive.type_dip_lib\&disjunctive.filiere\&disjunctive.specialite_lib}{Taux de pression et d'emploi pour les diplômes de la voie professionnelle}
+\href{https://data.education.gouv.fr/explore/embed/dataset/fr-en-taux-de-pression-et-demploi/table/?disjunctive.diplome&disjunctive.type_dip_lib&disjunctive.filiere&disjunctive.specialite_lib}{Taux de pression et d'emploi pour les diplômes de la voie professionnelle}
 
 En suivant les liens vous pouvez télécharger les fichiers Excel.
 
@@ -1228,7 +1215,7 @@ trois temps.
 
 \begin{verbatim}
 ## Rows: 200 Columns: 17
-## -- Column specification -------------------------------------------------------------------------------------------------
+## -- Column specification -------------------------------------------------------------------------------------------
 ## Delimiter: ","
 ## chr  (5): UID, Hopital, sexe, scoliose, drepano
 ## dbl (12): poids, vitaux, CIM2, age, dureeopmin, postopj, ACP, peridurale, periACP, nbttt, totalechelle, nbechelle
@@ -1377,8 +1364,8 @@ faire vous même, il suffit de spécificier chaque à la main :
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: The following named parsers don't match the column names: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width,
-## Species
+## Warning: The following named parsers don't match the column names: Sepal.Length, Sepal.Width, Petal.Length,
+## Petal.Width, Species
 \end{verbatim}
 
 \begin{verbatim}
@@ -1451,11 +1438,9 @@ mettre n'importe objet et l'indexer (presque) comme une \textbf{data.frame}.
 
 On voit que c'est un type \textbf{list}, les \textbf{data.frame}.
 
-\hypertarget{ruxe9sumuxe9s-rapides-descriptives}{%
-\chapter{Résumés rapides descriptives}\label{ruxe9sumuxe9s-rapides-descriptives}}
+\chapter{Résumés rapides descriptives}\label{ruxe9sumuxe9s-rapides-descriptives}
 
-\hypertarget{les-premiuxe8res-tables}{%
-\section{Les premières tables}\label{les-premiuxe8res-tables}}
+\section{Les premières tables}\label{les-premiuxe8res-tables}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1620,8 +1605,7 @@ T4 & 23 (12\%) & 27 (14\%) & 50 (25\%) & \\
 \hline
 \end{tabular}
 
-\hypertarget{tableaux-croisuxe9s}{%
-\section{Tableaux croisés}\label{tableaux-croisuxe9s}}
+\section{Tableaux croisés}\label{tableaux-croisuxe9s}
 
 On peut faire des tris croisés et choisir le sens des pourcentages : par cellule,
 par ligne ou par colonne.
@@ -1649,8 +1633,7 @@ B & 67 (58\%) & 33 (39\%) & 100 (50\%) & \\
 \hline
 \end{tabular}
 
-\hypertarget{themes}{%
-\section{Themes}\label{themes}}
+\section{Themes}\label{themes}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1683,8 +1666,7 @@ B & 67 (58\%) & 33 (39\%) & 100 (50\%) & \\
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{exportation}{%
-\section{Exportation}\label{exportation}}
+\section{Exportation}\label{exportation}
 
 Pour les exporter avec le paquet \textbf{writexl} :
 
@@ -1706,8 +1688,7 @@ Sinon
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{personnalisation-des-statistiques}{%
-\section{Personnalisation des statistiques}\label{personnalisation-des-statistiques}}
+\section{Personnalisation des statistiques}\label{personnalisation-des-statistiques}
 
 Sans qu'il soit nécessaire de fonction, vous pouvez personnaliser les sortie.
 
@@ -1928,11 +1909,9 @@ virginica & 50 / 150 (33\%)\\
 \hline
 \end{tabular}
 
-\hypertarget{moduxe8les}{%
-\section{Modèles}\label{moduxe8les}}
+\section{Modèles}\label{moduxe8les}
 
-\hypertarget{exemple-de-moduxe8le-de-ruxe9gression-linuxe9aire}{%
-\subsection{Exemple de modèle de régression linéaire}\label{exemple-de-moduxe8le-de-ruxe9gression-linuxe9aire}}
+\subsection{Exemple de modèle de régression linéaire}\label{exemple-de-moduxe8le-de-ruxe9gression-linuxe9aire}
 
 On peut faire aussi des modèles avec gtsummary :
 
@@ -1968,21 +1947,18 @@ dureeopmin & 0,29 & -0,58 – 1,2 & 0,5 & 1,2 & -0,16 – 2,5 & 0,084\\
 Une liste des fonctionnalités est disponible là :
 \href{https://www.danieldsjoberg.com/gtsummary/reference/theme_gtsummary.html\#examples}{Ici}
 
-\hypertarget{graphiques-et-ggplot}{%
-\chapter{Graphiques et ggplot}\label{graphiques-et-ggplot}}
+\chapter{Graphiques et ggplot}\label{graphiques-et-ggplot}
 
 Les graphiques sont une composante de R qui est en partie à l'origine de son
 succès car on peut de très beaux et ce depuis la création de R.
 
-\hypertarget{les-graphiques-de-base}{%
-\section{Les graphiques de base}\label{les-graphiques-de-base}}
+\section{Les graphiques de base}\label{les-graphiques-de-base}
 
 Certaines sont très simples d'autres un peu plus compliquées. Nous verrons dans
 un premier temps les graphiques de base c'est-à-dire qui ne nécessitent pas de
 charger un \textbf{package}.
 
-\hypertarget{pour-les-graphiques-de-chiffres}{%
-\subsection{Pour les graphiques de chiffres}\label{pour-les-graphiques-de-chiffres}}
+\subsection{Pour les graphiques de chiffres}\label{pour-les-graphiques-de-chiffres}
 
 Les premières fonctions présentées sont les plus usuelles comme les histogrammes.
 
@@ -2158,8 +2134,7 @@ suite difficile à lire.
 \includegraphics{_main_files/figure-latex/sexe2-1.pdf}
 \#\# le tidyverse et ggplot
 
-\hypertarget{introduction-1}{%
-\subsection{Introduction}\label{introduction-1}}
+\subsection{Introduction}\label{introduction-1}
 
 Vous pourrez comme précédemment entendre parler des graphiques de base de même
 que des graphiques \textbf{lattice} mais le choucou du \textbf{tidyverse} c'est \textbf{ggplot2}.
@@ -2174,8 +2149,7 @@ On va reprendre notre grammaire. Il faut saisir que \textbf{ggplot2} fonctionne 
 couche. Sur une base, vous additionner des couches qui apporte la personnalisation
 des graphiques.
 
-\hypertarget{la-base}{%
-\subsection{La base}\label{la-base}}
+\subsection{La base}\label{la-base}
 
 Au tout départ, il faut lui passer une \textbf{data.frame}, c'est le passage obligé.
 
@@ -2321,8 +2295,7 @@ On peut vouloir calculer la \textbf{densité} et non les effectifs dans ce cas :
 
 \includegraphics{_main_files/figure-latex/ggplot11-1.pdf}
 
-\hypertarget{les-autres-graphiques}{%
-\subsection{Les autres graphiques}\label{les-autres-graphiques}}
+\subsection{Les autres graphiques}\label{les-autres-graphiques}
 
 Le boxplot :
 
@@ -2467,8 +2440,7 @@ de faire en sorte que la superposition des étiquettes soit minimale :
 Evidemment toutes les étiquettes ne sont pas dessinés car il y a trop d'individus
 mais cela permet de repérer les individus atypiques.
 
-\hypertarget{tableaux-de-contingences}{%
-\subsection{Tableaux de contingences}\label{tableaux-de-contingences}}
+\subsection{Tableaux de contingences}\label{tableaux-de-contingences}
 
 Pour les tableaux de fréquences, on peut faire très simple :
 
@@ -2569,8 +2541,7 @@ on l'appelle une fois que le graphique est terminé, c'est-à-dire en dernier :
 
 Et ainsi de suite\ldots{}
 
-\hypertarget{liens}{%
-\section{Liens}\label{liens}}
+\section{Liens}\label{liens}
 
 Il y a de nombreuses galleries sur le web avec toutes les possiblités offertes
 par les graphiques de base comme les graphiques avec \textbf{ggplot2}.
@@ -2602,8 +2573,604 @@ On peut en parcourir ensemble\ldots{}
 
 \includegraphics{_main_files/figure-latex/unnamed-chunk-80-1.pdf}
 
-\hypertarget{chargement}{%
-\section{Chargement}\label{chargement}}
+\chapter{Manipulation avancée (mettre en forme vos données)}\label{manipulation-avancuxe9e-mettre-en-forme-vos-donnuxe9es}
+
+Le but de cette partie qui ne sera pas très longue sur le papier mais beaucoup
+plus à l'apprentissage est de vous montrer comment automatiser les choses.
+
+Pour prendre un exemple qui nous est familier, transformer en facteur ou en
+variable ordinale des items de plusieurs échelles. Sous SPSS ou sous R, c'est
+pénible si vous n'utilisez pas les macros pour SPSS ou la programmation
+sous R.
+
+On peut automatiser beaucoup de choses sous R. Il y a des paquets sous
+R qui permettent d'analyser des modèles structuraux ou faire des pages web
+interactives. Sans aller jusque là, on peut se rendre la vie plus facile.
+
+\section{Transformation de plusieurs variables}\label{transformation-de-plusieurs-variables}
+
+On va charger le \href{https://personality-project.org/r/psych/HowTo/scoring.tutorial/small.msq.txt}{fichier de données} en ligne :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{file.name }\OtherTok{\textless{}{-}} \StringTok{"https://personality{-}project.org/r/psych/HowTo/scoring.tutorial/small.msq.txt"}
+\NormalTok{msq }\OtherTok{\textless{}{-}} \FunctionTok{read\_table}\NormalTok{(file.name)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## -- Column specification -------------------------------------------------------------------------------------------
+## cols(
+##   `"active"` = col_double(),
+##   `"alert"` = col_double(),
+##   `"aroused"` = col_double(),
+##   `"sleepy"` = col_double(),
+##   `"tired"` = col_double(),
+##   `"drowsy"` = col_double(),
+##   `"anxious"` = col_double(),
+##   `"jittery"` = col_double(),
+##   `"nervous"` = col_double(),
+##   `"calm"` = col_double(),
+##   `"relaxed"` = col_double(),
+##   `"at.ease"` = col_double(),
+##   `"gender"` = col_double(),
+##   `"drug"` = col_double()
+## )
+\end{verbatim}
+
+Oui au passage on peut lire des fichiers de données directement en ligne.
+
+Dans ce cas, on a utilisé la commande \textbf{read\_table} du \textbf{package readr}, car
+le séparateur de champs est l'espace.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(msq)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## spc_tbl_ [200 x 14] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ "active" : num [1:200] 2 1 1 1 1 3 1 0 3 1 ...
+##  $ "alert"  : num [1:200] 2 1 1 2 2 3 1 1 3 1 ...
+##  $ "aroused": num [1:200] 0 0 1 0 1 2 0 0 3 0 ...
+##  $ "sleepy" : num [1:200] 0 2 3 1 1 0 2 1 0 1 ...
+##  $ "tired"  : num [1:200] 1 2 3 1 1 0 2 1 0 1 ...
+##  $ "drowsy" : num [1:200] 1 2 2 0 0 0 3 1 0 1 ...
+##  $ "anxious": num [1:200] 1 1 2 0 0 1 0 0 3 0 ...
+##  $ "jittery": num [1:200] 1 0 0 0 1 0 0 0 3 0 ...
+##  $ "nervous": num [1:200] 0 1 1 0 0 0 0 0 1 0 ...
+##  $ "calm"   : num [1:200] 2 2 2 2 3 2 1 3 0 1 ...
+##  $ "relaxed": num [1:200] 2 2 2 2 2 3 2 2 0 2 ...
+##  $ "at.ease": num [1:200] 2 2 2 2 3 3 1 2 0 2 ...
+##  $ "gender" : num [1:200] 2 2 1 2 1 1 2 2 1 1 ...
+##  $ "drug"   : num [1:200] 2 1 1 2 1 2 2 1 2 1 ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   `"active"` = col_double(),
+##   ..   `"alert"` = col_double(),
+##   ..   `"aroused"` = col_double(),
+##   ..   `"sleepy"` = col_double(),
+##   ..   `"tired"` = col_double(),
+##   ..   `"drowsy"` = col_double(),
+##   ..   `"anxious"` = col_double(),
+##   ..   `"jittery"` = col_double(),
+##   ..   `"nervous"` = col_double(),
+##   ..   `"calm"` = col_double(),
+##   ..   `"relaxed"` = col_double(),
+##   ..   `"at.ease"` = col_double(),
+##   ..   `"gender"` = col_double(),
+##   ..   `"drug"` = col_double()
+##   .. )
+\end{verbatim}
+
+On voit que les guillemets ont été importés et parasite la ligne des noms de colonnes.
+Pour ça on utilise \textbf{gsub}, une fonction qui remplace les caractéères dans le premier
+argument par les caractères dans le deuxième. Le troisième argument est \textbf{vecteur}
+dans lequel on veut remplacer le texte.
+
+Ici on va remplacer un guillemet double, partout, par aucun caractère. Et on applique
+ça aux noms de variables de msq, ce qui nous donne :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(msq) }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{}"\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,}\FunctionTok{colnames}\NormalTok{(msq),}\AttributeTok{fixed=}\NormalTok{T)}
+\NormalTok{msq}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 200 x 14
+##    active alert aroused sleepy tired drowsy anxious jittery nervous  calm relaxed at.ease gender  drug
+##     <dbl> <dbl>   <dbl>  <dbl> <dbl>  <dbl>   <dbl>   <dbl>   <dbl> <dbl>   <dbl>   <dbl>  <dbl> <dbl>
+##  1      2     2       0      0     1      1       1       1       0     2       2       2      2     2
+##  2      1     1       0      2     2      2       1       0       1     2       2       2      2     1
+##  3      1     1       1      3     3      2       2       0       1     2       2       2      1     1
+##  4      1     2       0      1     1      0       0       0       0     2       2       2      2     2
+##  5      1     2       1      1     1      0       0       1       0     3       2       3      1     1
+##  6      3     3       2      0     0      0       1       0       0     2       3       3      1     2
+##  7      1     1       0      2     2      3       0       0       0     1       2       1      2     2
+##  8      0     1       0      1     1      1       0       0       0     3       2       2      2     1
+##  9      3     3       3      0     0      0       3       3       1     0       0       0      1     2
+## 10      1     1       0      1     1      1       0       0       0     1       2       2      1     1
+## # i 190 more rows
+\end{verbatim}
+
+Les commentaires de read.table indique que les colonnes sont toutes des nombres
+réels de double précision. C'est très bien pour les analyses psychométriques
+primaires avec \textbf{psych} mais pas avec lavaan qui réclame des facteurs.
+
+On va utiliser la machine à automatiser \textbf{mutate\_at} qui permet d'appliquer une
+transformation sur une série de variable.
+
+Dans le premier argument, on mets \textbf{vars()} et à l'intérieur quelque chose pour
+définir une ou des variables comme avec un \textbf{select}.
+
+Le deuxième argument est la fonction à appliquer et après les arguments optionnels.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{msq\_fact }\OtherTok{\textless{}{-}}\NormalTok{ msq}
+\NormalTok{msq\_fact }\OtherTok{\textless{}{-}}\NormalTok{ msq\_fact }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(active}\SpecialCharTok{:}\NormalTok{at.ease,}\SpecialCharTok{\textasciitilde{}} \FunctionTok{factor}\NormalTok{(.x,}\AttributeTok{ordered=}\NormalTok{T)))}
+\end{Highlighting}
+\end{Shaded}
+
+Pour être vraiment propre, on spécifierait les niveaux :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{msq\_fact }\OtherTok{\textless{}{-}}\NormalTok{ msq\_fact }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(active}\SpecialCharTok{:}\NormalTok{at.ease, }\SpecialCharTok{\textasciitilde{}} \FunctionTok{factor}\NormalTok{(.x,}\AttributeTok{levels=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{),}\AttributeTok{ordered=}\NormalTok{T)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(msq\_fact)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [200 x 14] (S3: tbl_df/tbl/data.frame)
+##  $ active : Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 3 2 2 2 2 4 2 1 4 2 ...
+##  $ alert  : Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 3 2 2 3 3 4 2 2 4 2 ...
+##  $ aroused: Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 1 1 2 1 2 3 1 1 4 1 ...
+##  $ sleepy : Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 1 3 4 2 2 1 3 2 1 2 ...
+##  $ tired  : Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 2 3 4 2 2 1 3 2 1 2 ...
+##  $ drowsy : Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 2 3 3 1 1 1 4 2 1 2 ...
+##  $ anxious: Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 2 2 3 1 1 2 1 1 4 1 ...
+##  $ jittery: Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 2 1 1 1 2 1 1 1 4 1 ...
+##  $ nervous: Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 1 2 2 1 1 1 1 1 2 1 ...
+##  $ calm   : Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 3 3 3 3 4 3 2 4 1 2 ...
+##  $ relaxed: Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 3 3 3 3 3 4 3 3 1 3 ...
+##  $ at.ease: Ord.factor w/ 4 levels "0"<"1"<"2"<"3": 3 3 3 3 4 4 2 3 1 3 ...
+##  $ gender : num [1:200] 2 2 1 2 1 1 2 2 1 1 ...
+##  $ drug   : num [1:200] 2 1 1 2 1 2 2 1 2 1 ...
+\end{verbatim}
+
+Il y a des variantes à \textbf{mutate\_at} comme \textbf{mutate\_if}.
+
+Par exemple, pour centrer/réduire les variables numériques :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\OtherTok{\textless{}{-}}\NormalTok{ iris }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric),scale))}
+\end{Highlighting}
+\end{Shaded}
+
+Si la variable est numérique alors R va centrer/réduire la variable. Donc pas
+de problème avec \textbf{Species} qui est un facteur :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    150 obs. of  5 variables:
+##  $ Sepal.Length: num [1:150, 1] -0.898 -1.139 -1.381 -1.501 -1.018 ...
+##   ..- attr(*, "scaled:center")= num 5.84
+##   ..- attr(*, "scaled:scale")= num 0.828
+##  $ Sepal.Width : num [1:150, 1] 1.0156 -0.1315 0.3273 0.0979 1.245 ...
+##   ..- attr(*, "scaled:center")= num 3.06
+##   ..- attr(*, "scaled:scale")= num 0.436
+##  $ Petal.Length: num [1:150, 1] -1.34 -1.34 -1.39 -1.28 -1.34 ...
+##   ..- attr(*, "scaled:center")= num 3.76
+##   ..- attr(*, "scaled:scale")= num 1.77
+##  $ Petal.Width : num [1:150, 1] -1.31 -1.31 -1.31 -1.31 -1.31 ...
+##   ..- attr(*, "scaled:center")= num 1.2
+##   ..- attr(*, "scaled:scale")= num 0.762
+##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+\end{verbatim}
+
+Soit :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{tbl\_summary}\NormalTok{(}\AttributeTok{statistic =} \FunctionTok{list}\NormalTok{(}
+  \FunctionTok{all\_continuous}\NormalTok{() }\SpecialCharTok{\textasciitilde{}} \StringTok{"\{mean\} (\{sd\})"}\NormalTok{),}\AttributeTok{type =} \FunctionTok{c}\NormalTok{(Sepal.Length}\SpecialCharTok{:}\NormalTok{Petal.Width) }\SpecialCharTok{\textasciitilde{}} \StringTok{"continuous"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|c}
+\hline
+**Caractéristique** & **N = 150**\\
+\hline
+Sepal.Length & 0,00 (1,00)\\
+\hline
+Sepal.Width & 0,00 (1,00)\\
+\hline
+Petal.Length & 0,00 (1,00)\\
+\hline
+Petal.Width & 0,00 (1,00)\\
+\hline
+Species & \\
+\hline
+setosa & 50 (33\%)\\
+\hline
+versicolor & 50 (33\%)\\
+\hline
+virginica & 50 (33\%)\\
+\hline
+\end{tabular}
+
+\section{Opérateurs et case\_when}\label{opuxe9rateurs-et-case_when}
+
+On appelle opérateur des mots-clefs généralement symbolique comme les +,/,==, etc.
+
+Par exemple de très utile, il y a l'opérateur \textbf{\%in\%}.
+
+Il prends un vecteur à gauche et un vecteur à droite.
+
+Dans le cas simple, avec un élement dans un vecteur à gauche, il renvoie vrai si
+l'élement à gauche est présent dans le vecteur de droite :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{3} \SpecialCharTok{\%in\%} \DecValTok{1}\SpecialCharTok{:}\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{{-}}\DecValTok{1} \SpecialCharTok{\%in\%} \DecValTok{1}\SpecialCharTok{:}\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+Quand il y a plusieurs élements à gauche, l'opérateur renvoie une réponse pour
+chaque élement à gauche :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{) }\SpecialCharTok{\%in\%} \DecValTok{1}\SpecialCharTok{:}\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{) }\SpecialCharTok{\%in\%} \DecValTok{1}\SpecialCharTok{:}\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE  TRUE
+\end{verbatim}
+
+Si on veut transformer msq en items dichotomiques, c'est-à-dire coder 0 ou 1 en
+0 et 2 et 3 en 1. Alors ça devient facile.
+
+En fait il y a deux façons de l'écrire. la première est \textbf{old school}.
+
+On utilise la fonction \textbf{ifelse} pour renvoyer 0 ou 1 selon la réponse :
+
+Pour comprendre \textbf{ifelse} un exemple :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{FALSE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{FALSE}\NormalTok{,}\ConstantTok{FALSE}\NormalTok{),}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 0 1 0 0
+\end{verbatim}
+
+\textbf{ifelse} renvoie 1 quand c'est vrai et 0 quand c'est faux. Ce qui nous donne
+associé à notre nouvel opérateur:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{active }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(msq}\SpecialCharTok{$}\NormalTok{active }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{),}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{)}
+\FunctionTok{table}\NormalTok{(active)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## active
+##   0   1 
+## 156  44
+\end{verbatim}
+
+C'est un peu brutal car on ne précise pas explicitement ce que va prendre les
+valeurs 0 et 1.
+
+En plus élégant, il y a une variante à privilégier avec le \textbf{tidyverse}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{msq2 }\OtherTok{\textless{}{-}}\NormalTok{ msq }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{active=}\FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{      active }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \DecValTok{0}\NormalTok{,}
+\NormalTok{      active }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \DecValTok{1}\NormalTok{,}
+      \AttributeTok{.default =} \ConstantTok{NA}
+\NormalTok{))}
+\FunctionTok{table}\NormalTok{(msq2}\SpecialCharTok{$}\NormalTok{active)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   0   1 
+## 156  44
+\end{verbatim}
+
+Mais là, on ne fait qu'un variable à la fois, il faudrait appliquer une fonction
+pour avoir le résultat sur toutes les variables.
+
+Une fonction se définit par un corps de fonction, des arguments et un nom.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ma.fonction }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+  \FunctionTok{return}\NormalTok{(x)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Ce qui donne :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ma.fonction}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+Ce qui est en dernière ligne ou bien (c'est mieux) ce qui est indiqué entre parenthèses
+pour la fonction \textbf{return} est renvoyée.
+
+Donc notre fonction devient :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dichotomiser }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{  resultat }\OtherTok{\textless{}{-}} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{      x }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \DecValTok{0}\NormalTok{,}
+\NormalTok{      x }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \DecValTok{1}\NormalTok{,}
+      \AttributeTok{.default =} \ConstantTok{NA}
+\NormalTok{  )}
+  \FunctionTok{return}\NormalTok{(resultat)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(}\FunctionTok{dichotomiser}\NormalTok{(msq}\SpecialCharTok{$}\NormalTok{active))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   0   1 
+## 156  44
+\end{verbatim}
+
+Pour l'appliquer, il faut se rappeler de \textbf{mutate\_at}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{msq2 }\OtherTok{\textless{}{-}}\NormalTok{ msq }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(active}\SpecialCharTok{:}\NormalTok{at.ease,dichotomiser))}
+\end{Highlighting}
+\end{Shaded}
+
+Ce qui donne bien :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tbl\_summary}\NormalTok{(msq2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|c}
+\hline
+**Caractéristique** & **N = 200**\\
+\hline
+active & 44 (22\%)\\
+\hline
+alert & 49 (25\%)\\
+\hline
+Manquant & 1\\
+\hline
+aroused & 24 (12\%)\\
+\hline
+sleepy & 101 (51\%)\\
+\hline
+Manquant & 2\\
+\hline
+tired & 123 (62\%)\\
+\hline
+drowsy & 98 (49\%)\\
+\hline
+anxious & 26 (13\%)\\
+\hline
+jittery & 31 (16\%)\\
+\hline
+nervous & 20 (10\%)\\
+\hline
+calm & 106 (53\%)\\
+\hline
+relaxed & 119 (60\%)\\
+\hline
+Manquant & 1\\
+\hline
+at.ease & 91 (46\%)\\
+\hline
+Manquant & 2\\
+\hline
+gender & \\
+\hline
+1 & 62 (46\%)\\
+\hline
+2 & 74 (54\%)\\
+\hline
+Manquant & 64\\
+\hline
+drug & \\
+\hline
+1 & 68 (50\%)\\
+\hline
+2 & 68 (50\%)\\
+\hline
+Manquant & 64\\
+\hline
+\end{tabular}
+
+\section{Réutilisation de statistiques}\label{ruxe9utilisation-de-statistiques}
+
+Contrairement aux autres logiciels, les résultats statistiques sont la plupart
+du temps réutilisable par l'utilisateur.
+
+Par exemple, sous Jamovi, il faut créer des variables \textbf{à la main} pour créer
+des variables avec les quantiles.
+
+Pour créer ces variables sous R, c'est beaucoup plus simple, il n'y a pas besoin
+de faire de tests (if):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{quantile}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Length)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          0%         25%         50%         75%        100% 
+## -1.86378030 -0.89767388 -0.05233076  0.67224905  2.48369858
+\end{verbatim}
+
+La fonction \textbf{quantile} nous renvoie les quartiles sous la forme d'un vecteur qu'il
+suffit de combiner avec une autre fonction \textbf{cut}. Cette dernière crée des
+variables facteurs à partir d'une variable quantitative et de points de césure.
+
+Les points de césure sont fournis par la fonction \textbf{quantile}, par conséquent :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(}\FunctionTok{cut}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Length, }\AttributeTok{breaks=}\FunctionTok{quantile}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Length)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   (-1.86,-0.898] (-0.898,-0.0523]  (-0.0523,0.672]     (0.672,2.48] 
+##               40               39               35               35
+\end{verbatim}
+
+Pour généraliser :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{quartiles }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+  \FunctionTok{cut}\NormalTok{(x, }\AttributeTok{breaks=}\FunctionTok{quantile}\NormalTok{(x))}
+\NormalTok{\}}
+\NormalTok{iris2 }\OtherTok{\textless{}{-}}\NormalTok{ iris }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric),quartiles))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tbl\_summary}\NormalTok{(iris2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|c}
+\hline
+**Caractéristique** & **N = 150**\\
+\hline
+Sepal.Length & \\
+\hline
+(-1.86,-0.898] & 40 (27\%)\\
+\hline
+(-0.898,-0.0523] & 39 (26\%)\\
+\hline
+(-0.0523,0.672] & 35 (23\%)\\
+\hline
+(0.672,2.48] & 35 (23\%)\\
+\hline
+Manquant & 1\\
+\hline
+Sepal.Width & \\
+\hline
+(-2.43,-0.59] & 46 (31\%)\\
+\hline
+(-0.59,-0.132] & 36 (24\%)\\
+\hline
+(-0.132,0.557] & 30 (20\%)\\
+\hline
+(0.557,3.08] & 37 (25\%)\\
+\hline
+Manquant & 1\\
+\hline
+Petal.Length & \\
+\hline
+(-1.56,-1.22] & 43 (29\%)\\
+\hline
+(-1.22,0.335] & 31 (21\%)\\
+\hline
+(0.335,0.76] & 41 (28\%)\\
+\hline
+(0.76,1.78] & 34 (23\%)\\
+\hline
+Manquant & 1\\
+\hline
+Petal.Width & \\
+\hline
+(-1.44,-1.18] & 36 (25\%)\\
+\hline
+(-1.18,0.132] & 37 (26\%)\\
+\hline
+(0.132,0.788] & 38 (26\%)\\
+\hline
+(0.788,1.71] & 34 (23\%)\\
+\hline
+Manquant & 5\\
+\hline
+Species & \\
+\hline
+setosa & 50 (33\%)\\
+\hline
+versicolor & 50 (33\%)\\
+\hline
+virginica & 50 (33\%)\\
+\hline
+\end{tabular}
+
+\section{Chargement}\label{chargement}
 
 \begin{verbatim}
 ## spc_tbl_ [200 x 17] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
