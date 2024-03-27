@@ -1,3 +1,0 @@
-"0","iris %>% tbl_summary(by=Species) %>%"
-"0","  gtsummary::as_gt() %>% "
-"0","  gt::gtsave(., ""example_gtsummary3.rtf"")"

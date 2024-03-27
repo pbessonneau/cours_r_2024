@@ -372,6 +372,24 @@ ggplot(patient,aes(x=dureeopmin,y=totalechelle))+geom_point(aes(col=sexe))+
   facet_grid(CIM2 ~ Hopital)
 ```
 
+Pour ajouter des étiquettes, il existe la librairie **ggrepel** qui permet 
+de faire en sorte que la superposition des étiquettes soit minimale :
+
+```{r,message=F,warning=FALSE}
+ggplot(patient,aes(x=dureeopmin,y=totalechelle,label=UID))+geom_point(aes(col=sexe))+
+  geom_smooth(method="lm",se=FALSE) +
+  geom_text_repel() +
+  ggtitle("Total des échelles de douleur et durée opération") + 
+  xlab("Durée de l'opération en minutes") + 
+  ylab("Total des échelles de douleur") 
+```
+
+Evidemment toutes les étiquettes ne sont pas dessinés car il y a trop d'individus
+mais cela permet de repérer les individus atypiques.
+
+
+### Tableaux de contingences
+
 Pour les tableaux de fréquences, on peut faire très simple :
 
 ```{r ggplot17}
@@ -437,6 +455,9 @@ on l'appelle une fois que le graphique est terminé, c'est-à-dire en dernier :
 ggplot(long,aes(x=CIM2,y=value,fill=sexe))+geom_bar(position = "dodge",stat="identity")
 ggsave("mon-graphique.png")
 ```
+
+
+
 
 Et ainsi de suite...
 

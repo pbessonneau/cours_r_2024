@@ -1,5 +1,0 @@
-"0","patient$Hopital <- factor(patient$Hopital)"
-"0","patient$sexe <- factor(patient$sexe)"
-"0","patient$CIM2 <- factor(patient$CIM2)"
-"0","patient$ACP <- factor(patient$ACP,levels=c(0,1),labels=c(""Non"",""Oui""))"
-"0",""

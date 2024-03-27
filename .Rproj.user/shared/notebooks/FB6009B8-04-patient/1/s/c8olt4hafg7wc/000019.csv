@@ -1,7 +1,0 @@
-"0","patient <- patient %>% mutate("
-"0","  nbttopj = factor(case_when("
-"0","    postopj-nbttt > 0 ~ ""Sup à 0"","
-"0","    postopj-nbttt <= 0 & postopj-nbttt > -10 ~ ""Entre 0 et -10"","
-"0","    postopj-nbttt <= -10 ~ ""Inf à -10"","
-"0","    .default = NA"
-"0","  )))"

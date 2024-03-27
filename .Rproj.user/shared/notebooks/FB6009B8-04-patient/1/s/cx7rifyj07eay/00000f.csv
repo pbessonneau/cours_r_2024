@@ -1,1 +1,0 @@
-"0","patient$scoliose2 <- factor(ifelse(patient$scoliose==""Non"",""Non"",""Oui""))"
