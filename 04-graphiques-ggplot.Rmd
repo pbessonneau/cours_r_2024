@@ -331,7 +331,7 @@ ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
 
 Pour rajouter une droite de régression :
 
-```{r ggplot16}
+```{r ggplot17a}
 ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
   geom_smooth(method="lm") +
   ggtitle("Caractéristiques des patients") + 
@@ -341,7 +341,7 @@ ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
 ```
 Des courbes de tendances :
 
-```{r}
+```{r ggplot18}
 ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
   geom_smooth() +
   ggtitle("Caractéristiques des patients") + 
@@ -352,7 +352,7 @@ ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
 
 Sans l'intervalle de confiance :
 
-```{r}
+```{r ggplot19}
 ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
   geom_smooth(se=FALSE) +
   ggtitle("Caractéristiques des patients") + 
@@ -363,7 +363,7 @@ ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
 
 Avec l'intervalle de confiance et la droite de régression :
 
-```{r}
+```{r ggplot20}
 ggplot(patient,aes(x=dureeopmin,y=totalechelle))+geom_point(aes(col=sexe))+
   geom_smooth(method="lm",se=FALSE) +
   ggtitle("Total des échelles de douleur et durée opération") + 
@@ -375,7 +375,7 @@ ggplot(patient,aes(x=dureeopmin,y=totalechelle))+geom_point(aes(col=sexe))+
 Pour ajouter des étiquettes, il existe la librairie **ggrepel** qui permet 
 de faire en sorte que la superposition des étiquettes soit minimale :
 
-```{r,message=F,warning=FALSE}
+```{r ggplot21,message=F,warning=FALSE}
 ggplot(patient,aes(x=dureeopmin,y=totalechelle,label=UID))+geom_point(aes(col=sexe))+
   geom_smooth(method="lm",se=FALSE) +
   geom_text_repel() +
@@ -392,11 +392,11 @@ mais cela permet de repérer les individus atypiques.
 
 Pour les tableaux de fréquences, on peut faire très simple :
 
-```{r ggplot17}
+```{r ggplot17b}
 ggplot(patient,aes(sexe))+geom_bar()
 ```
 
-```{r ggplot18}
+```{r ggplot18b}
 ggplot(patient,aes(sexe))+geom_bar()+
   facet_grid(CIM2~Hopital)
 ```
@@ -430,17 +430,17 @@ Il faut spécifier le nom à donner aux deux variables et spécifier le résulta
 du croisement des deux variables qui est le nombre d'observations c'est-à-dire
 le contenu de chaque cellule de __tableau__.
 
-```{r ggplot20}
+```{r ggplot30}
 ggplot(long,aes(x=sexe,y=value,fill=CIM2))+geom_bar(position = "stack",stat="identity")
 ```
 
-```{r ggplot21}
+```{r ggplot31}
 ggplot(long,aes(x=CIM2,y=value,fill=sexe))+geom_bar(position = "dodge",stat="identity")
 ```
 
 D'où le graphique :
 
-```{r ggplot22}
+```{r ggplot32}
 tableau <- table(patient$Hopital,patient$sexe,patient$CIM2)
 long <- melt(tableau,varnames = c("Hopital","sexe","CIM2"),value.name = "value")
 ggplot(long,aes(x=CIM2,y=value,fill=sexe))+
