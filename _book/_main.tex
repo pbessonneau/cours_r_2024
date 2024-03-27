@@ -129,7 +129,8 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Objectif}\label{objectif}
+\hypertarget{objectif}{%
+\chapter{Objectif}\label{objectif}}
 
 Ce document constitue la trame du cours sur R pour les doctorants ``orientation''
 du CRTD du CNAM.
@@ -137,7 +138,8 @@ du CRTD du CNAM.
 Il n'est pas exhaustif et se place plutôt en appui du cours de M. Kilani. Il est
 construit sur les bases et sur les difficultés du langage.
 
-\chapter{Architecture de R}\label{architecture-de-r}
+\hypertarget{architecture-de-r}{%
+\chapter{Architecture de R}\label{architecture-de-r}}
 
 \begin{verbatim}
 ## New names:
@@ -228,7 +230,8 @@ dehors de commentaires. Sinon c'est la catastrophe\ldots{}
 
 \textbf{Utiliser toujours RStudio en mode Projet}
 
-\section{Paquets}\label{paquets}
+\hypertarget{paquets}{%
+\section{Paquets}\label{paquets}}
 
 Les fonctionnalités de R sont finalement assez limitées. Il fait un certain
 nombre de statistiques et surtout fourni des outils mathématiques puissants
@@ -295,9 +298,11 @@ paquets que vous utilisez \textbf{en tête du script}.
 
 Maintenant on va faire des statistiques.
 
-\chapter{Le langage R}\label{le-langage-r}
+\hypertarget{le-langage-r}{%
+\chapter{Le langage R}\label{le-langage-r}}
 
-\section{Introduction}\label{introduction}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
 Le but est d'aborder des notions et de voir quelques exemples.
 
@@ -324,7 +329,8 @@ Vous avez des objets en mémoire dans R et ces objets peuvent servir aussi bien
 de sources de données, d'arguments pour sélectionner une partie des résultats ou
 bien être des résultats d'une opérations statistiques.
 
-\section{Un exemple de traitement de données}\label{un-exemple-de-traitement-de-donnuxe9es}
+\hypertarget{un-exemple-de-traitement-de-donnuxe9es}{%
+\section{Un exemple de traitement de données}\label{un-exemple-de-traitement-de-donnuxe9es}}
 
 On va travailler sur une base de données qui sont les iris de Fisher. C'est
 plus simple car c'est un jeu de données qui est en mémoire dans R, on verra
@@ -386,9 +392,11 @@ on a gardé 5 éléments caractérisant l'individu.
 On voit que R sépare bien chacune des variables. Pour schématiser dans notre cas
 nous avons des individus en ligne et des observations en colonne. Comme Jamovi.
 
-\section{Vecteurs}\label{vecteurs}
+\hypertarget{vecteurs}{%
+\section{Vecteurs}\label{vecteurs}}
 
-\subsection{Exemple de vecteurs}\label{exemple-de-vecteurs}
+\hypertarget{exemple-de-vecteurs}{%
+\subsection{Exemple de vecteurs}\label{exemple-de-vecteurs}}
 
 Là où ça devient différent c'est que la \textbf{data.frame} est en fait un aggrégat
 d'élements plus simples.
@@ -402,12 +410,12 @@ Vous pouvez extraire par exemple la longueur des sépales pour tous les individu
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
-##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
-##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
-##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
-## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
-## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
+##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
+##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
+##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
+## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
+## [146] 6.7 6.3 6.5 6.2 5.9
 \end{verbatim}
 
 Vous regardez par colonne, vous obtenez les valeurs pour les 150 individus.
@@ -462,12 +470,12 @@ Si on fait:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
-##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
-##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
-##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
-## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
-## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
+##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
+##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
+##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
+## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
+## [146] 6.7 6.3 6.5 6.2 5.9
 \end{verbatim}
 
 On retrouve bien nos longueurs.
@@ -489,7 +497,8 @@ Qu'est ce qui se passe ? En fait on a indexé notre \textbf{data.frame}.
 On a dit à R, renvoie nous la variable ``Sepal.Length'' et nous avons décidé de le
 stocker dans une variable autre.
 
-\subsection{Création de vecteurs}\label{cruxe9ation-de-vecteurs}
+\hypertarget{cruxe9ation-de-vecteurs}{%
+\subsection{Création de vecteurs}\label{cruxe9ation-de-vecteurs}}
 
 Pour créer un vecteur, il faut utiliser la fonction \textbf{c} pour \textbf{concatenate}.
 
@@ -729,12 +738,12 @@ on peut faire:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
-##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
-##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
-##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
-## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
-## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
+##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
+##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
+##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
+## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
+## [146] 6.7 6.3 6.5 6.2 5.9
 \end{verbatim}
 
 \begin{Shaded}
@@ -747,7 +756,8 @@ on peut faire:
 ## [1] 5.843333
 \end{verbatim}
 
-\subsection{Les types de vecteurs}\label{les-types-de-vecteurs}
+\hypertarget{les-types-de-vecteurs}{%
+\subsection{Les types de vecteurs}\label{les-types-de-vecteurs}}
 
 les vecteurs en résumé peuvent être :
 - des numéros entiers, \textbf{int}
@@ -850,12 +860,14 @@ Pour faire le résumer d'une variable texte:
 ##         50         50         50
 \end{verbatim}
 
-\subsection{Pour résumé}\label{pour-ruxe9sumuxe9}
+\hypertarget{pour-ruxe9sumuxe9}{%
+\subsection{Pour résumé}\label{pour-ruxe9sumuxe9}}
 
 On a les \textbf{data.frame}, on a les \textbf{vector} de différents types. On sait qu'on
 peut sélectionner les variables par l'intermédiaire de vecteurs.
 
-\section{Sélection des individus}\label{suxe9lection-des-individus}
+\hypertarget{suxe9lection-des-individus}{%
+\section{Sélection des individus}\label{suxe9lection-des-individus}}
 
 Intuitivement, comment sélectionner des individus ?
 
@@ -921,15 +933,14 @@ On l'adapte pour notre cas :
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [19] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
-##  [55]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [73]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [91]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [127] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [145] FALSE FALSE FALSE FALSE FALSE FALSE
+##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [20] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [39] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [58]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [77]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [96]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [115] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [134] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 \end{verbatim}
 
 Donc on indexe les individus :
@@ -1018,7 +1029,8 @@ from iris, filter Species==``versicolor'',
 ## 50          5.0         3.3          1.4         0.2  setosa
 \end{verbatim}
 
-\subsection{Calcul de la moyenne et nouveaux générateurs}\label{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}
+\hypertarget{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}{%
+\subsection{Calcul de la moyenne et nouveaux générateurs}\label{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}}
 
 Pour la moyenne des longueurs de sépales ?
 
@@ -1139,13 +1151,14 @@ Calculer la moyenne de toutes les colonnes sauf Species ?
 ## 3 virginica          6.59        2.97         5.55       2.03
 \end{verbatim}
 
-\chapter{Données de Parcoursup}\label{donnuxe9es-de-parcoursup}
+\hypertarget{donnuxe9es-de-parcoursup}{%
+\chapter{Données de Parcoursup}\label{donnuxe9es-de-parcoursup}}
 
 Les données de ParcourSup viennent de là :
 \href{https://data.education.gouv.fr/explore/embed/dataset/fr-esr-parcoursup/table/?sort=tri}{Parcoursup 2023 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements}
 
 sinon vous avez les métiers en tensions :
-\href{https://data.education.gouv.fr/explore/embed/dataset/fr-en-taux-de-pression-et-demploi/table/?disjunctive.diplome&disjunctive.type_dip_lib&disjunctive.filiere&disjunctive.specialite_lib}{Taux de pression et d'emploi pour les diplômes de la voie professionnelle}
+\href{https://data.education.gouv.fr/explore/embed/dataset/fr-en-taux-de-pression-et-demploi/table/?disjunctive.diplome\&disjunctive.type_dip_lib\&disjunctive.filiere\&disjunctive.specialite_lib}{Taux de pression et d'emploi pour les diplômes de la voie professionnelle}
 
 En suivant les liens vous pouvez télécharger les fichiers Excel.
 
@@ -1215,7 +1228,7 @@ trois temps.
 
 \begin{verbatim}
 ## Rows: 200 Columns: 17
-## -- Column specification -------------------------------------------------------------------------------------------
+## -- Column specification -------------------------------------------------------------------------------------------------
 ## Delimiter: ","
 ## chr  (5): UID, Hopital, sexe, scoliose, drepano
 ## dbl (12): poids, vitaux, CIM2, age, dureeopmin, postopj, ACP, peridurale, periACP, nbttt, totalechelle, nbechelle
@@ -1364,8 +1377,8 @@ faire vous même, il suffit de spécificier chaque à la main :
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: The following named parsers don't match the column names: Sepal.Length, Sepal.Width, Petal.Length,
-## Petal.Width, Species
+## Warning: The following named parsers don't match the column names: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width,
+## Species
 \end{verbatim}
 
 \begin{verbatim}
@@ -1438,9 +1451,11 @@ mettre n'importe objet et l'indexer (presque) comme une \textbf{data.frame}.
 
 On voit que c'est un type \textbf{list}, les \textbf{data.frame}.
 
-\chapter{Résumés rapides descriptives}\label{ruxe9sumuxe9s-rapides-descriptives}
+\hypertarget{ruxe9sumuxe9s-rapides-descriptives}{%
+\chapter{Résumés rapides descriptives}\label{ruxe9sumuxe9s-rapides-descriptives}}
 
-\section{Les premières tables}\label{les-premiuxe8res-tables}
+\hypertarget{les-premiuxe8res-tables}{%
+\section{Les premières tables}\label{les-premiuxe8res-tables}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1605,7 +1620,8 @@ T4 & 23 (12\%) & 27 (14\%) & 50 (25\%) & \\
 \hline
 \end{tabular}
 
-\section{Tableaux croisés}\label{tableaux-croisuxe9s}
+\hypertarget{tableaux-croisuxe9s}{%
+\section{Tableaux croisés}\label{tableaux-croisuxe9s}}
 
 On peut faire des tris croisés et choisir le sens des pourcentages : par cellule,
 par ligne ou par colonne.
@@ -1633,7 +1649,8 @@ B & 67 (58\%) & 33 (39\%) & 100 (50\%) & \\
 \hline
 \end{tabular}
 
-\section{Themes}\label{themes}
+\hypertarget{themes}{%
+\section{Themes}\label{themes}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1666,7 +1683,8 @@ B & 67 (58\%) & 33 (39\%) & 100 (50\%) & \\
 \end{Highlighting}
 \end{Shaded}
 
-\section{Exportation}\label{exportation}
+\hypertarget{exportation}{%
+\section{Exportation}\label{exportation}}
 
 Pour les exporter avec le paquet \textbf{writexl} :
 
@@ -1688,7 +1706,8 @@ Sinon
 \end{Highlighting}
 \end{Shaded}
 
-\section{Personnalisation des statistiques}\label{personnalisation-des-statistiques}
+\hypertarget{personnalisation-des-statistiques}{%
+\section{Personnalisation des statistiques}\label{personnalisation-des-statistiques}}
 
 Sans qu'il soit nécessaire de fonction, vous pouvez personnaliser les sortie.
 
@@ -1696,23 +1715,43 @@ Il suffit de changer la valeur de \textbf{statistic}.
 
 Les mots-clefs sont, pour les variables quantitatives et qualtitatives :
 - \textbf{\{N\_obs\}} total number of observations
-- \textbf{\{N\_miss\}} number of missing observations
-- \textbf{\{N\_nonmiss\}} number of non-missing observations
-- \textbf{\{p\_miss\}} percentage of observations missing
-- \textbf{\{p\_nonmiss\}} percentage of observations not missing
+
+\begin{itemize}
+\item
+  \textbf{\{N\_miss\}} number of missing observations
+\item
+  \textbf{\{N\_nonmiss\}} number of non-missing observations
+\item
+  \textbf{\{p\_miss\}} percentage of observations missing
+\item
+  \textbf{\{p\_nonmiss\}} percentage of observations not missing
+\end{itemize}
 
 Pour les variables quantitatives :
 - \textbf{\{mean\}}
-- \textbf{\{median\}}
-- \textbf{\{sd\}}
-- les quantiles \textbf{\{pDD\}} avec DD un chiffre sur 100 comme \textbf{\{p25\}}
-- \textbf{\{min\}}
-- \textbf{\{max\}}
+
+\begin{itemize}
+\item
+  \textbf{\{median\}}
+\item
+  \textbf{\{sd\}}
+\item
+  les quantiles \textbf{\{pDD\}} avec DD un chiffre sur 100 comme \textbf{\{p25\}}
+\item
+  \textbf{\{min\}}
+\item
+  \textbf{\{max\}}
+\end{itemize}
 
 Pour les variables qualitatives :
 - \textbf{\{p\}} le pourcentage
-- \textbf{\{n\}}, nombre d'observations dans la cellule
-- nombre total \textbf{\{N\}}
+
+\begin{itemize}
+\item
+  \textbf{\{n\}}, nombre d'observations dans la cellule
+\item
+  nombre total \textbf{\{N\}}
+\end{itemize}
 
 Il suffit alors de préciser les statistiques à afficher :
 
@@ -1889,9 +1928,11 @@ virginica & 50 / 150 (33\%)\\
 \hline
 \end{tabular}
 
-\section{Modèles}\label{moduxe8les}
+\hypertarget{moduxe8les}{%
+\section{Modèles}\label{moduxe8les}}
 
-\subsection{Exemple de modèle de régression linéaire}\label{exemple-de-moduxe8le-de-ruxe9gression-linuxe9aire}
+\hypertarget{exemple-de-moduxe8le-de-ruxe9gression-linuxe9aire}{%
+\subsection{Exemple de modèle de régression linéaire}\label{exemple-de-moduxe8le-de-ruxe9gression-linuxe9aire}}
 
 On peut faire aussi des modèles avec gtsummary :
 
@@ -1927,18 +1968,21 @@ dureeopmin & 0,29 & -0,58 – 1,2 & 0,5 & 1,2 & -0,16 – 2,5 & 0,084\\
 Une liste des fonctionnalités est disponible là :
 \href{https://www.danieldsjoberg.com/gtsummary/reference/theme_gtsummary.html\#examples}{Ici}
 
-\chapter{Graphiques et ggplot}\label{graphiques-et-ggplot}
+\hypertarget{graphiques-et-ggplot}{%
+\chapter{Graphiques et ggplot}\label{graphiques-et-ggplot}}
 
 Les graphiques sont une composante de R qui est en partie à l'origine de son
 succès car on peut de très beaux et ce depuis la création de R.
 
-\section{Les graphiques de base}\label{les-graphiques-de-base}
+\hypertarget{les-graphiques-de-base}{%
+\section{Les graphiques de base}\label{les-graphiques-de-base}}
 
 Certaines sont très simples d'autres un peu plus compliquées. Nous verrons dans
 un premier temps les graphiques de base c'est-à-dire qui ne nécessitent pas de
 charger un \textbf{package}.
 
-\subsection{Pour les graphiques de chiffres}\label{pour-les-graphiques-de-chiffres}
+\hypertarget{pour-les-graphiques-de-chiffres}{%
+\subsection{Pour les graphiques de chiffres}\label{pour-les-graphiques-de-chiffres}}
 
 Les premières fonctions présentées sont les plus usuelles comme les histogrammes.
 
@@ -2114,7 +2158,8 @@ suite difficile à lire.
 \includegraphics{_main_files/figure-latex/sexe2-1.pdf}
 \#\# le tidyverse et ggplot
 
-\subsection{Introduction}\label{introduction-1}
+\hypertarget{introduction-1}{%
+\subsection{Introduction}\label{introduction-1}}
 
 Vous pourrez comme précédemment entendre parler des graphiques de base de même
 que des graphiques \textbf{lattice} mais le choucou du \textbf{tidyverse} c'est \textbf{ggplot2}.
@@ -2129,7 +2174,8 @@ On va reprendre notre grammaire. Il faut saisir que \textbf{ggplot2} fonctionne 
 couche. Sur une base, vous additionner des couches qui apporte la personnalisation
 des graphiques.
 
-\subsection{La base}\label{la-base}
+\hypertarget{la-base}{%
+\subsection{La base}\label{la-base}}
 
 Au tout départ, il faut lui passer une \textbf{data.frame}, c'est le passage obligé.
 
@@ -2275,7 +2321,8 @@ On peut vouloir calculer la \textbf{densité} et non les effectifs dans ce cas :
 
 \includegraphics{_main_files/figure-latex/ggplot11-1.pdf}
 
-\subsection{Les autres graphiques}\label{les-autres-graphiques}
+\hypertarget{les-autres-graphiques}{%
+\subsection{Les autres graphiques}\label{les-autres-graphiques}}
 
 Le boxplot :
 
@@ -2420,7 +2467,8 @@ de faire en sorte que la superposition des étiquettes soit minimale :
 Evidemment toutes les étiquettes ne sont pas dessinés car il y a trop d'individus
 mais cela permet de repérer les individus atypiques.
 
-\subsection{Tableaux de contingences}\label{tableaux-de-contingences}
+\hypertarget{tableaux-de-contingences}{%
+\subsection{Tableaux de contingences}\label{tableaux-de-contingences}}
 
 Pour les tableaux de fréquences, on peut faire très simple :
 
@@ -2521,7 +2569,8 @@ on l'appelle une fois que le graphique est terminé, c'est-à-dire en dernier :
 
 Et ainsi de suite\ldots{}
 
-\section{Liens}\label{liens}
+\hypertarget{liens}{%
+\section{Liens}\label{liens}}
 
 Il y a de nombreuses galleries sur le web avec toutes les possiblités offertes
 par les graphiques de base comme les graphiques avec \textbf{ggplot2}.
@@ -2553,7 +2602,8 @@ On peut en parcourir ensemble\ldots{}
 
 \includegraphics{_main_files/figure-latex/unnamed-chunk-80-1.pdf}
 
-\section{Chargement}\label{chargement}
+\hypertarget{chargement}{%
+\section{Chargement}\label{chargement}}
 
 \begin{verbatim}
 ## spc_tbl_ [200 x 17] (S3: spec_tbl_df/tbl_df/tbl/data.frame)

@@ -3,6 +3,7 @@
 
 ```{r setup_ggplot, include=FALSE,message=FALSE,warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(ggrepel)
 require(tidyverse)
 patient <- read_csv("data/patient.csv")
 ```

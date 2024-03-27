@@ -106,22 +106,36 @@ Il suffit de changer la valeur de **statistic**.
 
 Les mots-clefs sont, pour les variables quantitatives et qualtitatives :
 - **{N_obs}** total number of observations
+
 - **{N_miss}** number of missing observations
+
 - **{N_nonmiss}** number of non-missing observations
+
 - **{p_miss}** percentage of observations missing
+
 - **{p_nonmiss}** percentage of observations not missing
+
+
 
 Pour les variables quantitatives :
 - **{mean}**
+
 - **{median}** 
+
 - **{sd}**
+
 - les quantiles **{pDD}** avec DD un chiffre sur 100 comme **{p25}**
+
 - **{min}**
+
 - **{max}**
+
 
 Pour les variables qualitatives :
 - **{p}** le pourcentage
+
 - **{n}**, nombre d'observations dans la cellule
+
 - nombre total **{N}**
 
 Il suffit alors de préciser les statistiques à afficher :
