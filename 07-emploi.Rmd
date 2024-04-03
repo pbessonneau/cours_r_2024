@@ -1,0 +1,284 @@
+
+# Données des lycées pro.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+library(gtsummary)
+library(knitr)
+library(ggrepel)
+```
+
+## Importation des données
+
+On importe les données qui sont contenues dans un fichier Excel.
+
+```{r,message=FALSE,warning=FALSE}
+lycee <- read_excel("data/fr-en-taux-de-pression-et-demploi.xlsx")
+```
+
+```{r}
+str(lycee)
+```
+On a 185 lignes et 18 colonnes. A aller vérifier dans le fichier Excel.
+
+C'est bon.
+
+On a les colonnes __Code diplome...12__ et __Code diplome...15__ qui ont eu
+un problème car elle porte le même nom sous Excel ce qui n'est pas possible dans R.
+R a donc ajouter le numéro de la colonne lors de l'importation.
+
+
+On vérifie qu'on a bien une seule année de diplôme : 
+
+```{r}
+table(lycee$`Année diplôme`)
+```
+On a vu que dans le tableau Excel, on a autant de valeurs pour le **diplôme** et le
+la **Spécialité libellé** que de lignes... De même pour les colonnes **MEFSTAT**
+et **Code Diplôme**.
+
+On voit que la variable __première année__ n'est pas très utile non plus.
+
+On regarde de loin comment ça se comporte :
+
+```{r,message=FALSE,warning=FALSE}
+theme_gtsummary_compact(set_theme = TRUE, font_size = NULL)
+lycee %>% select(-`Année diplôme`,-Diplôme,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme"),
+                 -`Année première année`
+                 ) %>% 
+  tbl_summary()
+reset_gtsummary_theme()
+```
+
+On voit que les libellés sont assez variés, un peu trop avec des libellés comme
+__Mer__ qui n'ont que 3 diplômes comme __Relation client, etc.__.
+
+On regarde les valeurs extrèmes et les quantiles pour les variables quantitatives.
+
+
+```{r}
+theme_gtsummary_compact(set_theme = TRUE, font_size = NULL)
+lycee %>% select(-`Année diplôme`,-Diplôme,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme"),
+                 -`Année première année`
+                 ) %>% select(where(is.numeric)) %>%
+  tbl_summary(statistic = all_continuous() ~ "{mean} ({sd}) {min}-{max}")
+reset_gtsummary_theme()
+
+```
+
+
+On voit que le code type diplome est reconnu comme numérique alors que c'est un 
+code, donc on corrige :
+
+```{r}
+lycee$`Code type diplôme` <- factor(lycee$`Code type diplôme`)
+```
+
+Il y a aussi baleineau sous gravillons, il y a des zéros dans les taux et les admis.
+Donc des spécialités ne doivent pas être assuré cette année là :
+
+```{r}
+nuls <- lycee %>% select(-`Année diplôme`,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme"),
+                 -`Année première année`) %>% 
+  filter(`Admis apprentissage 2019`==0 | `Admis voie scolaire 2019` == 0)
+kable(nuls)
+```
+On n'en a 27 qui apparemment ont un nombre admis nul soit dans l'apprentissage soit 
+dans la voie scolaire.
+
+```{r}
+nuls <- lycee %>% select(-`Année diplôme`,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme"),
+                 -`Année première année`) %>% 
+  filter(`Admis apprentissage 2019`==0 & `Admis voie scolaire 2019` == 0)
+nrow(nuls)
+```
+Et apparemment aucun n'a de nul en même temps. 
+
+On vérifie de ce qu'ils ont fait quand **Capacités** est nulle (division par zéro).
+
+```{r}
+nuls <- lycee %>% select(-`Année diplôme`,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme"),
+                 -`Année première année`) %>% 
+  filter(`Capacité`==0)
+kable(nuls)
+```
+
+En fait ils ont pas fait n'importe quoi, le taux de pression est **NA**.
+
+Par contre au fil de la vérification, on a vu qu'il y avait des taux d'emploi nuls:
+
+```{r}
+nuls <- lycee %>% select(-`Année diplôme`,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme"),
+                 -`Année première année`) %>% 
+  filter(`Taux d'emploi`==0)
+kable(nuls)
+
+```
+Ils sont au nombre de 10 quand même.
+
+
+
+## Analyses
+
+
+On représente le taux de pression graphiquement : Demandes en fonction de Capacité
+
+```{r}
+ggplot(lycee,aes(Demandes,Capacité,col=`Type de diplôme`))+geom_point() +
+  ggtitle("Pression")+
+  geom_smooth(method="lm")
+```
+
+On voit que ça a l'air assez linéaire. Et on voit surtout que certains diplômes
+explose les chiffres en terme de demande. 
+
+On voit demander à ggplot de passer en log pour mieux faire la différence.
+
+```{r}
+ggplot(lycee,aes(Demandes,Capacité,col=`Type de diplôme`))+geom_point() +
+  ggtitle("Pression")+
+  geom_smooth(method="lm")+
+  scale_x_continuous(trans = 'log2') +
+  scale_y_continuous(trans = 'log2')
+
+```
+
+En fait on voit que c'est vers zéro qu'il y a un problème. Ca peut être du au **log2**.
+Mais globalement il n'y a pas d'anomalies à l'oeil.
+
+Et c'est bien logarithmiquement linéaire. Il y a une différence avec plus de capacités
+pour les BAC PRO pour les fortes demandes que pour les CAPs où c'est l'inverse.
+
+
+On regarde le TOP10 des formations en terme de candidats ?
+
+```{r}
+kable(lycee %>% select(-`Année diplôme`,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme"),
+                 -`Année première année`) %>% arrange(desc(Demandes)) %>%
+  slice(1:10))
+  
+```
+
+On regarde maintenant le taux d'emploi au regard du taux de pression :
+
+```{r}
+ggplot(lycee,aes(`Taux de pression`,`Taux d'emploi`))+
+  geom_point() + geom_smooth(method="lm") + facet_grid(`Type de diplôme` ~ .)
+```
+Ouf... on s'y attendait pas.
+
+```{r}
+ggplot(lycee,aes(`Taux de pression`,`Taux d'emploi`))+
+  geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .)
+```
+Apparemment il n'y a pas corrélation claire entre le taux de pression et le taux d'emploi.
+
+On a des points extrêmes, on va ajouter les étiquettes.
+
+```{r}
+ggplot(lycee,aes(`Taux de pression`,`Taux d'emploi`,label=Diplôme))+
+  geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .) + 
+  geom_text_repel()
+```
+Y'a comme un souci...
+
+```{r}
+ggplot(lycee,aes(`Taux de pression`,`Taux d'emploi`,label=`Code diplôme...12`))+
+  geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .) + 
+  geom_text_repel()
+```
+
+Par exemple :
+
+```{r}
+kable(lycee %>% select(-`Année diplôme`,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme...15"),
+                 -`Année première année`) %>% 
+  filter(`Code diplôme...12` %in% c(40022402,40023206,40031109,50022362)))
+```
+Apparemment les charpentiers ne peuvent pas travailler beaucoup.
+
+En fait, on regarde plus systématiquement :
+
+TOP 10 des taux d'emploi :
+```{r}
+kable(lycee %>% group_by(`Type de diplôme`) %>% select(-`Année diplôme`,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme"),
+                 -`Année première année`) %>% slice_max(`Taux d'emploi`,n=10))
+```
+
+et l'inverse
+
+```{r}
+kable(lycee %>% group_by(`Type de diplôme`) %>% select(-`Année diplôme`,-`Spécialité libellé`,
+                 -starts_with("MEFSTAT"),
+                 -starts_with("Code Diplôme"),
+                 -`Année première année`) %>% slice_min(`Taux d'emploi`,n=10))
+```
+
+Est-ce qu'il y a un lien entre l'effectif et le taux d'emploi ?
+
+```{r}
+ggplot(lycee,aes(`Taux de pression`,`Demandes`))+
+  geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .) 
+```
+Il faut qu'on retourne aux **log2**.
+
+```{r}
+ggplot(lycee,aes(`Taux de pression`,`Demandes`))+
+  geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .) +
+  scale_y_continuous(trans="log2")
+```
+Apparemment oui mais ce n'est pas linéaire.
+
+
+Pour faire un graphique avec le taux moyen d'emploi selon la filière ?
+
+```{r}
+graphique <- lycee %>% group_by(Filière) %>% 
+  summarise(Moyenne=mean(`Taux d'emploi`))
+
+ggplot(graphique,aes(Filière,Moyenne,fill=Filière)) + geom_bar(color="black",stat="identity")
+```
+on enlève l'axe des abscisses...
+
+
+```{r}
+graphique <- lycee %>% group_by(Filière) %>% 
+  summarise(Moyenne=mean(`Taux d'emploi`))
+
+ggplot(graphique,aes(Filière,Moyenne,fill=Filière)) + geom_bar(color="black",stat="identity") +
+   theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+
+
+
+
+## Quiz..
+
+
+- Faire les TOP10 et l'inverse pour les Taux de pression
+
+- Faire le graphique du taux moyen selon la Filières du Taux de pression
+

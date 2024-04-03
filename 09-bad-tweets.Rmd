@@ -1,0 +1,97 @@
+
+```{r setup, include=FALSE,message=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require("dslabs")
+data("trump_tweets")
+require(quanteda)
+require("quanteda.textmodels")
+require("quanteda.textstats")
+require("arrow")
+library(quanteda.textmodels)
+library("quanteda.textstats")
+library("quanteda.textplots")
+library(tidyverse)
+require(tm)
+library(rainette)
+require("udpipe")
+require(jsonlite)
+library(wordcloud2)
+library("textometry")
+```
+
+
+```{r}
+trump <- trump_tweets
+
+tr <- corpus(
+  trump$text 
+)
+docnames(tr) <- trump$id_str
+docvars(tr,"source") <- trump$source
+docvars(tr,"created") <- trump$created_at
+docvars(tr,"retweet") <- trump$retweet_count
+docvars(tr,"favorite") <- trump$favorite_count
+trtok <- tokens(tr,remove_punct = T, remove_url = T,remove_separators = T)
+trtok <- tokens_tolower(trtok)
+trtok <- tokens_remove(trtok,stopwords("english"), padding = TRUE) 
+trtok <- tokens_wordstem(trtok)
+
+fc <- fcm(trtok,context = "window", window = 5, tri = FALSE)
+
+tt <- dfm(trtok)
+top=names(topfeatures(tt, 30))
+
+
+tweets <- read_parquet(file = "french_deputies_tweets.parquet") %>%
+  mutate(text = stringr::str_replace_all(.$text, "’", " "))
+tr <- corpus(tweets)
+docvars(tr,"Id") <- tweets$twitterId
+docvars(tr,"date") <- tweets$date
+docvars(tr,"auteur") <- tweets$authorId
+docvars(tr,"group") <- tweets$group
+
+
+corpus <- tweets %>%
+   mutate(text = stringr::str_replace_all(.$text, "’", " ")) %>% 
+   .$text %>% 
+   VectorSource()%>%
+   VCorpus()
+
+corpus <- corpus %>%
+   tm_map(content_transformer(tolower))%>%
+   tm_map(stripWhitespace) %>%
+   tm_map(removeNumbers)%>%
+   tm_map(removePunctuation)%>%
+   tm_map(removeWords, stopwords("fr"))
+
+TDM <- corpus %>%
+   TermDocumentMatrix() %>%
+   as.matrix()
+TDM <- sort(rowSums(TDM),decreasing=TRUE)
+TDM <- data.frame(word = names(TDM),freq=TDM)
+
+barplot(height=head(TDM,10)$freq, names.arg=head(TDM,10)$word, xlab="Mots", ylab="Fréquence", col="#973232",las=2)
+
+
+trtok <- tokens_tolower(trtok) 
+trtok <- tokens_remove(trtok,padding = FALSE) %>%
+   filter(!word %in% stopwords_iso$fr) %>%
+   count(word, sort = TRUE) %>%
+   head(10)
+
+trtok <- tokens_wordstem(trtok)
+
+tt <- dfm(trtok)
+top=names(topfeatures(tt, 30))
+topall=topfeatures(tt, 300)
+
+```
+
+
+```{r}
+n <- 100000
+position.x <- cumsum(c( 0, rnorm(n)))
+position.y <- cumsum(c( 0, rnorm(n)))
+plot(0,0,type="n",xlim=range(position.x),ylim=range(position.y))
+lines(position.x,position.y)
+```

@@ -1,0 +1,54 @@
+
+# Enquête Emploi
+
+```{r setupEEC, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("dplyr")
+
+EEC = read.csv2("data/fd_eec19_csv/FD_EEC_2019.csv", header = TRUE, sep = ";", quote = "\"",
+                dec = ".", fill = TRUE, comment.char = "")	
+
+
+```
+
+## Exemple de calcul d'indicateurs
+
+```{r}
+summarize(EEC,tauxchom = 100*sum(EXTRIAN*(ACTEU %in% c(2)))/sum(EXTRIAN*(ACTEU %in% c(1,2))))
+```
+
+
+```{r}
+summarize(EEC,proportion=sum((ACTEU %in% 2))/sum((ACTEU %in% c(1,2))))*100
+
+summarize(EEC,proportion=sum((SEXE %in% 2))/sum((SEXE %in% c(1,2))))*100
+
+```
+
+
+```{r}
+summarize(EEC,proportion=sum(EXTRIAN*(SEXE %in% 2))/sum(EXTRIAN*(SEXE %in% c(1,2))))*100
+
+summarize(EEC,proportion=sum((SEXE %in% 2 & ACTEU %in% 2))/sum((ACTEU %in% c(1,2) & SEXE %in% 2)))*100
+summarize(EEC,proportion=sum((SEXE %in% 1 & ACTEU %in% 2))/sum((ACTEU %in% c(1,2) & SEXE %in% 1)))*100
+
+
+
+summarize(EEC,proportion=sum(EXTRIAN*(SEXE %in% 2 & ACTEU %in% 2))/sum(EXTRIAN*(SEXE %in% c(1,2) & ACTEU %in% c(2))))*100
+
+summarize(EEC,tauxCDD50 = 100*sum(EXTRIAN*(AGE3 %in% c(50) & STAT2 %in% c(2) & STATUTR %in% c(4)))/
+                    sum(EXTRIAN*(AGE3 %in% c(50) & STAT2 %in% c(2))))
+
+```
+
+                                                   
+Calcul de la part de temps partiel parmi les femmes en emploi en moyenne annuelle sur 2019
+28,4 % en arrondissant à une décimale
+
+```{r}
+summarize(EEC,tauxFTP = 100*sum(EXTRIAN*(SEXE %in% c(2) & ACTEU %in% c(1) & TPPRED %in% c(2)))/
+            sum(EXTRIAN*(SEXE %in% c(2) & ACTEU %in% c(1))))                                                 
+
+```
+                                               
+

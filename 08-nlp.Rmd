@@ -1,0 +1,226 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(quanteda)
+require("quanteda.textmodels")
+require("quanteda.textstats")
+library(quanteda.textmodels)
+library("quanteda.textstats")
+library("quanteda.textplots")
+library(tidyverse)
+require(tm)
+library(rainette)
+require("udpipe")
+require(jsonlite)
+library(wordcloud2)
+library("textometry")
+library(gtsummary)
+```
+
+Dans cette partie, on étudie l'utilisation de la réserve parlementaire par les 
+députés. 
+
+Ce sont les [données de 2014](https://www.data.gouv.fr/fr/datasets/reserve-parlementaire/)
+
+Les questions sont celles d'une personne naïve et sans a priori : 
+
+- Est-ce que les groupes ont dépensé chacun autant ?
+
+- Est-ce que les groupes ont dépensé chacun autant en moyenne ?
+
+- Est-ce vrai pour les députés en moyenne ?
+
+- Quel est l'enveloppe dépensé au total ?
+
+<!-- - Comment on utilise un tableau de données supplémentaires pour avoir les infos -->
+<!-- sur les parlementaires ? -->
+
+- Est-ce possible avec le descriptif d'avoir les mots-clefs pour les sous dépensés ?
+
+
+```{r}
+reserve <- fromJSON("data/reserve/2014_reserve_parlementaire.json")
+```
+
+
+
+Pourquoi c'est compliqué de faire un gtsummary direct ?
+
+En fait on va se demander si il y a un bénéficiaire qui apparait plusieurs fois.
+
+## Bénéficiaires
+
+```{r}
+tb <- table(reserve$Bénéficiaire)
+tb1 <- tb[tb>1]
+names(tb1)
+```
+
+
+
+Si oui, est-ce qu'on peut le mettre sous forme de data.frame ? Pourquoi on a 
+besoin d'une data.frame pour représenter graphiquement ces informations ?
+
+
+```{r}
+dt <- data.frame(Nom=names(tb1),Nombre=as.numeric(tb1))
+dt
+```
+
+Une représentation visuelle de la répartition du nombre sur ceux qui ont plus de
+2 donations et après sur l'ensemble.
+
+
+
+```{r}
+ggplot(dt,aes(Nombre))+geom_histogram()
+```
+
+Quels sont les bénéficiaires de plus de 5 donations ? Ce sont des termes génériques
+ou des entités ?
+
+```{r}
+tbt <- table(reserve$Bénéficiaire)
+dt <- data.frame(Nom=names(tbt),Nombre=as.numeric(tbt))
+dt[dt$Nombre>5,]
+```
+
+
+
+```{r}
+tbt <- table(reserve$Bénéficiaire)
+dt <- data.frame(Nom=names(tbt),Nombre=as.numeric(tbt))
+ggplot(dt,aes(Nombre))+geom_histogram()
+```
+
+## Par groupe politique
+
+Si on regarde les dépenses par groupe.
+
+
+```{r}
+ggplot(dt,aes(Nombre))+geom_histogram()+scale_y_log10()
+```
+```{r}
+ggplot(reserve,aes(Groupe,Montant))+geom_bar(stat="identity",position="dodge")
+```
+
+Mais que ?
+
+```{r}
+table(reserve$Groupe)
+```
+
+
+Il faut trouver et corriger.
+
+
+```{r}
+
+maisque <- reserve %>% filter(Groupe=="")
+
+table(maisque$Nom)
+
+table(maisque$Descriptif)
+
+reserve <- reserve %>% mutate(Groupe=ifelse(Groupe=="","Présidence AN",Groupe))
+```
+
+
+L'erreur corrigée
+
+
+```{r}
+ggplot(reserve,aes(Groupe,Montant))+geom_bar(stat="identity",position="dodge")
+```
+
+
+Les résultats par groupe avec gtsummary ou summarize.
+
+on en profite pour calculer la somme des donations, la donation moyenne par 
+Acteur et le nombre d'acteur par groupe
+
+
+
+```{r}
+groupe <- reserve %>% group_by(Groupe)
+
+res <- groupe %>% summarize(min=min(Montant),max=max(Montant),
+                     Moyenne=mean(Montant),EC=sd(Montant),
+                     Somme=sum(Montant),nbActeur=length(unique(ID_Acteur)),
+                     Somme_par_acteur=Somme/nbActeur)
+res 
+```
+
+
+## Exportation 
+
+Comment l'exporter pour ses collègues ?
+
+
+
+```{r}
+require(writexl)
+write_xlsx(res,"Résultats/Résultats-Deputes-Reserve.xlsx")
+```
+
+## Les sommes par acteurs
+
+Les sommes par acteurs selon les groupes
+
+```{r}
+ggplot(res %>% filter(nbActeur != 1),aes(x=Groupe,y=Somme_par_acteur,fill=Groupe))+
+  geom_bar(,stat="identity",position="dodge")
+```
+
+```{r}
+
+```
+
+## Quoi faire avec le descriptif ?
+
+En utilisant le descriptif :
+
+```{r}
+reserve <- reserve %>% mutate(doc_id=paste0("A",1:nrow(reserve)))
+
+reserve_corpus <- corpus(
+  reserve,
+  text_field = "Descriptif",
+  docid_field = "doc_id"
+)
+
+mystopwords <- c("loire-atlantique")
+
+tok <- tokens(reserve_corpus, remove_punct = TRUE, remove_numbers = TRUE) %>%
+  tokens_remove(pattern = mystopwords,valuetype = 'fixed') %>%
+  tokens_tolower() %>%
+  tokens_remove(stopwords("fr")) %>%
+  tokens_wordstem(language="fr") 
+  
+
+dtm <- dfm(tok)
+
+res <- rainette(dtm, k = 5)
+rainette_explor(res, dtm, reserve_corpus)
+
+```
+
+```{r}
+tok <- tokens(reserve_corpus, remove_punct = TRUE, remove_numbers = TRUE) %>%
+  tokens_remove(pattern = mystopwords,valuetype = 'fixed') %>%
+  tokens_tolower() %>%
+  tokens_remove(stopwords("fr"))
+
+dtm <- dfm(tok)
+
+top=topfeatures(dtm, 30)
+topall=topfeatures(dtm, 300)
+top
+```
+
+```{r}
+dfreq <- data.frame(word=names(topall),freq=as.numeric(topall))
+
+wordcloud2(dfreq,size=2)
+```

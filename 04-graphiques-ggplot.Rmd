@@ -1,6 +1,8 @@
 
 # Graphiques et ggplot
 
+
+
 ```{r setup_ggplot, include=FALSE,message=FALSE,warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggrepel)
@@ -11,13 +13,21 @@ patient <- read_csv("data/patient.csv")
 Les graphiques sont une composante de R qui est en partie à l'origine de son 
 succès car on peut de très beaux et ce depuis la création de R.
 
+
+
 ## Les graphiques de base
+
+
 
 Certaines sont très simples d'autres un peu plus compliquées. Nous verrons dans
 un premier temps les graphiques de base c'est-à-dire qui ne nécessitent pas de
 charger un __package__.
 
+
+
 ### Pour les graphiques de chiffres
+
+
 
 Les premières fonctions présentées sont les plus usuelles comme les histogrammes.
 
@@ -101,7 +111,7 @@ Si on veut tracer une ligne pour la régression linéaire, il faut faire appel
 à la fonction **lm** qui calcule la régression et R se charge du reste.
 
 ```{r poids10}
-coefficients <- lm(dureeopmin~poids,data=patient)
+coefficients <- lm(dureeopmin ~ poids,data=patient)
 plot(patient$poids,patient$dureeopmin,xlab="Poids",ylab="Durée opération en minutes")
 abline(coefficients)
 ```
@@ -114,8 +124,9 @@ D'ailleurs on peut les spécifier nous mêmes :
 ```{r poids11}
 coefficients <- lm(dureeopmin~poids,data=patient)
 plot(patient$poids,patient$dureeopmin,xlab="Poids",ylab="Durée opération en minutes",
-     xlim=c(0,150),ylim=c(0,600))
+     xlim=c(0,150),ylim=c(0,600),type="n")
 abline(coefficients)
+text(patient$poids,patient$dureeopmin,patient$UID)
 ```
 
 Pour sauvegarder un graphique, on doit le faire avant d'appeler la fonction 
@@ -137,7 +148,7 @@ dimension :
 
 ```{r sexe1}
 tableau <- table(patient$sexe)
-barplot(tableau, main = "CIM2", ylab = "Effectifs")
+barplot(tableau, main = "sexe", ylab = "Effectifs")
 ```
 On peut lui passer un argument à deux dimensions mais la table devient tout de 
 suite difficile à lire.
@@ -146,9 +157,13 @@ suite difficile à lire.
 tableau <- table(patient$CIM2,patient$sexe)
 barplot(tableau, main = "CIM2", ylab = "Effectifs")
 ```
+
+
+
+
 ## le tidyverse et ggplot
 
-### Introduction
+
 
 Vous pourrez comme précédemment entendre parler des graphiques de base de même
 que des graphiques __lattice__ mais le choucou du **tidyverse** c'est **ggplot2**.
@@ -167,7 +182,10 @@ On va reprendre notre grammaire. Il faut saisir que **ggplot2** fonctionne par
 couche. Sur une base, vous additionner des couches qui apporte la personnalisation
 des graphiques.
 
+
+
 ### La base
+
 
 Au tout départ, il faut lui passer une **data.frame**, c'est le passage obligé.
 
@@ -281,6 +299,8 @@ ggplot(patient,aes(poids))+geom_histogram(aes(y = ..density..),color="black")+
 
 ### Les autres graphiques
 
+
+
 Le boxplot :
 
 ```{r ggplot12}
@@ -327,8 +347,21 @@ ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
   xlab("Poids") + 
   ylab("Durée de l'opération en minutes") +
   facet_grid(CIM2 ~ Hopital)
-
 ```
+
+Si on veut ajouter une variable de gravité inversée par rapport à la variable
+CIM2, avec 1 l'opération la plus grave et 4 l'opération bénigne:
+
+```{r}
+patient$Gravité <- LETTERS[5 - patient$CIM2]
+ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
+  ggtitle("Caractéristiques des patients") + 
+  xlab("Poids") + 
+  ylab("Durée de l'opération en minutes") +
+  facet_grid(Gravité ~ Hopital)
+```
+
+
 
 Pour rajouter une droite de régression :
 
@@ -354,7 +387,7 @@ ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
 Sans l'intervalle de confiance :
 
 ```{r ggplot19}
-ggplot(patient,aes(x=poids,y=dureeopmin))+geom_point(aes(col=sexe))+
+ggplot(patient,aes(x=vitaux,y=totalechelle))+geom_point(aes(col=sexe))+
   geom_smooth(se=FALSE) +
   ggtitle("Caractéristiques des patients") + 
   xlab("Poids") + 
@@ -391,6 +424,7 @@ mais cela permet de repérer les individus atypiques.
 
 ### Tableaux de contingences
 
+
 Pour les tableaux de fréquences, on peut faire très simple :
 
 ```{r ggplot17b}
@@ -399,7 +433,7 @@ ggplot(patient,aes(sexe))+geom_bar()
 
 ```{r ggplot18b}
 ggplot(patient,aes(sexe))+geom_bar()+
-  facet_grid(CIM2~Hopital)
+  facet_grid(.~Hopital)
 ```
 Là où **ggplot2** commence à devenir compliqué, c'est que **geom_bar** ne va pas
 marcher car il faut lui fournir la **data.frame** avec les statistiques **en ligne**.
@@ -409,7 +443,7 @@ Soit :
 ```{r,echo=FALSE}
 require(reshape2)
 tableau <- table(patient$sexe,patient$CIM2)
-long <- melt(tableau,varnames = c("sexe","CIM2"),value.name = "value")
+long <- melt(tableau,varnames = c("sexe","CIM2"),value.name = "effectif")
 long
 ```
 
@@ -435,16 +469,20 @@ le contenu de chaque cellule de __tableau__.
 ggplot(long,aes(x=sexe,y=value,fill=CIM2))+geom_bar(position = "stack",stat="identity")
 ```
 
+Je dois faire de CIM2 une variable qualitative explicitement. En effet, CIM2 est numérique
+(un entier de 1 à 4). Aussi quand je donne le CIM2 à l'argument **fill=** il ne sait pas
+s'il s'agit de la couleur (qui peut être un code numérique aussi) ou d'une variable qualitative.
+
 ```{r ggplot31}
-ggplot(long,aes(x=CIM2,y=value,fill=sexe))+geom_bar(position = "dodge",stat="identity")
+ggplot(long,aes(x=sexe,y=value,fill=factor(CIM2)))+geom_bar(position = "dodge",stat="identity")
 ```
 
 D'où le graphique :
 
 ```{r ggplot32}
 tableau <- table(patient$Hopital,patient$sexe,patient$CIM2)
-long <- melt(tableau,varnames = c("Hopital","sexe","CIM2"),value.name = "value")
-ggplot(long,aes(x=CIM2,y=value,fill=sexe))+
+long <- melt(tableau,varnames = c("Hopital","sexe","CIM2"),value.name = "effectif")
+ggplot(long,aes(x=CIM2,y=effectif,fill=sexe))+
   geom_bar(position = "dodge",stat="identity")+
   facet_grid(Hopital ~ . )
 ```
@@ -453,16 +491,38 @@ Pour sauvegarder un graphique **ggplot2**, la syntaxe est différente et surtout
 on l'appelle une fois que le graphique est terminé, c'est-à-dire en dernier :
 
 ```{r,include=FALSE}
-ggplot(long,aes(x=CIM2,y=value,fill=sexe))+geom_bar(position = "dodge",stat="identity")
+ggplot(long,aes(x=CIM2,y=effectif,fill=sexe))+geom_bar(position = "dodge",stat="identity")+theme_minimal()
 ggsave("mon-graphique.png")
+
 ```
-
-
 
 
 Et ainsi de suite...
 
+
+### Les thèmes
+
+
+Les graphiques de ggplot peuvent changer selon des thèmes qui définissent des styles
+de graphique différents. Celui à retenir est minimal qui fait que le graphique
+est épuré au maximum :
+
+```{r}
+tableau <- table(patient$Hopital,patient$sexe,patient$CIM2)
+long <- melt(tableau,varnames = c("Hopital","sexe","CIM2"),value.name = "effectif")
+ggplot(long,aes(x=CIM2,y=effectif,fill=sexe))+
+  geom_bar(position = "dodge",stat="identity")+
+  facet_grid(Hopital ~ . ) + theme_minimal()
+```
+
+Il y a 10 à 20 thèmes par défaut et il y a des variantes supplémentaires et de 
+quoi personnaliser ses propres thèmes dans le package **ggthemes**.
+
+
+
 ## Liens
+
+
 
 Il y a de nombreuses galleries sur le web avec toutes les possiblités offertes
 par les graphiques de base comme les graphiques avec **ggplot2**.
