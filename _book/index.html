@@ -4,26 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Patient</title>
+  <title>A Minimal Book on R</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Patient" />
+  <meta property="og:title" content="A Minimal Book on R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
   <meta name="github-repo" content="pbessonneau/Cours_R_2024" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Patient" />
+  <meta name="twitter:title" content="A Minimal Book on R" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
   
 
-<meta name="author" content="Pascal" />
+<meta name="author" content="Pascal Bessonneau" />
 
 
-<meta name="date" content="2024-03-13" />
+<meta name="date" content="2024-04-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,11 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet" />
+<script src="libs/wordcloud2-0.0.1/wordcloud2-all.js"></script>
+<script src="libs/wordcloud2-0.0.1/hover.js"></script>
+<script src="libs/wordcloud2-binding-0.2.1/wordcloud2.js"></script>
 
 
 <style type="text/css">
@@ -161,7 +166,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4.1" data-path="le-langage-r.html"><a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs"><i class="fa fa-check"></i><b>3.4.1</b> Calcul de la moyenne et nouveaux générateurs</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="données-de-parcoursup.html"><a href="données-de-parcoursup.html"><i class="fa fa-check"></i><b>4</b> Données de Parcoursup</a></li>
+<li class="chapter" data-level="4" data-path="importation-de-données.html"><a href="importation-de-données.html"><i class="fa fa-check"></i><b>4</b> Importation de Données</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="importation-de-données.html"><a href="importation-de-données.html#parcours-sup."><i class="fa fa-check"></i><b>4.1</b> Parcours Sup.</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html"><i class="fa fa-check"></i><b>5</b> Résumés rapides descriptives</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#les-premières-tables"><i class="fa fa-check"></i><b>5.1</b> Les premières tables</a></li>
@@ -179,12 +187,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-graphiques-de-base"><i class="fa fa-check"></i><b>6.1</b> Les graphiques de base</a>
 <ul>
 <li class="chapter" data-level="6.1.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#pour-les-graphiques-de-chiffres"><i class="fa fa-check"></i><b>6.1.1</b> Pour les graphiques de chiffres</a></li>
-<li class="chapter" data-level="6.1.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#introduction-1"><i class="fa fa-check"></i><b>6.1.2</b> Introduction</a></li>
-<li class="chapter" data-level="6.1.3" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#la-base"><i class="fa fa-check"></i><b>6.1.3</b> La base</a></li>
-<li class="chapter" data-level="6.1.4" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-autres-graphiques"><i class="fa fa-check"></i><b>6.1.4</b> Les autres graphiques</a></li>
-<li class="chapter" data-level="6.1.5" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#tableaux-de-contingences"><i class="fa fa-check"></i><b>6.1.5</b> Tableaux de contingences</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#liens"><i class="fa fa-check"></i><b>6.2</b> Liens</a></li>
+<li class="chapter" data-level="6.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#le-tidyverse-et-ggplot"><i class="fa fa-check"></i><b>6.2</b> le tidyverse et ggplot</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#la-base"><i class="fa fa-check"></i><b>6.2.1</b> La base</a></li>
+<li class="chapter" data-level="6.2.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-autres-graphiques"><i class="fa fa-check"></i><b>6.2.2</b> Les autres graphiques</a></li>
+<li class="chapter" data-level="6.2.3" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#tableaux-de-contingences"><i class="fa fa-check"></i><b>6.2.3</b> Tableaux de contingences</a></li>
+<li class="chapter" data-level="6.2.4" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-thèmes"><i class="fa fa-check"></i><b>6.2.4</b> Les thèmes</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#liens"><i class="fa fa-check"></i><b>6.3</b> Liens</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html"><i class="fa fa-check"></i><b>7</b> Manipulation avancée (mettre en forme vos données)</a>
 <ul>
@@ -192,6 +203,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#opérateurs-et-case_when"><i class="fa fa-check"></i><b>7.2</b> Opérateurs et case_when</a></li>
 <li class="chapter" data-level="7.3" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#réutilisation-de-statistiques"><i class="fa fa-check"></i><b>7.3</b> Réutilisation de statistiques</a></li>
 <li class="chapter" data-level="7.4" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#chargement"><i class="fa fa-check"></i><b>7.4</b> Chargement</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html"><i class="fa fa-check"></i><b>8</b> Données des lycées pro.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#importation-des-données"><i class="fa fa-check"></i><b>8.1</b> Importation des données</a></li>
+<li class="chapter" data-level="8.2" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#analyses"><i class="fa fa-check"></i><b>8.2</b> Analyses</a></li>
+<li class="chapter" data-level="8.3" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#quiz.."><i class="fa fa-check"></i><b>8.3</b> Quiz..</a></li>
+<li class="chapter" data-level="8.4" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#bénéficiaires"><i class="fa fa-check"></i><b>8.4</b> Bénéficiaires</a></li>
+<li class="chapter" data-level="8.5" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#par-groupe-politique"><i class="fa fa-check"></i><b>8.5</b> Par groupe politique</a></li>
+<li class="chapter" data-level="8.6" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#exportation-1"><i class="fa fa-check"></i><b>8.6</b> Exportation</a></li>
+<li class="chapter" data-level="8.7" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#les-sommes-par-acteurs"><i class="fa fa-check"></i><b>8.7</b> Les sommes par acteurs</a></li>
+<li class="chapter" data-level="8.8" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#quoi-faire-avec-le-descriptif"><i class="fa fa-check"></i><b>8.8</b> Quoi faire avec le descriptif ?</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="enquête-emploi.html"><a href="enquête-emploi.html"><i class="fa fa-check"></i><b>9</b> Enquête Emploi</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="enquête-emploi.html"><a href="enquête-emploi.html#exemple-de-calcul-dindicateurs"><i class="fa fa-check"></i><b>9.1</b> Exemple de calcul d’indicateurs</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="exercices.html"><a href="exercices.html"><i class="fa fa-check"></i><b>10</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="exercices.html"><a href="exercices.html#ask-a-manager"><i class="fa fa-check"></i><b>10.1</b> Ask A Manager</a></li>
+<li class="chapter" data-level="10.2" data-path="exercices.html"><a href="exercices.html#pisa"><i class="fa fa-check"></i><b>10.2</b> PISA</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -205,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Patient</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book on R</a>
           </h1>
         </div>
 
@@ -214,9 +245,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Patient</h1>
-<p class="author"><em>Pascal</em></p>
-<p class="date"><em>2024-03-13</em></p>
+<h1 class="title">A Minimal Book on R</h1>
+<p class="author"><em>Pascal Bessonneau</em></p>
+<p class="date"><em>2024-04-04</em></p>
 </div>
 <div id="objectif" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Objectif<a href="index.html#objectif" class="anchor-section" aria-label="Anchor link to header"></a></h1>

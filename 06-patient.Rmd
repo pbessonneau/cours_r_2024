@@ -1,11 +1,9 @@
 
-```{r setup, include=FALSE}
+```{r setup_patient, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Analyse de la table Patient
-
-
+<!-- # Analyse de la table Patient -->
 
 ## Chargement
 

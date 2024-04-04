@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Graphiques et ggplot | A Minimal Book on R</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Graphiques et ggplot | A Minimal Book on R" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Pascal Bessonneau" />
 
 
-<meta name="date" content="2024-03-28" />
+<meta name="date" content="2024-04-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,11 +52,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet" />
+<script src="libs/wordcloud2-0.0.1/wordcloud2-all.js"></script>
+<script src="libs/wordcloud2-0.0.1/hover.js"></script>
+<script src="libs/wordcloud2-binding-0.2.1/wordcloud2.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -140,7 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Objectif</a></li>
 <li class="chapter" data-level="2" data-path="architecture-de-r.html"><a href="architecture-de-r.html"><i class="fa fa-check"></i><b>2</b> Architecture de R</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="architecture-de-r.html"><a href="architecture-de-r.html#paquets"><i class="fa fa-check"></i><b>2.1</b> Paquets</a></li>
@@ -161,7 +166,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4.1" data-path="le-langage-r.html"><a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs"><i class="fa fa-check"></i><b>3.4.1</b> Calcul de la moyenne et nouveaux générateurs</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="données-de-parcoursup.html"><a href="données-de-parcoursup.html"><i class="fa fa-check"></i><b>4</b> Données de Parcoursup</a></li>
+<li class="chapter" data-level="4" data-path="importation-de-données.html"><a href="importation-de-données.html"><i class="fa fa-check"></i><b>4</b> Importation de Données</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="importation-de-données.html"><a href="importation-de-données.html#parcours-sup."><i class="fa fa-check"></i><b>4.1</b> Parcours Sup.</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html"><i class="fa fa-check"></i><b>5</b> Résumés rapides descriptives</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#les-premières-tables"><i class="fa fa-check"></i><b>5.1</b> Les premières tables</a></li>
@@ -196,6 +204,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#réutilisation-de-statistiques"><i class="fa fa-check"></i><b>7.3</b> Réutilisation de statistiques</a></li>
 <li class="chapter" data-level="7.4" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#chargement"><i class="fa fa-check"></i><b>7.4</b> Chargement</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html"><i class="fa fa-check"></i><b>8</b> Données des lycées pro.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#importation-des-données"><i class="fa fa-check"></i><b>8.1</b> Importation des données</a></li>
+<li class="chapter" data-level="8.2" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#analyses"><i class="fa fa-check"></i><b>8.2</b> Analyses</a></li>
+<li class="chapter" data-level="8.3" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#quiz.."><i class="fa fa-check"></i><b>8.3</b> Quiz..</a></li>
+<li class="chapter" data-level="8.4" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#bénéficiaires"><i class="fa fa-check"></i><b>8.4</b> Bénéficiaires</a></li>
+<li class="chapter" data-level="8.5" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#par-groupe-politique"><i class="fa fa-check"></i><b>8.5</b> Par groupe politique</a></li>
+<li class="chapter" data-level="8.6" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#exportation-1"><i class="fa fa-check"></i><b>8.6</b> Exportation</a></li>
+<li class="chapter" data-level="8.7" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#les-sommes-par-acteurs"><i class="fa fa-check"></i><b>8.7</b> Les sommes par acteurs</a></li>
+<li class="chapter" data-level="8.8" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#quoi-faire-avec-le-descriptif"><i class="fa fa-check"></i><b>8.8</b> Quoi faire avec le descriptif ?</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="enquête-emploi.html"><a href="enquête-emploi.html"><i class="fa fa-check"></i><b>9</b> Enquête Emploi</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="enquête-emploi.html"><a href="enquête-emploi.html#exemple-de-calcul-dindicateurs"><i class="fa fa-check"></i><b>9.1</b> Exemple de calcul d’indicateurs</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="exercices.html"><a href="exercices.html"><i class="fa fa-check"></i><b>10</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="exercices.html"><a href="exercices.html#ask-a-manager"><i class="fa fa-check"></i><b>10.1</b> Ask A Manager</a></li>
+<li class="chapter" data-level="10.2" data-path="exercices.html"><a href="exercices.html#pisa"><i class="fa fa-check"></i><b>10.2</b> PISA</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -228,16 +256,16 @@ charger un <strong>package</strong>.</p>
 <div id="pour-les-graphiques-de-chiffres" class="section level3 hasAnchor" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> Pour les graphiques de chiffres<a href="graphiques-et-ggplot.html#pour-les-graphiques-de-chiffres" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Les premières fonctions présentées sont les plus usuelles comme les histogrammes.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="graphiques-et-ggplot.html#cb1-1" tabindex="-1"></a><span class="fu">hist</span>(patient<span class="sc">$</span>poids)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="graphiques-et-ggplot.html#cb121-1" tabindex="-1"></a><span class="fu">hist</span>(patient<span class="sc">$</span>poids)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids1-1.png" width="672" /></p>
 <p>Ce n’est pas très esthétique. Il y a des arguments aux fonctions qui permettent
 d’améliorer les choses.</p>
 <p>Déjà changer les noms des axes X et y, notamment se débarasser de <strong>Frequency</strong>
 qui est un faux ami en français.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="graphiques-et-ggplot.html#cb2-1" tabindex="-1"></a><span class="fu">hist</span>(patient<span class="sc">$</span>poids,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="graphiques-et-ggplot.html#cb122-1" tabindex="-1"></a><span class="fu">hist</span>(patient<span class="sc">$</span>poids,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids2-1.png" width="672" />
 Ensuite le titre :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="graphiques-et-ggplot.html#cb3-1" tabindex="-1"></a><span class="fu">hist</span>(patient<span class="sc">$</span>poids,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Effectifs&quot;</span>,<span class="at">main=</span><span class="st">&quot;Poids des patients&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="graphiques-et-ggplot.html#cb123-1" tabindex="-1"></a><span class="fu">hist</span>(patient<span class="sc">$</span>poids,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Effectifs&quot;</span>,<span class="at">main=</span><span class="st">&quot;Poids des patients&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids3-1.png" width="672" /></p>
 <p>Pour la couleur, c’est un peu plus compliqué. En effet il y a simple des couleurs
 qui répondent à leurs mots en anglais, la liste est <a href="https://www.datanovia.com/en/blog/awesome-list-of-657-r-color-names/">là</a>.</p>
@@ -245,19 +273,19 @@ qui répondent à leurs mots en anglais, la liste est <a href="https://www.datan
 hexadécimaux. Si vous voulez personnaliser plus les couleurs, je vous conseille
 le paquet <strong>RColorBrewer</strong> qui possède de jolis (et intelligents) assortiments
 de couleurs et <a href="https://larmarange.github.io/analyse-R/couleurs.html">de la lecture</a></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="graphiques-et-ggplot.html#cb4-1" tabindex="-1"></a><span class="fu">hist</span>(patient<span class="sc">$</span>poids,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Effectifs&quot;</span>,<span class="at">main=</span><span class="st">&quot;Poids des patients&quot;</span>,<span class="at">col=</span><span class="st">&quot;lightblue&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="graphiques-et-ggplot.html#cb124-1" tabindex="-1"></a><span class="fu">hist</span>(patient<span class="sc">$</span>poids,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Effectifs&quot;</span>,<span class="at">main=</span><span class="st">&quot;Poids des patients&quot;</span>,<span class="at">col=</span><span class="st">&quot;lightblue&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-73-1.png" width="672" />
 Ensuite il y a les boxplots ou boîtes à moustache pour les variables continues.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="graphiques-et-ggplot.html#cb5-1" tabindex="-1"></a><span class="fu">boxplot</span>(patient<span class="sc">$</span>poids)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="graphiques-et-ggplot.html#cb125-1" tabindex="-1"></a><span class="fu">boxplot</span>(patient<span class="sc">$</span>poids)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids4-1.png" width="672" /></p>
 <p>De même on arrange un peu :</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="graphiques-et-ggplot.html#cb6-1" tabindex="-1"></a><span class="fu">boxplot</span>(patient<span class="sc">$</span>poids,<span class="at">ylab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">main=</span><span class="st">&quot;Poids des patients&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="graphiques-et-ggplot.html#cb126-1" tabindex="-1"></a><span class="fu">boxplot</span>(patient<span class="sc">$</span>poids,<span class="at">ylab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">main=</span><span class="st">&quot;Poids des patients&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids5-1.png" width="672" />
 Pour les boxplots on peut faire un peu mieux, par exemple pour segmenter par type
 de pathologies.</p>
 <p>On passe la <strong>data.frame</strong> patient et on précise le nom de la variable qualitative
 qui doit “séparer” les tracés.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="graphiques-et-ggplot.html#cb7-1" tabindex="-1"></a><span class="fu">boxplot</span>(poids <span class="sc">~</span> CIM2, <span class="at">data =</span> patient,<span class="at">ylab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">main=</span><span class="st">&quot;Poids des patients en fonction du CIM2&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="graphiques-et-ggplot.html#cb127-1" tabindex="-1"></a><span class="fu">boxplot</span>(poids <span class="sc">~</span> CIM2, <span class="at">data =</span> patient,<span class="at">ylab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">main=</span><span class="st">&quot;Poids des patients en fonction du CIM2&quot;</span>) </span></code></pre></div>
 <p><img src="_main_files/figure-html/poids6-1.png" width="672" />
 Le premier argument doit vous paraître un peu abstrait. En fait c’est une formule
 sous R. C’est l’équivalent de “patient=CIM2”.</p>
@@ -267,41 +295,41 @@ explicatives. Ici on en a une de chaque côté.</p>
 par lui :</p>
 <p>Cette fois on a deux arguments qui sont la variable numérique des x en premier
 et la variable numérique des y en second.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="graphiques-et-ggplot.html#cb8-1" tabindex="-1"></a><span class="fu">plot</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="graphiques-et-ggplot.html#cb128-1" tabindex="-1"></a><span class="fu">plot</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids7-1.png" width="672" /></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="graphiques-et-ggplot.html#cb9-1" tabindex="-1"></a><span class="fu">plot</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Durée opération en minutes&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="graphiques-et-ggplot.html#cb129-1" tabindex="-1"></a><span class="fu">plot</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Durée opération en minutes&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids8-1.png" width="672" />
 Qui aurait pu s’écrire :</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="graphiques-et-ggplot.html#cb10-1" tabindex="-1"></a><span class="fu">plot</span>(dureeopmin <span class="sc">~</span> poids,<span class="at">data=</span>patient,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Durée opération en minutes&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="graphiques-et-ggplot.html#cb130-1" tabindex="-1"></a><span class="fu">plot</span>(dureeopmin <span class="sc">~</span> poids,<span class="at">data=</span>patient,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Durée opération en minutes&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids9-1.png" width="672" />
 Si on veut tracer une ligne pour la régression linéaire, il faut faire appel
 à la fonction <strong>lm</strong> qui calcule la régression et R se charge du reste.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="graphiques-et-ggplot.html#cb11-1" tabindex="-1"></a>coefficients <span class="ot">&lt;-</span> <span class="fu">lm</span>(dureeopmin <span class="sc">~</span> poids,<span class="at">data=</span>patient)</span>
-<span id="cb11-2"><a href="graphiques-et-ggplot.html#cb11-2" tabindex="-1"></a><span class="fu">plot</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Durée opération en minutes&quot;</span>)</span>
-<span id="cb11-3"><a href="graphiques-et-ggplot.html#cb11-3" tabindex="-1"></a><span class="fu">abline</span>(coefficients)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="graphiques-et-ggplot.html#cb131-1" tabindex="-1"></a>coefficients <span class="ot">&lt;-</span> <span class="fu">lm</span>(dureeopmin <span class="sc">~</span> poids,<span class="at">data=</span>patient)</span>
+<span id="cb131-2"><a href="graphiques-et-ggplot.html#cb131-2" tabindex="-1"></a><span class="fu">plot</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Durée opération en minutes&quot;</span>)</span>
+<span id="cb131-3"><a href="graphiques-et-ggplot.html#cb131-3" tabindex="-1"></a><span class="fu">abline</span>(coefficients)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids10-1.png" width="672" />
 On voit ici que j’ai appellé <strong>abline</strong> après le plot. En effet, il est nécessaire
 de faire un <strong>plot</strong>, un <strong>hist</strong> ou une <strong>boxplot</strong> avant pour que R initialise
 le graphique notamment le calcul des coordonnées maximales et minimales.</p>
 <p>D’ailleurs on peut les spécifier nous mêmes :</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="graphiques-et-ggplot.html#cb12-1" tabindex="-1"></a>coefficients <span class="ot">&lt;-</span> <span class="fu">lm</span>(dureeopmin<span class="sc">~</span>poids,<span class="at">data=</span>patient)</span>
-<span id="cb12-2"><a href="graphiques-et-ggplot.html#cb12-2" tabindex="-1"></a><span class="fu">plot</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Durée opération en minutes&quot;</span>,</span>
-<span id="cb12-3"><a href="graphiques-et-ggplot.html#cb12-3" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>),<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">600</span>),<span class="at">type=</span><span class="st">&quot;n&quot;</span>)</span>
-<span id="cb12-4"><a href="graphiques-et-ggplot.html#cb12-4" tabindex="-1"></a><span class="fu">abline</span>(coefficients)</span>
-<span id="cb12-5"><a href="graphiques-et-ggplot.html#cb12-5" tabindex="-1"></a><span class="fu">text</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin,patient<span class="sc">$</span>UID)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="graphiques-et-ggplot.html#cb132-1" tabindex="-1"></a>coefficients <span class="ot">&lt;-</span> <span class="fu">lm</span>(dureeopmin<span class="sc">~</span>poids,<span class="at">data=</span>patient)</span>
+<span id="cb132-2"><a href="graphiques-et-ggplot.html#cb132-2" tabindex="-1"></a><span class="fu">plot</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin,<span class="at">xlab=</span><span class="st">&quot;Poids&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Durée opération en minutes&quot;</span>,</span>
+<span id="cb132-3"><a href="graphiques-et-ggplot.html#cb132-3" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>),<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">600</span>),<span class="at">type=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb132-4"><a href="graphiques-et-ggplot.html#cb132-4" tabindex="-1"></a><span class="fu">abline</span>(coefficients)</span>
+<span id="cb132-5"><a href="graphiques-et-ggplot.html#cb132-5" tabindex="-1"></a><span class="fu">text</span>(patient<span class="sc">$</span>poids,patient<span class="sc">$</span>dureeopmin,patient<span class="sc">$</span>UID)</span></code></pre></div>
 <p><img src="_main_files/figure-html/poids11-1.png" width="672" /></p>
 <p>Pour sauvegarder un graphique, on doit le faire avant d’appeler la fonction
 <strong>principale</strong> et refermer le fichier avec la commande <strong>dev.off</strong>:</p>
 <p>La dernière fonction à connaître pour les graphiques de base est le <strong>barplot</strong>.</p>
 <p>Il s’agit de représenter des tableaux de contingence, le plus simple étant à une
 dimension :</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="graphiques-et-ggplot.html#cb13-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>sexe)</span>
-<span id="cb13-2"><a href="graphiques-et-ggplot.html#cb13-2" tabindex="-1"></a><span class="fu">barplot</span>(tableau, <span class="at">main =</span> <span class="st">&quot;sexe&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="graphiques-et-ggplot.html#cb133-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>sexe)</span>
+<span id="cb133-2"><a href="graphiques-et-ggplot.html#cb133-2" tabindex="-1"></a><span class="fu">barplot</span>(tableau, <span class="at">main =</span> <span class="st">&quot;sexe&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/sexe1-1.png" width="672" />
 On peut lui passer un argument à deux dimensions mais la table devient tout de
 suite difficile à lire.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="graphiques-et-ggplot.html#cb14-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>CIM2,patient<span class="sc">$</span>sexe)</span>
-<span id="cb14-2"><a href="graphiques-et-ggplot.html#cb14-2" tabindex="-1"></a><span class="fu">barplot</span>(tableau, <span class="at">main =</span> <span class="st">&quot;CIM2&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="graphiques-et-ggplot.html#cb134-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>CIM2,patient<span class="sc">$</span>sexe)</span>
+<span id="cb134-2"><a href="graphiques-et-ggplot.html#cb134-2" tabindex="-1"></a><span class="fu">barplot</span>(tableau, <span class="at">main =</span> <span class="st">&quot;CIM2&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/sexe2-1.png" width="672" /></p>
 </div>
 </div>
@@ -319,187 +347,158 @@ des graphiques.</p>
 <div id="la-base" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> La base<a href="graphiques-et-ggplot.html#la-base" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Au tout départ, il faut lui passer une <strong>data.frame</strong>, c’est le passage obligé.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="graphiques-et-ggplot.html#cb15-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="graphiques-et-ggplot.html#cb135-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot1-1.png" width="672" />
 Ensuite on précise les variables de travail. Pour l’histogramme, on en a qu’une :</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="graphiques-et-ggplot.html#cb16-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="graphiques-et-ggplot.html#cb136-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot2-1.png" width="672" /></p>
 <p>Vous pouvez constater, que le logiciel a calculé et positionner les légendes
 pour créer un graphique avec poids comme variable des abscisses (horizontal).</p>
 <p>On personnalise en demandant un graphique de type histogramme. En additionnant
 littéralement:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="graphiques-et-ggplot.html#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="graphiques-et-ggplot.html#cb137-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot3-1.png" width="672" /></p>
 <p>Pour modifier les limtes du graphiques, on rajoute :</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="graphiques-et-ggplot.html#cb19-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
-<span id="cb19-2"><a href="graphiques-et-ggplot.html#cb19-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span></span>
-<span id="cb19-3"><a href="graphiques-et-ggplot.html#cb19-3" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>))</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_bar()`).</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="graphiques-et-ggplot.html#cb138-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
+<span id="cb138-2"><a href="graphiques-et-ggplot.html#cb138-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span></span>
+<span id="cb138-3"><a href="graphiques-et-ggplot.html#cb138-3" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>))</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot4-1.png" width="672" /></p>
 <p>Si on veut modifier le nombre de barres verticales (la précision de l’histogramme),
 on précise l’option dans la couche de l’histogramme :</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="graphiques-et-ggplot.html#cb22-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">10</span>)<span class="sc">+</span></span>
-<span id="cb22-2"><a href="graphiques-et-ggplot.html#cb22-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>))</span></code></pre></div>
-<pre><code>## Warning: Removed 2 rows containing missing values (`geom_bar()`).</code></pre>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="graphiques-et-ggplot.html#cb139-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">10</span>)<span class="sc">+</span></span>
+<span id="cb139-2"><a href="graphiques-et-ggplot.html#cb139-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>))</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot5-1.png" width="672" />
 Pour les titres, c’est pareil, on ajoute des couches :</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="graphiques-et-ggplot.html#cb24-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
-<span id="cb24-2"><a href="graphiques-et-ggplot.html#cb24-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
-<span id="cb24-3"><a href="graphiques-et-ggplot.html#cb24-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb24-4"><a href="graphiques-et-ggplot.html#cb24-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb24-5"><a href="graphiques-et-ggplot.html#cb24-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 2 rows containing missing values (`geom_bar()`).</code></pre>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="graphiques-et-ggplot.html#cb140-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
+<span id="cb140-2"><a href="graphiques-et-ggplot.html#cb140-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
+<span id="cb140-3"><a href="graphiques-et-ggplot.html#cb140-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb140-4"><a href="graphiques-et-ggplot.html#cb140-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb140-5"><a href="graphiques-et-ggplot.html#cb140-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot6-1.png" width="672" />
 On peut ajouter des propriétés esthétiques comme la couleur, par exemple :</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="graphiques-et-ggplot.html#cb27-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">fill =</span><span class="st">&quot;lightblue&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb27-2"><a href="graphiques-et-ggplot.html#cb27-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
-<span id="cb27-3"><a href="graphiques-et-ggplot.html#cb27-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-4"><a href="graphiques-et-ggplot.html#cb27-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-5"><a href="graphiques-et-ggplot.html#cb27-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 2 rows containing missing values (`geom_bar()`).</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="graphiques-et-ggplot.html#cb141-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">fill =</span><span class="st">&quot;lightblue&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb141-2"><a href="graphiques-et-ggplot.html#cb141-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
+<span id="cb141-3"><a href="graphiques-et-ggplot.html#cb141-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb141-4"><a href="graphiques-et-ggplot.html#cb141-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb141-5"><a href="graphiques-et-ggplot.html#cb141-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot7-1.png" width="672" /></p>
 <p>Là où <strong>ggplot2</strong> sort du lot, c’est sa capacité à segmenter et à représenter
 avec <a href="https://link.springer.com/book/10.1007/0-387-28695-0">une bonne grammaire graphique</a></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="graphiques-et-ggplot.html#cb30-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids,<span class="at">fill=</span>sexe))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb30-2"><a href="graphiques-et-ggplot.html#cb30-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
-<span id="cb30-3"><a href="graphiques-et-ggplot.html#cb30-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb30-4"><a href="graphiques-et-ggplot.html#cb30-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb30-5"><a href="graphiques-et-ggplot.html#cb30-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_bar()`).</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="graphiques-et-ggplot.html#cb142-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids,<span class="at">fill=</span>sexe))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb142-2"><a href="graphiques-et-ggplot.html#cb142-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
+<span id="cb142-3"><a href="graphiques-et-ggplot.html#cb142-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb142-4"><a href="graphiques-et-ggplot.html#cb142-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb142-5"><a href="graphiques-et-ggplot.html#cb142-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot8-1.png" width="672" /></p>
 <p>On a l’ajout de couleurs ou alors deux graphiques avec des unités bien choisies:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="graphiques-et-ggplot.html#cb33-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids,<span class="at">fill=</span>sexe))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb33-2"><a href="graphiques-et-ggplot.html#cb33-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
-<span id="cb33-3"><a href="graphiques-et-ggplot.html#cb33-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb33-4"><a href="graphiques-et-ggplot.html#cb33-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb33-5"><a href="graphiques-et-ggplot.html#cb33-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>) <span class="sc">+</span></span>
-<span id="cb33-6"><a href="graphiques-et-ggplot.html#cb33-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(sexe <span class="sc">~</span> .)</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_bar()`).</code></pre>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="graphiques-et-ggplot.html#cb143-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids,<span class="at">fill=</span>sexe))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb143-2"><a href="graphiques-et-ggplot.html#cb143-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
+<span id="cb143-3"><a href="graphiques-et-ggplot.html#cb143-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb143-4"><a href="graphiques-et-ggplot.html#cb143-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb143-5"><a href="graphiques-et-ggplot.html#cb143-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>) <span class="sc">+</span></span>
+<span id="cb143-6"><a href="graphiques-et-ggplot.html#cb143-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(sexe <span class="sc">~</span> .)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot9-1.png" width="672" /></p>
 <p>On a de nouveau une formule. Cette fois, c’est à gauche du ~ les lignes et
 à droite les colonnes :</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="graphiques-et-ggplot.html#cb36-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb36-2"><a href="graphiques-et-ggplot.html#cb36-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
-<span id="cb36-3"><a href="graphiques-et-ggplot.html#cb36-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb36-4"><a href="graphiques-et-ggplot.html#cb36-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb36-5"><a href="graphiques-et-ggplot.html#cb36-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>) <span class="sc">+</span></span>
-<span id="cb36-6"><a href="graphiques-et-ggplot.html#cb36-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(sexe <span class="sc">~</span> Hopital)</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 8 rows containing missing values (`geom_bar()`).</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="graphiques-et-ggplot.html#cb144-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb144-2"><a href="graphiques-et-ggplot.html#cb144-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
+<span id="cb144-3"><a href="graphiques-et-ggplot.html#cb144-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb144-4"><a href="graphiques-et-ggplot.html#cb144-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb144-5"><a href="graphiques-et-ggplot.html#cb144-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Effectifs&quot;</span>) <span class="sc">+</span></span>
+<span id="cb144-6"><a href="graphiques-et-ggplot.html#cb144-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(sexe <span class="sc">~</span> Hopital)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot10-1.png" width="672" /></p>
 <p>On peut vouloir calculer la <strong>densité</strong> et non les effectifs dans ce cas :</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="graphiques-et-ggplot.html#cb39-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..),<span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb39-2"><a href="graphiques-et-ggplot.html#cb39-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
-<span id="cb39-3"><a href="graphiques-et-ggplot.html#cb39-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb39-4"><a href="graphiques-et-ggplot.html#cb39-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb39-5"><a href="graphiques-et-ggplot.html#cb39-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densité&quot;</span>) <span class="sc">+</span></span>
-<span id="cb39-6"><a href="graphiques-et-ggplot.html#cb39-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(sexe <span class="sc">~</span> Hopital)</span></code></pre></div>
-<pre><code>## Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
-## ℹ Please use `after_stat(density)` instead.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-## generated.</code></pre>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 8 rows containing missing values (`geom_bar()`).</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="graphiques-et-ggplot.html#cb145-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..),<span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb145-2"><a href="graphiques-et-ggplot.html#cb145-2" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>)) <span class="sc">+</span> </span>
+<span id="cb145-3"><a href="graphiques-et-ggplot.html#cb145-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb145-4"><a href="graphiques-et-ggplot.html#cb145-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb145-5"><a href="graphiques-et-ggplot.html#cb145-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densité&quot;</span>) <span class="sc">+</span></span>
+<span id="cb145-6"><a href="graphiques-et-ggplot.html#cb145-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(sexe <span class="sc">~</span> Hopital)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot11-1.png" width="672" /></p>
 </div>
 <div id="les-autres-graphiques" class="section level3 hasAnchor" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> Les autres graphiques<a href="graphiques-et-ggplot.html#les-autres-graphiques" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Le boxplot :</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="graphiques-et-ggplot.html#cb43-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">fill=</span>sexe))<span class="sc">+</span><span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
-<span id="cb43-2"><a href="graphiques-et-ggplot.html#cb43-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb43-3"><a href="graphiques-et-ggplot.html#cb43-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb43-4"><a href="graphiques-et-ggplot.html#cb43-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densité&quot;</span>) <span class="sc">+</span></span>
-<span id="cb43-5"><a href="graphiques-et-ggplot.html#cb43-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Hopital <span class="sc">~</span> .)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="graphiques-et-ggplot.html#cb146-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">fill=</span>sexe))<span class="sc">+</span><span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb146-2"><a href="graphiques-et-ggplot.html#cb146-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb146-3"><a href="graphiques-et-ggplot.html#cb146-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb146-4"><a href="graphiques-et-ggplot.html#cb146-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densité&quot;</span>) <span class="sc">+</span></span>
+<span id="cb146-5"><a href="graphiques-et-ggplot.html#cb146-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Hopital <span class="sc">~</span> .)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot12-1.png" width="672" /></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="graphiques-et-ggplot.html#cb44-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>sexe,<span class="at">y=</span>poids))<span class="sc">+</span><span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
-<span id="cb44-2"><a href="graphiques-et-ggplot.html#cb44-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb44-3"><a href="graphiques-et-ggplot.html#cb44-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb44-4"><a href="graphiques-et-ggplot.html#cb44-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densité&quot;</span>) <span class="sc">+</span></span>
-<span id="cb44-5"><a href="graphiques-et-ggplot.html#cb44-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Hopital <span class="sc">~</span> .)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="graphiques-et-ggplot.html#cb147-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>sexe,<span class="at">y=</span>poids))<span class="sc">+</span><span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb147-2"><a href="graphiques-et-ggplot.html#cb147-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb147-3"><a href="graphiques-et-ggplot.html#cb147-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb147-4"><a href="graphiques-et-ggplot.html#cb147-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densité&quot;</span>) <span class="sc">+</span></span>
+<span id="cb147-5"><a href="graphiques-et-ggplot.html#cb147-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Hopital <span class="sc">~</span> .)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot13-1.png" width="672" /></p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="graphiques-et-ggplot.html#cb45-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
-<span id="cb45-2"><a href="graphiques-et-ggplot.html#cb45-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb45-3"><a href="graphiques-et-ggplot.html#cb45-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb45-4"><a href="graphiques-et-ggplot.html#cb45-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densité&quot;</span>) <span class="sc">+</span></span>
-<span id="cb45-5"><a href="graphiques-et-ggplot.html#cb45-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(sexe <span class="sc">~</span> Hopital)</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="graphiques-et-ggplot.html#cb148-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(poids))<span class="sc">+</span><span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb148-2"><a href="graphiques-et-ggplot.html#cb148-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Poids des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb148-3"><a href="graphiques-et-ggplot.html#cb148-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb148-4"><a href="graphiques-et-ggplot.html#cb148-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densité&quot;</span>) <span class="sc">+</span></span>
+<span id="cb148-5"><a href="graphiques-et-ggplot.html#cb148-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(sexe <span class="sc">~</span> Hopital)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot14-1.png" width="672" /></p>
 <p>D’où des graphiques en <strong>scatterplot</strong> comme :</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="graphiques-et-ggplot.html#cb46-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
-<span id="cb46-2"><a href="graphiques-et-ggplot.html#cb46-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb46-3"><a href="graphiques-et-ggplot.html#cb46-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb46-4"><a href="graphiques-et-ggplot.html#cb46-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="graphiques-et-ggplot.html#cb149-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
+<span id="cb149-2"><a href="graphiques-et-ggplot.html#cb149-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb149-3"><a href="graphiques-et-ggplot.html#cb149-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb149-4"><a href="graphiques-et-ggplot.html#cb149-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) </span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot15-1.png" width="672" /></p>
 <p>ou en rajoutant plein de trucs :</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="graphiques-et-ggplot.html#cb47-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
-<span id="cb47-2"><a href="graphiques-et-ggplot.html#cb47-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb47-3"><a href="graphiques-et-ggplot.html#cb47-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb47-4"><a href="graphiques-et-ggplot.html#cb47-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
-<span id="cb47-5"><a href="graphiques-et-ggplot.html#cb47-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="graphiques-et-ggplot.html#cb150-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
+<span id="cb150-2"><a href="graphiques-et-ggplot.html#cb150-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb150-3"><a href="graphiques-et-ggplot.html#cb150-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb150-4"><a href="graphiques-et-ggplot.html#cb150-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
+<span id="cb150-5"><a href="graphiques-et-ggplot.html#cb150-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot16-1.png" width="672" /></p>
 <p>Si on veut ajouter une variable de gravité inversée par rapport à la variable
 CIM2, avec 1 l’opération la plus grave et 4 l’opération bénigne:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="graphiques-et-ggplot.html#cb48-1" tabindex="-1"></a>patient<span class="sc">$</span>Gravité <span class="ot">&lt;-</span> LETTERS[<span class="dv">5</span> <span class="sc">-</span> patient<span class="sc">$</span>CIM2]</span>
-<span id="cb48-2"><a href="graphiques-et-ggplot.html#cb48-2" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
-<span id="cb48-3"><a href="graphiques-et-ggplot.html#cb48-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb48-4"><a href="graphiques-et-ggplot.html#cb48-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb48-5"><a href="graphiques-et-ggplot.html#cb48-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
-<span id="cb48-6"><a href="graphiques-et-ggplot.html#cb48-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Gravité <span class="sc">~</span> Hopital)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="graphiques-et-ggplot.html#cb151-1" tabindex="-1"></a>patient<span class="sc">$</span>Gravité <span class="ot">&lt;-</span> LETTERS[<span class="dv">5</span> <span class="sc">-</span> patient<span class="sc">$</span>CIM2]</span>
+<span id="cb151-2"><a href="graphiques-et-ggplot.html#cb151-2" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
+<span id="cb151-3"><a href="graphiques-et-ggplot.html#cb151-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb151-4"><a href="graphiques-et-ggplot.html#cb151-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb151-5"><a href="graphiques-et-ggplot.html#cb151-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
+<span id="cb151-6"><a href="graphiques-et-ggplot.html#cb151-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Gravité <span class="sc">~</span> Hopital)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
 <p>Pour rajouter une droite de régression :</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="graphiques-et-ggplot.html#cb49-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
-<span id="cb49-2"><a href="graphiques-et-ggplot.html#cb49-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
-<span id="cb49-3"><a href="graphiques-et-ggplot.html#cb49-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb49-4"><a href="graphiques-et-ggplot.html#cb49-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb49-5"><a href="graphiques-et-ggplot.html#cb49-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
-<span id="cb49-6"><a href="graphiques-et-ggplot.html#cb49-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="graphiques-et-ggplot.html#cb152-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
+<span id="cb152-2"><a href="graphiques-et-ggplot.html#cb152-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
+<span id="cb152-3"><a href="graphiques-et-ggplot.html#cb152-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb152-4"><a href="graphiques-et-ggplot.html#cb152-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb152-5"><a href="graphiques-et-ggplot.html#cb152-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
+<span id="cb152-6"><a href="graphiques-et-ggplot.html#cb152-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot17a-1.png" width="672" />
 Des courbes de tendances :</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="graphiques-et-ggplot.html#cb51-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
-<span id="cb51-2"><a href="graphiques-et-ggplot.html#cb51-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb51-3"><a href="graphiques-et-ggplot.html#cb51-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb51-4"><a href="graphiques-et-ggplot.html#cb51-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb51-5"><a href="graphiques-et-ggplot.html#cb51-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
-<span id="cb51-6"><a href="graphiques-et-ggplot.html#cb51-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="graphiques-et-ggplot.html#cb153-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>dureeopmin))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
+<span id="cb153-2"><a href="graphiques-et-ggplot.html#cb153-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb153-3"><a href="graphiques-et-ggplot.html#cb153-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb153-4"><a href="graphiques-et-ggplot.html#cb153-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb153-5"><a href="graphiques-et-ggplot.html#cb153-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
+<span id="cb153-6"><a href="graphiques-et-ggplot.html#cb153-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot18-1.png" width="672" /></p>
 <p>Sans l’intervalle de confiance :</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="graphiques-et-ggplot.html#cb53-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>vitaux,<span class="at">y=</span>totalechelle))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
-<span id="cb53-2"><a href="graphiques-et-ggplot.html#cb53-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb53-3"><a href="graphiques-et-ggplot.html#cb53-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb53-4"><a href="graphiques-et-ggplot.html#cb53-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb53-5"><a href="graphiques-et-ggplot.html#cb53-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
-<span id="cb53-6"><a href="graphiques-et-ggplot.html#cb53-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 24 rows containing non-finite values (`stat_smooth()`).</code></pre>
-<pre><code>## Warning: Removed 24 rows containing missing values (`geom_point()`).</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="graphiques-et-ggplot.html#cb154-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>vitaux,<span class="at">y=</span>totalechelle))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
+<span id="cb154-2"><a href="graphiques-et-ggplot.html#cb154-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb154-3"><a href="graphiques-et-ggplot.html#cb154-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Caractéristiques des patients&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb154-4"><a href="graphiques-et-ggplot.html#cb154-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Poids&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb154-5"><a href="graphiques-et-ggplot.html#cb154-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span></span>
+<span id="cb154-6"><a href="graphiques-et-ggplot.html#cb154-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot19-1.png" width="672" /></p>
 <p>Avec l’intervalle de confiance et la droite de régression :</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="graphiques-et-ggplot.html#cb57-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>dureeopmin,<span class="at">y=</span>totalechelle))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
-<span id="cb57-2"><a href="graphiques-et-ggplot.html#cb57-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb57-3"><a href="graphiques-et-ggplot.html#cb57-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Total des échelles de douleur et durée opération&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb57-4"><a href="graphiques-et-ggplot.html#cb57-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb57-5"><a href="graphiques-et-ggplot.html#cb57-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Total des échelles de douleur&quot;</span>) <span class="sc">+</span></span>
-<span id="cb57-6"><a href="graphiques-et-ggplot.html#cb57-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 24 rows containing non-finite values (`stat_smooth()`).</code></pre>
-<pre><code>## Warning: Removed 24 rows containing missing values (`geom_point()`).</code></pre>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="graphiques-et-ggplot.html#cb155-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>dureeopmin,<span class="at">y=</span>totalechelle))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
+<span id="cb155-2"><a href="graphiques-et-ggplot.html#cb155-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb155-3"><a href="graphiques-et-ggplot.html#cb155-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Total des échelles de douleur et durée opération&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb155-4"><a href="graphiques-et-ggplot.html#cb155-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb155-5"><a href="graphiques-et-ggplot.html#cb155-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Total des échelles de douleur&quot;</span>) <span class="sc">+</span></span>
+<span id="cb155-6"><a href="graphiques-et-ggplot.html#cb155-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(CIM2 <span class="sc">~</span> Hopital)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot20-1.png" width="672" /></p>
 <p>Pour ajouter des étiquettes, il existe la librairie <strong>ggrepel</strong> qui permet
 de faire en sorte que la superposition des étiquettes soit minimale :</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="graphiques-et-ggplot.html#cb61-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>dureeopmin,<span class="at">y=</span>totalechelle,<span class="at">label=</span>UID))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
-<span id="cb61-2"><a href="graphiques-et-ggplot.html#cb61-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb61-3"><a href="graphiques-et-ggplot.html#cb61-3" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>() <span class="sc">+</span></span>
-<span id="cb61-4"><a href="graphiques-et-ggplot.html#cb61-4" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Total des échelles de douleur et durée opération&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb61-5"><a href="graphiques-et-ggplot.html#cb61-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb61-6"><a href="graphiques-et-ggplot.html#cb61-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Total des échelles de douleur&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="graphiques-et-ggplot.html#cb156-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(<span class="at">x=</span>dureeopmin,<span class="at">y=</span>totalechelle,<span class="at">label=</span>UID))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>sexe))<span class="sc">+</span></span>
+<span id="cb156-2"><a href="graphiques-et-ggplot.html#cb156-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb156-3"><a href="graphiques-et-ggplot.html#cb156-3" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>() <span class="sc">+</span></span>
+<span id="cb156-4"><a href="graphiques-et-ggplot.html#cb156-4" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Total des échelles de douleur et durée opération&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb156-5"><a href="graphiques-et-ggplot.html#cb156-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Durée de l&#39;opération en minutes&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb156-6"><a href="graphiques-et-ggplot.html#cb156-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Total des échelles de douleur&quot;</span>) </span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot21-1.png" width="672" /></p>
 <p>Evidemment toutes les étiquettes ne sont pas dessinés car il y a trop d’individus
 mais cela permet de repérer les individus atypiques.</p>
@@ -507,20 +506,14 @@ mais cela permet de repérer les individus atypiques.</p>
 <div id="tableaux-de-contingences" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Tableaux de contingences<a href="graphiques-et-ggplot.html#tableaux-de-contingences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pour les tableaux de fréquences, on peut faire très simple :</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="graphiques-et-ggplot.html#cb62-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(sexe))<span class="sc">+</span><span class="fu">geom_bar</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="graphiques-et-ggplot.html#cb157-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(sexe))<span class="sc">+</span><span class="fu">geom_bar</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot17b-1.png" width="672" /></p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="graphiques-et-ggplot.html#cb63-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(sexe))<span class="sc">+</span><span class="fu">geom_bar</span>()<span class="sc">+</span></span>
-<span id="cb63-2"><a href="graphiques-et-ggplot.html#cb63-2" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span>Hopital)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="graphiques-et-ggplot.html#cb158-1" tabindex="-1"></a><span class="fu">ggplot</span>(patient,<span class="fu">aes</span>(sexe))<span class="sc">+</span><span class="fu">geom_bar</span>()<span class="sc">+</span></span>
+<span id="cb158-2"><a href="graphiques-et-ggplot.html#cb158-2" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span>Hopital)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot18b-1.png" width="672" />
 Là où <strong>ggplot2</strong> commence à devenir compliqué, c’est que <strong>geom_bar</strong> ne va pas
 marcher car il faut lui fournir la <strong>data.frame</strong> avec les statistiques <strong>en ligne</strong>.</p>
 <p>Soit :</p>
-<pre><code>## Le chargement a nécessité le package : reshape2</code></pre>
-<pre><code>## 
-## Attachement du package : &#39;reshape2&#39;</code></pre>
-<pre><code>## L&#39;objet suivant est masqué depuis &#39;package:tidyr&#39;:
-## 
-##     smiths</code></pre>
 <pre><code>##       sexe CIM2 effectif
 ## 1  Feminin    1       20
 ## 2 Masculin    1       30
@@ -531,31 +524,31 @@ marcher car il faut lui fournir la <strong>data.frame</strong> avec les statisti
 ## 7  Feminin    4       41
 ## 8 Masculin    4        9</code></pre>
 <p>Pour faire ce tableau, il faut faire appel au <strong>package</strong> <strong>reshape2</strong>.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="graphiques-et-ggplot.html#cb68-1" tabindex="-1"></a><span class="fu">require</span>(reshape2)</span>
-<span id="cb68-2"><a href="graphiques-et-ggplot.html#cb68-2" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>sexe,patient<span class="sc">$</span>CIM2)</span>
-<span id="cb68-3"><a href="graphiques-et-ggplot.html#cb68-3" tabindex="-1"></a>tableau</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="graphiques-et-ggplot.html#cb160-1" tabindex="-1"></a><span class="fu">require</span>(reshape2)</span>
+<span id="cb160-2"><a href="graphiques-et-ggplot.html#cb160-2" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>sexe,patient<span class="sc">$</span>CIM2)</span>
+<span id="cb160-3"><a href="graphiques-et-ggplot.html#cb160-3" tabindex="-1"></a>tableau</span></code></pre></div>
 <pre><code>##           
 ##             1  2  3  4
 ##   Feminin  20 26 28 41
 ##   Masculin 30 24 22  9</code></pre>
 <p>De ce tableau on passe au long en une commande :</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="graphiques-et-ggplot.html#cb70-1" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">melt</span>(tableau,<span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">&quot;sexe&quot;</span>,<span class="st">&quot;CIM2&quot;</span>),<span class="at">value.name =</span> <span class="st">&quot;value&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="graphiques-et-ggplot.html#cb162-1" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">melt</span>(tableau,<span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">&quot;sexe&quot;</span>,<span class="st">&quot;CIM2&quot;</span>),<span class="at">value.name =</span> <span class="st">&quot;value&quot;</span>)</span></code></pre></div>
 <p>Il faut spécifier le nom à donner aux deux variables et spécifier le résultat
 du croisement des deux variables qui est le nombre d’observations c’est-à-dire
 le contenu de chaque cellule de <strong>tableau</strong>.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="graphiques-et-ggplot.html#cb71-1" tabindex="-1"></a><span class="fu">ggplot</span>(long,<span class="fu">aes</span>(<span class="at">x=</span>sexe,<span class="at">y=</span>value,<span class="at">fill=</span>CIM2))<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;stack&quot;</span>,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="graphiques-et-ggplot.html#cb163-1" tabindex="-1"></a><span class="fu">ggplot</span>(long,<span class="fu">aes</span>(<span class="at">x=</span>sexe,<span class="at">y=</span>value,<span class="at">fill=</span>CIM2))<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;stack&quot;</span>,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot30-1.png" width="672" /></p>
 <p>Je dois faire de CIM2 une variable qualitative explicitement. En effet, CIM2 est numérique
 (un entier de 1 à 4). Aussi quand je donne le CIM2 à l’argument <strong>fill=</strong> il ne sait pas
 s’il s’agit de la couleur (qui peut être un code numérique aussi) ou d’une variable qualitative.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="graphiques-et-ggplot.html#cb72-1" tabindex="-1"></a><span class="fu">ggplot</span>(long,<span class="fu">aes</span>(<span class="at">x=</span>sexe,<span class="at">y=</span>value,<span class="at">fill=</span><span class="fu">factor</span>(CIM2)))<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="graphiques-et-ggplot.html#cb164-1" tabindex="-1"></a><span class="fu">ggplot</span>(long,<span class="fu">aes</span>(<span class="at">x=</span>sexe,<span class="at">y=</span>value,<span class="at">fill=</span><span class="fu">factor</span>(CIM2)))<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot31-1.png" width="672" /></p>
 <p>D’où le graphique :</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="graphiques-et-ggplot.html#cb73-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>Hopital,patient<span class="sc">$</span>sexe,patient<span class="sc">$</span>CIM2)</span>
-<span id="cb73-2"><a href="graphiques-et-ggplot.html#cb73-2" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">melt</span>(tableau,<span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">&quot;Hopital&quot;</span>,<span class="st">&quot;sexe&quot;</span>,<span class="st">&quot;CIM2&quot;</span>),<span class="at">value.name =</span> <span class="st">&quot;effectif&quot;</span>)</span>
-<span id="cb73-3"><a href="graphiques-et-ggplot.html#cb73-3" tabindex="-1"></a><span class="fu">ggplot</span>(long,<span class="fu">aes</span>(<span class="at">x=</span>CIM2,<span class="at">y=</span>effectif,<span class="at">fill=</span>sexe))<span class="sc">+</span></span>
-<span id="cb73-4"><a href="graphiques-et-ggplot.html#cb73-4" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
-<span id="cb73-5"><a href="graphiques-et-ggplot.html#cb73-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Hopital <span class="sc">~</span> . )</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="graphiques-et-ggplot.html#cb165-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>Hopital,patient<span class="sc">$</span>sexe,patient<span class="sc">$</span>CIM2)</span>
+<span id="cb165-2"><a href="graphiques-et-ggplot.html#cb165-2" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">melt</span>(tableau,<span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">&quot;Hopital&quot;</span>,<span class="st">&quot;sexe&quot;</span>,<span class="st">&quot;CIM2&quot;</span>),<span class="at">value.name =</span> <span class="st">&quot;effectif&quot;</span>)</span>
+<span id="cb165-3"><a href="graphiques-et-ggplot.html#cb165-3" tabindex="-1"></a><span class="fu">ggplot</span>(long,<span class="fu">aes</span>(<span class="at">x=</span>CIM2,<span class="at">y=</span>effectif,<span class="at">fill=</span>sexe))<span class="sc">+</span></span>
+<span id="cb165-4"><a href="graphiques-et-ggplot.html#cb165-4" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
+<span id="cb165-5"><a href="graphiques-et-ggplot.html#cb165-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Hopital <span class="sc">~</span> . )</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot32-1.png" width="672" /></p>
 <p>Pour sauvegarder un graphique <strong>ggplot2</strong>, la syntaxe est différente et surtout
 on l’appelle une fois que le graphique est terminé, c’est-à-dire en dernier :</p>
@@ -566,12 +559,12 @@ on l’appelle une fois que le graphique est terminé, c’est-à-dire en dernie
 <p>Les graphiques de ggplot peuvent changer selon des thèmes qui définissent des styles
 de graphique différents. Celui à retenir est minimal qui fait que le graphique
 est épuré au maximum :</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="graphiques-et-ggplot.html#cb74-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>Hopital,patient<span class="sc">$</span>sexe,patient<span class="sc">$</span>CIM2)</span>
-<span id="cb74-2"><a href="graphiques-et-ggplot.html#cb74-2" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">melt</span>(tableau,<span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">&quot;Hopital&quot;</span>,<span class="st">&quot;sexe&quot;</span>,<span class="st">&quot;CIM2&quot;</span>),<span class="at">value.name =</span> <span class="st">&quot;effectif&quot;</span>)</span>
-<span id="cb74-3"><a href="graphiques-et-ggplot.html#cb74-3" tabindex="-1"></a><span class="fu">ggplot</span>(long,<span class="fu">aes</span>(<span class="at">x=</span>CIM2,<span class="at">y=</span>effectif,<span class="at">fill=</span>sexe))<span class="sc">+</span></span>
-<span id="cb74-4"><a href="graphiques-et-ggplot.html#cb74-4" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
-<span id="cb74-5"><a href="graphiques-et-ggplot.html#cb74-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Hopital <span class="sc">~</span> . ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="graphiques-et-ggplot.html#cb166-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">table</span>(patient<span class="sc">$</span>Hopital,patient<span class="sc">$</span>sexe,patient<span class="sc">$</span>CIM2)</span>
+<span id="cb166-2"><a href="graphiques-et-ggplot.html#cb166-2" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">melt</span>(tableau,<span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">&quot;Hopital&quot;</span>,<span class="st">&quot;sexe&quot;</span>,<span class="st">&quot;CIM2&quot;</span>),<span class="at">value.name =</span> <span class="st">&quot;effectif&quot;</span>)</span>
+<span id="cb166-3"><a href="graphiques-et-ggplot.html#cb166-3" tabindex="-1"></a><span class="fu">ggplot</span>(long,<span class="fu">aes</span>(<span class="at">x=</span>CIM2,<span class="at">y=</span>effectif,<span class="at">fill=</span>sexe))<span class="sc">+</span></span>
+<span id="cb166-4"><a href="graphiques-et-ggplot.html#cb166-4" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
+<span id="cb166-5"><a href="graphiques-et-ggplot.html#cb166-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Hopital <span class="sc">~</span> . ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
 <p>Il y a 10 à 20 thèmes par défaut et il y a des variantes supplémentaires et de
 quoi personnaliser ses propres thèmes dans le package <strong>ggthemes</strong>.</p>
 </div>
@@ -586,17 +579,15 @@ par les graphiques de base comme les graphiques avec <strong>ggplot2</strong>.</
 <li>…</li>
 </ul>
 <p>On peut en parcourir ensemble…</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="graphiques-et-ggplot.html#cb75-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">dcast</span>(patient, UID <span class="sc">+</span> sexe <span class="sc">~</span> Hopital, <span class="at">value.var =</span> <span class="st">&quot;nbechelle&quot;</span>)</span>
-<span id="cb75-2"><a href="graphiques-et-ggplot.html#cb75-2" tabindex="-1"></a>tableau<span class="sc">$</span>poids <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(tableau<span class="sc">$</span>A),tableau<span class="sc">$</span>A,tableau<span class="sc">$</span>B)</span>
-<span id="cb75-3"><a href="graphiques-et-ggplot.html#cb75-3" tabindex="-1"></a></span>
-<span id="cb75-4"><a href="graphiques-et-ggplot.html#cb75-4" tabindex="-1"></a><span class="fu">ggplot</span>(tableau, <span class="fu">aes</span>(<span class="at">x=</span>nbechelle) ) <span class="sc">+</span></span>
-<span id="cb75-5"><a href="graphiques-et-ggplot.html#cb75-5" tabindex="-1"></a>  <span class="fu">geom_density</span>( <span class="fu">aes</span>(<span class="at">x =</span> A, <span class="at">y =</span> ..density..), <span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span> ) <span class="sc">+</span></span>
-<span id="cb75-6"><a href="graphiques-et-ggplot.html#cb75-6" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">90</span>, <span class="at">y=</span><span class="fl">0.01</span>, <span class="at">label=</span><span class="st">&quot;Hopital A&quot;</span>), <span class="at">color=</span><span class="st">&quot;#69b3a2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb75-7"><a href="graphiques-et-ggplot.html#cb75-7" tabindex="-1"></a>  <span class="fu">geom_density</span>( <span class="fu">aes</span>(<span class="at">x =</span> B, <span class="at">y =</span> <span class="sc">-</span>..density..), <span class="at">fill=</span> <span class="st">&quot;#404080&quot;</span>) <span class="sc">+</span></span>
-<span id="cb75-8"><a href="graphiques-et-ggplot.html#cb75-8" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">90</span>,<span class="at">y=</span><span class="sc">-</span><span class="fl">0.01</span>, <span class="at">label=</span><span class="st">&quot;Hopital B&quot;</span>), <span class="at">color=</span><span class="st">&quot;#404080&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 100 rows containing non-finite values (`stat_density()`).
-## Removed 100 rows containing non-finite values (`stat_density()`).</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="graphiques-et-ggplot.html#cb167-1" tabindex="-1"></a>tableau <span class="ot">&lt;-</span> <span class="fu">dcast</span>(patient, UID <span class="sc">+</span> sexe <span class="sc">~</span> Hopital, <span class="at">value.var =</span> <span class="st">&quot;nbechelle&quot;</span>)</span>
+<span id="cb167-2"><a href="graphiques-et-ggplot.html#cb167-2" tabindex="-1"></a>tableau<span class="sc">$</span>poids <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(tableau<span class="sc">$</span>A),tableau<span class="sc">$</span>A,tableau<span class="sc">$</span>B)</span>
+<span id="cb167-3"><a href="graphiques-et-ggplot.html#cb167-3" tabindex="-1"></a></span>
+<span id="cb167-4"><a href="graphiques-et-ggplot.html#cb167-4" tabindex="-1"></a><span class="fu">ggplot</span>(tableau, <span class="fu">aes</span>(<span class="at">x=</span>nbechelle) ) <span class="sc">+</span></span>
+<span id="cb167-5"><a href="graphiques-et-ggplot.html#cb167-5" tabindex="-1"></a>  <span class="fu">geom_density</span>( <span class="fu">aes</span>(<span class="at">x =</span> A, <span class="at">y =</span> ..density..), <span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span> ) <span class="sc">+</span></span>
+<span id="cb167-6"><a href="graphiques-et-ggplot.html#cb167-6" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">90</span>, <span class="at">y=</span><span class="fl">0.01</span>, <span class="at">label=</span><span class="st">&quot;Hopital A&quot;</span>), <span class="at">color=</span><span class="st">&quot;#69b3a2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb167-7"><a href="graphiques-et-ggplot.html#cb167-7" tabindex="-1"></a>  <span class="fu">geom_density</span>( <span class="fu">aes</span>(<span class="at">x =</span> B, <span class="at">y =</span> <span class="sc">-</span>..density..), <span class="at">fill=</span> <span class="st">&quot;#404080&quot;</span>) <span class="sc">+</span></span>
+<span id="cb167-8"><a href="graphiques-et-ggplot.html#cb167-8" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">90</span>,<span class="at">y=</span><span class="sc">-</span><span class="fl">0.01</span>, <span class="at">label=</span><span class="st">&quot;Hopital B&quot;</span>), <span class="at">color=</span><span class="st">&quot;#404080&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
 
 # Données des lycées pro.
 
-```{r setup, include=FALSE}
+```{r setup_emploi, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readxl)
@@ -137,7 +137,7 @@ Ils sont au nombre de 10 quand même.
 
 On représente le taux de pression graphiquement : Demandes en fonction de Capacité
 
-```{r}
+```{r lycee1}
 ggplot(lycee,aes(Demandes,Capacité,col=`Type de diplôme`))+geom_point() +
   ggtitle("Pression")+
   geom_smooth(method="lm")
@@ -148,7 +148,7 @@ explose les chiffres en terme de demande.
 
 On voit demander à ggplot de passer en log pour mieux faire la différence.
 
-```{r}
+```{r lycee2}
 ggplot(lycee,aes(Demandes,Capacité,col=`Type de diplôme`))+geom_point() +
   ggtitle("Pression")+
   geom_smooth(method="lm")+
@@ -177,13 +177,13 @@ kable(lycee %>% select(-`Année diplôme`,-`Spécialité libellé`,
 
 On regarde maintenant le taux d'emploi au regard du taux de pression :
 
-```{r}
+```{r lycee3}
 ggplot(lycee,aes(`Taux de pression`,`Taux d'emploi`))+
   geom_point() + geom_smooth(method="lm") + facet_grid(`Type de diplôme` ~ .)
 ```
 Ouf... on s'y attendait pas.
 
-```{r}
+```{r lycee4}
 ggplot(lycee,aes(`Taux de pression`,`Taux d'emploi`))+
   geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .)
 ```
@@ -191,14 +191,14 @@ Apparemment il n'y a pas corrélation claire entre le taux de pression et le tau
 
 On a des points extrêmes, on va ajouter les étiquettes.
 
-```{r}
+```{r lycee5}
 ggplot(lycee,aes(`Taux de pression`,`Taux d'emploi`,label=Diplôme))+
   geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .) + 
   geom_text_repel()
 ```
 Y'a comme un souci...
 
-```{r}
+```{r lycee6}
 ggplot(lycee,aes(`Taux de pression`,`Taux d'emploi`,label=`Code diplôme...12`))+
   geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .) + 
   geom_text_repel()
@@ -236,13 +236,13 @@ kable(lycee %>% group_by(`Type de diplôme`) %>% select(-`Année diplôme`,-`Sp�
 
 Est-ce qu'il y a un lien entre l'effectif et le taux d'emploi ?
 
-```{r}
+```{r lycee7}
 ggplot(lycee,aes(`Taux de pression`,`Demandes`))+
   geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .) 
 ```
 Il faut qu'on retourne aux **log2**.
 
-```{r}
+```{r lycee8}
 ggplot(lycee,aes(`Taux de pression`,`Demandes`))+
   geom_point() + geom_smooth()  + facet_grid(`Type de diplôme` ~ .) +
   scale_y_continuous(trans="log2")
@@ -252,7 +252,7 @@ Apparemment oui mais ce n'est pas linéaire.
 
 Pour faire un graphique avec le taux moyen d'emploi selon la filière ?
 
-```{r}
+```{r lycee10}
 graphique <- lycee %>% group_by(Filière) %>% 
   summarise(Moyenne=mean(`Taux d'emploi`))
 
@@ -261,7 +261,7 @@ ggplot(graphique,aes(Filière,Moyenne,fill=Filière)) + geom_bar(color="black",s
 on enlève l'axe des abscisses...
 
 
-```{r}
+```{r lycee11}
 graphique <- lycee %>% group_by(Filière) %>% 
   summarise(Moyenne=mean(`Taux d'emploi`))
 

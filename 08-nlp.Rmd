@@ -1,5 +1,5 @@
 
-```{r setup, include=FALSE}
+```{r setupnlp, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 require(quanteda)
 require("quanteda.textmodels")
@@ -72,7 +72,7 @@ Une représentation visuelle de la répartition du nombre sur ceux qui ont plus 
 
 
 
-```{r}
+```{r reserve1}
 ggplot(dt,aes(Nombre))+geom_histogram()
 ```
 
@@ -87,7 +87,7 @@ dt[dt$Nombre>5,]
 
 
 
-```{r}
+```{r reserve2}
 tbt <- table(reserve$Bénéficiaire)
 dt <- data.frame(Nom=names(tbt),Nombre=as.numeric(tbt))
 ggplot(dt,aes(Nombre))+geom_histogram()
@@ -98,10 +98,12 @@ ggplot(dt,aes(Nombre))+geom_histogram()
 Si on regarde les dépenses par groupe.
 
 
-```{r}
+```{r reserve3}
 ggplot(dt,aes(Nombre))+geom_histogram()+scale_y_log10()
 ```
-```{r}
+
+
+```{r reserve4}
 ggplot(reserve,aes(Groupe,Montant))+geom_bar(stat="identity",position="dodge")
 ```
 
@@ -130,7 +132,7 @@ reserve <- reserve %>% mutate(Groupe=ifelse(Groupe=="","Présidence AN",Groupe))
 L'erreur corrigée
 
 
-```{r}
+```{r reserve5}
 ggplot(reserve,aes(Groupe,Montant))+geom_bar(stat="identity",position="dodge")
 ```
 
@@ -168,7 +170,7 @@ write_xlsx(res,"Résultats/Résultats-Deputes-Reserve.xlsx")
 
 Les sommes par acteurs selon les groupes
 
-```{r}
+```{r reserve6}
 ggplot(res %>% filter(nbActeur != 1),aes(x=Groupe,y=Somme_par_acteur,fill=Groupe))+
   geom_bar(,stat="identity",position="dodge")
 ```
@@ -202,7 +204,7 @@ tok <- tokens(reserve_corpus, remove_punct = TRUE, remove_numbers = TRUE) %>%
 dtm <- dfm(tok)
 
 res <- rainette(dtm, k = 5)
-rainette_explor(res, dtm, reserve_corpus)
+#rainette_explor(res, dtm, reserve_corpus)
 
 ```
 
@@ -219,7 +221,7 @@ topall=topfeatures(dtm, 300)
 top
 ```
 
-```{r}
+```{r reserve20}
 dfreq <- data.frame(word=names(topall),freq=as.numeric(topall))
 
 wordcloud2(dfreq,size=2)
