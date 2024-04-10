@@ -113,14 +113,14 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Patient},
-  pdfauthor={Pascal},
+  pdftitle={A Minimal Book on R},
+  pdfauthor={Pascal Bessonneau},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Patient}
-\author{Pascal}
-\date{2024-03-13}
+\title{A Minimal Book on R}
+\author{Pascal Bessonneau}
+\date{2024-04-09}
 
 \begin{document}
 \maketitle
@@ -129,7 +129,8 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Objectif}\label{objectif}
+\hypertarget{objectif}{%
+\chapter{Objectif}\label{objectif}}
 
 Ce document constitue la trame du cours sur R pour les doctorants ``orientation''
 du CRTD du CNAM.
@@ -137,13 +138,8 @@ du CRTD du CNAM.
 Il n'est pas exhaustif et se place plutôt en appui du cours de M. Kilani. Il est
 construit sur les bases et sur les difficultés du langage.
 
-\chapter{Architecture de R}\label{architecture-de-r}
-
-\begin{verbatim}
-## New names:
-## * `Filière de formation` -> `Filière de formation...10`
-## * `Filière de formation` -> `Filière de formation...14`
-\end{verbatim}
+\hypertarget{architecture-de-r}{%
+\chapter{Architecture de R}\label{architecture-de-r}}
 
 R est à l'origine un logiciel de statistiques. Pour en faciliter l'usage il y
 avait une interface très rugueuse qui était livré avec sous Windows.
@@ -228,7 +224,8 @@ dehors de commentaires. Sinon c'est la catastrophe\ldots{}
 
 \textbf{Utiliser toujours RStudio en mode Projet}
 
-\section{Paquets}\label{paquets}
+\hypertarget{paquets}{%
+\section{Paquets}\label{paquets}}
 
 Les fonctionnalités de R sont finalement assez limitées. Il fait un certain
 nombre de statistiques et surtout fourni des outils mathématiques puissants
@@ -295,9 +292,11 @@ paquets que vous utilisez \textbf{en tête du script}.
 
 Maintenant on va faire des statistiques.
 
-\chapter{Le langage R}\label{le-langage-r}
+\hypertarget{le-langage-r}{%
+\chapter{Le langage R}\label{le-langage-r}}
 
-\section{Introduction}\label{introduction}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
 Le but est d'aborder des notions et de voir quelques exemples.
 
@@ -324,7 +323,8 @@ Vous avez des objets en mémoire dans R et ces objets peuvent servir aussi bien
 de sources de données, d'arguments pour sélectionner une partie des résultats ou
 bien être des résultats d'une opérations statistiques.
 
-\section{Un exemple de traitement de données}\label{un-exemple-de-traitement-de-donnuxe9es}
+\hypertarget{un-exemple-de-traitement-de-donnuxe9es}{%
+\section{Un exemple de traitement de données}\label{un-exemple-de-traitement-de-donnuxe9es}}
 
 On va travailler sur une base de données qui sont les iris de Fisher. C'est
 plus simple car c'est un jeu de données qui est en mémoire dans R, on verra
@@ -386,9 +386,11 @@ on a gardé 5 éléments caractérisant l'individu.
 On voit que R sépare bien chacune des variables. Pour schématiser dans notre cas
 nous avons des individus en ligne et des observations en colonne. Comme Jamovi.
 
-\section{Vecteurs}\label{vecteurs}
+\hypertarget{vecteurs}{%
+\section{Vecteurs}\label{vecteurs}}
 
-\subsection{Exemple de vecteurs}\label{exemple-de-vecteurs}
+\hypertarget{exemple-de-vecteurs}{%
+\subsection{Exemple de vecteurs}\label{exemple-de-vecteurs}}
 
 Là où ça devient différent c'est que la \textbf{data.frame} est en fait un aggrégat
 d'élements plus simples.
@@ -402,12 +404,12 @@ Vous pouvez extraire par exemple la longueur des sépales pour tous les individu
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
-##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
-##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
-##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
-## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
-## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
+##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
+##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
+##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
+## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
+## [146] 6.7 6.3 6.5 6.2 5.9
 \end{verbatim}
 
 Vous regardez par colonne, vous obtenez les valeurs pour les 150 individus.
@@ -462,12 +464,12 @@ Si on fait:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
-##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
-##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
-##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
-## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
-## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
+##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
+##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
+##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
+## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
+## [146] 6.7 6.3 6.5 6.2 5.9
 \end{verbatim}
 
 On retrouve bien nos longueurs.
@@ -489,7 +491,8 @@ Qu'est ce qui se passe ? En fait on a indexé notre \textbf{data.frame}.
 On a dit à R, renvoie nous la variable ``Sepal.Length'' et nous avons décidé de le
 stocker dans une variable autre.
 
-\subsection{Création de vecteurs}\label{cruxe9ation-de-vecteurs}
+\hypertarget{cruxe9ation-de-vecteurs}{%
+\subsection{Création de vecteurs}\label{cruxe9ation-de-vecteurs}}
 
 Pour créer un vecteur, il faut utiliser la fonction \textbf{c} pour \textbf{concatenate}.
 
@@ -729,12 +732,12 @@ on peut faire:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
-##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
-##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
-##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
-## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
-## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2
+##  [30] 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7 6.3 4.9
+##  [59] 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7
+##  [88] 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4
+## [117] 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7
+## [146] 6.7 6.3 6.5 6.2 5.9
 \end{verbatim}
 
 \begin{Shaded}
@@ -747,7 +750,8 @@ on peut faire:
 ## [1] 5.843333
 \end{verbatim}
 
-\subsection{Les types de vecteurs}\label{les-types-de-vecteurs}
+\hypertarget{les-types-de-vecteurs}{%
+\subsection{Les types de vecteurs}\label{les-types-de-vecteurs}}
 
 les vecteurs en résumé peuvent être :
 - des numéros entiers, \textbf{int}
@@ -850,12 +854,14 @@ Pour faire le résumer d'une variable texte:
 ##         50         50         50
 \end{verbatim}
 
-\subsection{Pour résumé}\label{pour-ruxe9sumuxe9}
+\hypertarget{pour-ruxe9sumuxe9}{%
+\subsection{Pour résumé}\label{pour-ruxe9sumuxe9}}
 
 On a les \textbf{data.frame}, on a les \textbf{vector} de différents types. On sait qu'on
 peut sélectionner les variables par l'intermédiaire de vecteurs.
 
-\section{Sélection des individus}\label{suxe9lection-des-individus}
+\hypertarget{suxe9lection-des-individus}{%
+\section{Sélection des individus}\label{suxe9lection-des-individus}}
 
 Intuitivement, comment sélectionner des individus ?
 
@@ -921,15 +927,14 @@ On l'adapte pour notre cas :
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [19] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
-##  [55]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [73]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [91]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [127] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [145] FALSE FALSE FALSE FALSE FALSE FALSE
+##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [20] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [39] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [58]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [77]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [96]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [115] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [134] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 \end{verbatim}
 
 Donc on indexe les individus :
@@ -1018,7 +1023,8 @@ from iris, filter Species==``versicolor'',
 ## 50          5.0         3.3          1.4         0.2  setosa
 \end{verbatim}
 
-\subsection{Calcul de la moyenne et nouveaux générateurs}\label{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}
+\hypertarget{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}{%
+\subsection{Calcul de la moyenne et nouveaux générateurs}\label{calcul-de-la-moyenne-et-nouveaux-guxe9nuxe9rateurs}}
 
 Pour la moyenne des longueurs de sépales ?
 
@@ -1139,13 +1145,17 @@ Calculer la moyenne de toutes les colonnes sauf Species ?
 ## 3 virginica          6.59        2.97         5.55       2.03
 \end{verbatim}
 
-\chapter{Données de Parcoursup}\label{donnuxe9es-de-parcoursup}
+\hypertarget{importation-de-donnuxe9es}{%
+\chapter{Importation de Données}\label{importation-de-donnuxe9es}}
+
+\hypertarget{parcours-sup.}{%
+\section{Parcours Sup.}\label{parcours-sup.}}
 
 Les données de ParcourSup viennent de là :
 \href{https://data.education.gouv.fr/explore/embed/dataset/fr-esr-parcoursup/table/?sort=tri}{Parcoursup 2023 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements}
 
 sinon vous avez les métiers en tensions :
-\href{https://data.education.gouv.fr/explore/embed/dataset/fr-en-taux-de-pression-et-demploi/table/?disjunctive.diplome&disjunctive.type_dip_lib&disjunctive.filiere&disjunctive.specialite_lib}{Taux de pression et d'emploi pour les diplômes de la voie professionnelle}
+\href{https://data.education.gouv.fr/explore/embed/dataset/fr-en-taux-de-pression-et-demploi/table/?disjunctive.diplome\&disjunctive.type_dip_lib\&disjunctive.filiere\&disjunctive.specialite_lib}{Taux de pression et d'emploi pour les diplômes de la voie professionnelle}
 
 En suivant les liens vous pouvez télécharger les fichiers Excel.
 
@@ -1162,12 +1172,6 @@ Déplacer le fichier Excel à la racine de votre projet. puis
 \NormalTok{parcours }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/fr{-}esr{-}parcoursup.xlsx"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## New names:
-## * `Filière de formation` -> `Filière de formation...10`
-## * `Filière de formation` -> `Filière de formation...14`
-\end{verbatim}
 
 Je viens de créer une data.frame du nom de parcours avec le contenu du fichier
 Excel.
@@ -1215,7 +1219,7 @@ trois temps.
 
 \begin{verbatim}
 ## Rows: 200 Columns: 17
-## -- Column specification -------------------------------------------------------------------------------------------
+## -- Column specification -------------------------------------------------------------------------------------------------
 ## Delimiter: ","
 ## chr  (5): UID, Hopital, sexe, scoliose, drepano
 ## dbl (12): poids, vitaux, CIM2, age, dureeopmin, postopj, ACP, peridurale, periACP, nbttt, totalechelle, nbechelle
@@ -1364,8 +1368,8 @@ faire vous même, il suffit de spécificier chaque à la main :
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: The following named parsers don't match the column names: Sepal.Length, Sepal.Width, Petal.Length,
-## Petal.Width, Species
+## Warning: The following named parsers don't match the column names: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width,
+## Species
 \end{verbatim}
 
 \begin{verbatim}
@@ -1438,9 +1442,11 @@ mettre n'importe objet et l'indexer (presque) comme une \textbf{data.frame}.
 
 On voit que c'est un type \textbf{list}, les \textbf{data.frame}.
 
-\chapter{Résumés rapides descriptives}\label{ruxe9sumuxe9s-rapides-descriptives}
+\hypertarget{ruxe9sumuxe9s-rapides-descriptives}{%
+\chapter{Résumés rapides descriptives}\label{ruxe9sumuxe9s-rapides-descriptives}}
 
-\section{Les premières tables}\label{les-premiuxe8res-tables}
+\hypertarget{les-premiuxe8res-tables}{%
+\section{Les premières tables}\label{les-premiuxe8res-tables}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1456,9 +1462,9 @@ On voit que c'est un type \textbf{list}, les \textbf{data.frame}.
 
 \begin{tabular}{l|c}
 \hline
-**Caractéristique** & **N = 32**\\
+**Characteristic** & **N = 32**\\
 \hline
-mpg & 19,2 (15,4 – 22,8)\\
+mpg & 19.2 (15.4, 22.8)\\
 \hline
 cyl & \\
 \hline
@@ -1468,15 +1474,15 @@ cyl & \\
 \hline
 8 & 14 (44\%)\\
 \hline
-disp & 196 (121 – 326)\\
+disp & 196 (121, 326)\\
 \hline
-hp & 123 (97 – 180)\\
+hp & 123 (97, 180)\\
 \hline
-drat & 3,70 (3,08 – 3,92)\\
+drat & 3.70 (3.08, 3.92)\\
 \hline
-wt & 3,33 (2,58 – 3,61)\\
+wt & 3.33 (2.58, 3.61)\\
 \hline
-qsec & 17,71 (16,89 – 18,90)\\
+qsec & 17.71 (16.89, 18.90)\\
 \hline
 vs & 14 (44\%)\\
 \hline
@@ -1496,13 +1502,13 @@ carb & \\
 \hline
 2 & 10 (31\%)\\
 \hline
-3 & 3 (9,4\%)\\
+3 & 3 (9.4\%)\\
 \hline
 4 & 10 (31\%)\\
 \hline
-6 & 1 (3,1\%)\\
+6 & 1 (3.1\%)\\
 \hline
-8 & 1 (3,1\%)\\
+8 & 1 (3.1\%)\\
 \hline
 \end{tabular}
 
@@ -1514,15 +1520,15 @@ carb & \\
 
 \begin{tabular}{l|c}
 \hline
-**Caractéristique** & **N = 150**\\
+**Characteristic** & **N = 150**\\
 \hline
-Sepal.Length & 5,80 (5,10 – 6,40)\\
+Sepal.Length & 5.80 (5.10, 6.40)\\
 \hline
-Sepal.Width & 3,00 (2,80 – 3,30)\\
+Sepal.Width & 3.00 (2.80, 3.30)\\
 \hline
-Petal.Length & 4,35 (1,60 – 5,10)\\
+Petal.Length & 4.35 (1.60, 5.10)\\
 \hline
-Petal.Width & 1,30 (0,30 – 1,80)\\
+Petal.Width & 1.30 (0.30, 1.80)\\
 \hline
 Species & \\
 \hline
@@ -1544,15 +1550,15 @@ Plus fort,
 
 \begin{tabular}{l|c|c|c}
 \hline
-**Caractéristique** & **setosa**, N = 50 & **versicolor**, N = 50 & **virginica**, N = 50\\
+**Characteristic** & **setosa**, N = 50 & **versicolor**, N = 50 & **virginica**, N = 50\\
 \hline
-Sepal.Length & 5,00 (4,80 – 5,20) & 5,90 (5,60 – 6,30) & 6,50 (6,23 – 6,90)\\
+Sepal.Length & 5.00 (4.80, 5.20) & 5.90 (5.60, 6.30) & 6.50 (6.23, 6.90)\\
 \hline
-Sepal.Width & 3,40 (3,20 – 3,68) & 2,80 (2,53 – 3,00) & 3,00 (2,80 – 3,18)\\
+Sepal.Width & 3.40 (3.20, 3.68) & 2.80 (2.53, 3.00) & 3.00 (2.80, 3.18)\\
 \hline
-Petal.Length & 1,50 (1,40 – 1,58) & 4,35 (4,00 – 4,60) & 5,55 (5,10 – 5,88)\\
+Petal.Length & 1.50 (1.40, 1.58) & 4.35 (4.00, 4.60) & 5.55 (5.10, 5.88)\\
 \hline
-Petal.Width & 0,20 (0,20 – 0,30) & 1,30 (1,20 – 1,50) & 2,00 (1,80 – 2,30)\\
+Petal.Width & 0.20 (0.20, 0.30) & 1.30 (1.20, 1.50) & 2.00 (1.80, 2.30)\\
 \hline
 \end{tabular}
 
@@ -1566,15 +1572,15 @@ On peut rajouter un test statistique:
 
 \begin{tabular}{l|c|c|c|c|c}
 \hline
-**Caractéristique** & **Total**, N = 150 & **setosa**, N = 50 & **versicolor**, N = 50 & **virginica**, N = 50 & **p-valeur**\\
+**Characteristic** & **Overall**, N = 150 & **setosa**, N = 50 & **versicolor**, N = 50 & **virginica**, N = 50 & **p-value**\\
 \hline
-Sepal.Length & 5,80 (5,10 – 6,40) & 5,00 (4,80 – 5,20) & 5,90 (5,60 – 6,30) & 6,50 (6,23 – 6,90) & <0,001\\
+Sepal.Length & 5.80 (5.10, 6.40) & 5.00 (4.80, 5.20) & 5.90 (5.60, 6.30) & 6.50 (6.23, 6.90) & <0.001\\
 \hline
-Sepal.Width & 3,00 (2,80 – 3,30) & 3,40 (3,20 – 3,68) & 2,80 (2,53 – 3,00) & 3,00 (2,80 – 3,18) & <0,001\\
+Sepal.Width & 3.00 (2.80, 3.30) & 3.40 (3.20, 3.68) & 2.80 (2.53, 3.00) & 3.00 (2.80, 3.18) & <0.001\\
 \hline
-Petal.Length & 4,35 (1,60 – 5,10) & 1,50 (1,40 – 1,58) & 4,35 (4,00 – 4,60) & 5,55 (5,10 – 5,88) & <0,001\\
+Petal.Length & 4.35 (1.60, 5.10) & 1.50 (1.40, 1.58) & 4.35 (4.00, 4.60) & 5.55 (5.10, 5.88) & <0.001\\
 \hline
-Petal.Width & 1,30 (0,30 – 1,80) & 0,20 (0,20 – 0,30) & 1,30 (1,20 – 1,50) & 2,00 (1,80 – 2,30) & <0,001\\
+Petal.Width & 1.30 (0.30, 1.80) & 0.20 (0.20, 0.30) & 1.30 (1.20, 1.50) & 2.00 (1.80, 2.30) & <0.001\\
 \hline
 \end{tabular}
 
@@ -1589,9 +1595,9 @@ Petal.Width & 1,30 (0,30 – 1,80) & 0,20 (0,20 – 0,30) & 1,30 (1,20 – 1,50)
 
 \begin{tabular}{l|c|c|c|c}
 \hline
- & Drug A & Drug B & **Total** & **p-valeur**\\
+ & Drug A & Drug B & **Total** & **p-value**\\
 \hline
-\_\_T Stage\_\_ &  &  &  & 0,9\\
+\_\_T Stage\_\_ &  &  &  & 0.9\\
 \hline
 T1 & 28 (14\%) & 25 (13\%) & 53 (27\%) & \\
 \hline
@@ -1605,7 +1611,8 @@ T4 & 23 (12\%) & 27 (14\%) & 50 (25\%) & \\
 \hline
 \end{tabular}
 
-\section{Tableaux croisés}\label{tableaux-croisuxe9s}
+\hypertarget{tableaux-croisuxe9s}{%
+\section{Tableaux croisés}\label{tableaux-croisuxe9s}}
 
 On peut faire des tris croisés et choisir le sens des pourcentages : par cellule,
 par ligne ou par colonne.
@@ -1621,9 +1628,9 @@ par ligne ou par colonne.
 
 \begin{tabular}{l|c|c|c|c}
 \hline
- & Feminin & Masculin & **Total** & **p-valeur**\\
+ & Feminin & Masculin & **Total** & **p-value**\\
 \hline
-\_\_Hopital\_\_ &  &  &  & 0,007\\
+\_\_Hopital\_\_ &  &  &  & 0.007\\
 \hline
 A & 48 (42\%) & 52 (61\%) & 100 (50\%) & \\
 \hline
@@ -1633,7 +1640,8 @@ B & 67 (58\%) & 33 (39\%) & 100 (50\%) & \\
 \hline
 \end{tabular}
 
-\section{Themes}\label{themes}
+\hypertarget{themes}{%
+\section{Themes}\label{themes}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1648,9 +1656,9 @@ B & 67 (58\%) & 33 (39\%) & 100 (50\%) & \\
 
 \begin{tabular}{l|c|c|c|c}
 \hline
- & Feminin & Masculin & **Total** & **p-valeur**\\
+ & Feminin & Masculin & **Total** & **p-value**\\
 \hline
-\_\_Hopital\_\_ &  &  &  & 0,007\\
+\_\_Hopital\_\_ &  &  &  & 0.007\\
 \hline
 A & 48 (42\%) & 52 (61\%) & 100 (50\%) & \\
 \hline
@@ -1666,7 +1674,8 @@ B & 67 (58\%) & 33 (39\%) & 100 (50\%) & \\
 \end{Highlighting}
 \end{Shaded}
 
-\section{Exportation}\label{exportation}
+\hypertarget{exportation}{%
+\section{Exportation}\label{exportation}}
 
 Pour les exporter avec le paquet \textbf{writexl} :
 
@@ -1688,7 +1697,8 @@ Sinon
 \end{Highlighting}
 \end{Shaded}
 
-\section{Personnalisation des statistiques}\label{personnalisation-des-statistiques}
+\hypertarget{personnalisation-des-statistiques}{%
+\section{Personnalisation des statistiques}\label{personnalisation-des-statistiques}}
 
 Sans qu'il soit nécessaire de fonction, vous pouvez personnaliser les sortie.
 
@@ -1909,9 +1919,11 @@ virginica & 50 / 150 (33\%)\\
 \hline
 \end{tabular}
 
-\section{Modèles}\label{moduxe8les}
+\hypertarget{moduxe8les}{%
+\section{Modèles}\label{moduxe8les}}
 
-\subsection{Exemple de modèle de régression linéaire}\label{exemple-de-moduxe8le-de-ruxe9gression-linuxe9aire}
+\hypertarget{exemple-de-moduxe8le-de-ruxe9gression-linuxe9aire}{%
+\subsection{Exemple de modèle de régression linéaire}\label{exemple-de-moduxe8le-de-ruxe9gression-linuxe9aire}}
 
 On peut faire aussi des modèles avec gtsummary :
 
@@ -1947,18 +1959,21 @@ dureeopmin & 0,29 & -0,58 – 1,2 & 0,5 & 1,2 & -0,16 – 2,5 & 0,084\\
 Une liste des fonctionnalités est disponible là :
 \href{https://www.danieldsjoberg.com/gtsummary/reference/theme_gtsummary.html\#examples}{Ici}
 
-\chapter{Graphiques et ggplot}\label{graphiques-et-ggplot}
+\hypertarget{graphiques-et-ggplot}{%
+\chapter{Graphiques et ggplot}\label{graphiques-et-ggplot}}
 
 Les graphiques sont une composante de R qui est en partie à l'origine de son
 succès car on peut de très beaux et ce depuis la création de R.
 
-\section{Les graphiques de base}\label{les-graphiques-de-base}
+\hypertarget{les-graphiques-de-base}{%
+\section{Les graphiques de base}\label{les-graphiques-de-base}}
 
 Certaines sont très simples d'autres un peu plus compliquées. Nous verrons dans
 un premier temps les graphiques de base c'est-à-dire qui ne nécessitent pas de
 charger un \textbf{package}.
 
-\subsection{Pour les graphiques de chiffres}\label{pour-les-graphiques-de-chiffres}
+\hypertarget{pour-les-graphiques-de-chiffres}{%
+\subsection{Pour les graphiques de chiffres}\label{pour-les-graphiques-de-chiffres}}
 
 Les premières fonctions présentées sont les plus usuelles comme les histogrammes.
 
@@ -2007,7 +2022,7 @@ de couleurs et \href{https://larmarange.github.io/analyse-R/couleurs.html}{de la
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-73-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-74-1.pdf}
 Ensuite il y a les boxplots ou boîtes à moustache pour les variables continues.
 
 \begin{Shaded}
@@ -2081,7 +2096,7 @@ Si on veut tracer une ligne pour la régression linéaire, il faut faire appel
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{coefficients }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(dureeopmin}\SpecialCharTok{\textasciitilde{}}\NormalTok{poids,}\AttributeTok{data=}\NormalTok{patient)}
+\NormalTok{coefficients }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(dureeopmin }\SpecialCharTok{\textasciitilde{}}\NormalTok{ poids,}\AttributeTok{data=}\NormalTok{patient)}
 \FunctionTok{plot}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,patient}\SpecialCharTok{$}\NormalTok{dureeopmin,}\AttributeTok{xlab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Durée opération en minutes"}\NormalTok{)}
 \FunctionTok{abline}\NormalTok{(coefficients)}
 \end{Highlighting}
@@ -2098,8 +2113,9 @@ D'ailleurs on peut les spécifier nous mêmes :
 \begin{Highlighting}[]
 \NormalTok{coefficients }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(dureeopmin}\SpecialCharTok{\textasciitilde{}}\NormalTok{poids,}\AttributeTok{data=}\NormalTok{patient)}
 \FunctionTok{plot}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,patient}\SpecialCharTok{$}\NormalTok{dureeopmin,}\AttributeTok{xlab=}\StringTok{"Poids"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Durée opération en minutes"}\NormalTok{,}
-     \AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{),}\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{600}\NormalTok{))}
+     \AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{),}\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{600}\NormalTok{),}\AttributeTok{type=}\StringTok{"n"}\NormalTok{)}
 \FunctionTok{abline}\NormalTok{(coefficients)}
+\FunctionTok{text}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{poids,patient}\SpecialCharTok{$}\NormalTok{dureeopmin,patient}\SpecialCharTok{$}\NormalTok{UID)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2116,7 +2132,7 @@ dimension :
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{tableau }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{sexe)}
-\FunctionTok{barplot}\NormalTok{(tableau, }\AttributeTok{main =} \StringTok{"CIM2"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Effectifs"}\NormalTok{)}
+\FunctionTok{barplot}\NormalTok{(tableau, }\AttributeTok{main =} \StringTok{"sexe"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Effectifs"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2132,9 +2148,9 @@ suite difficile à lire.
 \end{Shaded}
 
 \includegraphics{_main_files/figure-latex/sexe2-1.pdf}
-\#\# le tidyverse et ggplot
 
-\subsection{Introduction}\label{introduction-1}
+\hypertarget{le-tidyverse-et-ggplot}{%
+\section{le tidyverse et ggplot}\label{le-tidyverse-et-ggplot}}
 
 Vous pourrez comme précédemment entendre parler des graphiques de base de même
 que des graphiques \textbf{lattice} mais le choucou du \textbf{tidyverse} c'est \textbf{ggplot2}.
@@ -2149,7 +2165,8 @@ On va reprendre notre grammaire. Il faut saisir que \textbf{ggplot2} fonctionne 
 couche. Sur une base, vous additionner des couches qui apporte la personnalisation
 des graphiques.
 
-\subsection{La base}\label{la-base}
+\hypertarget{la-base}{%
+\subsection{La base}\label{la-base}}
 
 Au tout départ, il faut lui passer une \textbf{data.frame}, c'est le passage obligé.
 
@@ -2295,7 +2312,8 @@ On peut vouloir calculer la \textbf{densité} et non les effectifs dans ce cas :
 
 \includegraphics{_main_files/figure-latex/ggplot11-1.pdf}
 
-\subsection{Les autres graphiques}\label{les-autres-graphiques}
+\hypertarget{les-autres-graphiques}{%
+\subsection{Les autres graphiques}\label{les-autres-graphiques}}
 
 Le boxplot :
 
@@ -2362,6 +2380,22 @@ ou en rajoutant plein de trucs :
 
 \includegraphics{_main_files/figure-latex/ggplot16-1.pdf}
 
+Si on veut ajouter une variable de gravité inversée par rapport à la variable
+CIM2, avec 1 l'opération la plus grave et 4 l'opération bénigne:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{patient}\SpecialCharTok{$}\NormalTok{Gravité }\OtherTok{\textless{}{-}}\NormalTok{ LETTERS[}\DecValTok{5} \SpecialCharTok{{-}}\NormalTok{ patient}\SpecialCharTok{$}\NormalTok{CIM2]}
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{poids,}\AttributeTok{y=}\NormalTok{dureeopmin))}\SpecialCharTok{+}\FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{col=}\NormalTok{sexe))}\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Caractéristiques des patients"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Durée de l\textquotesingle{}opération en minutes"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(Gravité }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Hopital)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-77-1.pdf}
+
 Pour rajouter une droite de régression :
 
 \begin{Shaded}
@@ -2395,7 +2429,7 @@ Sans l'intervalle de confiance :
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{poids,}\AttributeTok{y=}\NormalTok{dureeopmin))}\SpecialCharTok{+}\FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{col=}\NormalTok{sexe))}\SpecialCharTok{+}
+\FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{vitaux,}\AttributeTok{y=}\NormalTok{totalechelle))}\SpecialCharTok{+}\FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{col=}\NormalTok{sexe))}\SpecialCharTok{+}
   \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{se=}\ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Caractéristiques des patients"}\NormalTok{) }\SpecialCharTok{+} 
   \FunctionTok{xlab}\NormalTok{(}\StringTok{"Poids"}\NormalTok{) }\SpecialCharTok{+} 
@@ -2440,7 +2474,8 @@ de faire en sorte que la superposition des étiquettes soit minimale :
 Evidemment toutes les étiquettes ne sont pas dessinés car il y a trop d'individus
 mais cela permet de repérer les individus atypiques.
 
-\subsection{Tableaux de contingences}\label{tableaux-de-contingences}
+\hypertarget{tableaux-de-contingences}{%
+\subsection{Tableaux de contingences}\label{tableaux-de-contingences}}
 
 Pour les tableaux de fréquences, on peut faire très simple :
 
@@ -2455,7 +2490,7 @@ Pour les tableaux de fréquences, on peut faire très simple :
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{(patient,}\FunctionTok{aes}\NormalTok{(sexe))}\SpecialCharTok{+}\FunctionTok{geom\_bar}\NormalTok{()}\SpecialCharTok{+}
-  \FunctionTok{facet\_grid}\NormalTok{(CIM2}\SpecialCharTok{\textasciitilde{}}\NormalTok{Hopital)}
+  \FunctionTok{facet\_grid}\NormalTok{(.}\SpecialCharTok{\textasciitilde{}}\NormalTok{Hopital)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2466,15 +2501,15 @@ marcher car il faut lui fournir la \textbf{data.frame} avec les statistiques \te
 Soit :
 
 \begin{verbatim}
-##       sexe CIM2 value
-## 1  Feminin    1    20
-## 2 Masculin    1    30
-## 3  Feminin    2    26
-## 4 Masculin    2    24
-## 5  Feminin    3    28
-## 6 Masculin    3    22
-## 7  Feminin    4    41
-## 8 Masculin    4     9
+##       sexe CIM2 effectif
+## 1  Feminin    1       20
+## 2 Masculin    1       30
+## 3  Feminin    2       26
+## 4 Masculin    2       24
+## 5  Feminin    3       28
+## 6 Masculin    3       22
+## 7  Feminin    4       41
+## 8 Masculin    4        9
 \end{verbatim}
 
 Pour faire ce tableau, il faut faire appel au \textbf{package} \textbf{reshape2}.
@@ -2514,9 +2549,13 @@ le contenu de chaque cellule de \textbf{tableau}.
 
 \includegraphics{_main_files/figure-latex/ggplot30-1.pdf}
 
+Je dois faire de CIM2 une variable qualitative explicitement. En effet, CIM2 est numérique
+(un entier de 1 à 4). Aussi quand je donne le CIM2 à l'argument \textbf{fill=} il ne sait pas
+s'il s'agit de la couleur (qui peut être un code numérique aussi) ou d'une variable qualitative.
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(long,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{CIM2,}\AttributeTok{y=}\NormalTok{value,}\AttributeTok{fill=}\NormalTok{sexe))}\SpecialCharTok{+}\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(long,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{sexe,}\AttributeTok{y=}\NormalTok{value,}\AttributeTok{fill=}\FunctionTok{factor}\NormalTok{(CIM2)))}\SpecialCharTok{+}\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2527,8 +2566,8 @@ D'où le graphique :
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{tableau }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{Hopital,patient}\SpecialCharTok{$}\NormalTok{sexe,patient}\SpecialCharTok{$}\NormalTok{CIM2)}
-\NormalTok{long }\OtherTok{\textless{}{-}} \FunctionTok{melt}\NormalTok{(tableau,}\AttributeTok{varnames =} \FunctionTok{c}\NormalTok{(}\StringTok{"Hopital"}\NormalTok{,}\StringTok{"sexe"}\NormalTok{,}\StringTok{"CIM2"}\NormalTok{),}\AttributeTok{value.name =} \StringTok{"value"}\NormalTok{)}
-\FunctionTok{ggplot}\NormalTok{(long,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{CIM2,}\AttributeTok{y=}\NormalTok{value,}\AttributeTok{fill=}\NormalTok{sexe))}\SpecialCharTok{+}
+\NormalTok{long }\OtherTok{\textless{}{-}} \FunctionTok{melt}\NormalTok{(tableau,}\AttributeTok{varnames =} \FunctionTok{c}\NormalTok{(}\StringTok{"Hopital"}\NormalTok{,}\StringTok{"sexe"}\NormalTok{,}\StringTok{"CIM2"}\NormalTok{),}\AttributeTok{value.name =} \StringTok{"effectif"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(long,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{CIM2,}\AttributeTok{y=}\NormalTok{effectif,}\AttributeTok{fill=}\NormalTok{sexe))}\SpecialCharTok{+}
   \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{)}\SpecialCharTok{+}
   \FunctionTok{facet\_grid}\NormalTok{(Hopital }\SpecialCharTok{\textasciitilde{}}\NormalTok{ . )}
 \end{Highlighting}
@@ -2541,7 +2580,30 @@ on l'appelle une fois que le graphique est terminé, c'est-à-dire en dernier :
 
 Et ainsi de suite\ldots{}
 
-\section{Liens}\label{liens}
+\hypertarget{les-thuxe8mes}{%
+\subsection{Les thèmes}\label{les-thuxe8mes}}
+
+Les graphiques de ggplot peuvent changer selon des thèmes qui définissent des styles
+de graphique différents. Celui à retenir est minimal qui fait que le graphique
+est épuré au maximum :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tableau }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{Hopital,patient}\SpecialCharTok{$}\NormalTok{sexe,patient}\SpecialCharTok{$}\NormalTok{CIM2)}
+\NormalTok{long }\OtherTok{\textless{}{-}} \FunctionTok{melt}\NormalTok{(tableau,}\AttributeTok{varnames =} \FunctionTok{c}\NormalTok{(}\StringTok{"Hopital"}\NormalTok{,}\StringTok{"sexe"}\NormalTok{,}\StringTok{"CIM2"}\NormalTok{),}\AttributeTok{value.name =} \StringTok{"effectif"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(long,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{CIM2,}\AttributeTok{y=}\NormalTok{effectif,}\AttributeTok{fill=}\NormalTok{sexe))}\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(Hopital }\SpecialCharTok{\textasciitilde{}}\NormalTok{ . ) }\SpecialCharTok{+} \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-82-1.pdf}
+
+Il y a 10 à 20 thèmes par défaut et il y a des variantes supplémentaires et de
+quoi personnaliser ses propres thèmes dans le package \textbf{ggthemes}.
+
+\hypertarget{liens}{%
+\section{Liens}\label{liens}}
 
 Il y a de nombreuses galleries sur le web avec toutes les possiblités offertes
 par les graphiques de base comme les graphiques avec \textbf{ggplot2}.
@@ -2571,9 +2633,10 @@ On peut en parcourir ensemble\ldots{}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-80-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-83-1.pdf}
 
-\chapter{Manipulation avancée (mettre en forme vos données)}\label{manipulation-avancuxe9e-mettre-en-forme-vos-donnuxe9es}
+\hypertarget{manipulation-avancuxe9e-mettre-en-forme-vos-donnuxe9es}{%
+\chapter{Manipulation avancée (mettre en forme vos données)}\label{manipulation-avancuxe9e-mettre-en-forme-vos-donnuxe9es}}
 
 Le but de cette partie qui ne sera pas très longue sur le papier mais beaucoup
 plus à l'apprentissage est de vous montrer comment automatiser les choses.
@@ -2587,7 +2650,8 @@ On peut automatiser beaucoup de choses sous R. Il y a des paquets sous
 R qui permettent d'analyser des modèles structuraux ou faire des pages web
 interactives. Sans aller jusque là, on peut se rendre la vie plus facile.
 
-\section{Transformation de plusieurs variables}\label{transformation-de-plusieurs-variables}
+\hypertarget{transformation-de-plusieurs-variables}{%
+\section{Transformation de plusieurs variables}\label{transformation-de-plusieurs-variables}}
 
 On va charger le \href{https://personality-project.org/r/psych/HowTo/scoring.tutorial/small.msq.txt}{fichier de données} en ligne :
 
@@ -2600,7 +2664,7 @@ On va charger le \href{https://personality-project.org/r/psych/HowTo/scoring.tut
 
 \begin{verbatim}
 ## 
-## -- Column specification -------------------------------------------------------------------------------------------
+## -- Column specification -------------------------------------------------------------------------------------------------
 ## cols(
 ##   `"active"` = col_double(),
 ##   `"alert"` = col_double(),
@@ -2815,7 +2879,8 @@ virginica & 50 (33\%)\\
 \hline
 \end{tabular}
 
-\section{Opérateurs et case\_when}\label{opuxe9rateurs-et-case_when}
+\hypertarget{opuxe9rateurs-et-case_when}{%
+\section{Opérateurs et case\_when}\label{opuxe9rateurs-et-case_when}}
 
 On appelle opérateur des mots-clefs généralement symbolique comme les +,/,==, etc.
 
@@ -3051,7 +3116,8 @@ Manquant & 64\\
 \hline
 \end{tabular}
 
-\section{Réutilisation de statistiques}\label{ruxe9utilisation-de-statistiques}
+\hypertarget{ruxe9utilisation-de-statistiques}{%
+\section{Réutilisation de statistiques}\label{ruxe9utilisation-de-statistiques}}
 
 Contrairement aux autres logiciels, les résultats statistiques sont la plupart
 du temps réutilisable par l'utilisateur.
@@ -3170,86 +3236,1161 @@ virginica & 50 (33\%)\\
 \hline
 \end{tabular}
 
-\section{Chargement}\label{chargement}
+\hypertarget{donnuxe9es-des-lycuxe9es-pro.}{%
+\chapter{Données des lycées pro.}\label{donnuxe9es-des-lycuxe9es-pro.}}
 
-\begin{verbatim}
-## spc_tbl_ [200 x 17] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
-##  $ UID         : chr [1:200] "100A" "100B" "101A" "101B" ...
-##  $ Hopital     : chr [1:200] "A" "B" "A" "B" ...
-##  $ sexe        : chr [1:200] "Masculin" "Feminin" "Masculin" "Masculin" ...
-##  $ poids       : num [1:200] 45 80 37 28 18 13.7 16 35 40 32 ...
-##  $ vitaux      : num [1:200] 22 8 17 28 6 21 9 10 17 11 ...
-##  $ CIM2        : num [1:200] 2 2 1 2 3 3 3 1 2 1 ...
-##  $ age         : num [1:200] 13.54 15.72 10.94 11.14 4.05 ...
-##  $ dureeopmin  : num [1:200] 90 125 50 133 250 180 260 15 90 55 ...
-##  $ postopj     : num [1:200] 2.208 1.014 4.667 2.24 0.938 ...
-##  $ scoliose    : chr [1:200] NA NA NA NA ...
-##  $ drepano     : chr [1:200] NA "rien" NA "drepanocytose" ...
-##  $ ACP         : num [1:200] 0 0 0 0 0 0 0 0 0 0 ...
-##  $ peridurale  : num [1:200] 0 0 0 0 0 1 0 0 0 0 ...
-##  $ periACP     : num [1:200] 0 0 0 0 0 2 0 0 0 0 ...
-##  $ nbttt       : num [1:200] 3 4 4 5 3 10 3 2 3 7 ...
-##  $ totalechelle: num [1:200] 463 503 146 306 40 200 0 110 0 NA ...
-##  $ nbechelle   : num [1:200] 16 17 12 17 6 27 4 7 6 0 ...
-##  - attr(*, "spec")=
-##   .. cols(
-##   ..   UID = col_character(),
-##   ..   Hopital = col_character(),
-##   ..   sexe = col_character(),
-##   ..   poids = col_double(),
-##   ..   vitaux = col_double(),
-##   ..   CIM2 = col_double(),
-##   ..   age = col_double(),
-##   ..   dureeopmin = col_double(),
-##   ..   postopj = col_double(),
-##   ..   scoliose = col_character(),
-##   ..   drepano = col_character(),
-##   ..   ACP = col_double(),
-##   ..   peridurale = col_double(),
-##   ..   periACP = col_double(),
-##   ..   nbttt = col_double(),
-##   ..   totalechelle = col_double(),
-##   ..   nbechelle = col_double()
-##   .. )
-##  - attr(*, "problems")=<externalptr>
-\end{verbatim}
+\hypertarget{importation-des-donnuxe9es}{%
+\section{Importation des données}\label{importation-des-donnuxe9es}}
 
-Ouch\ldots{} Remettre en factor, les variables qui doivent l'être. Lequelles ?
-
-Scoliose ça sera plus propre avec les différents champs et ``non'' en l'absence
-de scoliose\ldots{}
+On importe les données qui sont contenues dans un fichier Excel.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{patient}\SpecialCharTok{$}\NormalTok{scoliose[}\FunctionTok{is.na}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{scoliose)] }\OtherTok{\textless{}{-}} \StringTok{"Non"}
-\FunctionTok{table}\NormalTok{(patient}\SpecialCharTok{$}\NormalTok{scoliose)}
+\NormalTok{lycee }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/fr{-}en{-}taux{-}de{-}pression{-}et{-}demploi.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(lycee)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [185 x 18] (S3: tbl_df/tbl/data.frame)
+##  $ Année diplôme           : num [1:185] 2019 2019 2019 2019 2019 ...
+##  $ Diplôme                 : chr [1:185] "BACPRO BOULANGER-PÂTISSIER" "BACPRO ARTISANAT ET METIERS D'ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE" "BACPRO ARTISANAT ET METIERS D'ART OPTION : METIERS DE L'ENSEIGNE ET DE LA SIGNALETIQUE" "BACPRO TECHNICIEN DE MAINTENANCE DES SYSTEMES ENERGETIQUES ET CLIMATIQUES" ...
+##  $ Type de diplôme         : chr [1:185] "BACPRO" "BACPRO" "BACPRO" "BACPRO" ...
+##  $ Filière                 : chr [1:185] "Alimentation, hôtellerie, restauration, tourisme" "Métiers d'art" "Industries graphiques, communication, audiovisuel, spectacle" "Electricité, électronique/numérique, environnement" ...
+##  $ Spécialité libellé      : chr [1:185] "BOULANGER-PÂTISSIER" "ARTISANAT ET METIERS D'ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE" "ARTISANAT ET METIERS D'ART OPTION : METIERS DE L'ENSEIGNE ET DE LA SIGNALETIQUE" "TECHNICIEN DE MAINTENANCE DES SYSTEMES ENERGETIQUES ET CLIMATIQUES" ...
+##  $ Taux d'emploi           : num [1:185] 50.3 80 34.1 46.1 36.2 34.1 49.2 40 44.7 56.3 ...
+##  $ Année première année    : num [1:185] 2020 2020 2020 2020 2020 2020 2020 2020 2020 2020 ...
+##  $ MEFSTAT libellé         : chr [1:185] "2NDPRO BOULANGER-PÂTISSIER" "2NDPRO ARTIS.& MET.ART:VERR.SCIENT.TECHN" "2NDPRO ARTIS. ET MET. D'ART 2NDE COMMUNE" "2NDPRO TECHN. MAINT. SYST.ENERG.CLIMATIQ" ...
+##  $ Taux de pression        : num [1:185] 2.367 0.5 0.725 0.658 0 ...
+##  $ Demandes                : num [1:185] 284 3 29 634 0 ...
+##  $ Capacité                : num [1:185] 120 6 40 963 3 ...
+##  $ Code diplôme...12       : chr [1:185] "40022105" "40022402" "40022403" "40022704" ...
+##  $ MEFSTAT11               : chr [1:185] "23810022105" "23810022402" "23810022404" "23810022704" ...
+##  $ Code type diplôme       : num [1:185] 400 400 400 400 400 400 400 400 400 400 ...
+##  $ Code diplôme...15       : chr [1:185] "40022105" "40022402" "40022404" "40022704" ...
+##  $ MEFSTAT libellé court   : chr [1:185] "2NDPRO22105" "2NDPRO22402" "2NDPRO22404" "2NDPRO22704" ...
+##  $ Admis apprentissage 2019: num [1:185] 163 0 9 196 42 29 96 3 69 164 ...
+##  $ Admis voie scolaire 2019: num [1:185] 1092 11 125 799 220 ...
+\end{verbatim}
+
+On a 185 lignes et 18 colonnes. A aller vérifier dans le fichier Excel.
+
+C'est bon.
+
+On a les colonnes \textbf{Code diplome\ldots12} et \textbf{Code diplome\ldots15} qui ont eu
+un problème car elle porte le même nom sous Excel ce qui n'est pas possible dans R.
+R a donc ajouter le numéro de la colonne lors de l'importation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tmp }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(lycee}\SpecialCharTok{$}\NormalTok{MEFSTAT11)}
+\NormalTok{tmp[tmp}\SpecialCharTok{\textgreater{}}\DecValTok{1}\NormalTok{]}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 ## 
-##  ante autre   Non  post 
-##     3     2   175    20
+## 23810020006 23810022404 23810023007 23810024304 23810025307 23810025516 23810030003 23810031211 23810032210 
+##           6           2           3           3           4           2           3           3           3
 \end{verbatim}
 
-Ca serait bien de faire \textbf{scoliose2}
-
-Et pareil avec les drépanocytose donc avec \textbf{drepano} et \textbf{drepano2}:
-
-Calculer la variable \textbf{moyechelle} qui fait la moyenne des échelles de douleur :
-
-\begin{verbatim}
-##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -8.31250 -1.94531 -0.79167 -0.08893  0.46875 40.60417
-\end{verbatim}
-
-Juste pour voir \textbf{case} : faire des catégories quand nbttt \textless{} 0, entre 0 et 10
-et est supérieur à 10
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tmp }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(lycee}\SpecialCharTok{$}\NormalTok{Diplôme)}
+\NormalTok{tmp[tmp}\SpecialCharTok{\textgreater{}}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{verbatim}
 ## 
-## Entre 0 et -5      Inf à -5       Sup à 0 
-##           127             7            66
+##                              BACPRO ACCOMPAGNEMENT SOINS ET SERVICES A LA PERSONNE OPTION A - A DOMICILE 
+##                                                                                                        2 
+##                                                              BACPRO AMENAGEMENT ET FINITIONS DU BATIMENT 
+##                                                                                                        2 
+##                   BACPRO ARTISANAT ET METIERS D'ART OPTION : METIERS DE L'ENSEIGNE ET DE LA SIGNALETIQUE 
+##                                                                                                        2 
+##                            BACPRO ARTISANAT ET METIERS D'ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE 
+##                                                                                                        2 
+##                                                                                        BACPRO LOGISTIQUE 
+##                                                                                                        2 
+##                                                     BACPRO MAINTENANCE DES VEHICULES OPTION C MOTOCYCLES 
+##                                                                                                        2 
+##                                                                        BACPRO MENUISERIE ALUMINIUM-VERRE 
+##                                                                                                        2 
+##                                                               BACPRO METIERS DU CUIR OPTION MAROQUINERIE 
+##                                                                                                        2 
+##                                                                     BACPRO POISSONNIER-ECAILLER-TRAITEUR 
+##                                                                                                        2 
+## BACPRO SYSTEMES NUMERIQUES OPTION A SURETE ET SECURITE DES INFRASTRUCTURES, DE L'HABITAT ET DU TERTIAIRE 
+##                                                                                                        2 
+##                       BACPRO SYSTEMES NUMERIQUES OPTION C RESEAUX INFORMATIQUES ET SYSTEMES COMMUNICANTS 
+##                                                                                                        2 
+##                                     BACPRO TECHNICIEN D'ETUDES DU BATIMENT OPTION A : ETUDES ET ECONOMIE 
+##                                                                                                        2
+\end{verbatim}
+
+On a beaucoup de valeurs pour le \textbf{diplôme}, la \textbf{Spécialité libellé} etc.
+De même pour les colonnes \textbf{MEFSTAT} et \textbf{Code Diplôme}.
+
+La variable \textbf{première année} n'est pas très utile non plus car elle indique
+uniquement 2019.
+
+Ces variables gênantes pour les statistiques descriptives sont supprimées de
+celles-ci.
+
+On regarde de loin comment ça se comporte :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{theme\_gtsummary\_compact}\NormalTok{(}\AttributeTok{set\_theme =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{font\_size =} \ConstantTok{NULL}\NormalTok{)}
+\NormalTok{lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\NormalTok{Diplôme,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}
+\NormalTok{                 ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{tbl\_summary}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|c}
+\hline
+**Caractéristique** & **N = 185**\\
+\hline
+Type de diplôme & \\
+\hline
+BACPRO & 96 (52\%)\\
+\hline
+CAP & 89 (48\%)\\
+\hline
+Filière & \\
+\hline
+Aéronautique & 6 (3,2\%)\\
+\hline
+Alimentation, hôtellerie, restauration, tourisme & 11 (5,9\%)\\
+\hline
+Automobile, engins & 17 (9,2\%)\\
+\hline
+Biochimie industrielle & 6 (3,2\%)\\
+\hline
+Construction, bâtiment, travaux publics & 27 (15\%)\\
+\hline
+Electricité, électronique/numérique, environnement & 13 (7,0\%)\\
+\hline
+Gestion-administration, transport, logistique, sécurité & 14 (7,6\%)\\
+\hline
+Industries graphiques, communication, audiovisuel, spectacle & 15 (8,1\%)\\
+\hline
+Mer & 3 (1,6\%)\\
+\hline
+Métiers d'art & 19 (10\%)\\
+\hline
+Productique, mécanique, automatisation & 17 (9,2\%)\\
+\hline
+Relation client, commerce, vente & 3 (1,6\%)\\
+\hline
+Santé, social, services à la personne et à la collectivité & 14 (7,6\%)\\
+\hline
+Textile, habillement, cuir & 20 (11\%)\\
+\hline
+Taux d'emploi & 41 (31 – 50)\\
+\hline
+Taux de pression & 0,80 (0,53 – 1,17)\\
+\hline
+Manquant & 2\\
+\hline
+Demandes & 174 (27 – 1 123)\\
+\hline
+Capacité & 234 (40 – 963)\\
+\hline
+Code type diplôme & \\
+\hline
+400 & 96 (52\%)\\
+\hline
+500 & 89 (48\%)\\
+\hline
+Admis apprentissage 2019 & 29 (4 – 164)\\
+\hline
+Admis voie scolaire 2019 & 220 (28 – 699)\\
+\hline
+\end{tabular}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{reset\_gtsummary\_theme}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+On voit que les libellés sont assez variés, un peu trop avec des libellés comme
+\textbf{Mer} qui n'ont que 3 diplômes comme \textbf{Relation client, etc.}.
+
+On regarde les valeurs extrèmes et les quantiles pour les variables quantitatives.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{theme\_gtsummary\_compact}\NormalTok{(}\AttributeTok{set\_theme =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{font\_size =} \ConstantTok{NULL}\NormalTok{)}
+\NormalTok{lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\NormalTok{Diplôme,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}
+\NormalTok{                 ) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tbl\_summary}\NormalTok{(}\AttributeTok{statistic =} \FunctionTok{all\_continuous}\NormalTok{() }\SpecialCharTok{\textasciitilde{}} \StringTok{"\{mean\} (\{sd\}) \{min\}{-}\{max\}"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|c}
+\hline
+**Characteristic** & **N = 185**\\
+\hline
+Taux d'emploi & 41 (16) 0-82\\
+\hline
+Taux de pression & 0.92 (0.57) 0.00-2.94\\
+\hline
+Unknown & 2\\
+\hline
+Demandes & 1,754 (5,267) 0-36,249\\
+\hline
+Capacité & 1,658 (4,776) 0-31,004\\
+\hline
+Code type diplôme & \\
+\hline
+400 & 96 (52\%)\\
+\hline
+500 & 89 (48\%)\\
+\hline
+Admis apprentissage 2019 & 242 (579) 0-3,893\\
+\hline
+Admis voie scolaire 2019 & 952 (2,396) 0-18,297\\
+\hline
+\end{tabular}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{reset\_gtsummary\_theme}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+On voit que le code type diplome est reconnu comme numérique alors que c'est un
+code, donc on corrige :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lycee}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{Code type diplôme}\StringTok{\textasciigrave{}} \OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(lycee}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{Code type diplôme}\StringTok{\textasciigrave{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Il y a aussi baleineau sous gravillons, il y a des zéros dans les taux et les admis.
+Donc des spécialités ne doivent pas être assuré cette année là :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nuls }\OtherTok{\textless{}{-}}\NormalTok{ lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Admis apprentissage 2019}\StringTok{\textasciigrave{}}\SpecialCharTok{==}\DecValTok{0} \SpecialCharTok{|} \StringTok{\textasciigrave{}}\AttributeTok{Admis voie scolaire 2019}\StringTok{\textasciigrave{}} \SpecialCharTok{==} \DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+On n'en a 27 qui apparemment ont un nombre admis nul soit dans l'apprentissage soit
+dans la voie scolaire.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nuls }\OtherTok{\textless{}{-}}\NormalTok{ lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Admis apprentissage 2019}\StringTok{\textasciigrave{}}\SpecialCharTok{==}\DecValTok{0} \SpecialCharTok{\&} \StringTok{\textasciigrave{}}\AttributeTok{Admis voie scolaire 2019}\StringTok{\textasciigrave{}} \SpecialCharTok{==} \DecValTok{0}\NormalTok{)}
+\FunctionTok{nrow}\NormalTok{(nuls)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+Et apparemment aucun n'a de nul en même temps.
+
+On vérifie de ce qu'ils ont fait quand \textbf{Capacités} est nulle (division par zéro).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nuls }\OtherTok{\textless{}{-}}\NormalTok{ lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Capacité}\StringTok{\textasciigrave{}}\SpecialCharTok{==}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+En fait ils ont pas fait n'importe quoi, le taux de pression est \textbf{NA}.
+
+Par contre au fil de la vérification, on a vu qu'il y avait des taux d'emploi nuls:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nuls }\OtherTok{\textless{}{-}}\NormalTok{ lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Taux d\textquotesingle{}emploi}\StringTok{\textasciigrave{}}\SpecialCharTok{==}\DecValTok{0}\NormalTok{)}
+\FunctionTok{nrow}\NormalTok{(nuls)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+Ils sont au nombre de 10 quand même.
+
+\hypertarget{analyses}{%
+\section{Analyses}\label{analyses}}
+
+On représente le taux de pression graphiquement : Demandes en fonction de Capacité
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(lycee,}\FunctionTok{aes}\NormalTok{(Demandes,Capacité,}\AttributeTok{col=}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}\FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Pression"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method=}\StringTok{"lm"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee1-1.pdf}
+
+On voit que ça a l'air assez linéaire. Et on voit surtout que certains diplômes
+explose les chiffres en terme de demande.
+
+On voit demander à ggplot de passer en log pour mieux faire la différence.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(lycee,}\FunctionTok{aes}\NormalTok{(Demandes,Capacité,}\AttributeTok{col=}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}\FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Pression"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method=}\StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{trans =} \StringTok{\textquotesingle{}log2\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{trans =} \StringTok{\textquotesingle{}log2\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee2-1.pdf}
+
+En fait on voit que c'est vers zéro qu'il y a un problème. Ca peut être du au \textbf{log2}.
+Mais globalement il n'y a pas d'anomalies à l'oeil.
+
+Et c'est bien logarithmiquement linéaire. Il y a une différence avec plus de capacités
+pour les BAC PRO pour les fortes demandes que pour les CAPs où c'est l'inverse.
+
+On regarde le TOP10 des formations en terme de candidats ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(Demandes)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{slice}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 10
+##    Diplôme             `Type de diplôme` Filière `Taux d'emploi` `Taux de pression` Demandes Capacité `Code type diplôme`
+##    <chr>               <chr>             <chr>             <dbl>              <dbl>    <dbl>    <dbl> <fct>              
+##  1 BACPRO VENTE        BACPRO            Relati~            40.9              1.17     36249    31004 400                
+##  2 BACPRO ACCUEIL - R~ BACPRO            Relati~            32.8              1.17     36249    31004 400                
+##  3 BACPRO COMMERCE     BACPRO            Relati~            41.8              1.17     36249    31004 400                
+##  4 BACPRO GESTION-ADM~ BACPRO            Gestio~            31.6              0.901    17346    19255 400                
+##  5 BACPRO LOGISTIQUE   BACPRO            Gestio~            42.4              0.901    17346    19255 400                
+##  6 BACPRO TRANSPORT    BACPRO            Gestio~            38.7              0.901    17346    19255 400                
+##  7 BACPRO ACCOMPAGNEM~ BACPRO            Santé,~            31.1              1.22     13865    11389 400                
+##  8 BACPRO METIERS DE ~ BACPRO            Electr~            40.5              0.850    11145    13110 400                
+##  9 BACPRO SYSTEMES NU~ BACPRO            Electr~            34.1              1.53     10035     6539 400                
+## 10 BACPRO SYSTEMES NU~ BACPRO            Electr~            30.9              1.53     10035     6539 400                
+## # i 2 more variables: `Admis apprentissage 2019` <dbl>, `Admis voie scolaire 2019` <dbl>
+\end{verbatim}
+
+On regarde maintenant le taux d'emploi au regard du taux de pression :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(lycee,}\FunctionTok{aes}\NormalTok{(Demandes,}\StringTok{\textasciigrave{}}\AttributeTok{Taux d\textquotesingle{}emploi}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method=}\StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}} \SpecialCharTok{\textasciitilde{}}\NormalTok{ .) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee3-1.pdf}
+Ouf\ldots{} on s'y attendait pas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(lycee,}\FunctionTok{aes}\NormalTok{(Demandes,}\StringTok{\textasciigrave{}}\AttributeTok{Taux d\textquotesingle{}emploi}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_smooth}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}} \SpecialCharTok{\textasciitilde{}}\NormalTok{ .) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{trans=}\StringTok{"log2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee4-1.pdf}
+Apparemment il n'y a pas corrélation claire entre le taux de pression et le taux d'emploi.
+
+On a des points extrêmes, on va ajouter les étiquettes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(lycee,}\FunctionTok{aes}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Taux de pression}\StringTok{\textasciigrave{}}\NormalTok{,}\StringTok{\textasciigrave{}}\AttributeTok{Taux d\textquotesingle{}emploi}\StringTok{\textasciigrave{}}\NormalTok{,}\AttributeTok{label=}\NormalTok{Diplôme))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_smooth}\NormalTok{()  }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}} \SpecialCharTok{\textasciitilde{}}\NormalTok{ .) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text\_repel}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee5-1.pdf}
+Y'a comme un souci\ldots{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(lycee,}\FunctionTok{aes}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Taux de pression}\StringTok{\textasciigrave{}}\NormalTok{,}\StringTok{\textasciigrave{}}\AttributeTok{Taux d\textquotesingle{}emploi}\StringTok{\textasciigrave{}}\NormalTok{,}\AttributeTok{label=}\StringTok{\textasciigrave{}}\AttributeTok{Code diplôme...12}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_smooth}\NormalTok{()  }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}} \SpecialCharTok{\textasciitilde{}}\NormalTok{ .) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text\_repel}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee6-1.pdf}
+
+Par exemple :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme...15"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Code diplôme...12}\StringTok{\textasciigrave{}} \SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{40022402}\NormalTok{,}\DecValTok{40023206}\NormalTok{,}\DecValTok{40031109}\NormalTok{,}\DecValTok{50022362}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 5 x 11
+##   Diplôme              `Type de diplôme` Filière `Taux d'emploi` `Taux de pression` Demandes Capacité `Code diplôme...12`
+##   <chr>                <chr>             <chr>             <dbl>              <dbl>    <dbl>    <dbl> <chr>              
+## 1 BACPRO ARTISANAT ET~ BACPRO            Métier~            80                0.5          3        6 40022402           
+## 2 CAP ART ET TECHNIQU~ CAP               Métier~            70.6              1.07        29       27 50022362           
+## 3 BACPRO ARTISANAT ET~ BACPRO            Métier~            80                0.725       29       40 40022402           
+## 4 BACPRO TRANSPORT FL~ BACPRO            Gestio~            70.3              0.531       17       32 40031109           
+## 5 BACPRO INTERVENTION~ BACPRO            Constr~             0                0.705     3455     4903 40023206           
+## # i 3 more variables: `Code type diplôme` <fct>, `Admis apprentissage 2019` <dbl>, `Admis voie scolaire 2019` <dbl>
+\end{verbatim}
+
+Apparemment les charpentiers ne peuvent pas travailler beaucoup.
+
+En fait, on regarde plus systématiquement :
+
+TOP 10 des taux d'emploi :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{kable}\NormalTok{(lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{slice\_max}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Taux d\textquotesingle{}emploi}\StringTok{\textasciigrave{}}\NormalTok{,}\AttributeTok{n=}\DecValTok{10}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|l|l|r|r|r|r|l|r|r}
+\hline
+Diplôme & Type de diplôme & Filière & Taux d'emploi & Taux de pression & Demandes & Capacité & Code type diplôme & Admis apprentissage 2019 & Admis voie scolaire 2019\\
+\hline
+BACPRO ARTISANAT ET METIERS D'ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE & BACPRO & Métiers d'art & 80.0 & 0.5000000 & 3 & 6 & 400 & 0 & 11\\
+\hline
+BACPRO ARTISANAT ET METIERS D'ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE & BACPRO & Métiers d'art & 80.0 & 0.7250000 & 29 & 40 & 400 & 0 & 11\\
+\hline
+BACPRO TRANSPORT FLUVIAL & BACPRO & Gestion-administration, transport, logistique, sécurité & 70.3 & 0.5312500 & 17 & 32 & 400 & 16 & 23\\
+\hline
+BACPRO FONDERIE & BACPRO & Productique, mécanique, automatisation & 69.4 & 0.4395604 & 40 & 91 & 400 & 6 & 32\\
+\hline
+BACPRO CONDUCTEUR TRANSPORT ROUTIER MARCHANDISES & BACPRO & Gestion-administration, transport, logistique, sécurité & 68.6 & 1.6021362 & 2400 & 1498 & 400 & 5 & 1116\\
+\hline
+BACPRO MAINTENANCE DES MATERIELS OPTION A MATERIELS AGRICOLES & BACPRO & Automobile, engins & 65.6 & 1.3103448 & 114 & 87 & 400 & 281 & 501\\
+\hline
+BACPRO METIERS ET ARTS DE LA PIERRE & BACPRO & Métiers d'art & 65.0 & 0.4712644 & 41 & 87 & 400 & 7 & 35\\
+\hline
+BACPRO MAINTENANCE DES MATERIELS OPTION B MATERIELS DE CONSTRUCTION ET DE MANUTENTION & BACPRO & Automobile, engins & 65.0 & 0.5352113 & 38 & 71 & 400 & 137 & 375\\
+\hline
+BACPRO CONSTRUCTION DES CARROSSERIES & BACPRO & Automobile, engins & 60.0 & 0.5508475 & 65 & 118 & 400 & 23 & 58\\
+\hline
+BACPRO MAINTENANCE DES VEHICULES OPTION B VEHICULES DE TRANSPORT ROUTIER & BACPRO & Automobile, engins & 59.0 & 0.6148410 & 174 & 283 & 400 & 356 & 440\\
+\hline
+CAP PODO-ORTHESISTE & CAP & Santé, social, services à la personne et à la collectivité & 81.8 & 0.1666667 & 2 & 12 & 500 & 9 & 5\\
+\hline
+CAP CONDUCTEUR ROUTIER "MARCHANDISES" & CAP & Gestion-administration, transport, logistique, sécurité & 71.6 & 2.1282051 & 249 & 117 & 500 & 959 & 464\\
+\hline
+CAP ART ET TECHNIQUES DE LA BIJOUTERIE-JOAILLERIE OPTION BIJOUTERIE-SERTISSAGE & CAP & Métiers d'art & 70.6 & 1.0740741 & 29 & 27 & 500 & 26 & 47\\
+\hline
+CAP CHOCOLATIER CONFISEUR & CAP & Alimentation, hôtellerie, restauration, tourisme & 67.0 & 0.6046512 & 26 & 43 & 500 & 611 & 86\\
+\hline
+CAP CONDUCTEUR D'ENGINS : TRAVAUX PUBLICS ET CARRIERES & CAP & Construction, bâtiment, travaux publics & 66.7 & 2.2166065 & 614 & 277 & 500 & 468 & 385\\
+\hline
+CAP MODELES ET MOULES CERAMIQUES & CAP & Métiers d'art & 66.7 & 0.5000000 & 9 & 18 & 500 & 1 & 5\\
+\hline
+CAP CONSTRUCTEUR DE ROUTES & CAP & Construction, bâtiment, travaux publics & 65.9 & 0.7804878 & 64 & 82 & 500 & 257 & 25\\
+\hline
+CAP TAILLEUR DE PIERRE & CAP & Métiers d'art & 65.2 & 0.3939394 & 52 & 132 & 500 & 66 & 52\\
+\hline
+CAP COUVREUR & CAP & Construction, bâtiment, travaux publics & 64.6 & 0.5316456 & 126 & 237 & 500 & 966 & 108\\
+\hline
+CAP ARTS ET TECHNIQUES DU VERRE OPTION DECORATEUR & CAP & Métiers d'art & 63.6 & 0.4166667 & 15 & 36 & 500 & 4 & 26\\
+\hline
+\end{tabular}
+
+et l'inverse
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{kable}\NormalTok{(lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année diplôme}\StringTok{\textasciigrave{}}\NormalTok{,}\SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{,}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"MEFSTAT"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"Code Diplôme"}\NormalTok{),}
+                 \SpecialCharTok{{-}}\StringTok{\textasciigrave{}}\AttributeTok{Année première année}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{slice\_min}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Taux d\textquotesingle{}emploi}\StringTok{\textasciigrave{}}\NormalTok{,}\AttributeTok{n=}\DecValTok{10}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|l|l|r|r|r|r|l|r|r}
+\hline
+Diplôme & Type de diplôme & Filière & Taux d'emploi & Taux de pression & Demandes & Capacité & Code type diplôme & Admis apprentissage 2019 & Admis voie scolaire 2019\\
+\hline
+BACPRO INTERVENTIONS SUR LE PATRIMOINE BATI, OPTION B CHARPENTE & BACPRO & Construction, bâtiment, travaux publics & 0.0 & 0.7046706 & 3455 & 4903 & 400 & 1 & 8\\
+\hline
+BACPRO GESTION DES POLLUTIONS ET PROTECTION DE L'ENVIRONNEMENT & BACPRO & Electricité, électronique/numérique, environnement & 13.5 & 0.3975904 & 33 & 83 & 400 & 6 & 55\\
+\hline
+BACPRO AVIATION GENERALE & BACPRO & Aéronautique & 18.8 & 2.0467153 & 1402 & 685 & 400 & 4 & 20\\
+\hline
+BACPRO PHOTOGRAPHIE & BACPRO & Industries graphiques, communication, audiovisuel, spectacle & 21.8 & 2.1865672 & 586 & 268 & 400 & 7 & 300\\
+\hline
+BACPRO ARTISANAT ET METIERS D'ART OPTION : COMMUNICATION VISUELLE PLURI-MEDIA & BACPRO & Industries graphiques, communication, audiovisuel, spectacle & 22.3 & 2.7258523 & 1919 & 704 & 400 & 33 & 1322\\
+\hline
+BACPRO ARTISANAT ET METIERS D'ART OPTION MARCHANDISAGE VISUEL & BACPRO & Industries graphiques, communication, audiovisuel, spectacle & 22.8 & 1.0000000 & 367 & 367 & 400 & 0 & 308\\
+\hline
+BACPRO REALISATION DE PRODUITS IMPRIMES ET PLURIMEDIA OPTION A PRODUCTIONS GRAPHIQUES & BACPRO & Industries graphiques, communication, audiovisuel, spectacle & 23.9 & 0.9823651 & 947 & 964 & 400 & 54 & 514\\
+\hline
+BACPRO ETUDE ET DEFINITION DE PRODUITS INDUSTRIELS & BACPRO & Productique, mécanique, automatisation & 25.8 & 0.5706751 & 541 & 948 & 400 & 0 & 523\\
+\hline
+BACPRO SERVICES DE PROXIMITE ET VIE LOCALE & BACPRO & Santé, social, services à la personne et à la collectivité & 27.5 & 1.2163683 & 2378 & 1955 & 400 & 5 & 2187\\
+\hline
+BACPRO ETUDE ET REALISATION D'AGENCEMENT & BACPRO & Construction, bâtiment, travaux publics & 28.3 & 1.2448980 & 549 & 441 & 400 & 0 & 303\\
+\hline
+CAP OUTILLAGES EN OUTILS A DECOUPER ET A EMBOUTIR & CAP & Productique, mécanique, automatisation & 0.0 & 0.3750000 & 9 & 24 & 500 & 0 & 11\\
+\hline
+CAP ASSISTANT TECHNIQUE EN INSTRUMENTS DE MUSIQUE OPTION GUITARE & CAP & Industries graphiques, communication, audiovisuel, spectacle & 0.0 & NA & 0 & 0 & 500 & 6 & 12\\
+\hline
+CAP CANNAGE ET PAILLAGE EN AMEUBLEMENT & CAP & Métiers d'art & 0.0 & 0.1250000 & 1 & 8 & 500 & 0 & 1\\
+\hline
+CAP ACCORDEUR DE PIANO & CAP & Industries graphiques, communication, audiovisuel, spectacle & 0.0 & 0.1250000 & 1 & 8 & 500 & 0 & 5\\
+\hline
+CAP INDUSTRIES CHIMIQUES & CAP & Biochimie industrielle & 0.0 & 0.5555556 & 5 & 9 & 500 & 0 & 7\\
+\hline
+CAP AGENT DE LA QUALITE DE L'EAU & CAP & Electricité, électronique/numérique, environnement & 12.5 & 0.7966102 & 47 & 59 & 500 & 0 & 35\\
+\hline
+CAP AGENT DE PREVENTION ET DE MEDIATION & CAP & Santé, social, services à la personne et à la collectivité & 13.3 & 1.0000000 & 26 & 26 & 500 & 0 & 2305\\
+\hline
+CAP TOURNAGE EN CERAMIQUE & CAP & Métiers d'art & 14.3 & 0.4166667 & 10 & 24 & 500 & 3 & 19\\
+\hline
+CAP ASSISTANT(E) TECHNIQUE EN MILIEUX FAMILIAL ET COLLECTIF & CAP & Santé, social, services à la personne et à la collectivité & 15.8 & 0.8788660 & 2728 & 3104 & 500 & 43 & 2810\\
+\hline
+CAP METIERS DE LA MODE-VÊTEMENT FLOU & CAP & Textile, habillement, cuir & 18.8 & 0.8470705 & 853 & 1007 & 500 & 26 & 699\\
+\hline
+\end{tabular}
+
+Est-ce qu'il y a un lien entre l'effectif et le taux d'emploi ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(lycee,}\FunctionTok{aes}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Taux de pression}\StringTok{\textasciigrave{}}\NormalTok{,}\StringTok{\textasciigrave{}}\AttributeTok{Demandes}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_smooth}\NormalTok{()  }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}} \SpecialCharTok{\textasciitilde{}}\NormalTok{ .) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee7-1.pdf}
+Il faut qu'on retourne aux \textbf{log2}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(lycee,}\FunctionTok{aes}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Taux de pression}\StringTok{\textasciigrave{}}\NormalTok{,}\StringTok{\textasciigrave{}}\AttributeTok{Demandes}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_smooth}\NormalTok{()  }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Type de diplôme}\StringTok{\textasciigrave{}} \SpecialCharTok{\textasciitilde{}}\NormalTok{ .) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{trans=}\StringTok{"log2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee8-1.pdf}
+Apparemment oui mais ce n'est pas linéaire.
+
+Pour faire un graphique avec le taux moyen d'emploi selon la filière ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{graphique }\OtherTok{\textless{}{-}}\NormalTok{ lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(Filière) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Moyenne=}\FunctionTok{mean}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Taux d\textquotesingle{}emploi}\StringTok{\textasciigrave{}}\NormalTok{))}
+
+\FunctionTok{ggplot}\NormalTok{(graphique,}\FunctionTok{aes}\NormalTok{(Filière,Moyenne,}\AttributeTok{fill=}\NormalTok{Filière)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee10-1.pdf}
+on enlève l'axe des abscisses\ldots{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{graphique }\OtherTok{\textless{}{-}}\NormalTok{ lycee }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(Filière) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Moyenne=}\FunctionTok{mean}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Taux d\textquotesingle{}emploi}\StringTok{\textasciigrave{}}\NormalTok{))}
+
+\FunctionTok{ggplot}\NormalTok{(graphique,}\FunctionTok{aes}\NormalTok{(Filière,Moyenne,}\AttributeTok{fill=}\NormalTok{Filière)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+   \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.title.x=}\FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{axis.text.x=}\FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{axis.ticks.x=}\FunctionTok{element\_blank}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/lycee11-1.pdf}
+
+\hypertarget{commentaires-des-auditeurs}{%
+\section{Commentaires des auditeurs}\label{commentaires-des-auditeurs}}
+
+Deux problèmes ont été signalés par les doctorants dans l'analyse qui interrogent
+sur la documentation voire la qualité des données :
+
+\begin{itemize}
+\tightlist
+\item
+  il y a le fait, que la première table abrite plusieurs occurences pour le même
+  libellé de diplôme, MEFTSTAT, \ldots{} Ce qui est curieux
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a}\OtherTok{=}\FunctionTok{table}\NormalTok{(lycee}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{Spécialité libellé}\StringTok{\textasciigrave{}}\NormalTok{)}
+\NormalTok{a[a}\SpecialCharTok{\textgreater{}}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##                              ACCOMPAGNEMENT SOINS ET SERVICES A LA PERSONNE OPTION A - A DOMICILE 
+##                                                                                                 2 
+##                                                                     AERONAUTIQUE OPTION AVIONIQUE 
+##                                                                                                 2 
+##                                                              AMENAGEMENT ET FINITIONS DU BATIMENT 
+##                                                                                                 2 
+##                   ARTISANAT ET METIERS D'ART OPTION : METIERS DE L'ENSEIGNE ET DE LA SIGNALETIQUE 
+##                                                                                                 2 
+##                            ARTISANAT ET METIERS D'ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE 
+##                                                                                                 2 
+##                                                                                        LOGISTIQUE 
+##                                                                                                 2 
+##                                            MAINTENANCE DES MATERIELS OPTION A MATERIELS AGRICOLES 
+##                                                                                                 2 
+##                    MAINTENANCE DES MATERIELS OPTION B MATERIELS DE CONSTRUCTION ET DE MANUTENTION 
+##                                                                                                 2 
+##                                      MAINTENANCE DES MATERIELS OPTION C MATERIELS D'ESPACES VERTS 
+##                                                                                                 2 
+##                                         MAINTENANCE DES VEHICULES OPTION A VOITURES PARTICULIERES 
+##                                                                                                 2 
+##                                 MAINTENANCE DES VEHICULES OPTION B VEHICULES DE TRANSPORT ROUTIER 
+##                                                                                                 2 
+##                                                     MAINTENANCE DES VEHICULES OPTION C MOTOCYCLES 
+##                                                                                                 2 
+##                                                                        MENUISERIE ALUMINIUM-VERRE 
+##                                                                                                 2 
+##                                                               METIERS DU CUIR OPTION MAROQUINERIE 
+##                                                                                                 2 
+##                                                                     POISSONNIER-ECAILLER-TRAITEUR 
+##                                                                                                 2 
+##                                                                       REPARATION DES CARROSSERIES 
+##                                                                                                 2 
+## SYSTEMES NUMERIQUES OPTION A SURETE ET SECURITE DES INFRASTRUCTURES, DE L'HABITAT ET DU TERTIAIRE 
+##                                                                                                 2 
+##                       SYSTEMES NUMERIQUES OPTION C RESEAUX INFORMATIQUES ET SYSTEMES COMMUNICANTS 
+##                                                                                                 2 
+##                                     TECHNICIEN D'ETUDES DU BATIMENT OPTION A : ETUDES ET ECONOMIE 
+##                                                                                                 2
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Il y a des taux d'emploi offerts nuls pour certaines catégories qui sont curieux.
+  Par exemple il y le cas pour la construction et le batiment avec pourtant un
+  nombre de formés parmi les plus élevés.
+\end{itemize}
+
+\hypertarget{quiz..}{%
+\section{Quiz..}\label{quiz..}}
+
+\begin{itemize}
+\item
+  Faire les TOP10 et l'inverse pour les Taux de pression
+\item
+  Faire le graphique du taux moyen selon la Filières du Taux de pression
+\end{itemize}
+
+\hypertarget{donnuxe9es-des-ruxe9serves-parlementaires}{%
+\chapter{Données des réserves parlementaires}\label{donnuxe9es-des-ruxe9serves-parlementaires}}
+
+Dans cette partie, on étudie l'utilisation de la réserve parlementaire par les
+députés.
+
+Ce sont les \href{https://www.data.gouv.fr/fr/datasets/reserve-parlementaire/}{données de 2014}
+
+Les questions sont celles d'une personne naïve et sans a priori :
+
+\begin{itemize}
+\item
+  Est-ce que les groupes ont dépensé chacun autant ?
+\item
+  Est-ce que les groupes ont dépensé chacun autant en moyenne ?
+\item
+  Est-ce vrai pour les députés en moyenne ? IdAuteur
+\item
+  Quel est l'enveloppe dépensé au total ?
+\end{itemize}
+
+\begin{itemize}
+\tightlist
+\item
+  Est-ce possible avec le descriptif d'avoir les mots-clefs pour les sous dépensés ?
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reserve }\OtherTok{\textless{}{-}} \FunctionTok{fromJSON}\NormalTok{(}\StringTok{"data/reserve/2014\_reserve\_parlementaire.json"}\NormalTok{)}
+
+\FunctionTok{str}\NormalTok{(reserve)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    13133 obs. of  10 variables:
+##  $ Bénéficiaire        : chr  "Télé Bocal" "Mieux se déplacer à Bicyclette" "Festival du livre et de la presse d'écologie" "ARDHIS" ...
+##  $ Adresse             : chr  "Maison des associations\n1/3 rue Frédérique Lemaître\n75020 Paris" "MDB –\n37 boulevard Bourdon\n75004 Paris" "6 cité de l’Ermitage\n75020 Paris" "76 cours de Vincennes\n75012 Paris" ...
+##  $ Descriptif          : chr  "Mise en œuvre d'ateliers de production locale proposant d’utiliser l'image comme une valorisation du travail des artistes" "Réalisation des supports de communication pour faire connaître ses nouvelles dispositions sur l'usage de la bic"| __truncated__ "Organisation du Festival du livre et de la presse d’écologie Promotion du livre et de l’écrit, information, sen"| __truncated__ "Mise en place d’outils de communication : plaquette multilingue qui pourrait être mise à disposition dans les d"| __truncated__ ...
+##  $ Montant             : int  5000 4000 3500 2500 5000 2000 3000 2000 10000 8000 ...
+##  $ Nom                 : chr  "BAUPIN" "BAUPIN" "BAUPIN" "BAUPIN" ...
+##  $ Prénom              : chr  "Denis" "Denis" "Denis" "Denis" ...
+##  $ Département         : chr  "Paris" "Paris" "Paris" "Paris" ...
+##  $ Groupe              : chr  "Ecolo" "Ecolo" "Ecolo" "Ecolo" ...
+##  $ Programme budgétaire: chr  "313-03" "203-15" "334-01" "177-11" ...
+##  $ ID_Acteur           : chr  "PA609016" "PA609016" "PA609016" "PA609016" ...
+\end{verbatim}
+
+Pourquoi c'est compliqué de faire un gtsummary direct ?
+
+En fait on va se demander si il y a un bénéficiaire qui apparait plusieurs fois.
+
+\hypertarget{buxe9nuxe9ficiaires}{%
+\section{Bénéficiaires}\label{buxe9nuxe9ficiaires}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tb }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(reserve}\SpecialCharTok{$}\NormalTok{Bénéficiaire)}
+\NormalTok{tb1 }\OtherTok{\textless{}{-}}\NormalTok{ tb[tb}\SpecialCharTok{\textgreater{}}\DecValTok{1}\NormalTok{]}
+\FunctionTok{length}\NormalTok{(tb1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 267
+\end{verbatim}
+
+Si oui, est-ce qu'on peut le mettre sous forme de data.frame ? Pourquoi on a
+besoin d'une data.frame pour représenter graphiquement ces informations ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dt }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Nom=}\FunctionTok{names}\NormalTok{(tb),}\AttributeTok{Nombre=}\FunctionTok{as.numeric}\NormalTok{(tb))}
+\FunctionTok{str}\NormalTok{(dt)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    12718 obs. of  2 variables:
+##  $ Nom   : chr  "\"Le Tracteur\" - Compagnie Beaudrain de paroi" "\"Petite enfance\net soutien\nà la parentalité\"" "(A.R.A.C.) Section Saint-Marcel" "« La Bande à Michel » section théâtre du Foyer Laïque" ...
+##  $ Nombre: num  1 1 1 1 1 1 1 1 1 1 ...
+\end{verbatim}
+
+Une représentation visuelle de la répartition du nombre sur ceux qui ont plus de
+2 donations et après sur l'ensemble.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dt,}\FunctionTok{aes}\NormalTok{(Nombre))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/reserve1-1.pdf}
+
+Quels sont les bénéficiaires de plus de 5 donations ? Ce sont des termes génériques
+ou des entités ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tbt }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(reserve}\SpecialCharTok{$}\NormalTok{Bénéficiaire)}
+\NormalTok{dt }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Nom=}\FunctionTok{names}\NormalTok{(tbt),}\AttributeTok{Nombre=}\FunctionTok{as.numeric}\NormalTok{(tbt))}
+\NormalTok{dt[dt}\SpecialCharTok{$}\NormalTok{Nombre}\SpecialCharTok{\textgreater{}}\DecValTok{5}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                          Nom Nombre
+## 325                    AIDES      6
+## 2927               BRIGNOLES      6
+## 3982        Comité des Fêtes      7
+## 4475        Commune de Crest      8
+## 6416                   FNACA      7
+## 8060               Le Refuge     11
+## 10509         Restos du Cœur      6
+## 11095     Secours catholique      9
+## 11096     Secours Catholique      6
+## 11116      Secours Populaire     12
+## 11527 Sou des Ecoles Laïques      7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tbt }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(reserve}\SpecialCharTok{$}\NormalTok{Bénéficiaire)}
+\NormalTok{dt }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Nom=}\FunctionTok{names}\NormalTok{(tbt),}\AttributeTok{Nombre=}\FunctionTok{as.numeric}\NormalTok{(tbt))}
+\FunctionTok{ggplot}\NormalTok{(dt,}\FunctionTok{aes}\NormalTok{(Nombre))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/reserve2-1.pdf}
+
+\hypertarget{par-groupe-politique}{%
+\section{Par groupe politique}\label{par-groupe-politique}}
+
+Si on regarde les dépenses par groupe.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dt,}\FunctionTok{aes}\NormalTok{(Nombre))}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{scale\_y\_log10}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/reserve3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(reserve,}\FunctionTok{aes}\NormalTok{(Groupe,Montant))}\SpecialCharTok{+}\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{,}\AttributeTok{position=}\StringTok{"dodge"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/reserve4-1.pdf}
+
+Mais que ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(reserve}\SpecialCharTok{$}\NormalTok{Groupe)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##       Ecolo   GDR    NI  RRDP   SRC   UDI   UMP 
+##    52   549   148   128   262  5172   741  6081
+\end{verbatim}
+
+Il faut trouver et corriger.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{maisque }\OtherTok{\textless{}{-}}\NormalTok{ reserve }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(Groupe}\SpecialCharTok{==}\StringTok{""}\NormalTok{)}
+
+\FunctionTok{table}\NormalTok{(maisque}\SpecialCharTok{$}\NormalTok{Nom)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Présidence de l'Assemblée nationale 
+##                                  52
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(maisque}\SpecialCharTok{$}\NormalTok{Descriptif)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Agir en faveur de l'emploi des jeunes diplômés issus des quartiers prioritaires ou de milieux sociaux défavorisés. 
+##                                                                                                                  1 
+##                                                            Association de juriste dans la lutte contre l'exclusion 
+##                                                                                                                  1 
+##                                                  Création d'un système d'information pour le réseau Habitat Jeunes 
+##                                                                                                                  1 
+##                                                Equipement du futur 3ème siège de l'Alliance française de la Havane 
+##                                                                                                                  1 
+##                                                                                                     Fonctionnement 
+##                                                                                                                 44 
+##                                                                                  Fonctionnement Mardis de l'Avenir 
+##                                                                                                                  1 
+##                                                                  Insertion sociale et professionnelle par le sport 
+##                                                                                                                  1 
+##                                                                Soutien projet consacré aux femmes de l'immigration 
+##                                                                                                                  1 
+##                                                                                            Travaux d'intérêt local 
+##                                                                                                                  1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reserve }\OtherTok{\textless{}{-}}\NormalTok{ reserve }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Groupe=}\FunctionTok{ifelse}\NormalTok{(Groupe}\SpecialCharTok{==}\StringTok{""}\NormalTok{,}\StringTok{"Présidence AN"}\NormalTok{,Groupe))}
+\end{Highlighting}
+\end{Shaded}
+
+L'erreur corrigée
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(reserve,}\FunctionTok{aes}\NormalTok{(Groupe,Montant))}\SpecialCharTok{+}\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{,}\AttributeTok{position=}\StringTok{"dodge"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/reserve5-1.pdf}
+
+Les résultats par groupe avec gtsummary ou summarize.
+
+on en profite pour calculer la somme des donations, la donation moyenne par
+Acteur et le nombre d'acteur par groupe
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{groupe }\OtherTok{\textless{}{-}}\NormalTok{ reserve }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(Groupe)}
+
+\NormalTok{res }\OtherTok{\textless{}{-}}\NormalTok{ groupe }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarize}\NormalTok{(}\AttributeTok{min=}\FunctionTok{min}\NormalTok{(Montant),}\AttributeTok{max=}\FunctionTok{max}\NormalTok{(Montant),}
+                     \AttributeTok{Moyenne=}\FunctionTok{mean}\NormalTok{(Montant),}\AttributeTok{EC=}\FunctionTok{sd}\NormalTok{(Montant),}
+                     \AttributeTok{Somme=}\FunctionTok{sum}\NormalTok{(Montant),}\AttributeTok{nbActeur=}\FunctionTok{length}\NormalTok{(}\FunctionTok{unique}\NormalTok{(ID\_Acteur)),}
+                     \AttributeTok{Somme\_par\_acteur=}\NormalTok{Somme}\SpecialCharTok{/}\NormalTok{nbActeur)}
+\NormalTok{res }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 8 x 8
+##   Groupe          min    max Moyenne     EC    Somme nbActeur Somme_par_acteur
+##   <chr>         <int>  <int>   <dbl>  <dbl>    <int>    <int>            <dbl>
+## 1 Ecolo           500  50000   4805.  4039.  2637890       18          146549.
+## 2 GDR              67 130000  14198. 18951.  2101366       16          131335.
+## 3 NI              800  90000   8926. 10212.  1142574        9          126953.
+## 4 Présidence AN  1000 250000  54923. 53608.  2856000        1         2856000 
+## 5 RRDP            650  98000   8813. 11365.  2309018       18          128279.
+## 6 SRC             300 190000   7797. 10387. 40323770      290          139047.
+## 7 UDI             960  88000   5523.  6880.  4092383       31          132012.
+## 8 UMP             240 200000   4047.  7410. 24608557      200          123043.
+\end{verbatim}
+
+\hypertarget{exportation-1}{%
+\section{Exportation}\label{exportation-1}}
+
+Comment l'exporter pour ses collègues ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(writexl)}
+\FunctionTok{write\_xlsx}\NormalTok{(res,}\StringTok{"Résultats/Résultats{-}Deputes{-}Reserve.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{les-sommes-par-acteurs}{%
+\section{Les sommes par acteurs}\label{les-sommes-par-acteurs}}
+
+Les sommes par acteurs selon les groupes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(res }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(nbActeur }\SpecialCharTok{!=} \DecValTok{1}\NormalTok{),}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Groupe,}\AttributeTok{y=}\NormalTok{Somme\_par\_acteur,}\AttributeTok{fill=}\NormalTok{Groupe))}\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(,}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{,}\AttributeTok{position=}\StringTok{"dodge"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/reserve6-1.pdf}
+
+\hypertarget{quoi-faire-avec-le-descriptif}{%
+\section{Quoi faire avec le descriptif ?}\label{quoi-faire-avec-le-descriptif}}
+
+En utilisant le descriptif :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reserve }\OtherTok{\textless{}{-}}\NormalTok{ reserve }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{doc\_id=}\FunctionTok{paste0}\NormalTok{(}\StringTok{"A"}\NormalTok{,}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(reserve)))}
+
+\NormalTok{reserve\_corpus }\OtherTok{\textless{}{-}} \FunctionTok{corpus}\NormalTok{(}
+\NormalTok{  reserve,}
+  \AttributeTok{text\_field =} \StringTok{"Descriptif"}\NormalTok{,}
+  \AttributeTok{docid\_field =} \StringTok{"doc\_id"}
+\NormalTok{)}
+
+\NormalTok{mystopwords }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"loire{-}atlantique"}\NormalTok{,}\StringTok{"c\textquotesingle{}est"}\NormalTok{)}
+
+\NormalTok{tok }\OtherTok{\textless{}{-}} \FunctionTok{tokens}\NormalTok{(reserve\_corpus, }\AttributeTok{remove\_punct =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{remove\_numbers =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tokens\_tolower}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tokens\_remove}\NormalTok{(}\AttributeTok{pattern =}\NormalTok{ mystopwords,}\AttributeTok{valuetype =} \StringTok{\textquotesingle{}fixed\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tokens\_remove}\NormalTok{(}\FunctionTok{stopwords}\NormalTok{(}\StringTok{"fr"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tokens\_wordstem}\NormalTok{(}\AttributeTok{language=}\StringTok{"fr"}\NormalTok{) }
+  
+\NormalTok{dtm }\OtherTok{\textless{}{-}} \FunctionTok{dfm}\NormalTok{(tok)}
+
+\NormalTok{res }\OtherTok{\textless{}{-}} \FunctionTok{rainette}\NormalTok{(dtm, }\AttributeTok{k =} \DecValTok{5}\NormalTok{)}
+\CommentTok{\#rainette\_explor(res, dtm, reserve\_corpus)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tok }\OtherTok{\textless{}{-}} \FunctionTok{tokens}\NormalTok{(reserve\_corpus, }\AttributeTok{remove\_punct =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{remove\_numbers =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tokens\_remove}\NormalTok{(}\AttributeTok{pattern =}\NormalTok{ mystopwords,}\AttributeTok{valuetype =} \StringTok{\textquotesingle{}fixed\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tokens\_tolower}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tokens\_remove}\NormalTok{(}\FunctionTok{stopwords}\NormalTok{(}\StringTok{"fr"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tokens\_wordstem}\NormalTok{(}\AttributeTok{language =} \StringTok{"fr"}\NormalTok{)}
+
+\NormalTok{dtm }\OtherTok{\textless{}{-}} \FunctionTok{dfm}\NormalTok{(tok)}
+
+\NormalTok{top}\OtherTok{=}\FunctionTok{topfeatures}\NormalTok{(dtm, }\DecValTok{30}\NormalTok{)}
+\NormalTok{topall}\OtherTok{=}\FunctionTok{topfeatures}\NormalTok{(dtm, }\DecValTok{300}\NormalTok{)}
+\NormalTok{top}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  fonction      d'un    traval     local    aménag     achat    associ    cultur d'intérêt  matériel      sall     sport 
+##      5254      1282       813       793       439       425       422       406       404       374       374       366 
+##  création       mis    réfect     rénov        vi      mair  communal construct    l'écol        ru  l'aménag   l'églis 
+##       342       323       321       309       295       294       287       270       235       235       234       234 
+##   scolair   organis   restaur   soutien       aid  acquisit 
+##       232       226       225       196       194       185
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dfreq }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{word=}\FunctionTok{names}\NormalTok{(topall),}\AttributeTok{freq=}\FunctionTok{as.numeric}\NormalTok{(topall))}
+
+\FunctionTok{wordcloud2}\NormalTok{(dfreq,}\AttributeTok{size=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/reserve20-1.pdf}
+
+\hypertarget{enquuxeate-emploi}{%
+\chapter{Enquête Emploi}\label{enquuxeate-emploi}}
+
+\hypertarget{exemple-de-calcul-dindicateurs}{%
+\section{Exemple de calcul d'indicateurs}\label{exemple-de-calcul-dindicateurs}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summarize}\NormalTok{(EEC,}\AttributeTok{tauxchom =} \DecValTok{100}\SpecialCharTok{*}\FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(ACTEU }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{)))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(ACTEU }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   tauxchom
+## 1 8.443378
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summarize}\NormalTok{(EEC,}\AttributeTok{proportion=}\FunctionTok{sum}\NormalTok{((ACTEU }\SpecialCharTok{\%in\%} \DecValTok{2}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{((ACTEU }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))))}\SpecialCharTok{*}\DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   proportion
+## 1   8.788914
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summarize}\NormalTok{(EEC,}\AttributeTok{proportion=}\FunctionTok{sum}\NormalTok{((SEXE }\SpecialCharTok{\%in\%} \DecValTok{2}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{((SEXE }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))))}\SpecialCharTok{*}\DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   proportion
+## 1    52.8948
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summarize}\NormalTok{(EEC,}\AttributeTok{proportion=}\FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(SEXE }\SpecialCharTok{\%in\%} \DecValTok{2}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(SEXE }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))))}\SpecialCharTok{*}\DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   proportion
+## 1   52.25345
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summarize}\NormalTok{(EEC,}\AttributeTok{proportion=}\FunctionTok{sum}\NormalTok{((SEXE }\SpecialCharTok{\%in\%} \DecValTok{2} \SpecialCharTok{\&}\NormalTok{ ACTEU }\SpecialCharTok{\%in\%} \DecValTok{2}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{((ACTEU }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ SEXE }\SpecialCharTok{\%in\%} \DecValTok{2}\NormalTok{)))}\SpecialCharTok{*}\DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   proportion
+## 1   8.800153
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summarize}\NormalTok{(EEC,}\AttributeTok{proportion=}\FunctionTok{sum}\NormalTok{((SEXE }\SpecialCharTok{\%in\%} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ ACTEU }\SpecialCharTok{\%in\%} \DecValTok{2}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{((ACTEU }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ SEXE }\SpecialCharTok{\%in\%} \DecValTok{1}\NormalTok{)))}\SpecialCharTok{*}\DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   proportion
+## 1   8.777967
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summarize}\NormalTok{(EEC,}\AttributeTok{proportion=}\FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(SEXE }\SpecialCharTok{\%in\%} \DecValTok{2} \SpecialCharTok{\&}\NormalTok{ ACTEU }\SpecialCharTok{\%in\%} \DecValTok{2}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(SEXE }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ ACTEU }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{))))}\SpecialCharTok{*}\DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   proportion
+## 1   48.10994
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summarize}\NormalTok{(EEC,}\AttributeTok{tauxCDD50 =} \DecValTok{100}\SpecialCharTok{*}\FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(AGE3 }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{50}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ STAT2 }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ STATUTR }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{)))}\SpecialCharTok{/}
+                    \FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(AGE3 }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{50}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ STAT2 }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{))))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   tauxCDD50
+## 1  6.017983
+\end{verbatim}
+
+Calcul de la part de temps partiel parmi les femmes en emploi en moyenne annuelle sur 2019
+28,4 \% en arrondissant à une décimale
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summarize}\NormalTok{(EEC,}\AttributeTok{tauxFTP =} \DecValTok{100}\SpecialCharTok{*}\FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(SEXE }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ ACTEU }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ TPPRED }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{)))}\SpecialCharTok{/}
+            \FunctionTok{sum}\NormalTok{(EXTRIAN}\SpecialCharTok{*}\NormalTok{(SEXE }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ ACTEU }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{))))                                                 }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    tauxFTP
+## 1 28.43296
 \end{verbatim}
 
   \bibliography{book.bib,packages.bib}

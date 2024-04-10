@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Données des lycées pro. | A Minimal Book on R</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Données des lycées pro. | A Minimal Book on R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
-  <meta name="github-repo" content="pbessonneau/Cours_R_2024" />
+  
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 8 Données des lycées pro. | A Minimal Book on R" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Pascal Bessonneau" />
 
 
-<meta name="date" content="2024-04-04" />
+<meta name="date" content="2024-04-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="manipulation-avancée-mettre-en-forme-vos-données.html"/>
-<link rel="next" href="enquête-emploi.html"/>
+<link rel="next" href="données-des-réserves-parlementaires.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,7 +52,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet" />
 <script src="libs/wordcloud2-0.0.1/wordcloud2-all.js"></script>
 <script src="libs/wordcloud2-0.0.1/hover.js"></script>
@@ -61,7 +61,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -202,27 +202,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#transformation-de-plusieurs-variables"><i class="fa fa-check"></i><b>7.1</b> Transformation de plusieurs variables</a></li>
 <li class="chapter" data-level="7.2" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#opérateurs-et-case_when"><i class="fa fa-check"></i><b>7.2</b> Opérateurs et case_when</a></li>
 <li class="chapter" data-level="7.3" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#réutilisation-de-statistiques"><i class="fa fa-check"></i><b>7.3</b> Réutilisation de statistiques</a></li>
-<li class="chapter" data-level="7.4" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#chargement"><i class="fa fa-check"></i><b>7.4</b> Chargement</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html"><i class="fa fa-check"></i><b>8</b> Données des lycées pro.</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#importation-des-données"><i class="fa fa-check"></i><b>8.1</b> Importation des données</a></li>
 <li class="chapter" data-level="8.2" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#analyses"><i class="fa fa-check"></i><b>8.2</b> Analyses</a></li>
-<li class="chapter" data-level="8.3" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#quiz.."><i class="fa fa-check"></i><b>8.3</b> Quiz..</a></li>
-<li class="chapter" data-level="8.4" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#bénéficiaires"><i class="fa fa-check"></i><b>8.4</b> Bénéficiaires</a></li>
-<li class="chapter" data-level="8.5" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#par-groupe-politique"><i class="fa fa-check"></i><b>8.5</b> Par groupe politique</a></li>
-<li class="chapter" data-level="8.6" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#exportation-1"><i class="fa fa-check"></i><b>8.6</b> Exportation</a></li>
-<li class="chapter" data-level="8.7" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#les-sommes-par-acteurs"><i class="fa fa-check"></i><b>8.7</b> Les sommes par acteurs</a></li>
-<li class="chapter" data-level="8.8" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#quoi-faire-avec-le-descriptif"><i class="fa fa-check"></i><b>8.8</b> Quoi faire avec le descriptif ?</a></li>
+<li class="chapter" data-level="8.3" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#commentaires-des-auditeurs"><i class="fa fa-check"></i><b>8.3</b> Commentaires des auditeurs</a></li>
+<li class="chapter" data-level="8.4" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#quiz.."><i class="fa fa-check"></i><b>8.4</b> Quiz..</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="enquête-emploi.html"><a href="enquête-emploi.html"><i class="fa fa-check"></i><b>9</b> Enquête Emploi</a>
+<li class="chapter" data-level="9" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html"><i class="fa fa-check"></i><b>9</b> Données des réserves parlementaires</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="enquête-emploi.html"><a href="enquête-emploi.html#exemple-de-calcul-dindicateurs"><i class="fa fa-check"></i><b>9.1</b> Exemple de calcul d’indicateurs</a></li>
+<li class="chapter" data-level="9.1" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#bénéficiaires"><i class="fa fa-check"></i><b>9.1</b> Bénéficiaires</a></li>
+<li class="chapter" data-level="9.2" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#par-groupe-politique"><i class="fa fa-check"></i><b>9.2</b> Par groupe politique</a></li>
+<li class="chapter" data-level="9.3" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#exportation-1"><i class="fa fa-check"></i><b>9.3</b> Exportation</a></li>
+<li class="chapter" data-level="9.4" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#les-sommes-par-acteurs"><i class="fa fa-check"></i><b>9.4</b> Les sommes par acteurs</a></li>
+<li class="chapter" data-level="9.5" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#quoi-faire-avec-le-descriptif"><i class="fa fa-check"></i><b>9.5</b> Quoi faire avec le descriptif ?</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="exercices.html"><a href="exercices.html"><i class="fa fa-check"></i><b>10</b> Exercices</a>
+<li class="chapter" data-level="10" data-path="enquête-emploi.html"><a href="enquête-emploi.html"><i class="fa fa-check"></i><b>10</b> Enquête Emploi</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="exercices.html"><a href="exercices.html#ask-a-manager"><i class="fa fa-check"></i><b>10.1</b> Ask A Manager</a></li>
-<li class="chapter" data-level="10.2" data-path="exercices.html"><a href="exercices.html#pisa"><i class="fa fa-check"></i><b>10.2</b> PISA</a></li>
+<li class="chapter" data-level="10.1" data-path="enquête-emploi.html"><a href="enquête-emploi.html#exemple-de-calcul-dindicateurs"><i class="fa fa-check"></i><b>10.1</b> Exemple de calcul d’indicateurs</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -249,8 +247,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="importation-des-données" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Importation des données<a href="données-des-lycées-pro..html#importation-des-données" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On importe les données qui sont contenues dans un fichier Excel.</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="données-des-lycées-pro..html#cb215-1" tabindex="-1"></a>lycee <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/fr-en-taux-de-pression-et-demploi.xlsx&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="données-des-lycées-pro..html#cb216-1" tabindex="-1"></a><span class="fu">str</span>(lycee)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="données-des-lycées-pro..html#cb210-1" tabindex="-1"></a>lycee <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/fr-en-taux-de-pression-et-demploi.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="données-des-lycées-pro..html#cb211-1" tabindex="-1"></a><span class="fu">str</span>(lycee)</span></code></pre></div>
 <pre><code>## tibble [185 × 18] (S3: tbl_df/tbl/data.frame)
 ##  $ Année diplôme           : num [1:185] 2019 2019 2019 2019 2019 ...
 ##  $ Diplôme                 : chr [1:185] &quot;BACPRO BOULANGER-PÂTISSIER&quot; &quot;BACPRO ARTISANAT ET METIERS D&#39;ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE&quot; &quot;BACPRO ARTISANAT ET METIERS D&#39;ART OPTION : METIERS DE L&#39;ENSEIGNE ET DE LA SIGNALETIQUE&quot; &quot;BACPRO TECHNICIEN DE MAINTENANCE DES SYSTEMES ENERGETIQUES ET CLIMATIQUES&quot; ...
@@ -275,40 +273,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>On a les colonnes <strong>Code diplome…12</strong> et <strong>Code diplome…15</strong> qui ont eu
 un problème car elle porte le même nom sous Excel ce qui n’est pas possible dans R.
 R a donc ajouter le numéro de la colonne lors de l’importation.</p>
-<p>On vérifie qu’on a bien une seule année de diplôme :</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="données-des-lycées-pro..html#cb218-1" tabindex="-1"></a><span class="fu">table</span>(lycee<span class="sc">$</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="données-des-lycées-pro..html#cb213-1" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">table</span>(lycee<span class="sc">$</span>MEFSTAT11)</span>
+<span id="cb213-2"><a href="données-des-lycées-pro..html#cb213-2" tabindex="-1"></a>tmp[tmp<span class="sc">&gt;</span><span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## 
-## 2019 
-##  185</code></pre>
-<p>On a vu que dans le tableau Excel, on a autant de valeurs pour le <strong>diplôme</strong> et le
-la <strong>Spécialité libellé</strong> que de lignes… De même pour les colonnes <strong>MEFSTAT</strong>
-et <strong>Code Diplôme</strong>.</p>
-<p>On voit que la variable <strong>première année</strong> n’est pas très utile non plus.</p>
+## 23810020006 23810022404 23810023007 23810024304 23810025307 23810025516 23810030003 23810031211 23810032210 
+##           6           2           3           3           4           2           3           3           3</code></pre>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="données-des-lycées-pro..html#cb215-1" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">table</span>(lycee<span class="sc">$</span>Diplôme)</span>
+<span id="cb215-2"><a href="données-des-lycées-pro..html#cb215-2" tabindex="-1"></a>tmp[tmp<span class="sc">&gt;</span><span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## 
+##                              BACPRO ACCOMPAGNEMENT SOINS ET SERVICES A LA PERSONNE OPTION A - A DOMICILE 
+##                                                                                                        2 
+##                                                              BACPRO AMENAGEMENT ET FINITIONS DU BATIMENT 
+##                                                                                                        2 
+##                   BACPRO ARTISANAT ET METIERS D&#39;ART OPTION : METIERS DE L&#39;ENSEIGNE ET DE LA SIGNALETIQUE 
+##                                                                                                        2 
+##                            BACPRO ARTISANAT ET METIERS D&#39;ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE 
+##                                                                                                        2 
+##                                                                                        BACPRO LOGISTIQUE 
+##                                                                                                        2 
+##                                                     BACPRO MAINTENANCE DES VEHICULES OPTION C MOTOCYCLES 
+##                                                                                                        2 
+##                                                                        BACPRO MENUISERIE ALUMINIUM-VERRE 
+##                                                                                                        2 
+##                                                               BACPRO METIERS DU CUIR OPTION MAROQUINERIE 
+##                                                                                                        2 
+##                                                                     BACPRO POISSONNIER-ECAILLER-TRAITEUR 
+##                                                                                                        2 
+## BACPRO SYSTEMES NUMERIQUES OPTION A SURETE ET SECURITE DES INFRASTRUCTURES, DE L&#39;HABITAT ET DU TERTIAIRE 
+##                                                                                                        2 
+##                       BACPRO SYSTEMES NUMERIQUES OPTION C RESEAUX INFORMATIQUES ET SYSTEMES COMMUNICANTS 
+##                                                                                                        2 
+##                                     BACPRO TECHNICIEN D&#39;ETUDES DU BATIMENT OPTION A : ETUDES ET ECONOMIE 
+##                                                                                                        2</code></pre>
+<p>On a beaucoup de valeurs pour le <strong>diplôme</strong>, la <strong>Spécialité libellé</strong> etc.
+De même pour les colonnes <strong>MEFSTAT</strong> et <strong>Code Diplôme</strong>.</p>
+<p>La variable <strong>première année</strong> n’est pas très utile non plus car elle indique
+uniquement 2019.</p>
+<p>Ces variables gênantes pour les statistiques descriptives sont supprimées de
+celles-ci.</p>
 <p>On regarde de loin comment ça se comporte :</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="données-des-lycées-pro..html#cb220-1" tabindex="-1"></a><span class="fu">theme_gtsummary_compact</span>(<span class="at">set_theme =</span> <span class="cn">TRUE</span>, <span class="at">font_size =</span> <span class="cn">NULL</span>)</span>
-<span id="cb220-2"><a href="données-des-lycées-pro..html#cb220-2" tabindex="-1"></a>lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span>Diplôme,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
-<span id="cb220-3"><a href="données-des-lycées-pro..html#cb220-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
-<span id="cb220-4"><a href="données-des-lycées-pro..html#cb220-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
-<span id="cb220-5"><a href="données-des-lycées-pro..html#cb220-5" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span></span>
-<span id="cb220-6"><a href="données-des-lycées-pro..html#cb220-6" tabindex="-1"></a>                 ) <span class="sc">%&gt;%</span> </span>
-<span id="cb220-7"><a href="données-des-lycées-pro..html#cb220-7" tabindex="-1"></a>  <span class="fu">tbl_summary</span>()</span></code></pre></div>
-<div id="wvxsztrywb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wvxsztrywb table {
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="données-des-lycées-pro..html#cb217-1" tabindex="-1"></a><span class="fu">theme_gtsummary_compact</span>(<span class="at">set_theme =</span> <span class="cn">TRUE</span>, <span class="at">font_size =</span> <span class="cn">NULL</span>)</span>
+<span id="cb217-2"><a href="données-des-lycées-pro..html#cb217-2" tabindex="-1"></a>lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span>Diplôme,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
+<span id="cb217-3"><a href="données-des-lycées-pro..html#cb217-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
+<span id="cb217-4"><a href="données-des-lycées-pro..html#cb217-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
+<span id="cb217-5"><a href="données-des-lycées-pro..html#cb217-5" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span></span>
+<span id="cb217-6"><a href="données-des-lycées-pro..html#cb217-6" tabindex="-1"></a>                 ) <span class="sc">%&gt;%</span> </span>
+<span id="cb217-7"><a href="données-des-lycées-pro..html#cb217-7" tabindex="-1"></a>  <span class="fu">tbl_summary</span>()</span></code></pre></div>
+<div id="vfynfplcjs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vfynfplcjs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wvxsztrywb thead, #wvxsztrywb tbody, #wvxsztrywb tfoot, #wvxsztrywb tr, #wvxsztrywb td, #wvxsztrywb th {
+#vfynfplcjs thead, #vfynfplcjs tbody, #vfynfplcjs tfoot, #vfynfplcjs tr, #vfynfplcjs td, #vfynfplcjs th {
   border-style: none;
 }
 
-#wvxsztrywb p {
+#vfynfplcjs p {
   margin: 0;
   padding: 0;
 }
 
-#wvxsztrywb .gt_table {
+#vfynfplcjs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -334,12 +361,12 @@ et <strong>Code Diplôme</strong>.</p>
   border-left-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_caption {
+#vfynfplcjs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wvxsztrywb .gt_title {
+#vfynfplcjs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -351,7 +378,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-bottom-width: 0;
 }
 
-#wvxsztrywb .gt_subtitle {
+#vfynfplcjs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -363,7 +390,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-top-width: 0;
 }
 
-#wvxsztrywb .gt_heading {
+#vfynfplcjs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -375,13 +402,13 @@ et <strong>Code Diplôme</strong>.</p>
   border-right-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_bottom_border {
+#vfynfplcjs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_col_headings {
+#vfynfplcjs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -396,7 +423,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-right-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_col_heading {
+#vfynfplcjs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -416,7 +443,7 @@ et <strong>Code Diplôme</strong>.</p>
   overflow-x: hidden;
 }
 
-#wvxsztrywb .gt_column_spanner_outer {
+#vfynfplcjs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -428,15 +455,15 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 4px;
 }
 
-#wvxsztrywb .gt_column_spanner_outer:first-child {
+#vfynfplcjs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wvxsztrywb .gt_column_spanner_outer:last-child {
+#vfynfplcjs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wvxsztrywb .gt_column_spanner {
+#vfynfplcjs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -448,11 +475,11 @@ et <strong>Code Diplôme</strong>.</p>
   width: 100%;
 }
 
-#wvxsztrywb .gt_spanner_row {
+#vfynfplcjs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wvxsztrywb .gt_group_heading {
+#vfynfplcjs .gt_group_heading {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -478,7 +505,7 @@ et <strong>Code Diplôme</strong>.</p>
   text-align: left;
 }
 
-#wvxsztrywb .gt_empty_group_heading {
+#vfynfplcjs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -493,15 +520,15 @@ et <strong>Code Diplôme</strong>.</p>
   vertical-align: middle;
 }
 
-#wvxsztrywb .gt_from_md > :first-child {
+#vfynfplcjs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wvxsztrywb .gt_from_md > :last-child {
+#vfynfplcjs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wvxsztrywb .gt_row {
+#vfynfplcjs .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -520,7 +547,7 @@ et <strong>Code Diplôme</strong>.</p>
   overflow-x: hidden;
 }
 
-#wvxsztrywb .gt_stub {
+#vfynfplcjs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -533,7 +560,7 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#wvxsztrywb .gt_stub_row_group {
+#vfynfplcjs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -547,15 +574,15 @@ et <strong>Code Diplôme</strong>.</p>
   vertical-align: top;
 }
 
-#wvxsztrywb .gt_row_group_first td {
+#vfynfplcjs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wvxsztrywb .gt_row_group_first th {
+#vfynfplcjs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wvxsztrywb .gt_summary_row {
+#vfynfplcjs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -565,16 +592,16 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#wvxsztrywb .gt_first_summary_row {
+#vfynfplcjs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_first_summary_row.thick {
+#vfynfplcjs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wvxsztrywb .gt_last_summary_row {
+#vfynfplcjs .gt_last_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -584,7 +611,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_grand_summary_row {
+#vfynfplcjs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -594,7 +621,7 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#wvxsztrywb .gt_first_grand_summary_row {
+#vfynfplcjs .gt_first_grand_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -604,7 +631,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-top-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_last_grand_summary_row_top {
+#vfynfplcjs .gt_last_grand_summary_row_top {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -614,11 +641,11 @@ et <strong>Code Diplôme</strong>.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_striped {
+#vfynfplcjs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wvxsztrywb .gt_table_body {
+#vfynfplcjs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -627,7 +654,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_footnotes {
+#vfynfplcjs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -641,7 +668,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-right-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_footnote {
+#vfynfplcjs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -650,7 +677,7 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#wvxsztrywb .gt_sourcenotes {
+#vfynfplcjs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -664,7 +691,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-right-color: #D3D3D3;
 }
 
-#wvxsztrywb .gt_sourcenote {
+#vfynfplcjs .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -672,63 +699,63 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#wvxsztrywb .gt_left {
+#vfynfplcjs .gt_left {
   text-align: left;
 }
 
-#wvxsztrywb .gt_center {
+#vfynfplcjs .gt_center {
   text-align: center;
 }
 
-#wvxsztrywb .gt_right {
+#vfynfplcjs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wvxsztrywb .gt_font_normal {
+#vfynfplcjs .gt_font_normal {
   font-weight: normal;
 }
 
-#wvxsztrywb .gt_font_bold {
+#vfynfplcjs .gt_font_bold {
   font-weight: bold;
 }
 
-#wvxsztrywb .gt_font_italic {
+#vfynfplcjs .gt_font_italic {
   font-style: italic;
 }
 
-#wvxsztrywb .gt_super {
+#vfynfplcjs .gt_super {
   font-size: 65%;
 }
 
-#wvxsztrywb .gt_footnote_marks {
+#vfynfplcjs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wvxsztrywb .gt_asterisk {
+#vfynfplcjs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wvxsztrywb .gt_indent_1 {
+#vfynfplcjs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wvxsztrywb .gt_indent_2 {
+#vfynfplcjs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wvxsztrywb .gt_indent_3 {
+#vfynfplcjs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wvxsztrywb .gt_indent_4 {
+#vfynfplcjs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wvxsztrywb .gt_indent_5 {
+#vfynfplcjs .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -805,34 +832,34 @@ et <strong>Code Diplôme</strong>.</p>
   </tfoot>
 </table>
 </div>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="données-des-lycées-pro..html#cb221-1" tabindex="-1"></a><span class="fu">reset_gtsummary_theme</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="données-des-lycées-pro..html#cb218-1" tabindex="-1"></a><span class="fu">reset_gtsummary_theme</span>()</span></code></pre></div>
 <p>On voit que les libellés sont assez variés, un peu trop avec des libellés comme
 <strong>Mer</strong> qui n’ont que 3 diplômes comme <strong>Relation client, etc.</strong>.</p>
 <p>On regarde les valeurs extrèmes et les quantiles pour les variables quantitatives.</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="données-des-lycées-pro..html#cb222-1" tabindex="-1"></a><span class="fu">theme_gtsummary_compact</span>(<span class="at">set_theme =</span> <span class="cn">TRUE</span>, <span class="at">font_size =</span> <span class="cn">NULL</span>)</span>
-<span id="cb222-2"><a href="données-des-lycées-pro..html#cb222-2" tabindex="-1"></a>lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span>Diplôme,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
-<span id="cb222-3"><a href="données-des-lycées-pro..html#cb222-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
-<span id="cb222-4"><a href="données-des-lycées-pro..html#cb222-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
-<span id="cb222-5"><a href="données-des-lycées-pro..html#cb222-5" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span></span>
-<span id="cb222-6"><a href="données-des-lycées-pro..html#cb222-6" tabindex="-1"></a>                 ) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span></span>
-<span id="cb222-7"><a href="données-des-lycées-pro..html#cb222-7" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(<span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">&quot;{mean} ({sd}) {min}-{max}&quot;</span>)</span></code></pre></div>
-<div id="saoogunbpt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#saoogunbpt table {
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="données-des-lycées-pro..html#cb219-1" tabindex="-1"></a><span class="fu">theme_gtsummary_compact</span>(<span class="at">set_theme =</span> <span class="cn">TRUE</span>, <span class="at">font_size =</span> <span class="cn">NULL</span>)</span>
+<span id="cb219-2"><a href="données-des-lycées-pro..html#cb219-2" tabindex="-1"></a>lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span>Diplôme,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
+<span id="cb219-3"><a href="données-des-lycées-pro..html#cb219-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
+<span id="cb219-4"><a href="données-des-lycées-pro..html#cb219-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
+<span id="cb219-5"><a href="données-des-lycées-pro..html#cb219-5" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span></span>
+<span id="cb219-6"><a href="données-des-lycées-pro..html#cb219-6" tabindex="-1"></a>                 ) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span></span>
+<span id="cb219-7"><a href="données-des-lycées-pro..html#cb219-7" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(<span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">&quot;{mean} ({sd}) {min}-{max}&quot;</span>)</span></code></pre></div>
+<div id="gidhbsimmu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gidhbsimmu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#saoogunbpt thead, #saoogunbpt tbody, #saoogunbpt tfoot, #saoogunbpt tr, #saoogunbpt td, #saoogunbpt th {
+#gidhbsimmu thead, #gidhbsimmu tbody, #gidhbsimmu tfoot, #gidhbsimmu tr, #gidhbsimmu td, #gidhbsimmu th {
   border-style: none;
 }
 
-#saoogunbpt p {
+#gidhbsimmu p {
   margin: 0;
   padding: 0;
 }
 
-#saoogunbpt .gt_table {
+#gidhbsimmu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -858,12 +885,12 @@ et <strong>Code Diplôme</strong>.</p>
   border-left-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_caption {
+#gidhbsimmu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#saoogunbpt .gt_title {
+#gidhbsimmu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -875,7 +902,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-bottom-width: 0;
 }
 
-#saoogunbpt .gt_subtitle {
+#gidhbsimmu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -887,7 +914,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-top-width: 0;
 }
 
-#saoogunbpt .gt_heading {
+#gidhbsimmu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -899,13 +926,13 @@ et <strong>Code Diplôme</strong>.</p>
   border-right-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_bottom_border {
+#gidhbsimmu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_col_headings {
+#gidhbsimmu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -920,7 +947,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-right-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_col_heading {
+#gidhbsimmu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -940,7 +967,7 @@ et <strong>Code Diplôme</strong>.</p>
   overflow-x: hidden;
 }
 
-#saoogunbpt .gt_column_spanner_outer {
+#gidhbsimmu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -952,15 +979,15 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 4px;
 }
 
-#saoogunbpt .gt_column_spanner_outer:first-child {
+#gidhbsimmu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#saoogunbpt .gt_column_spanner_outer:last-child {
+#gidhbsimmu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#saoogunbpt .gt_column_spanner {
+#gidhbsimmu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -972,11 +999,11 @@ et <strong>Code Diplôme</strong>.</p>
   width: 100%;
 }
 
-#saoogunbpt .gt_spanner_row {
+#gidhbsimmu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#saoogunbpt .gt_group_heading {
+#gidhbsimmu .gt_group_heading {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1002,7 +1029,7 @@ et <strong>Code Diplôme</strong>.</p>
   text-align: left;
 }
 
-#saoogunbpt .gt_empty_group_heading {
+#gidhbsimmu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1017,15 +1044,15 @@ et <strong>Code Diplôme</strong>.</p>
   vertical-align: middle;
 }
 
-#saoogunbpt .gt_from_md > :first-child {
+#gidhbsimmu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#saoogunbpt .gt_from_md > :last-child {
+#gidhbsimmu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#saoogunbpt .gt_row {
+#gidhbsimmu .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1044,7 +1071,7 @@ et <strong>Code Diplôme</strong>.</p>
   overflow-x: hidden;
 }
 
-#saoogunbpt .gt_stub {
+#gidhbsimmu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1057,7 +1084,7 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#saoogunbpt .gt_stub_row_group {
+#gidhbsimmu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1071,15 +1098,15 @@ et <strong>Code Diplôme</strong>.</p>
   vertical-align: top;
 }
 
-#saoogunbpt .gt_row_group_first td {
+#gidhbsimmu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#saoogunbpt .gt_row_group_first th {
+#gidhbsimmu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#saoogunbpt .gt_summary_row {
+#gidhbsimmu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1089,16 +1116,16 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#saoogunbpt .gt_first_summary_row {
+#gidhbsimmu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_first_summary_row.thick {
+#gidhbsimmu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#saoogunbpt .gt_last_summary_row {
+#gidhbsimmu .gt_last_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1108,7 +1135,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_grand_summary_row {
+#gidhbsimmu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1118,7 +1145,7 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#saoogunbpt .gt_first_grand_summary_row {
+#gidhbsimmu .gt_first_grand_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1128,7 +1155,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-top-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_last_grand_summary_row_top {
+#gidhbsimmu .gt_last_grand_summary_row_top {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1138,11 +1165,11 @@ et <strong>Code Diplôme</strong>.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_striped {
+#gidhbsimmu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#saoogunbpt .gt_table_body {
+#gidhbsimmu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1151,7 +1178,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_footnotes {
+#gidhbsimmu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1165,7 +1192,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-right-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_footnote {
+#gidhbsimmu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -1174,7 +1201,7 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#saoogunbpt .gt_sourcenotes {
+#gidhbsimmu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1188,7 +1215,7 @@ et <strong>Code Diplôme</strong>.</p>
   border-right-color: #D3D3D3;
 }
 
-#saoogunbpt .gt_sourcenote {
+#gidhbsimmu .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -1196,63 +1223,63 @@ et <strong>Code Diplôme</strong>.</p>
   padding-right: 5px;
 }
 
-#saoogunbpt .gt_left {
+#gidhbsimmu .gt_left {
   text-align: left;
 }
 
-#saoogunbpt .gt_center {
+#gidhbsimmu .gt_center {
   text-align: center;
 }
 
-#saoogunbpt .gt_right {
+#gidhbsimmu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#saoogunbpt .gt_font_normal {
+#gidhbsimmu .gt_font_normal {
   font-weight: normal;
 }
 
-#saoogunbpt .gt_font_bold {
+#gidhbsimmu .gt_font_bold {
   font-weight: bold;
 }
 
-#saoogunbpt .gt_font_italic {
+#gidhbsimmu .gt_font_italic {
   font-style: italic;
 }
 
-#saoogunbpt .gt_super {
+#gidhbsimmu .gt_super {
   font-size: 65%;
 }
 
-#saoogunbpt .gt_footnote_marks {
+#gidhbsimmu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#saoogunbpt .gt_asterisk {
+#gidhbsimmu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#saoogunbpt .gt_indent_1 {
+#gidhbsimmu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#saoogunbpt .gt_indent_2 {
+#gidhbsimmu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#saoogunbpt .gt_indent_3 {
+#gidhbsimmu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#saoogunbpt .gt_indent_4 {
+#gidhbsimmu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#saoogunbpt .gt_indent_5 {
+#gidhbsimmu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1293,853 +1320,119 @@ et <strong>Code Diplôme</strong>.</p>
   </tfoot>
 </table>
 </div>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="données-des-lycées-pro..html#cb223-1" tabindex="-1"></a><span class="fu">reset_gtsummary_theme</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="données-des-lycées-pro..html#cb220-1" tabindex="-1"></a><span class="fu">reset_gtsummary_theme</span>()</span></code></pre></div>
 <p>On voit que le code type diplome est reconnu comme numérique alors que c’est un
 code, donc on corrige :</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="données-des-lycées-pro..html#cb224-1" tabindex="-1"></a>lycee<span class="sc">$</span><span class="st">`</span><span class="at">Code type diplôme</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">factor</span>(lycee<span class="sc">$</span><span class="st">`</span><span class="at">Code type diplôme</span><span class="st">`</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="données-des-lycées-pro..html#cb221-1" tabindex="-1"></a>lycee<span class="sc">$</span><span class="st">`</span><span class="at">Code type diplôme</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">factor</span>(lycee<span class="sc">$</span><span class="st">`</span><span class="at">Code type diplôme</span><span class="st">`</span>)</span></code></pre></div>
 <p>Il y a aussi baleineau sous gravillons, il y a des zéros dans les taux et les admis.
 Donc des spécialités ne doivent pas être assuré cette année là :</p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="données-des-lycées-pro..html#cb222-1" tabindex="-1"></a>nuls <span class="ot">&lt;-</span> lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
+<span id="cb222-2"><a href="données-des-lycées-pro..html#cb222-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
+<span id="cb222-3"><a href="données-des-lycées-pro..html#cb222-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
+<span id="cb222-4"><a href="données-des-lycées-pro..html#cb222-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb222-5"><a href="données-des-lycées-pro..html#cb222-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Admis apprentissage 2019</span><span class="st">`</span><span class="sc">==</span><span class="dv">0</span> <span class="sc">|</span> <span class="st">`</span><span class="at">Admis voie scolaire 2019</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">0</span>)</span></code></pre></div>
+<p>On n’en a 27 qui apparemment ont un nombre admis nul soit dans l’apprentissage soit
+dans la voie scolaire.</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="données-des-lycées-pro..html#cb223-1" tabindex="-1"></a>nuls <span class="ot">&lt;-</span> lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
+<span id="cb223-2"><a href="données-des-lycées-pro..html#cb223-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
+<span id="cb223-3"><a href="données-des-lycées-pro..html#cb223-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
+<span id="cb223-4"><a href="données-des-lycées-pro..html#cb223-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb223-5"><a href="données-des-lycées-pro..html#cb223-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Admis apprentissage 2019</span><span class="st">`</span><span class="sc">==</span><span class="dv">0</span> <span class="sc">&amp;</span> <span class="st">`</span><span class="at">Admis voie scolaire 2019</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb223-6"><a href="données-des-lycées-pro..html#cb223-6" tabindex="-1"></a><span class="fu">nrow</span>(nuls)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p>Et apparemment aucun n’a de nul en même temps.</p>
+<p>On vérifie de ce qu’ils ont fait quand <strong>Capacités</strong> est nulle (division par zéro).</p>
 <div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="données-des-lycées-pro..html#cb225-1" tabindex="-1"></a>nuls <span class="ot">&lt;-</span> lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
 <span id="cb225-2"><a href="données-des-lycées-pro..html#cb225-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
 <span id="cb225-3"><a href="données-des-lycées-pro..html#cb225-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
 <span id="cb225-4"><a href="données-des-lycées-pro..html#cb225-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb225-5"><a href="données-des-lycées-pro..html#cb225-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Admis apprentissage 2019</span><span class="st">`</span><span class="sc">==</span><span class="dv">0</span> <span class="sc">|</span> <span class="st">`</span><span class="at">Admis voie scolaire 2019</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">0</span>)</span>
-<span id="cb225-6"><a href="données-des-lycées-pro..html#cb225-6" tabindex="-1"></a><span class="fu">kable</span>(nuls)</span></code></pre></div>
-<table>
-<colgroup>
-<col width="28%" />
-<col width="5%" />
-<col width="22%" />
-<col width="5%" />
-<col width="6%" />
-<col width="3%" />
-<col width="3%" />
-<col width="6%" />
-<col width="9%" />
-<col width="9%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Diplôme</th>
-<th align="left">Type de diplôme</th>
-<th align="left">Filière</th>
-<th align="right">Taux d’emploi</th>
-<th align="right">Taux de pression</th>
-<th align="right">Demandes</th>
-<th align="right">Capacité</th>
-<th align="left">Code type diplôme</th>
-<th align="right">Admis apprentissage 2019</th>
-<th align="right">Admis voie scolaire 2019</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">BACPRO ARTISANAT ET METIERS D’ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE</td>
-<td align="left">BACPRO</td>
-<td align="left">Métiers d’art</td>
-<td align="right">80.0</td>
-<td align="right">0.5000000</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="left">CAP DOREUR A LA FEUILLE ORNEMANISTE</td>
-<td align="left">CAP</td>
-<td align="left">Métiers d’art</td>
-<td align="right">57.1</td>
-<td align="right">0.0000000</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="left">500</td>
-<td align="right">6</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">CAP OUTILLAGES EN OUTILS A DECOUPER ET A EMBOUTIR</td>
-<td align="left">CAP</td>
-<td align="left">Productique, mécanique, automatisation</td>
-<td align="right">0.0</td>
-<td align="right">0.3750000</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO ETUDE ET REALISATION D’AGENCEMENT</td>
-<td align="left">BACPRO</td>
-<td align="left">Construction, bâtiment, travaux publics</td>
-<td align="right">28.3</td>
-<td align="right">1.2448980</td>
-<td align="right">549</td>
-<td align="right">441</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">303</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO METIERS DU PRESSING ET DE LA BLANCHISSERIE</td>
-<td align="left">BACPRO</td>
-<td align="left">Textile, habillement, cuir</td>
-<td align="right">29.4</td>
-<td align="right">0.0444444</td>
-<td align="right">2</td>
-<td align="right">45</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">13</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO METIERS DU CUIR OPTION CHAUSSURES</td>
-<td align="left">BACPRO</td>
-<td align="left">Textile, habillement, cuir</td>
-<td align="right">28.6</td>
-<td align="right">0.5869565</td>
-<td align="right">162</td>
-<td align="right">276</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">11</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO ARTISANAT ET METIERS D’ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE</td>
-<td align="left">BACPRO</td>
-<td align="left">Métiers d’art</td>
-<td align="right">80.0</td>
-<td align="right">0.7250000</td>
-<td align="right">29</td>
-<td align="right">40</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO TECHNICIEN EN APPAREILLAGE ORTHOPEDIQUE</td>
-<td align="left">BACPRO</td>
-<td align="left">Santé, social, services à la personne et à la collectivité</td>
-<td align="right">34.5</td>
-<td align="right">0.8771930</td>
-<td align="right">50</td>
-<td align="right">57</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">49</td>
-</tr>
-<tr class="odd">
-<td align="left">CAP PLASTURGIE</td>
-<td align="left">CAP</td>
-<td align="left">Biochimie industrielle</td>
-<td align="right">42.9</td>
-<td align="right">0.1481481</td>
-<td align="right">4</td>
-<td align="right">27</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">14</td>
-</tr>
-<tr class="even">
-<td align="left">CAP CANNAGE ET PAILLAGE EN AMEUBLEMENT</td>
-<td align="left">CAP</td>
-<td align="left">Métiers d’art</td>
-<td align="right">0.0</td>
-<td align="right">0.1250000</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">CAP VETEMENT DE PEAU</td>
-<td align="left">CAP</td>
-<td align="left">Textile, habillement, cuir</td>
-<td align="right">60.0</td>
-<td align="right">0.5000000</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">13</td>
-</tr>
-<tr class="even">
-<td align="left">CAP ORTHO-PROTHESISTE</td>
-<td align="left">CAP</td>
-<td align="left">Santé, social, services à la personne et à la collectivité</td>
-<td align="right">30.8</td>
-<td align="right">0.5384615</td>
-<td align="right">21</td>
-<td align="right">39</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">17</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO ARTISANAT ET METIERS D’ART OPTION : TAPISSIER D’AMEUBLEMENT</td>
-<td align="left">BACPRO</td>
-<td align="left">Textile, habillement, cuir</td>
-<td align="right">31.8</td>
-<td align="right">0.5092251</td>
-<td align="right">138</td>
-<td align="right">271</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">174</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO ACCOMPAGNEMENT SOINS ET SERVICES A LA PERSONNE OPTION A - A DOMICILE</td>
-<td align="left">BACPRO</td>
-<td align="left">Santé, social, services à la personne et à la collectivité</td>
-<td align="right">31.1</td>
-<td align="right">0.6772334</td>
-<td align="right">235</td>
-<td align="right">347</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">2557</td>
-</tr>
-<tr class="odd">
-<td align="left">CAP BOUCHER</td>
-<td align="left">CAP</td>
-<td align="left">Alimentation, hôtellerie, restauration, tourisme</td>
-<td align="right">59.4</td>
-<td align="right">0.3300000</td>
-<td align="right">33</td>
-<td align="right">100</td>
-<td align="left">500</td>
-<td align="right">2134</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">CAP ARTS DU BOIS OPTION A : SCULPTEUR ORNEMANISTE</td>
-<td align="left">CAP</td>
-<td align="left">Métiers d’art</td>
-<td align="right">36.2</td>
-<td align="right">0.6538462</td>
-<td align="right">34</td>
-<td align="right">52</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">81</td>
-</tr>
-<tr class="odd">
-<td align="left">CAP CHARPENTIER DE MARINE</td>
-<td align="left">CAP</td>
-<td align="left">Mer</td>
-<td align="right">42.9</td>
-<td align="right">0.4000000</td>
-<td align="right">12</td>
-<td align="right">30</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">23</td>
-</tr>
-<tr class="even">
-<td align="left">CAP METIERS DE LA GRAVURE OPTION C : GRAVURE EN MODELE</td>
-<td align="left">CAP</td>
-<td align="left">Industries graphiques, communication, audiovisuel, spectacle</td>
-<td align="right">25.0</td>
-<td align="right">0.2000000</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="left">CAP ACCORDEUR DE PIANO</td>
-<td align="left">CAP</td>
-<td align="left">Industries graphiques, communication, audiovisuel, spectacle</td>
-<td align="right">0.0</td>
-<td align="right">0.1250000</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="left">CAP AGENT DE PREVENTION ET DE MEDIATION</td>
-<td align="left">CAP</td>
-<td align="left">Santé, social, services à la personne et à la collectivité</td>
-<td align="right">13.3</td>
-<td align="right">1.0000000</td>
-<td align="right">26</td>
-<td align="right">26</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">2305</td>
-</tr>
-<tr class="odd">
-<td align="left">CAP AGENT DE LA QUALITE DE L’EAU</td>
-<td align="left">CAP</td>
-<td align="left">Electricité, électronique/numérique, environnement</td>
-<td align="right">12.5</td>
-<td align="right">0.7966102</td>
-<td align="right">47</td>
-<td align="right">59</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">35</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO ETUDE ET DEFINITION DE PRODUITS INDUSTRIELS</td>
-<td align="left">BACPRO</td>
-<td align="left">Productique, mécanique, automatisation</td>
-<td align="right">25.8</td>
-<td align="right">0.5706751</td>
-<td align="right">541</td>
-<td align="right">948</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">523</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO ARTISANAT ET METIERS D’ART OPTION MARCHANDISAGE VISUEL</td>
-<td align="left">BACPRO</td>
-<td align="left">Industries graphiques, communication, audiovisuel, spectacle</td>
-<td align="right">22.8</td>
-<td align="right">1.0000000</td>
-<td align="right">367</td>
-<td align="right">367</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">308</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO TECHNICIEN MODELEUR</td>
-<td align="left">BACPRO</td>
-<td align="left">Productique, mécanique, automatisation</td>
-<td align="right">40.5</td>
-<td align="right">0.4274809</td>
-<td align="right">56</td>
-<td align="right">131</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">74</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO ACCOMPAGNEMENT SOINS ET SERVICES A LA PERSONNE OPTION A - A DOMICILE</td>
-<td align="left">BACPRO</td>
-<td align="left">Santé, social, services à la personne et à la collectivité</td>
-<td align="right">31.1</td>
-<td align="right">1.2174028</td>
-<td align="right">13865</td>
-<td align="right">11389</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">2557</td>
-</tr>
-<tr class="even">
-<td align="left">CAP INDUSTRIES CHIMIQUES</td>
-<td align="left">CAP</td>
-<td align="left">Biochimie industrielle</td>
-<td align="right">0.0</td>
-<td align="right">0.5555556</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">7</td>
-</tr>
-<tr class="odd">
-<td align="left">CAP ACCESSOIRISTE REALISATEUR</td>
-<td align="left">CAP</td>
-<td align="left">Industries graphiques, communication, audiovisuel, spectacle</td>
-<td align="right">30.4</td>
-<td align="right">1.5000000</td>
-<td align="right">9</td>
-<td align="right">6</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">22</td>
-</tr>
-</tbody>
-</table>
-<p>On n’en a 27 qui apparemment ont un nombre admis nul soit dans l’apprentissage soit
-dans la voie scolaire.</p>
+<span id="cb225-5"><a href="données-des-lycées-pro..html#cb225-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Capacité</span><span class="st">`</span><span class="sc">==</span><span class="dv">0</span>)</span></code></pre></div>
+<p>En fait ils ont pas fait n’importe quoi, le taux de pression est <strong>NA</strong>.</p>
+<p>Par contre au fil de la vérification, on a vu qu’il y avait des taux d’emploi nuls:</p>
 <div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="données-des-lycées-pro..html#cb226-1" tabindex="-1"></a>nuls <span class="ot">&lt;-</span> lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
 <span id="cb226-2"><a href="données-des-lycées-pro..html#cb226-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
 <span id="cb226-3"><a href="données-des-lycées-pro..html#cb226-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
 <span id="cb226-4"><a href="données-des-lycées-pro..html#cb226-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb226-5"><a href="données-des-lycées-pro..html#cb226-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Admis apprentissage 2019</span><span class="st">`</span><span class="sc">==</span><span class="dv">0</span> <span class="sc">&amp;</span> <span class="st">`</span><span class="at">Admis voie scolaire 2019</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb226-5"><a href="données-des-lycées-pro..html#cb226-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span><span class="sc">==</span><span class="dv">0</span>)</span>
 <span id="cb226-6"><a href="données-des-lycées-pro..html#cb226-6" tabindex="-1"></a><span class="fu">nrow</span>(nuls)</span></code></pre></div>
-<pre><code>## [1] 0</code></pre>
-<p>Et apparemment aucun n’a de nul en même temps.</p>
-<p>On vérifie de ce qu’ils ont fait quand <strong>Capacités</strong> est nulle (division par zéro).</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="données-des-lycées-pro..html#cb228-1" tabindex="-1"></a>nuls <span class="ot">&lt;-</span> lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
-<span id="cb228-2"><a href="données-des-lycées-pro..html#cb228-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
-<span id="cb228-3"><a href="données-des-lycées-pro..html#cb228-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
-<span id="cb228-4"><a href="données-des-lycées-pro..html#cb228-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb228-5"><a href="données-des-lycées-pro..html#cb228-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Capacité</span><span class="st">`</span><span class="sc">==</span><span class="dv">0</span>)</span>
-<span id="cb228-6"><a href="données-des-lycées-pro..html#cb228-6" tabindex="-1"></a><span class="fu">kable</span>(nuls)</span></code></pre></div>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="6%" />
-<col width="23%" />
-<col width="5%" />
-<col width="6%" />
-<col width="3%" />
-<col width="3%" />
-<col width="6%" />
-<col width="9%" />
-<col width="9%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Diplôme</th>
-<th align="left">Type de diplôme</th>
-<th align="left">Filière</th>
-<th align="right">Taux d’emploi</th>
-<th align="right">Taux de pression</th>
-<th align="right">Demandes</th>
-<th align="right">Capacité</th>
-<th align="left">Code type diplôme</th>
-<th align="right">Admis apprentissage 2019</th>
-<th align="right">Admis voie scolaire 2019</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">BACPRO AMENAGEMENT ET FINITIONS DU BATIMENT</td>
-<td align="left">BACPRO</td>
-<td align="left">Construction, bâtiment, travaux publics</td>
-<td align="right">34.1</td>
-<td align="right">NA</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="left">400</td>
-<td align="right">29</td>
-<td align="right">640</td>
-</tr>
-<tr class="even">
-<td align="left">CAP ASSISTANT TECHNIQUE EN INSTRUMENTS DE MUSIQUE OPTION GUITARE</td>
-<td align="left">CAP</td>
-<td align="left">Industries graphiques, communication, audiovisuel, spectacle</td>
-<td align="right">0.0</td>
-<td align="right">NA</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="left">500</td>
-<td align="right">6</td>
-<td align="right">12</td>
-</tr>
-</tbody>
-</table>
-<p>En fait ils ont pas fait n’importe quoi, le taux de pression est <strong>NA</strong>.</p>
-<p>Par contre au fil de la vérification, on a vu qu’il y avait des taux d’emploi nuls:</p>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="données-des-lycées-pro..html#cb229-1" tabindex="-1"></a>nuls <span class="ot">&lt;-</span> lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
-<span id="cb229-2"><a href="données-des-lycées-pro..html#cb229-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
-<span id="cb229-3"><a href="données-des-lycées-pro..html#cb229-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
-<span id="cb229-4"><a href="données-des-lycées-pro..html#cb229-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb229-5"><a href="données-des-lycées-pro..html#cb229-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span><span class="sc">==</span><span class="dv">0</span>)</span>
-<span id="cb229-6"><a href="données-des-lycées-pro..html#cb229-6" tabindex="-1"></a><span class="fu">kable</span>(nuls)</span></code></pre></div>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="6%" />
-<col width="23%" />
-<col width="5%" />
-<col width="6%" />
-<col width="3%" />
-<col width="3%" />
-<col width="6%" />
-<col width="9%" />
-<col width="9%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Diplôme</th>
-<th align="left">Type de diplôme</th>
-<th align="left">Filière</th>
-<th align="right">Taux d’emploi</th>
-<th align="right">Taux de pression</th>
-<th align="right">Demandes</th>
-<th align="right">Capacité</th>
-<th align="left">Code type diplôme</th>
-<th align="right">Admis apprentissage 2019</th>
-<th align="right">Admis voie scolaire 2019</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">CAP OUTILLAGES EN OUTILS A DECOUPER ET A EMBOUTIR</td>
-<td align="left">CAP</td>
-<td align="left">Productique, mécanique, automatisation</td>
-<td align="right">0</td>
-<td align="right">0.3750000</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="left">CAP ASSISTANT TECHNIQUE EN INSTRUMENTS DE MUSIQUE OPTION GUITARE</td>
-<td align="left">CAP</td>
-<td align="left">Industries graphiques, communication, audiovisuel, spectacle</td>
-<td align="right">0</td>
-<td align="right">NA</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="left">500</td>
-<td align="right">6</td>
-<td align="right">12</td>
-</tr>
-<tr class="odd">
-<td align="left">CAP CANNAGE ET PAILLAGE EN AMEUBLEMENT</td>
-<td align="left">CAP</td>
-<td align="left">Métiers d’art</td>
-<td align="right">0</td>
-<td align="right">0.1250000</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">CAP ACCORDEUR DE PIANO</td>
-<td align="left">CAP</td>
-<td align="left">Industries graphiques, communication, audiovisuel, spectacle</td>
-<td align="right">0</td>
-<td align="right">0.1250000</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO INTERVENTIONS SUR LE PATRIMOINE BATI, OPTION B CHARPENTE</td>
-<td align="left">BACPRO</td>
-<td align="left">Construction, bâtiment, travaux publics</td>
-<td align="right">0</td>
-<td align="right">0.7046706</td>
-<td align="right">3455</td>
-<td align="right">4903</td>
-<td align="left">400</td>
-<td align="right">1</td>
-<td align="right">8</td>
-</tr>
-<tr class="even">
-<td align="left">CAP INDUSTRIES CHIMIQUES</td>
-<td align="left">CAP</td>
-<td align="left">Biochimie industrielle</td>
-<td align="right">0</td>
-<td align="right">0.5555556</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="left">500</td>
-<td align="right">0</td>
-<td align="right">7</td>
-</tr>
-</tbody>
-</table>
+<pre><code>## [1] 6</code></pre>
 <p>Ils sont au nombre de 10 quand même.</p>
 </div>
 <div id="analyses" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Analyses<a href="données-des-lycées-pro..html#analyses" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On représente le taux de pression graphiquement : Demandes en fonction de Capacité</p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="données-des-lycées-pro..html#cb230-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(Demandes,Capacité,<span class="at">col=</span><span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span>))<span class="sc">+</span><span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb230-2"><a href="données-des-lycées-pro..html#cb230-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Pression&quot;</span>)<span class="sc">+</span></span>
-<span id="cb230-3"><a href="données-des-lycées-pro..html#cb230-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="données-des-lycées-pro..html#cb228-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(Demandes,Capacité,<span class="at">col=</span><span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span>))<span class="sc">+</span><span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb228-2"><a href="données-des-lycées-pro..html#cb228-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Pression&quot;</span>)<span class="sc">+</span></span>
+<span id="cb228-3"><a href="données-des-lycées-pro..html#cb228-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/lycee1-1.png" width="672" /></p>
 <p>On voit que ça a l’air assez linéaire. Et on voit surtout que certains diplômes
 explose les chiffres en terme de demande.</p>
 <p>On voit demander à ggplot de passer en log pour mieux faire la différence.</p>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="données-des-lycées-pro..html#cb231-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(Demandes,Capacité,<span class="at">col=</span><span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span>))<span class="sc">+</span><span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb231-2"><a href="données-des-lycées-pro..html#cb231-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Pression&quot;</span>)<span class="sc">+</span></span>
-<span id="cb231-3"><a href="données-des-lycées-pro..html#cb231-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>)<span class="sc">+</span></span>
-<span id="cb231-4"><a href="données-des-lycées-pro..html#cb231-4" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">trans =</span> <span class="st">&#39;log2&#39;</span>) <span class="sc">+</span></span>
-<span id="cb231-5"><a href="données-des-lycées-pro..html#cb231-5" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">trans =</span> <span class="st">&#39;log2&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="données-des-lycées-pro..html#cb229-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(Demandes,Capacité,<span class="at">col=</span><span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span>))<span class="sc">+</span><span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb229-2"><a href="données-des-lycées-pro..html#cb229-2" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Pression&quot;</span>)<span class="sc">+</span></span>
+<span id="cb229-3"><a href="données-des-lycées-pro..html#cb229-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
+<span id="cb229-4"><a href="données-des-lycées-pro..html#cb229-4" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">trans =</span> <span class="st">&#39;log2&#39;</span>) <span class="sc">+</span></span>
+<span id="cb229-5"><a href="données-des-lycées-pro..html#cb229-5" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">trans =</span> <span class="st">&#39;log2&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/lycee2-1.png" width="672" /></p>
 <p>En fait on voit que c’est vers zéro qu’il y a un problème. Ca peut être du au <strong>log2</strong>.
 Mais globalement il n’y a pas d’anomalies à l’oeil.</p>
 <p>Et c’est bien logarithmiquement linéaire. Il y a une différence avec plus de capacités
 pour les BAC PRO pour les fortes demandes que pour les CAPs où c’est l’inverse.</p>
 <p>On regarde le TOP10 des formations en terme de candidats ?</p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="données-des-lycées-pro..html#cb232-1" tabindex="-1"></a><span class="fu">kable</span>(lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
-<span id="cb232-2"><a href="données-des-lycées-pro..html#cb232-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
-<span id="cb232-3"><a href="données-des-lycées-pro..html#cb232-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
-<span id="cb232-4"><a href="données-des-lycées-pro..html#cb232-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Demandes)) <span class="sc">%&gt;%</span></span>
-<span id="cb232-5"><a href="données-des-lycées-pro..html#cb232-5" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>))</span></code></pre></div>
-<table style="width:100%;">
-<colgroup>
-<col width="35%" />
-<col width="5%" />
-<col width="19%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-<col width="3%" />
-<col width="6%" />
-<col width="8%" />
-<col width="8%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Diplôme</th>
-<th align="left">Type de diplôme</th>
-<th align="left">Filière</th>
-<th align="right">Taux d’emploi</th>
-<th align="right">Taux de pression</th>
-<th align="right">Demandes</th>
-<th align="right">Capacité</th>
-<th align="left">Code type diplôme</th>
-<th align="right">Admis apprentissage 2019</th>
-<th align="right">Admis voie scolaire 2019</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">BACPRO VENTE</td>
-<td align="left">BACPRO</td>
-<td align="left">Relation client, commerce, vente</td>
-<td align="right">40.9</td>
-<td align="right">1.1691717</td>
-<td align="right">36249</td>
-<td align="right">31004</td>
-<td align="left">400</td>
-<td align="right">30</td>
-<td align="right">5433</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO ACCUEIL - RELATION CLIENTS ET USAGERS</td>
-<td align="left">BACPRO</td>
-<td align="left">Relation client, commerce, vente</td>
-<td align="right">32.8</td>
-<td align="right">1.1691717</td>
-<td align="right">36249</td>
-<td align="right">31004</td>
-<td align="left">400</td>
-<td align="right">407</td>
-<td align="right">5830</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO COMMERCE</td>
-<td align="left">BACPRO</td>
-<td align="left">Relation client, commerce, vente</td>
-<td align="right">41.8</td>
-<td align="right">1.1691717</td>
-<td align="right">36249</td>
-<td align="right">31004</td>
-<td align="left">400</td>
-<td align="right">2349</td>
-<td align="right">17570</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO GESTION-ADMINISTRATION</td>
-<td align="left">BACPRO</td>
-<td align="left">Gestion-administration, transport, logistique, sécurité</td>
-<td align="right">31.6</td>
-<td align="right">0.9008569</td>
-<td align="right">17346</td>
-<td align="right">19255</td>
-<td align="left">400</td>
-<td align="right">653</td>
-<td align="right">18297</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO LOGISTIQUE</td>
-<td align="left">BACPRO</td>
-<td align="left">Gestion-administration, transport, logistique, sécurité</td>
-<td align="right">42.4</td>
-<td align="right">0.9008569</td>
-<td align="right">17346</td>
-<td align="right">19255</td>
-<td align="left">400</td>
-<td align="right">474</td>
-<td align="right">1749</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO TRANSPORT</td>
-<td align="left">BACPRO</td>
-<td align="left">Gestion-administration, transport, logistique, sécurité</td>
-<td align="right">38.7</td>
-<td align="right">0.9008569</td>
-<td align="right">17346</td>
-<td align="right">19255</td>
-<td align="left">400</td>
-<td align="right">8</td>
-<td align="right">675</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO ACCOMPAGNEMENT SOINS ET SERVICES A LA PERSONNE OPTION A - A DOMICILE</td>
-<td align="left">BACPRO</td>
-<td align="left">Santé, social, services à la personne et à la collectivité</td>
-<td align="right">31.1</td>
-<td align="right">1.2174028</td>
-<td align="right">13865</td>
-<td align="right">11389</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">2557</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO METIERS DE L’ELECTRICITE ET DE SES ENVIRONNEMENTS CONNECTES</td>
-<td align="left">BACPRO</td>
-<td align="left">Electricité, électronique/numérique, environnement</td>
-<td align="right">40.5</td>
-<td align="right">0.8501144</td>
-<td align="right">11145</td>
-<td align="right">13110</td>
-<td align="left">400</td>
-<td align="right">1365</td>
-<td align="right">9960</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO SYSTEMES NUMERIQUES OPTION A SURETE ET SECURITE DES INFRASTRUCTURES, DE L’HABITAT ET DU TERTIAIRE</td>
-<td align="left">BACPRO</td>
-<td align="left">Electricité, électronique/numérique, environnement</td>
-<td align="right">34.1</td>
-<td align="right">1.5346383</td>
-<td align="right">10035</td>
-<td align="right">6539</td>
-<td align="left">400</td>
-<td align="right">3</td>
-<td align="right">988</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO SYSTEMES NUMERIQUES OPTION C RESEAUX INFORMATIQUES ET SYSTEMES COMMUNICANTS</td>
-<td align="left">BACPRO</td>
-<td align="left">Electricité, électronique/numérique, environnement</td>
-<td align="right">30.9</td>
-<td align="right">1.5346383</td>
-<td align="right">10035</td>
-<td align="right">6539</td>
-<td align="left">400</td>
-<td align="right">138</td>
-<td align="right">3878</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="données-des-lycées-pro..html#cb230-1" tabindex="-1"></a>lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
+<span id="cb230-2"><a href="données-des-lycées-pro..html#cb230-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
+<span id="cb230-3"><a href="données-des-lycées-pro..html#cb230-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme&quot;</span>),</span>
+<span id="cb230-4"><a href="données-des-lycées-pro..html#cb230-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Demandes)) <span class="sc">%&gt;%</span></span>
+<span id="cb230-5"><a href="données-des-lycées-pro..html#cb230-5" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 10
+##    Diplôme             `Type de diplôme` Filière `Taux d&#39;emploi` `Taux de pression` Demandes Capacité `Code type diplôme`
+##    &lt;chr&gt;               &lt;chr&gt;             &lt;chr&gt;             &lt;dbl&gt;              &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;              
+##  1 BACPRO VENTE        BACPRO            Relati…            40.9              1.17     36249    31004 400                
+##  2 BACPRO ACCUEIL - R… BACPRO            Relati…            32.8              1.17     36249    31004 400                
+##  3 BACPRO COMMERCE     BACPRO            Relati…            41.8              1.17     36249    31004 400                
+##  4 BACPRO GESTION-ADM… BACPRO            Gestio…            31.6              0.901    17346    19255 400                
+##  5 BACPRO LOGISTIQUE   BACPRO            Gestio…            42.4              0.901    17346    19255 400                
+##  6 BACPRO TRANSPORT    BACPRO            Gestio…            38.7              0.901    17346    19255 400                
+##  7 BACPRO ACCOMPAGNEM… BACPRO            Santé,…            31.1              1.22     13865    11389 400                
+##  8 BACPRO METIERS DE … BACPRO            Electr…            40.5              0.850    11145    13110 400                
+##  9 BACPRO SYSTEMES NU… BACPRO            Electr…            34.1              1.53     10035     6539 400                
+## 10 BACPRO SYSTEMES NU… BACPRO            Electr…            30.9              1.53     10035     6539 400                
+## # ℹ 2 more variables: `Admis apprentissage 2019` &lt;dbl&gt;, `Admis voie scolaire 2019` &lt;dbl&gt;</code></pre>
 <p>On regarde maintenant le taux d’emploi au regard du taux de pression :</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="données-des-lycées-pro..html#cb233-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(<span class="st">`</span><span class="at">Taux de pression</span><span class="st">`</span>,<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span>))<span class="sc">+</span></span>
-<span id="cb233-2"><a href="données-des-lycées-pro..html#cb233-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>) <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span> <span class="sc">~</span> .)</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="données-des-lycées-pro..html#cb232-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(Demandes,<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span>))<span class="sc">+</span></span>
+<span id="cb232-2"><a href="données-des-lycées-pro..html#cb232-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>) <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span> <span class="sc">~</span> .) </span></code></pre></div>
 <p><img src="_main_files/figure-html/lycee3-1.png" width="672" />
 Ouf… on s’y attendait pas.</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="données-des-lycées-pro..html#cb234-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(<span class="st">`</span><span class="at">Taux de pression</span><span class="st">`</span>,<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span>))<span class="sc">+</span></span>
-<span id="cb234-2"><a href="données-des-lycées-pro..html#cb234-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()  <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span> <span class="sc">~</span> .)</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="données-des-lycées-pro..html#cb233-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(Demandes,<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span>))<span class="sc">+</span></span>
+<span id="cb233-2"><a href="données-des-lycées-pro..html#cb233-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>() <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span> <span class="sc">~</span> .) <span class="sc">+</span></span>
+<span id="cb233-3"><a href="données-des-lycées-pro..html#cb233-3" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">trans=</span><span class="st">&quot;log2&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/lycee4-1.png" width="672" />
 Apparemment il n’y a pas corrélation claire entre le taux de pression et le taux d’emploi.</p>
 <p>On a des points extrêmes, on va ajouter les étiquettes.</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="données-des-lycées-pro..html#cb235-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(<span class="st">`</span><span class="at">Taux de pression</span><span class="st">`</span>,<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span>,<span class="at">label=</span>Diplôme))<span class="sc">+</span></span>
-<span id="cb235-2"><a href="données-des-lycées-pro..html#cb235-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()  <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span> <span class="sc">~</span> .) <span class="sc">+</span> </span>
-<span id="cb235-3"><a href="données-des-lycées-pro..html#cb235-3" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="données-des-lycées-pro..html#cb234-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(<span class="st">`</span><span class="at">Taux de pression</span><span class="st">`</span>,<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span>,<span class="at">label=</span>Diplôme))<span class="sc">+</span></span>
+<span id="cb234-2"><a href="données-des-lycées-pro..html#cb234-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()  <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span> <span class="sc">~</span> .) <span class="sc">+</span> </span>
+<span id="cb234-3"><a href="données-des-lycées-pro..html#cb234-3" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/lycee5-1.png" width="672" />
 Y’a comme un souci…</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="données-des-lycées-pro..html#cb236-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(<span class="st">`</span><span class="at">Taux de pression</span><span class="st">`</span>,<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span>,<span class="at">label=</span><span class="st">`</span><span class="at">Code diplôme...12</span><span class="st">`</span>))<span class="sc">+</span></span>
-<span id="cb236-2"><a href="données-des-lycées-pro..html#cb236-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()  <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span> <span class="sc">~</span> .) <span class="sc">+</span> </span>
-<span id="cb236-3"><a href="données-des-lycées-pro..html#cb236-3" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="données-des-lycées-pro..html#cb235-1" tabindex="-1"></a><span class="fu">ggplot</span>(lycee,<span class="fu">aes</span>(<span class="st">`</span><span class="at">Taux de pression</span><span class="st">`</span>,<span class="st">`</span><span class="at">Taux d&#39;emploi</span><span class="st">`</span>,<span class="at">label=</span><span class="st">`</span><span class="at">Code diplôme...12</span><span class="st">`</span>))<span class="sc">+</span></span>
+<span id="cb235-2"><a href="données-des-lycées-pro..html#cb235-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()  <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="st">`</span><span class="at">Type de diplôme</span><span class="st">`</span> <span class="sc">~</span> .) <span class="sc">+</span> </span>
+<span id="cb235-3"><a href="données-des-lycées-pro..html#cb235-3" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/lycee6-1.png" width="672" /></p>
 <p>Par exemple :</p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="données-des-lycées-pro..html#cb237-1" tabindex="-1"></a><span class="fu">kable</span>(lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
-<span id="cb237-2"><a href="données-des-lycées-pro..html#cb237-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
-<span id="cb237-3"><a href="données-des-lycées-pro..html#cb237-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme...15&quot;</span>),</span>
-<span id="cb237-4"><a href="données-des-lycées-pro..html#cb237-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb237-5"><a href="données-des-lycées-pro..html#cb237-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Code diplôme...12</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">40022402</span>,<span class="dv">40023206</span>,<span class="dv">40031109</span>,<span class="dv">50022362</span>)))</span></code></pre></div>
-<table style="width:100%;">
-<colgroup>
-<col width="27%" />
-<col width="5%" />
-<col width="19%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-<col width="3%" />
-<col width="6%" />
-<col width="6%" />
-<col width="8%" />
-<col width="8%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Diplôme</th>
-<th align="left">Type de diplôme</th>
-<th align="left">Filière</th>
-<th align="right">Taux d’emploi</th>
-<th align="right">Taux de pression</th>
-<th align="right">Demandes</th>
-<th align="right">Capacité</th>
-<th align="left">Code diplôme…12</th>
-<th align="left">Code type diplôme</th>
-<th align="right">Admis apprentissage 2019</th>
-<th align="right">Admis voie scolaire 2019</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">BACPRO ARTISANAT ET METIERS D’ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE</td>
-<td align="left">BACPRO</td>
-<td align="left">Métiers d’art</td>
-<td align="right">80.0</td>
-<td align="right">0.5000000</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="left">40022402</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="left">CAP ART ET TECHNIQUES DE LA BIJOUTERIE-JOAILLERIE OPTION BIJOUTERIE-SERTISSAGE</td>
-<td align="left">CAP</td>
-<td align="left">Métiers d’art</td>
-<td align="right">70.6</td>
-<td align="right">1.0740741</td>
-<td align="right">29</td>
-<td align="right">27</td>
-<td align="left">50022362</td>
-<td align="left">500</td>
-<td align="right">26</td>
-<td align="right">47</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO ARTISANAT ET METIERS D’ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE</td>
-<td align="left">BACPRO</td>
-<td align="left">Métiers d’art</td>
-<td align="right">80.0</td>
-<td align="right">0.7250000</td>
-<td align="right">29</td>
-<td align="right">40</td>
-<td align="left">40022402</td>
-<td align="left">400</td>
-<td align="right">0</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="left">BACPRO TRANSPORT FLUVIAL</td>
-<td align="left">BACPRO</td>
-<td align="left">Gestion-administration, transport, logistique, sécurité</td>
-<td align="right">70.3</td>
-<td align="right">0.5312500</td>
-<td align="right">17</td>
-<td align="right">32</td>
-<td align="left">40031109</td>
-<td align="left">400</td>
-<td align="right">16</td>
-<td align="right">23</td>
-</tr>
-<tr class="odd">
-<td align="left">BACPRO INTERVENTIONS SUR LE PATRIMOINE BATI, OPTION B CHARPENTE</td>
-<td align="left">BACPRO</td>
-<td align="left">Construction, bâtiment, travaux publics</td>
-<td align="right">0.0</td>
-<td align="right">0.7046706</td>
-<td align="right">3455</td>
-<td align="right">4903</td>
-<td align="left">40023206</td>
-<td align="left">400</td>
-<td align="right">1</td>
-<td align="right">8</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="données-des-lycées-pro..html#cb236-1" tabindex="-1"></a>lycee <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Année diplôme</span><span class="st">`</span>,<span class="sc">-</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>,</span>
+<span id="cb236-2"><a href="données-des-lycées-pro..html#cb236-2" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;MEFSTAT&quot;</span>),</span>
+<span id="cb236-3"><a href="données-des-lycées-pro..html#cb236-3" tabindex="-1"></a>                 <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;Code Diplôme...15&quot;</span>),</span>
+<span id="cb236-4"><a href="données-des-lycées-pro..html#cb236-4" tabindex="-1"></a>                 <span class="sc">-</span><span class="st">`</span><span class="at">Année première année</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb236-5"><a href="données-des-lycées-pro..html#cb236-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Code diplôme...12</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">40022402</span>,<span class="dv">40023206</span>,<span class="dv">40031109</span>,<span class="dv">50022362</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 11
+##   Diplôme              `Type de diplôme` Filière `Taux d&#39;emploi` `Taux de pression` Demandes Capacité `Code diplôme...12`
+##   &lt;chr&gt;                &lt;chr&gt;             &lt;chr&gt;             &lt;dbl&gt;              &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;              
+## 1 BACPRO ARTISANAT ET… BACPRO            Métier…            80                0.5          3        6 40022402           
+## 2 CAP ART ET TECHNIQU… CAP               Métier…            70.6              1.07        29       27 50022362           
+## 3 BACPRO ARTISANAT ET… BACPRO            Métier…            80                0.725       29       40 40022402           
+## 4 BACPRO TRANSPORT FL… BACPRO            Gestio…            70.3              0.531       17       32 40031109           
+## 5 BACPRO INTERVENTION… BACPRO            Constr…             0                0.705     3455     4903 40023206           
+## # ℹ 3 more variables: `Code type diplôme` &lt;fct&gt;, `Admis apprentissage 2019` &lt;dbl&gt;, `Admis voie scolaire 2019` &lt;dbl&gt;</code></pre>
 <p>Apparemment les charpentiers ne peuvent pas travailler beaucoup.</p>
 <p>En fait, on regarde plus systématiquement :</p>
 <p>TOP 10 des taux d’emploi :</p>
@@ -2718,729 +2011,67 @@ on enlève l’axe des abscisses…</p>
 <span id="cb243-7"><a href="données-des-lycées-pro..html#cb243-7" tabindex="-1"></a>        <span class="at">axis.ticks.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
 <p><img src="_main_files/figure-html/lycee11-1.png" width="672" /></p>
 </div>
-<div id="quiz.." class="section level2 hasAnchor" number="8.3">
-<h2><span class="header-section-number">8.3</span> Quiz..<a href="données-des-lycées-pro..html#quiz.." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="commentaires-des-auditeurs" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Commentaires des auditeurs<a href="données-des-lycées-pro..html#commentaires-des-auditeurs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deux problèmes ont été signalés par les doctorants dans l’analyse qui interrogent
+sur la documentation voire la qualité des données :</p>
+<ul>
+<li>il y a le fait, que la première table abrite plusieurs occurences pour le même
+libellé de diplôme, MEFTSTAT, … Ce qui est curieux</li>
+</ul>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="données-des-lycées-pro..html#cb244-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">table</span>(lycee<span class="sc">$</span><span class="st">`</span><span class="at">Spécialité libellé</span><span class="st">`</span>)</span>
+<span id="cb244-2"><a href="données-des-lycées-pro..html#cb244-2" tabindex="-1"></a>a[a<span class="sc">&gt;</span><span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## 
+##                              ACCOMPAGNEMENT SOINS ET SERVICES A LA PERSONNE OPTION A - A DOMICILE 
+##                                                                                                 2 
+##                                                                     AERONAUTIQUE OPTION AVIONIQUE 
+##                                                                                                 2 
+##                                                              AMENAGEMENT ET FINITIONS DU BATIMENT 
+##                                                                                                 2 
+##                   ARTISANAT ET METIERS D&#39;ART OPTION : METIERS DE L&#39;ENSEIGNE ET DE LA SIGNALETIQUE 
+##                                                                                                 2 
+##                            ARTISANAT ET METIERS D&#39;ART OPTION : VERRERIE SCIENTIFIQUE ET TECHNIQUE 
+##                                                                                                 2 
+##                                                                                        LOGISTIQUE 
+##                                                                                                 2 
+##                                            MAINTENANCE DES MATERIELS OPTION A MATERIELS AGRICOLES 
+##                                                                                                 2 
+##                    MAINTENANCE DES MATERIELS OPTION B MATERIELS DE CONSTRUCTION ET DE MANUTENTION 
+##                                                                                                 2 
+##                                      MAINTENANCE DES MATERIELS OPTION C MATERIELS D&#39;ESPACES VERTS 
+##                                                                                                 2 
+##                                         MAINTENANCE DES VEHICULES OPTION A VOITURES PARTICULIERES 
+##                                                                                                 2 
+##                                 MAINTENANCE DES VEHICULES OPTION B VEHICULES DE TRANSPORT ROUTIER 
+##                                                                                                 2 
+##                                                     MAINTENANCE DES VEHICULES OPTION C MOTOCYCLES 
+##                                                                                                 2 
+##                                                                        MENUISERIE ALUMINIUM-VERRE 
+##                                                                                                 2 
+##                                                               METIERS DU CUIR OPTION MAROQUINERIE 
+##                                                                                                 2 
+##                                                                     POISSONNIER-ECAILLER-TRAITEUR 
+##                                                                                                 2 
+##                                                                       REPARATION DES CARROSSERIES 
+##                                                                                                 2 
+## SYSTEMES NUMERIQUES OPTION A SURETE ET SECURITE DES INFRASTRUCTURES, DE L&#39;HABITAT ET DU TERTIAIRE 
+##                                                                                                 2 
+##                       SYSTEMES NUMERIQUES OPTION C RESEAUX INFORMATIQUES ET SYSTEMES COMMUNICANTS 
+##                                                                                                 2 
+##                                     TECHNICIEN D&#39;ETUDES DU BATIMENT OPTION A : ETUDES ET ECONOMIE 
+##                                                                                                 2</code></pre>
+<ul>
+<li>Il y a des taux d’emploi offerts nuls pour certaines catégories qui sont curieux.
+Par exemple il y le cas pour la construction et le batiment avec pourtant un
+nombre de formés parmi les plus élevés.</li>
+</ul>
+</div>
+<div id="quiz.." class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Quiz..<a href="données-des-lycées-pro..html#quiz.." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Faire les TOP10 et l’inverse pour les Taux de pression</p></li>
 <li><p>Faire le graphique du taux moyen selon la Filières du Taux de pression</p></li>
 </ul>
-
-<p>Dans cette partie, on étudie l’utilisation de la réserve parlementaire par les
-députés.</p>
-<p>Ce sont les <a href="https://www.data.gouv.fr/fr/datasets/reserve-parlementaire/">données de 2014</a></p>
-<p>Les questions sont celles d’une personne naïve et sans a priori :</p>
-<ul>
-<li><p>Est-ce que les groupes ont dépensé chacun autant ?</p></li>
-<li><p>Est-ce que les groupes ont dépensé chacun autant en moyenne ?</p></li>
-<li><p>Est-ce vrai pour les députés en moyenne ?</p></li>
-<li><p>Quel est l’enveloppe dépensé au total ?</p></li>
-</ul>
-<!-- - Comment on utilise un tableau de données supplémentaires pour avoir les infos -->
-<!-- sur les parlementaires ? -->
-<ul>
-<li>Est-ce possible avec le descriptif d’avoir les mots-clefs pour les sous dépensés ?</li>
-</ul>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="données-des-lycées-pro..html#cb244-1" tabindex="-1"></a>reserve <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="st">&quot;data/reserve/2014_reserve_parlementaire.json&quot;</span>)</span></code></pre></div>
-<p>Pourquoi c’est compliqué de faire un gtsummary direct ?</p>
-<p>En fait on va se demander si il y a un bénéficiaire qui apparait plusieurs fois.</p>
-</div>
-<div id="bénéficiaires" class="section level2 hasAnchor" number="8.4">
-<h2><span class="header-section-number">8.4</span> Bénéficiaires<a href="données-des-lycées-pro..html#bénéficiaires" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="données-des-lycées-pro..html#cb245-1" tabindex="-1"></a>tb <span class="ot">&lt;-</span> <span class="fu">table</span>(reserve<span class="sc">$</span>Bénéficiaire)</span>
-<span id="cb245-2"><a href="données-des-lycées-pro..html#cb245-2" tabindex="-1"></a>tb1 <span class="ot">&lt;-</span> tb[tb<span class="sc">&gt;</span><span class="dv">1</span>]</span>
-<span id="cb245-3"><a href="données-des-lycées-pro..html#cb245-3" tabindex="-1"></a><span class="fu">names</span>(tb1)</span></code></pre></div>
-<pre><code>##   [1] &quot;35 Lez&#39;arts dans l&#39;école&quot;                                               
-##   [2] &quot;7B15&quot;                                                                   
-##   [3] &quot;ADMR&quot;                                                                   
-##   [4] &quot;AIDES&quot;                                                                  
-##   [5] &quot;Albert&quot;                                                                 
-##   [6] &quot;AMOPA&quot;                                                                  
-##   [7] &quot;ANDELARRE&quot;                                                              
-##   [8] &quot;ANSORAA&quot;                                                                
-##   [9] &quot;APAJH&quot;                                                                  
-##  [10] &quot;APF&quot;                                                                    
-##  [11] &quot;ASPTT&quot;                                                                  
-##  [12] &quot;Assas&quot;                                                                  
-##  [13] &quot;Association Ah?&quot;                                                        
-##  [14] &quot;Association des Paralysés de France&quot;                                    
-##  [15] &quot;Association La Cimade&quot;                                                  
-##  [16] &quot;Association Le Refuge&quot;                                                  
-##  [17] &quot;ATTIGNY&quot;                                                                
-##  [18] &quot;Autisme Picardie 80&quot;                                                    
-##  [19] &quot;Baby Loup&quot;                                                              
-##  [20] &quot;Baby-Loup&quot;                                                              
-##  [21] &quot;Badminton Club&quot;                                                         
-##  [22] &quot;Balard Bouge&quot;                                                           
-##  [23] &quot;Banque alimentaire&quot;                                                     
-##  [24] &quot;Banque Alimentaire&quot;                                                     
-##  [25] &quot;Banque Alimentaire de l&#39;Isère&quot;                                          
-##  [26] &quot;Banque alimentaire de la Loire&quot;                                         
-##  [27] &quot;Basket Club&quot;                                                            
-##  [28] &quot;BEUGNEUX&quot;                                                               
-##  [29] &quot;Bibliothèque pour tous&quot;                                                 
-##  [30] &quot;BLEIGNY-LE-CARREAU&quot;                                                     
-##  [31] &quot;BRIGNOLES&quot;                                                              
-##  [32] &quot;CANNES&quot;                                                                 
-##  [33] &quot;Carpe Diem&quot;                                                             
-##  [34] &quot;CASAS&quot;                                                                  
-##  [35] &quot;CDHA&quot;                                                                   
-##  [36] &quot;Centre d&#39;Information sur les Droits des Femmes et des Familles&quot;         
-##  [37] &quot;CERNAY&quot;                                                                 
-##  [38] &quot;Chambly&quot;                                                                
-##  [39] &quot;Chanteloup-les-Vignes&quot;                                                  
-##  [40] &quot;Chaux&quot;                                                                  
-##  [41] &quot;Chorale Sainte-Cécile&quot;                                                  
-##  [42] &quot;CIDFF&quot;                                                                  
-##  [43] &quot;Cimade&quot;                                                                 
-##  [44] &quot;CIMADE&quot;                                                                 
-##  [45] &quot;CLCV&quot;                                                                   
-##  [46] &quot;Cloyes sur le Loir&quot;                                                     
-##  [47] &quot;Club d&#39;Automne&quot;                                                         
-##  [48] &quot;Club de l&#39;Amitié&quot;                                                       
-##  [49] &quot;Club de Rugby&quot;                                                          
-##  [50] &quot;Club de Tennis&quot;                                                         
-##  [51] &quot;CNIID&quot;                                                                  
-##  [52] &quot;Comité Bataillon Rémy&quot;                                                  
-##  [53] &quot;Comité d&#39;entente des associations patriotiques de la région de Saint-Lô&quot;
-##  [54] &quot;Comité de jumelage&quot;                                                     
-##  [55] &quot;Comité de Jumelage&quot;                                                     
-##  [56] &quot;Comité des fêtes&quot;                                                       
-##  [57] &quot;Comité des Fêtes&quot;                                                       
-##  [58] &quot;Communauté de Communes  du Pays d&#39;Ornans&quot;                               
-##  [59] &quot;Commune Blaringhem&quot;                                                     
-##  [60] &quot;Commune d&#39;Auneuil&quot;                                                      
-##  [61] &quot;Commune de Boisemont&quot;                                                   
-##  [62] &quot;Commune de Bondy&quot;                                                       
-##  [63] &quot;Commune de Chalandray&quot;                                                  
-##  [64] &quot;Commune de Chelles&quot;                                                     
-##  [65] &quot;Commune de Crest&quot;                                                       
-##  [66] &quot;Commune de Gonnehem&quot;                                                    
-##  [67] &quot;Commune de Grandvilliers&quot;                                               
-##  [68] &quot;Commune de Grenoble&quot;                                                    
-##  [69] &quot;Commune de Grosseto-Prugna&quot;                                             
-##  [70] &quot;Commune de LA TABLE&quot;                                                    
-##  [71] &quot;Commune de Ligugé&quot;                                                      
-##  [72] &quot;Commune de Pantin&quot;                                                      
-##  [73] &quot;Commune de Reims&quot;                                                       
-##  [74] &quot;COMMUNE DE SAINT PAIR&quot;                                                  
-##  [75] &quot;COMMUNE DE SAINT PIERRE DU JONQUET&quot;                                     
-##  [76] &quot;Commune de St Pierre de Manneville&quot;                                     
-##  [77] &quot;Commune de Venon&quot;                                                       
-##  [78] &quot;Commune de Villemeux sur Eure&quot;                                          
-##  [79] &quot;Commune du Perreux-sur-Marne&quot;                                           
-##  [80] &quot;Commune Hazebrouck&quot;                                                     
-##  [81] &quot;Commune Merville&quot;                                                       
-##  [82] &quot;Commune Nepvant&quot;                                                        
-##  [83] &quot;Commune Sercus&quot;                                                         
-##  [84] &quot;Confluences&quot;                                                            
-##  [85] &quot;Consulat de France à Londres&quot;                                           
-##  [86] &quot;Côté Cour&quot;                                                              
-##  [87] &quot;COUDES&quot;                                                                 
-##  [88] &quot;Coup de Pouce&quot;                                                          
-##  [89] &quot;Crespin&quot;                                                                
-##  [90] &quot;Croix Rouge&quot;                                                            
-##  [91] &quot;Croix Rouge Française&quot;                                                  
-##  [92] &quot;CSV Rugby&quot;                                                              
-##  [93] &quot;Culture et Loisirs&quot;                                                     
-##  [94] &quot;DAGNY&quot;                                                                  
-##  [95] &quot;DAMPIERRE-SUR-SALON&quot;                                                    
-##  [96] &quot;District de l&#39;Isère de Football&quot;                                        
-##  [97] &quot;Diverses communes&quot;                                                      
-##  [98] &quot;Don Bosco&quot;                                                              
-##  [99] &quot;Ecole de musique&quot;                                                       
-## [100] &quot;Ecole de Musique&quot;                                                       
-## [101] &quot;Emergence&quot;                                                              
-## [102] &quot;Emmaüs&quot;                                                                 
-## [103] &quot;Ener&#39;gym&quot;                                                               
-## [104] &quot;Energie Citoyenne&quot;                                                      
-## [105] &quot;Epaignes&quot;                                                               
-## [106] &quot;Equeurdreville&quot;                                                         
-## [107] &quot;Espace commercial Monplaisir&quot;                                           
-## [108] &quot;ESSISES&quot;                                                                
-## [109] &quot;Etrun&quot;                                                                  
-## [110] &quot;FACE GARD&quot;                                                              
-## [111] &quot;Fairplaylist&quot;                                                           
-## [112] &quot;Familles rurales&quot;                                                       
-## [113] &quot;FDSEA 25&quot;                                                               
-## [114] &quot;Fédération départementale des Foyers Ruraux des Deux-Sèvres&quot;            
-## [115] &quot;Femmes d&#39;histoire&quot;                                                      
-## [116] &quot;FLEURY-LA-RIVIERE&quot;                                                      
-## [117] &quot;FMES&quot;                                                                   
-## [118] &quot;FNACA&quot;                                                                  
-## [119] &quot;FNATH&quot;                                                                  
-## [120] &quot;Fondation Concorde&quot;                                                     
-## [121] &quot;Fondation Jean Jaurès&quot;                                                  
-## [122] &quot;FONDATION NICOLAS HULOT&quot;                                                
-## [123] &quot;Fondation pour l&#39;écologie politique&quot;                                    
-## [124] &quot;Foyer rural&quot;                                                            
-## [125] &quot;France Alzheimer Var&quot;                                                   
-## [126] &quot;FRANCHEVAL&quot;                                                             
-## [127] &quot;FRCIVAM LR&quot;                                                             
-## [128] &quot;FRESNE-LES-REIMS&quot;                                                       
-## [129] &quot;FROMONT&quot;                                                                
-## [130] &quot;GERBEROY&quot;                                                               
-## [131] &quot;GOUPILLIERES&quot;                                                           
-## [132] &quot;Groupement Sportif Figeacois&quot;                                           
-## [133] &quot;Gym Paris 15&quot;                                                           
-## [134] &quot;Gymnastique volontaire&quot;                                                 
-## [135] &quot;Hand Ball Club&quot;                                                         
-## [136] &quot;Handi Racing Club&quot;                                                      
-## [137] &quot;Herbault&quot;                                                               
-## [138] &quot;IPPO&quot;                                                                   
-## [139] &quot;Issy les Moulineaux&quot;                                                    
-## [140] &quot;Jeunes talents&quot;                                                         
-## [141] &quot;Kick Boxing&quot;                                                            
-## [142] &quot;L&#39;AIGLE&quot;                                                                
-## [143] &quot;L&#39;Escale&quot;                                                               
-## [144] &quot;L&#39;ISLE-ADAM&quot;                                                            
-## [145] &quot;La Cimade&quot;                                                              
-## [146] &quot;LA FERTE-IMBAULT&quot;                                                       
-## [147] &quot;La Marelle&quot;                                                             
-## [148] &quot;La Seyne Var Handball&quot;                                                  
-## [149] &quot;LA VACHERESSE-ET-LA ROUILLIE&quot;                                           
-## [150] &quot;LABRUYERE&quot;                                                              
-## [151] &quot;LE BEULAY&quot;                                                              
-## [152] &quot;LE HOMMET-D&#39;ARTHENAY&quot;                                                   
-## [153] &quot;Le mille pattes&quot;                                                        
-## [154] &quot;Le Moulin à Café&quot;                                                       
-## [155] &quot;Le Pallium&quot;                                                             
-## [156] &quot;Le refuge&quot;                                                              
-## [157] &quot;Le Refuge&quot;                                                              
-## [158] &quot;Le Souvenir Français&quot;                                                   
-## [159] &quot;Les Fleurs de la Mémoire&quot;                                               
-## [160] &quot;LES MOERES&quot;                                                             
-## [161] &quot;Les Restaurants du Coeur&quot;                                               
-## [162] &quot;Les Restaurants du Cœur&quot;                                                
-## [163] &quot;LES RICEYS&quot;                                                             
-## [164] &quot;Ligue des Droits de l&#39;Homme&quot;                                            
-## [165] &quot;Lille&quot;                                                                  
-## [166] &quot;Lisle&quot;                                                                  
-## [167] &quot;LONGWY&quot;                                                                 
-## [168] &quot;LOUVECIENNES&quot;                                                           
-## [169] &quot;Mairie d&#39;Angliers&quot;                                                      
-## [170] &quot;Mairie d&#39;Auriol&quot;                                                        
-## [171] &quot;Mairie de Bègles&quot;                                                       
-## [172] &quot;Mairie de Maisoncelles-sur-Ajon&quot;                                        
-## [173] &quot;Mairie de Ploermel&quot;                                                     
-## [174] &quot;Maison d&#39;Izieu&quot;                                                         
-## [175] &quot;Maison de l&#39;Europe&quot;                                                     
-## [176] &quot;Maison de la Francophonie&quot;                                              
-## [177] &quot;Maison des Femmes&quot;                                                      
-## [178] &quot;Maison des Lycéens&quot;                                                     
-## [179] &quot;Maizières-la-Grande-Paroisse&quot;                                           
-## [180] &quot;Marins du Monde&quot;                                                        
-## [181] &quot;MARSEILLE&quot;                                                              
-## [182] &quot;Médecins du monde&quot;                                                      
-## [183] &quot;Mémorial AFN 92&quot;                                                        
-## [184] &quot;MESNIL-THOMAS&quot;                                                          
-## [185] &quot;Mieux vivre au Noyer renard&quot;                                            
-## [186] &quot;MILLAS&quot;                                                                 
-## [187] &quot;Miré&quot;                                                                   
-## [188] &quot;MJC&quot;                                                                    
-## [189] &quot;Mobil&#39;Douche&quot;                                                           
-## [190] &quot;MODENE&quot;                                                                 
-## [191] &quot;MONTMACHOUX&quot;                                                            
-## [192] &quot;MUADIR&quot;                                                                 
-## [193] &quot;Musique Municipale&quot;                                                     
-## [194] &quot;Nice Judo&quot;                                                              
-## [195] &quot;Noratlas de Provence&quot;                                                   
-## [196] &quot;Office Central de Coopération à l&#39;Ecole - Section Hautes-Alpes&quot;         
-## [197] &quot;OIP&quot;                                                                    
-## [198] &quot;OMC&quot;                                                                    
-## [199] &quot;OMS&quot;                                                                    
-## [200] &quot;PAVANT&quot;                                                                 
-## [201] &quot;Pfastatt&quot;                                                               
-## [202] &quot;Planning Familial&quot;                                                      
-## [203] &quot;PROVINS&quot;                                                                
-## [204] &quot;Pugilist Club Niçois&quot;                                                   
-## [205] &quot;Recidev&quot;                                                                
-## [206] &quot;REMILLY&quot;                                                                
-## [207] &quot;Reporters sans frontières&quot;                                              
-## [208] &quot;Réserve naturelle&quot;                                                      
-## [209] &quot;Restaurants du cœur&quot;                                                    
-## [210] &quot;Restaurants du Cœur&quot;                                                    
-## [211] &quot;Resto du Cœur&quot;                                                          
-## [212] &quot;Restos du Coeur&quot;                                                        
-## [213] &quot;Restos du cœur&quot;                                                         
-## [214] &quot;Restos du Cœur&quot;                                                         
-## [215] &quot;RETONFEY&quot;                                                               
-## [216] &quot;Rêves&quot;                                                                  
-## [217] &quot;Rugby Club&quot;                                                             
-## [218] &quot;Rumegies&quot;                                                               
-## [219] &quot;Saint Germain sur Avre&quot;                                                 
-## [220] &quot;SAINT REMY&quot;                                                             
-## [221] &quot;Saint-Barthélemy d’Anjou&quot;                                               
-## [222] &quot;SAINT-DENIS-DES-PUITS&quot;                                                  
-## [223] &quot;SAINT-FELIX&quot;                                                            
-## [224] &quot;Saint-Joseph&quot;                                                           
-## [225] &quot;SAINTE-MARGUERITE&quot;                                                      
-## [226] &quot;SARTES&quot;                                                                 
-## [227] &quot;Scènes et Marne 1914&quot;                                                   
-## [228] &quot;Scouts et guides de France&quot;                                             
-## [229] &quot;Scouts et Guides de France&quot;                                             
-## [230] &quot;Secours catholique&quot;                                                     
-## [231] &quot;Secours Catholique&quot;                                                     
-## [232] &quot;Secours populaire&quot;                                                      
-## [233] &quot;Secours Populaire&quot;                                                      
-## [234] &quot;SECOURS POPULAIRE&quot;                                                      
-## [235] &quot;Secours populaire Français&quot;                                             
-## [236] &quot;Secours Populaire Français&quot;                                             
-## [237] &quot;Skoazell Diwan Paris&quot;                                                   
-## [238] &quot;SNL&quot;                                                                    
-## [239] &quot;Société Saint Vincent de Paul&quot;                                          
-## [240] &quot;Société Saint-Vincent de Paul&quot;                                          
-## [241] &quot;Solidarité Paysans&quot;                                                     
-## [242] &quot;Solidarité Paysans du Finistère&quot;                                        
-## [243] &quot;Solidarités Nouvelles pour le Logement&quot;                                 
-## [244] &quot;Somain&quot;                                                                 
-## [245] &quot;Sou des Ecoles&quot;                                                         
-## [246] &quot;Sou des Ecoles Laïques&quot;                                                 
-## [247] &quot;Soucelles&quot;                                                              
-## [248] &quot;Souvenir Français&quot;                                                      
-## [249] &quot;Sur les bancs de l&#39;école&quot;                                               
-## [250] &quot;Télé Bocal&quot;                                                             
-## [251] &quot;Tennis Club&quot;                                                            
-## [252] &quot;Trait d&#39;Union&quot;                                                          
-## [253] &quot;Trait d’union&quot;                                                          
-## [254] &quot;UCOL&quot;                                                                   
-## [255] &quot;UNC&quot;                                                                    
-## [256] &quot;Union nationale des Combattants du Var&quot;                                 
-## [257] &quot;Vaincre la Mucoviscidose&quot;                                               
-## [258] &quot;Vanault les Dames&quot;                                                      
-## [259] &quot;Varrains&quot;                                                               
-## [260] &quot;Via Nova&quot;                                                               
-## [261] &quot;Vie Libre&quot;                                                              
-## [262] &quot;Vignement&quot;                                                              
-## [263] &quot;VIGNY&quot;                                                                  
-## [264] &quot;Ville de Besançon&quot;                                                      
-## [265] &quot;Villeneuve&quot;                                                             
-## [266] &quot;VILLERET&quot;                                                               
-## [267] &quot;Women in Europe for a Common Future&quot;</code></pre>
-<p>Si oui, est-ce qu’on peut le mettre sous forme de data.frame ? Pourquoi on a
-besoin d’une data.frame pour représenter graphiquement ces informations ?</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="données-des-lycées-pro..html#cb247-1" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nom=</span><span class="fu">names</span>(tb1),<span class="at">Nombre=</span><span class="fu">as.numeric</span>(tb1))</span>
-<span id="cb247-2"><a href="données-des-lycées-pro..html#cb247-2" tabindex="-1"></a>dt</span></code></pre></div>
-<pre><code>##                                                                         Nom Nombre
-## 1                                                  35 Lez&#39;arts dans l&#39;école      2
-## 2                                                                      7B15      2
-## 3                                                                      ADMR      3
-## 4                                                                     AIDES      6
-## 5                                                                    Albert      2
-## 6                                                                     AMOPA      2
-## 7                                                                 ANDELARRE      2
-## 8                                                                   ANSORAA      2
-## 9                                                                     APAJH      3
-## 10                                                                      APF      2
-## 11                                                                    ASPTT      3
-## 12                                                                    Assas      2
-## 13                                                          Association Ah?      2
-## 14                                      Association des Paralysés de France      3
-## 15                                                    Association La Cimade      2
-## 16                                                    Association Le Refuge      3
-## 17                                                                  ATTIGNY      2
-## 18                                                      Autisme Picardie 80      2
-## 19                                                                Baby Loup      3
-## 20                                                                Baby-Loup      2
-## 21                                                           Badminton Club      2
-## 22                                                             Balard Bouge      2
-## 23                                                       Banque alimentaire      3
-## 24                                                       Banque Alimentaire      4
-## 25                                            Banque Alimentaire de l&#39;Isère      2
-## 26                                           Banque alimentaire de la Loire      2
-## 27                                                              Basket Club      2
-## 28                                                                 BEUGNEUX      2
-## 29                                                   Bibliothèque pour tous      2
-## 30                                                       BLEIGNY-LE-CARREAU      2
-## 31                                                                BRIGNOLES      6
-## 32                                                                   CANNES      2
-## 33                                                               Carpe Diem      2
-## 34                                                                    CASAS      3
-## 35                                                                     CDHA      2
-## 36           Centre d&#39;Information sur les Droits des Femmes et des Familles      2
-## 37                                                                   CERNAY      2
-## 38                                                                  Chambly      2
-## 39                                                    Chanteloup-les-Vignes      2
-## 40                                                                    Chaux      2
-## 41                                                    Chorale Sainte-Cécile      3
-## 42                                                                    CIDFF      4
-## 43                                                                   Cimade      2
-## 44                                                                   CIMADE      3
-## 45                                                                     CLCV      2
-## 46                                                       Cloyes sur le Loir      2
-## 47                                                           Club d&#39;Automne      2
-## 48                                                         Club de l&#39;Amitié      3
-## 49                                                            Club de Rugby      2
-## 50                                                           Club de Tennis      2
-## 51                                                                    CNIID      2
-## 52                                                    Comité Bataillon Rémy      2
-## 53  Comité d&#39;entente des associations patriotiques de la région de Saint-Lô      2
-## 54                                                       Comité de jumelage      3
-## 55                                                       Comité de Jumelage      3
-## 56                                                         Comité des fêtes      4
-## 57                                                         Comité des Fêtes      7
-## 58                                 Communauté de Communes  du Pays d&#39;Ornans      2
-## 59                                                       Commune Blaringhem      2
-## 60                                                        Commune d&#39;Auneuil      2
-## 61                                                     Commune de Boisemont      2
-## 62                                                         Commune de Bondy      2
-## 63                                                    Commune de Chalandray      2
-## 64                                                       Commune de Chelles      2
-## 65                                                         Commune de Crest      8
-## 66                                                      Commune de Gonnehem      2
-## 67                                                 Commune de Grandvilliers      3
-## 68                                                      Commune de Grenoble      3
-## 69                                               Commune de Grosseto-Prugna      2
-## 70                                                      Commune de LA TABLE      2
-## 71                                                        Commune de Ligugé      2
-## 72                                                        Commune de Pantin      4
-## 73                                                         Commune de Reims      2
-## 74                                                    COMMUNE DE SAINT PAIR      2
-## 75                                       COMMUNE DE SAINT PIERRE DU JONQUET      2
-## 76                                       Commune de St Pierre de Manneville      2
-## 77                                                         Commune de Venon      2
-## 78                                            Commune de Villemeux sur Eure      5
-## 79                                             Commune du Perreux-sur-Marne      3
-## 80                                                       Commune Hazebrouck      2
-## 81                                                         Commune Merville      2
-## 82                                                          Commune Nepvant      2
-## 83                                                           Commune Sercus      2
-## 84                                                              Confluences      2
-## 85                                             Consulat de France à Londres      2
-## 86                                                                Côté Cour      2
-## 87                                                                   COUDES      2
-## 88                                                            Coup de Pouce      4
-## 89                                                                  Crespin      2
-## 90                                                              Croix Rouge      2
-## 91                                                    Croix Rouge Française      4
-## 92                                                                CSV Rugby      2
-## 93                                                       Culture et Loisirs      2
-## 94                                                                    DAGNY      2
-## 95                                                      DAMPIERRE-SUR-SALON      2
-## 96                                          District de l&#39;Isère de Football      2
-## 97                                                        Diverses communes      2
-## 98                                                                Don Bosco      2
-## 99                                                         Ecole de musique      3
-## 100                                                        Ecole de Musique      2
-## 101                                                               Emergence      2
-## 102                                                                  Emmaüs      4
-## 103                                                                Ener&#39;gym      2
-## 104                                                       Energie Citoyenne      2
-## 105                                                                Epaignes      3
-## 106                                                          Equeurdreville      2
-## 107                                            Espace commercial Monplaisir      2
-## 108                                                                 ESSISES      2
-## 109                                                                   Etrun      2
-## 110                                                               FACE GARD      2
-## 111                                                            Fairplaylist      3
-## 112                                                        Familles rurales      5
-## 113                                                                FDSEA 25      2
-## 114             Fédération départementale des Foyers Ruraux des Deux-Sèvres      2
-## 115                                                       Femmes d&#39;histoire      2
-## 116                                                       FLEURY-LA-RIVIERE      2
-## 117                                                                    FMES      2
-## 118                                                                   FNACA      7
-## 119                                                                   FNATH      5
-## 120                                                      Fondation Concorde      3
-## 121                                                   Fondation Jean Jaurès      2
-## 122                                                 FONDATION NICOLAS HULOT      2
-## 123                                     Fondation pour l&#39;écologie politique      2
-## 124                                                             Foyer rural      2
-## 125                                                    France Alzheimer Var      2
-## 126                                                              FRANCHEVAL      2
-## 127                                                              FRCIVAM LR      2
-## 128                                                        FRESNE-LES-REIMS      2
-## 129                                                                 FROMONT      2
-## 130                                                                GERBEROY      2
-## 131                                                            GOUPILLIERES      3
-## 132                                            Groupement Sportif Figeacois      2
-## 133                                                            Gym Paris 15      2
-## 134                                                  Gymnastique volontaire      2
-## 135                                                          Hand Ball Club      2
-## 136                                                       Handi Racing Club      2
-## 137                                                                Herbault      2
-## 138                                                                    IPPO      2
-## 139                                                     Issy les Moulineaux      2
-## 140                                                          Jeunes talents      2
-## 141                                                             Kick Boxing      2
-## 142                                                                 L&#39;AIGLE      2
-## 143                                                                L&#39;Escale      2
-## 144                                                             L&#39;ISLE-ADAM      2
-## 145                                                               La Cimade      5
-## 146                                                        LA FERTE-IMBAULT      2
-## 147                                                              La Marelle      2
-## 148                                                   La Seyne Var Handball      2
-## 149                                            LA VACHERESSE-ET-LA ROUILLIE      2
-## 150                                                               LABRUYERE      2
-## 151                                                               LE BEULAY      2
-## 152                                                    LE HOMMET-D&#39;ARTHENAY      2
-## 153                                                         Le mille pattes      2
-## 154                                                        Le Moulin à Café      2
-## 155                                                              Le Pallium      2
-## 156                                                               Le refuge      2
-## 157                                                               Le Refuge     11
-## 158                                                    Le Souvenir Français      5
-## 159                                                Les Fleurs de la Mémoire      2
-## 160                                                              LES MOERES      2
-## 161                                                Les Restaurants du Coeur      2
-## 162                                                 Les Restaurants du Cœur      2
-## 163                                                              LES RICEYS      2
-## 164                                             Ligue des Droits de l&#39;Homme      4
-## 165                                                                   Lille      2
-## 166                                                                   Lisle      2
-## 167                                                                  LONGWY      2
-## 168                                                            LOUVECIENNES      2
-## 169                                                       Mairie d&#39;Angliers      2
-## 170                                                         Mairie d&#39;Auriol      2
-## 171                                                        Mairie de Bègles      5
-## 172                                         Mairie de Maisoncelles-sur-Ajon      2
-## 173                                                      Mairie de Ploermel      2
-## 174                                                          Maison d&#39;Izieu      2
-## 175                                                      Maison de l&#39;Europe      2
-## 176                                               Maison de la Francophonie      2
-## 177                                                       Maison des Femmes      2
-## 178                                                      Maison des Lycéens      2
-## 179                                            Maizières-la-Grande-Paroisse      2
-## 180                                                         Marins du Monde      2
-## 181                                                               MARSEILLE      2
-## 182                                                       Médecins du monde      2
-## 183                                                         Mémorial AFN 92      2
-## 184                                                           MESNIL-THOMAS      2
-## 185                                             Mieux vivre au Noyer renard      2
-## 186                                                                  MILLAS      2
-## 187                                                                    Miré      2
-## 188                                                                     MJC      2
-## 189                                                            Mobil&#39;Douche      2
-## 190                                                                  MODENE      4
-## 191                                                             MONTMACHOUX      2
-## 192                                                                  MUADIR      3
-## 193                                                      Musique Municipale      2
-## 194                                                               Nice Judo      2
-## 195                                                    Noratlas de Provence      2
-## 196          Office Central de Coopération à l&#39;Ecole - Section Hautes-Alpes      2
-## 197                                                                     OIP      2
-## 198                                                                     OMC      2
-## 199                                                                     OMS      2
-## 200                                                                  PAVANT      2
-## 201                                                                Pfastatt      2
-## 202                                                       Planning Familial      2
-## 203                                                                 PROVINS      3
-## 204                                                    Pugilist Club Niçois      2
-## 205                                                                 Recidev      2
-## 206                                                                 REMILLY      2
-## 207                                               Reporters sans frontières      2
-## 208                                                       Réserve naturelle      2
-## 209                                                     Restaurants du cœur      3
-## 210                                                     Restaurants du Cœur      3
-## 211                                                           Resto du Cœur      3
-## 212                                                         Restos du Coeur      3
-## 213                                                          Restos du cœur      2
-## 214                                                          Restos du Cœur      6
-## 215                                                                RETONFEY      2
-## 216                                                                   Rêves      2
-## 217                                                              Rugby Club      2
-## 218                                                                Rumegies      2
-## 219                                                  Saint Germain sur Avre      2
-## 220                                                              SAINT REMY      2
-## 221                                                Saint-Barthélemy d’Anjou      2
-## 222                                                   SAINT-DENIS-DES-PUITS      2
-## 223                                                             SAINT-FELIX      2
-## 224                                                            Saint-Joseph      2
-## 225                                                       SAINTE-MARGUERITE      2
-## 226                                                                  SARTES      2
-## 227                                                    Scènes et Marne 1914      2
-## 228                                              Scouts et guides de France      2
-## 229                                              Scouts et Guides de France      4
-## 230                                                      Secours catholique      9
-## 231                                                      Secours Catholique      6
-## 232                                                       Secours populaire      5
-## 233                                                       Secours Populaire     12
-## 234                                                       SECOURS POPULAIRE      2
-## 235                                              Secours populaire Français      2
-## 236                                              Secours Populaire Français      2
-## 237                                                    Skoazell Diwan Paris      2
-## 238                                                                     SNL      2
-## 239                                           Société Saint Vincent de Paul      2
-## 240                                           Société Saint-Vincent de Paul      2
-## 241                                                      Solidarité Paysans      3
-## 242                                         Solidarité Paysans du Finistère      2
-## 243                                  Solidarités Nouvelles pour le Logement      2
-## 244                                                                  Somain      2
-## 245                                                          Sou des Ecoles      4
-## 246                                                  Sou des Ecoles Laïques      7
-## 247                                                               Soucelles      2
-## 248                                                       Souvenir Français      5
-## 249                                                Sur les bancs de l&#39;école      2
-## 250                                                              Télé Bocal      4
-## 251                                                             Tennis Club      3
-## 252                                                           Trait d&#39;Union      2
-## 253                                                           Trait d’union      2
-## 254                                                                    UCOL      2
-## 255                                                                     UNC      3
-## 256                                  Union nationale des Combattants du Var      2
-## 257                                                Vaincre la Mucoviscidose      3
-## 258                                                       Vanault les Dames      4
-## 259                                                                Varrains      2
-## 260                                                                Via Nova      2
-## 261                                                               Vie Libre      3
-## 262                                                               Vignement      2
-## 263                                                                   VIGNY      3
-## 264                                                       Ville de Besançon      4
-## 265                                                              Villeneuve      2
-## 266                                                                VILLERET      2
-## 267                                     Women in Europe for a Common Future      2</code></pre>
-<p>Une représentation visuelle de la répartition du nombre sur ceux qui ont plus de
-2 donations et après sur l’ensemble.</p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="données-des-lycées-pro..html#cb249-1" tabindex="-1"></a><span class="fu">ggplot</span>(dt,<span class="fu">aes</span>(Nombre))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/reserve1-1.png" width="672" /></p>
-<p>Quels sont les bénéficiaires de plus de 5 donations ? Ce sont des termes génériques
-ou des entités ?</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="données-des-lycées-pro..html#cb250-1" tabindex="-1"></a>tbt <span class="ot">&lt;-</span> <span class="fu">table</span>(reserve<span class="sc">$</span>Bénéficiaire)</span>
-<span id="cb250-2"><a href="données-des-lycées-pro..html#cb250-2" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nom=</span><span class="fu">names</span>(tbt),<span class="at">Nombre=</span><span class="fu">as.numeric</span>(tbt))</span>
-<span id="cb250-3"><a href="données-des-lycées-pro..html#cb250-3" tabindex="-1"></a>dt[dt<span class="sc">$</span>Nombre<span class="sc">&gt;</span><span class="dv">5</span>,]</span></code></pre></div>
-<pre><code>##                          Nom Nombre
-## 325                    AIDES      6
-## 2927               BRIGNOLES      6
-## 3982        Comité des Fêtes      7
-## 4475        Commune de Crest      8
-## 6416                   FNACA      7
-## 8059               Le Refuge     11
-## 10509         Restos du Cœur      6
-## 11095     Secours catholique      9
-## 11096     Secours Catholique      6
-## 11116      Secours Populaire     12
-## 11527 Sou des Ecoles Laïques      7</code></pre>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="données-des-lycées-pro..html#cb252-1" tabindex="-1"></a>tbt <span class="ot">&lt;-</span> <span class="fu">table</span>(reserve<span class="sc">$</span>Bénéficiaire)</span>
-<span id="cb252-2"><a href="données-des-lycées-pro..html#cb252-2" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nom=</span><span class="fu">names</span>(tbt),<span class="at">Nombre=</span><span class="fu">as.numeric</span>(tbt))</span>
-<span id="cb252-3"><a href="données-des-lycées-pro..html#cb252-3" tabindex="-1"></a><span class="fu">ggplot</span>(dt,<span class="fu">aes</span>(Nombre))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/reserve2-1.png" width="672" /></p>
-</div>
-<div id="par-groupe-politique" class="section level2 hasAnchor" number="8.5">
-<h2><span class="header-section-number">8.5</span> Par groupe politique<a href="données-des-lycées-pro..html#par-groupe-politique" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Si on regarde les dépenses par groupe.</p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="données-des-lycées-pro..html#cb253-1" tabindex="-1"></a><span class="fu">ggplot</span>(dt,<span class="fu">aes</span>(Nombre))<span class="sc">+</span><span class="fu">geom_histogram</span>()<span class="sc">+</span><span class="fu">scale_y_log10</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/reserve3-1.png" width="672" /></p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="données-des-lycées-pro..html#cb254-1" tabindex="-1"></a><span class="fu">ggplot</span>(reserve,<span class="fu">aes</span>(Groupe,Montant))<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/reserve4-1.png" width="672" /></p>
-<p>Mais que ?</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="données-des-lycées-pro..html#cb255-1" tabindex="-1"></a><span class="fu">table</span>(reserve<span class="sc">$</span>Groupe)</span></code></pre></div>
-<pre><code>## 
-##       Ecolo   GDR    NI  RRDP   SRC   UDI   UMP 
-##    52   549   148   128   262  5172   741  6081</code></pre>
-<p>Il faut trouver et corriger.</p>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="données-des-lycées-pro..html#cb257-1" tabindex="-1"></a>maisque <span class="ot">&lt;-</span> reserve <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Groupe<span class="sc">==</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb257-2"><a href="données-des-lycées-pro..html#cb257-2" tabindex="-1"></a></span>
-<span id="cb257-3"><a href="données-des-lycées-pro..html#cb257-3" tabindex="-1"></a><span class="fu">table</span>(maisque<span class="sc">$</span>Nom)</span></code></pre></div>
-<pre><code>## 
-## Présidence de l&#39;Assemblée nationale 
-##                                  52</code></pre>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="données-des-lycées-pro..html#cb259-1" tabindex="-1"></a><span class="fu">table</span>(maisque<span class="sc">$</span>Descriptif)</span></code></pre></div>
-<pre><code>## 
-## Agir en faveur de l&#39;emploi des jeunes diplômés issus des quartiers prioritaires ou de milieux sociaux défavorisés. 
-##                                                                                                                  1 
-##                                                            Association de juriste dans la lutte contre l&#39;exclusion 
-##                                                                                                                  1 
-##                                                  Création d&#39;un système d&#39;information pour le réseau Habitat Jeunes 
-##                                                                                                                  1 
-##                                                Equipement du futur 3ème siège de l&#39;Alliance française de la Havane 
-##                                                                                                                  1 
-##                                                                                                     Fonctionnement 
-##                                                                                                                 44 
-##                                                                                  Fonctionnement Mardis de l&#39;Avenir 
-##                                                                                                                  1 
-##                                                                  Insertion sociale et professionnelle par le sport 
-##                                                                                                                  1 
-##                                                                Soutien projet consacré aux femmes de l&#39;immigration 
-##                                                                                                                  1 
-##                                                                                            Travaux d&#39;intérêt local 
-##                                                                                                                  1</code></pre>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="données-des-lycées-pro..html#cb261-1" tabindex="-1"></a>reserve <span class="ot">&lt;-</span> reserve <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Groupe=</span><span class="fu">ifelse</span>(Groupe<span class="sc">==</span><span class="st">&quot;&quot;</span>,<span class="st">&quot;Présidence AN&quot;</span>,Groupe))</span></code></pre></div>
-<p>L’erreur corrigée</p>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="données-des-lycées-pro..html#cb262-1" tabindex="-1"></a><span class="fu">ggplot</span>(reserve,<span class="fu">aes</span>(Groupe,Montant))<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/reserve5-1.png" width="672" /></p>
-<p>Les résultats par groupe avec gtsummary ou summarize.</p>
-<p>on en profite pour calculer la somme des donations, la donation moyenne par
-Acteur et le nombre d’acteur par groupe</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="données-des-lycées-pro..html#cb263-1" tabindex="-1"></a>groupe <span class="ot">&lt;-</span> reserve <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Groupe)</span>
-<span id="cb263-2"><a href="données-des-lycées-pro..html#cb263-2" tabindex="-1"></a></span>
-<span id="cb263-3"><a href="données-des-lycées-pro..html#cb263-3" tabindex="-1"></a>res <span class="ot">&lt;-</span> groupe <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">min=</span><span class="fu">min</span>(Montant),<span class="at">max=</span><span class="fu">max</span>(Montant),</span>
-<span id="cb263-4"><a href="données-des-lycées-pro..html#cb263-4" tabindex="-1"></a>                     <span class="at">Moyenne=</span><span class="fu">mean</span>(Montant),<span class="at">EC=</span><span class="fu">sd</span>(Montant),</span>
-<span id="cb263-5"><a href="données-des-lycées-pro..html#cb263-5" tabindex="-1"></a>                     <span class="at">Somme=</span><span class="fu">sum</span>(Montant),<span class="at">nbActeur=</span><span class="fu">length</span>(<span class="fu">unique</span>(ID_Acteur)),</span>
-<span id="cb263-6"><a href="données-des-lycées-pro..html#cb263-6" tabindex="-1"></a>                     <span class="at">Somme_par_acteur=</span>Somme<span class="sc">/</span>nbActeur)</span>
-<span id="cb263-7"><a href="données-des-lycées-pro..html#cb263-7" tabindex="-1"></a>res </span></code></pre></div>
-<pre><code>## # A tibble: 8 × 8
-##   Groupe          min    max Moyenne     EC    Somme nbActeur Somme_par_acteur
-##   &lt;chr&gt;         &lt;int&gt;  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;            &lt;dbl&gt;
-## 1 Ecolo           500  50000   4805.  4039.  2637890       18          146549.
-## 2 GDR              67 130000  14198. 18951.  2101366       16          131335.
-## 3 NI              800  90000   8926. 10212.  1142574        9          126953.
-## 4 Présidence AN  1000 250000  54923. 53608.  2856000        1         2856000 
-## 5 RRDP            650  98000   8813. 11365.  2309018       18          128279.
-## 6 SRC             300 190000   7797. 10387. 40323770      290          139047.
-## 7 UDI             960  88000   5523.  6880.  4092383       31          132012.
-## 8 UMP             240 200000   4047.  7410. 24608557      200          123043.</code></pre>
-</div>
-<div id="exportation-1" class="section level2 hasAnchor" number="8.6">
-<h2><span class="header-section-number">8.6</span> Exportation<a href="données-des-lycées-pro..html#exportation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Comment l’exporter pour ses collègues ?</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="données-des-lycées-pro..html#cb265-1" tabindex="-1"></a><span class="fu">require</span>(writexl)</span>
-<span id="cb265-2"><a href="données-des-lycées-pro..html#cb265-2" tabindex="-1"></a><span class="fu">write_xlsx</span>(res,<span class="st">&quot;Résultats/Résultats-Deputes-Reserve.xlsx&quot;</span>)</span></code></pre></div>
-</div>
-<div id="les-sommes-par-acteurs" class="section level2 hasAnchor" number="8.7">
-<h2><span class="header-section-number">8.7</span> Les sommes par acteurs<a href="données-des-lycées-pro..html#les-sommes-par-acteurs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Les sommes par acteurs selon les groupes</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="données-des-lycées-pro..html#cb266-1" tabindex="-1"></a><span class="fu">ggplot</span>(res <span class="sc">%&gt;%</span> <span class="fu">filter</span>(nbActeur <span class="sc">!=</span> <span class="dv">1</span>),<span class="fu">aes</span>(<span class="at">x=</span>Groupe,<span class="at">y=</span>Somme_par_acteur,<span class="at">fill=</span>Groupe))<span class="sc">+</span></span>
-<span id="cb266-2"><a href="données-des-lycées-pro..html#cb266-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/reserve6-1.png" width="672" /></p>
-</div>
-<div id="quoi-faire-avec-le-descriptif" class="section level2 hasAnchor" number="8.8">
-<h2><span class="header-section-number">8.8</span> Quoi faire avec le descriptif ?<a href="données-des-lycées-pro..html#quoi-faire-avec-le-descriptif" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>En utilisant le descriptif :</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="données-des-lycées-pro..html#cb267-1" tabindex="-1"></a>reserve <span class="ot">&lt;-</span> reserve <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">doc_id=</span><span class="fu">paste0</span>(<span class="st">&quot;A&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(reserve)))</span>
-<span id="cb267-2"><a href="données-des-lycées-pro..html#cb267-2" tabindex="-1"></a></span>
-<span id="cb267-3"><a href="données-des-lycées-pro..html#cb267-3" tabindex="-1"></a>reserve_corpus <span class="ot">&lt;-</span> <span class="fu">corpus</span>(</span>
-<span id="cb267-4"><a href="données-des-lycées-pro..html#cb267-4" tabindex="-1"></a>  reserve,</span>
-<span id="cb267-5"><a href="données-des-lycées-pro..html#cb267-5" tabindex="-1"></a>  <span class="at">text_field =</span> <span class="st">&quot;Descriptif&quot;</span>,</span>
-<span id="cb267-6"><a href="données-des-lycées-pro..html#cb267-6" tabindex="-1"></a>  <span class="at">docid_field =</span> <span class="st">&quot;doc_id&quot;</span></span>
-<span id="cb267-7"><a href="données-des-lycées-pro..html#cb267-7" tabindex="-1"></a>)</span>
-<span id="cb267-8"><a href="données-des-lycées-pro..html#cb267-8" tabindex="-1"></a></span>
-<span id="cb267-9"><a href="données-des-lycées-pro..html#cb267-9" tabindex="-1"></a>mystopwords <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;loire-atlantique&quot;</span>)</span>
-<span id="cb267-10"><a href="données-des-lycées-pro..html#cb267-10" tabindex="-1"></a></span>
-<span id="cb267-11"><a href="données-des-lycées-pro..html#cb267-11" tabindex="-1"></a>tok <span class="ot">&lt;-</span> <span class="fu">tokens</span>(reserve_corpus, <span class="at">remove_punct =</span> <span class="cn">TRUE</span>, <span class="at">remove_numbers =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb267-12"><a href="données-des-lycées-pro..html#cb267-12" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="at">pattern =</span> mystopwords,<span class="at">valuetype =</span> <span class="st">&#39;fixed&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb267-13"><a href="données-des-lycées-pro..html#cb267-13" tabindex="-1"></a>  <span class="fu">tokens_tolower</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb267-14"><a href="données-des-lycées-pro..html#cb267-14" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="fu">stopwords</span>(<span class="st">&quot;fr&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb267-15"><a href="données-des-lycées-pro..html#cb267-15" tabindex="-1"></a>  <span class="fu">tokens_wordstem</span>(<span class="at">language=</span><span class="st">&quot;fr&quot;</span>) </span>
-<span id="cb267-16"><a href="données-des-lycées-pro..html#cb267-16" tabindex="-1"></a>  </span>
-<span id="cb267-17"><a href="données-des-lycées-pro..html#cb267-17" tabindex="-1"></a></span>
-<span id="cb267-18"><a href="données-des-lycées-pro..html#cb267-18" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> <span class="fu">dfm</span>(tok)</span>
-<span id="cb267-19"><a href="données-des-lycées-pro..html#cb267-19" tabindex="-1"></a></span>
-<span id="cb267-20"><a href="données-des-lycées-pro..html#cb267-20" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rainette</span>(dtm, <span class="at">k =</span> <span class="dv">5</span>)</span>
-<span id="cb267-21"><a href="données-des-lycées-pro..html#cb267-21" tabindex="-1"></a><span class="co">#rainette_explor(res, dtm, reserve_corpus)</span></span></code></pre></div>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="données-des-lycées-pro..html#cb268-1" tabindex="-1"></a>tok <span class="ot">&lt;-</span> <span class="fu">tokens</span>(reserve_corpus, <span class="at">remove_punct =</span> <span class="cn">TRUE</span>, <span class="at">remove_numbers =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb268-2"><a href="données-des-lycées-pro..html#cb268-2" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="at">pattern =</span> mystopwords,<span class="at">valuetype =</span> <span class="st">&#39;fixed&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb268-3"><a href="données-des-lycées-pro..html#cb268-3" tabindex="-1"></a>  <span class="fu">tokens_tolower</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb268-4"><a href="données-des-lycées-pro..html#cb268-4" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="fu">stopwords</span>(<span class="st">&quot;fr&quot;</span>))</span>
-<span id="cb268-5"><a href="données-des-lycées-pro..html#cb268-5" tabindex="-1"></a></span>
-<span id="cb268-6"><a href="données-des-lycées-pro..html#cb268-6" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> <span class="fu">dfm</span>(tok)</span>
-<span id="cb268-7"><a href="données-des-lycées-pro..html#cb268-7" tabindex="-1"></a></span>
-<span id="cb268-8"><a href="données-des-lycées-pro..html#cb268-8" tabindex="-1"></a>top<span class="ot">=</span><span class="fu">topfeatures</span>(dtm, <span class="dv">30</span>)</span>
-<span id="cb268-9"><a href="données-des-lycées-pro..html#cb268-9" tabindex="-1"></a>topall<span class="ot">=</span><span class="fu">topfeatures</span>(dtm, <span class="dv">300</span>)</span>
-<span id="cb268-10"><a href="données-des-lycées-pro..html#cb268-10" tabindex="-1"></a>top</span></code></pre></div>
-<pre><code>## fonctionnement           d&#39;un        travaux          local    aménagement          d&#39;une      d&#39;intérêt 
-##           5251            871            813            488            415            411            404 
-##        culture          achat          salle       création      réfection           mise       matériel 
-##            400            396            354            339            320            317            313 
-##     rénovation         mairie            vie   construction    associative        l&#39;école  l&#39;aménagement 
-##            308            293            290            270            256            235            234 
-##       l&#39;église          sport   organisation         locale            rue        soutien   restauration 
-##            234            218            212            209            203            196            186 
-##    acquisition           aide 
-##            185            185</code></pre>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="données-des-lycées-pro..html#cb270-1" tabindex="-1"></a>dfreq <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">word=</span><span class="fu">names</span>(topall),<span class="at">freq=</span><span class="fu">as.numeric</span>(topall))</span>
-<span id="cb270-2"><a href="données-des-lycées-pro..html#cb270-2" tabindex="-1"></a></span>
-<span id="cb270-3"><a href="données-des-lycées-pro..html#cb270-3" tabindex="-1"></a><span class="fu">wordcloud2</span>(dfreq,<span class="at">size=</span><span class="dv">2</span>)</span></code></pre></div>
-<div class="wordcloud2 html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8cd09c64cffe816ce8bd" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8cd09c64cffe816ce8bd">{"x":{"word":["fonctionnement","d'un","travaux","local","aménagement","d'une","d'intérêt","culture","achat","salle","création","réfection","mise","matériel","rénovation","mairie","vie","construction","associative","l'école","l'aménagement","l'église","sport","organisation","locale","rue","soutien","restauration","acquisition","aide","réhabilitation","scolaire","l'acquisition","communal","projet","sports","place","centre","réalisation","informatique","voirie","développement","jeunes","école","toiture","festival","financement","bourg","bâtiment","accessibilité","mobilier","public","normes","solidarité","tranche","maison","l'association","locaux","personnes","quartier","sécurité","remplacement","fêtes","association","extension","social","enfants","cimetière","polyvalente","communale","terrain","actions","activités","culturelle","village","réseau","chemin","santé","jeux","véhicule","écoles","sociale","réseaux","formation","education","logement","espace","route","matériels","l'installation","groupe","club","l'extension","maternelle","sportif","sportive","promotion","culturel","loisirs","parking","football","scolaires","contre","abords","installation","pédagogiques","action","sécurisation","stade","insertion","site","femmes","restructuration","animation","cadre","d'accueil","aire","patrimoine","monument","jeunesse","commune","primaire","équipement","associations","nouvelle","nouveau","classe","bâtiments","2ème","culturelles","communaux","pédagogique","lutte","morts","voyage","musique","equipement","bibliothèque","accueil","participation","périscolaire","restaurant","deux","réaménagement","d'aménagement","cantine","pôle","mur","spectacle","accompagnement","handicap","sportifs","municipal","l'éclairage","chapelle","enfance","d’un","manifestations","d'équipement","préau","l'eglise","ville","publics","accès","l'ancienne","rues","jardin","investissement","tennis","vestiaires","éducation","projets","renouvellement","cuisine","l'organisation","chauffage","périscolaires","cour","d'eau","parc","mémoire","achats","bois","rd","sanitaires","france","atelier","ans","station","pratique","pose","presbytère","église","trottoirs","édition","ateliers","logements","rural","numérique","programme","associatif","couverture","humanitaire","l'ancien","populaire","service","foyer","renforcement","diffusion","sensibilisation","entre","d'équipements","familles","temps","fête","fenêtres","divers","d'accessibilité","élémentaire","remise","théâtre","l'équipement","conformité","saint","incendie","d'assainissement","tableaux","communication","mobilité","+","handicapés","amélioration","publique","façades","eaux","autour","électrique","lien","système","tous","clocher","animations","déplacement","état","d'accès","élèves","protection","potable","numériques","danse","isolation","pont","classes","services","voie","l'enfouissement","situé","d'éclairage","rythmes","technique","équipements","d'activités","l'entrée","quartiers","multisports","espaces","ecole","enfouissement","portes","°","anniversaire","prévention","salles","grande","1ère","malles","valorisation","d'information","anciens","manifestation","guerre","artistique","partie","situation","l'accueil","droits","a","français","nord","destination","aménagements","requalification","petite","l'investissement","citoyenneté","lieu","électriques","âgées","victimes","zone"],"freq":[5251,871,813,488,415,411,404,400,396,354,339,320,317,313,308,293,290,270,256,235,234,234,218,212,209,203,196,186,185,185,181,179,156,154,151,148,144,142,135,128,123,119,119,115,113,106,104,102,100,100,98,97,96,95,94,93,91,90,89,89,89,86,86,85,84,83,78,76,75,75,74,74,73,70,68,68,68,67,67,65,65,64,64,61,61,61,61,61,60,60,59,58,58,57,56,55,54,54,54,54,53,53,53,53,52,51,51,51,51,51,50,50,50,49,48,47,47,46,46,45,45,45,44,44,44,43,43,43,42,42,42,41,41,41,40,40,39,39,38,38,38,38,37,37,37,37,36,36,35,35,35,35,35,35,35,35,34,34,34,34,34,33,33,32,32,32,31,31,31,31,30,30,30,30,30,30,30,30,30,29,29,29,29,29,29,28,28,28,28,28,28,28,28,28,27,27,27,27,27,27,27,27,27,27,26,26,26,26,25,25,25,25,25,25,25,25,25,25,25,24,24,24,24,24,24,24,24,23,23,23,23,23,23,23,23,22,22,22,22,22,22,22,22,21,21,21,21,21,21,21,21,21,21,21,21,21,21,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,18,18,18,18,18,18],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":0.0685583698343173,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
 
 </div>
 </div>
@@ -3450,7 +2081,7 @@ Acteur et le nombre d’acteur par groupe</p>
         </div>
       </div>
 <a href="manipulation-avancée-mettre-en-forme-vos-données.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="enquête-emploi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="données-des-réserves-parlementaires.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

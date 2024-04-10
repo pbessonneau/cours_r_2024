@@ -1,4 +1,7 @@
 
+# Données des réserves parlementaires
+
+
 ```{r setupnlp, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 require(quanteda)
@@ -28,7 +31,7 @@ Les questions sont celles d'une personne naïve et sans a priori :
 
 - Est-ce que les groupes ont dépensé chacun autant en moyenne ?
 
-- Est-ce vrai pour les députés en moyenne ?
+- Est-ce vrai pour les députés en moyenne ? IdAuteur
 
 - Quel est l'enveloppe dépensé au total ?
 
@@ -40,6 +43,8 @@ Les questions sont celles d'une personne naïve et sans a priori :
 
 ```{r}
 reserve <- fromJSON("data/reserve/2014_reserve_parlementaire.json")
+
+str(reserve)
 ```
 
 
@@ -53,7 +58,7 @@ En fait on va se demander si il y a un bénéficiaire qui apparait plusieurs foi
 ```{r}
 tb <- table(reserve$Bénéficiaire)
 tb1 <- tb[tb>1]
-names(tb1)
+length(tb1)
 ```
 
 
@@ -63,8 +68,8 @@ besoin d'une data.frame pour représenter graphiquement ces informations ?
 
 
 ```{r}
-dt <- data.frame(Nom=names(tb1),Nombre=as.numeric(tb1))
-dt
+dt <- data.frame(Nom=names(tb),Nombre=as.numeric(tb))
+str(dt)
 ```
 
 Une représentation visuelle de la répartition du nombre sur ceux qui ont plus de
@@ -152,6 +157,9 @@ res <- groupe %>% summarize(min=min(Montant),max=max(Montant),
                      Somme=sum(Montant),nbActeur=length(unique(ID_Acteur)),
                      Somme_par_acteur=Somme/nbActeur)
 res 
+
+
+
 ```
 
 
@@ -192,15 +200,14 @@ reserve_corpus <- corpus(
   docid_field = "doc_id"
 )
 
-mystopwords <- c("loire-atlantique")
+mystopwords <- c("loire-atlantique","c'est")
 
 tok <- tokens(reserve_corpus, remove_punct = TRUE, remove_numbers = TRUE) %>%
-  tokens_remove(pattern = mystopwords,valuetype = 'fixed') %>%
   tokens_tolower() %>%
+  tokens_remove(pattern = mystopwords,valuetype = 'fixed') %>%
   tokens_remove(stopwords("fr")) %>%
   tokens_wordstem(language="fr") 
   
-
 dtm <- dfm(tok)
 
 res <- rainette(dtm, k = 5)
@@ -212,7 +219,8 @@ res <- rainette(dtm, k = 5)
 tok <- tokens(reserve_corpus, remove_punct = TRUE, remove_numbers = TRUE) %>%
   tokens_remove(pattern = mystopwords,valuetype = 'fixed') %>%
   tokens_tolower() %>%
-  tokens_remove(stopwords("fr"))
+  tokens_remove(stopwords("fr")) %>%
+  tokens_wordstem(language = "fr")
 
 dtm <- dfm(tok)
 
@@ -225,4 +233,6 @@ top
 dfreq <- data.frame(word=names(topall),freq=as.numeric(topall))
 
 wordcloud2(dfreq,size=2)
+
 ```
+

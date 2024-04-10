@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Données des réserves parlementaires | A Minimal Book on R</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Données des réserves parlementaires | A Minimal Book on R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Données des réserves parlementaires | A Minimal Book on R" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The HTML output format for this example is bookdown::gitbook, set in the _output.yml file." />
+  
+
+<meta name="author" content="Pascal Bessonneau" />
+
+
+<meta name="date" content="2024-04-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="données-des-lycées-pro..html"/>
+<link rel="next" href="enquête-emploi.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet" />
+<script src="libs/wordcloud2-0.0.1/wordcloud2-all.js"></script>
+<script src="libs/wordcloud2-0.0.1/hover.js"></script>
+<script src="libs/wordcloud2-binding-0.2.1/wordcloud2.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Objectif</a></li>
+<li class="chapter" data-level="2" data-path="architecture-de-r.html"><a href="architecture-de-r.html"><i class="fa fa-check"></i><b>2</b> Architecture de R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="architecture-de-r.html"><a href="architecture-de-r.html#paquets"><i class="fa fa-check"></i><b>2.1</b> Paquets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="le-langage-r.html"><a href="le-langage-r.html"><i class="fa fa-check"></i><b>3</b> Le langage R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="le-langage-r.html"><a href="le-langage-r.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="le-langage-r.html"><a href="le-langage-r.html#un-exemple-de-traitement-de-données"><i class="fa fa-check"></i><b>3.2</b> Un exemple de traitement de données</a></li>
+<li class="chapter" data-level="3.3" data-path="le-langage-r.html"><a href="le-langage-r.html#vecteurs"><i class="fa fa-check"></i><b>3.3</b> Vecteurs</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="le-langage-r.html"><a href="le-langage-r.html#exemple-de-vecteurs"><i class="fa fa-check"></i><b>3.3.1</b> Exemple de vecteurs</a></li>
+<li class="chapter" data-level="3.3.2" data-path="le-langage-r.html"><a href="le-langage-r.html#création-de-vecteurs"><i class="fa fa-check"></i><b>3.3.2</b> Création de vecteurs</a></li>
+<li class="chapter" data-level="3.3.3" data-path="le-langage-r.html"><a href="le-langage-r.html#les-types-de-vecteurs"><i class="fa fa-check"></i><b>3.3.3</b> Les types de vecteurs</a></li>
+<li class="chapter" data-level="3.3.4" data-path="le-langage-r.html"><a href="le-langage-r.html#pour-résumé"><i class="fa fa-check"></i><b>3.3.4</b> Pour résumé</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="le-langage-r.html"><a href="le-langage-r.html#sélection-des-individus"><i class="fa fa-check"></i><b>3.4</b> Sélection des individus</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="le-langage-r.html"><a href="le-langage-r.html#calcul-de-la-moyenne-et-nouveaux-générateurs"><i class="fa fa-check"></i><b>3.4.1</b> Calcul de la moyenne et nouveaux générateurs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="importation-de-données.html"><a href="importation-de-données.html"><i class="fa fa-check"></i><b>4</b> Importation de Données</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="importation-de-données.html"><a href="importation-de-données.html#parcours-sup."><i class="fa fa-check"></i><b>4.1</b> Parcours Sup.</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html"><i class="fa fa-check"></i><b>5</b> Résumés rapides descriptives</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#les-premières-tables"><i class="fa fa-check"></i><b>5.1</b> Les premières tables</a></li>
+<li class="chapter" data-level="5.2" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#tableaux-croisés"><i class="fa fa-check"></i><b>5.2</b> Tableaux croisés</a></li>
+<li class="chapter" data-level="5.3" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#themes"><i class="fa fa-check"></i><b>5.3</b> Themes</a></li>
+<li class="chapter" data-level="5.4" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#exportation"><i class="fa fa-check"></i><b>5.4</b> Exportation</a></li>
+<li class="chapter" data-level="5.5" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#personnalisation-des-statistiques"><i class="fa fa-check"></i><b>5.5</b> Personnalisation des statistiques</a></li>
+<li class="chapter" data-level="5.6" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#modèles"><i class="fa fa-check"></i><b>5.6</b> Modèles</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="résumés-rapides-descriptives.html"><a href="résumés-rapides-descriptives.html#exemple-de-modèle-de-régression-linéaire"><i class="fa fa-check"></i><b>5.6.1</b> Exemple de modèle de régression linéaire</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html"><i class="fa fa-check"></i><b>6</b> Graphiques et ggplot</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-graphiques-de-base"><i class="fa fa-check"></i><b>6.1</b> Les graphiques de base</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#pour-les-graphiques-de-chiffres"><i class="fa fa-check"></i><b>6.1.1</b> Pour les graphiques de chiffres</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#le-tidyverse-et-ggplot"><i class="fa fa-check"></i><b>6.2</b> le tidyverse et ggplot</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#la-base"><i class="fa fa-check"></i><b>6.2.1</b> La base</a></li>
+<li class="chapter" data-level="6.2.2" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-autres-graphiques"><i class="fa fa-check"></i><b>6.2.2</b> Les autres graphiques</a></li>
+<li class="chapter" data-level="6.2.3" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#tableaux-de-contingences"><i class="fa fa-check"></i><b>6.2.3</b> Tableaux de contingences</a></li>
+<li class="chapter" data-level="6.2.4" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#les-thèmes"><i class="fa fa-check"></i><b>6.2.4</b> Les thèmes</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="graphiques-et-ggplot.html"><a href="graphiques-et-ggplot.html#liens"><i class="fa fa-check"></i><b>6.3</b> Liens</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html"><i class="fa fa-check"></i><b>7</b> Manipulation avancée (mettre en forme vos données)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#transformation-de-plusieurs-variables"><i class="fa fa-check"></i><b>7.1</b> Transformation de plusieurs variables</a></li>
+<li class="chapter" data-level="7.2" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#opérateurs-et-case_when"><i class="fa fa-check"></i><b>7.2</b> Opérateurs et case_when</a></li>
+<li class="chapter" data-level="7.3" data-path="manipulation-avancée-mettre-en-forme-vos-données.html"><a href="manipulation-avancée-mettre-en-forme-vos-données.html#réutilisation-de-statistiques"><i class="fa fa-check"></i><b>7.3</b> Réutilisation de statistiques</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html"><i class="fa fa-check"></i><b>8</b> Données des lycées pro.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#importation-des-données"><i class="fa fa-check"></i><b>8.1</b> Importation des données</a></li>
+<li class="chapter" data-level="8.2" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#analyses"><i class="fa fa-check"></i><b>8.2</b> Analyses</a></li>
+<li class="chapter" data-level="8.3" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#commentaires-des-auditeurs"><i class="fa fa-check"></i><b>8.3</b> Commentaires des auditeurs</a></li>
+<li class="chapter" data-level="8.4" data-path="données-des-lycées-pro..html"><a href="données-des-lycées-pro..html#quiz.."><i class="fa fa-check"></i><b>8.4</b> Quiz..</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html"><i class="fa fa-check"></i><b>9</b> Données des réserves parlementaires</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#bénéficiaires"><i class="fa fa-check"></i><b>9.1</b> Bénéficiaires</a></li>
+<li class="chapter" data-level="9.2" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#par-groupe-politique"><i class="fa fa-check"></i><b>9.2</b> Par groupe politique</a></li>
+<li class="chapter" data-level="9.3" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#exportation-1"><i class="fa fa-check"></i><b>9.3</b> Exportation</a></li>
+<li class="chapter" data-level="9.4" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#les-sommes-par-acteurs"><i class="fa fa-check"></i><b>9.4</b> Les sommes par acteurs</a></li>
+<li class="chapter" data-level="9.5" data-path="données-des-réserves-parlementaires.html"><a href="données-des-réserves-parlementaires.html#quoi-faire-avec-le-descriptif"><i class="fa fa-check"></i><b>9.5</b> Quoi faire avec le descriptif ?</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="enquête-emploi.html"><a href="enquête-emploi.html"><i class="fa fa-check"></i><b>10</b> Enquête Emploi</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="enquête-emploi.html"><a href="enquête-emploi.html#exemple-de-calcul-dindicateurs"><i class="fa fa-check"></i><b>10.1</b> Exemple de calcul d’indicateurs</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book on R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="données-des-réserves-parlementaires" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Données des réserves parlementaires<a href="données-des-réserves-parlementaires.html#données-des-réserves-parlementaires" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Dans cette partie, on étudie l’utilisation de la réserve parlementaire par les
+députés.</p>
+<p>Ce sont les <a href="https://www.data.gouv.fr/fr/datasets/reserve-parlementaire/">données de 2014</a></p>
+<p>Les questions sont celles d’une personne naïve et sans a priori :</p>
+<ul>
+<li><p>Est-ce que les groupes ont dépensé chacun autant ?</p></li>
+<li><p>Est-ce que les groupes ont dépensé chacun autant en moyenne ?</p></li>
+<li><p>Est-ce vrai pour les députés en moyenne ? IdAuteur</p></li>
+<li><p>Quel est l’enveloppe dépensé au total ?</p></li>
+</ul>
+<!-- - Comment on utilise un tableau de données supplémentaires pour avoir les infos -->
+<!-- sur les parlementaires ? -->
+<ul>
+<li>Est-ce possible avec le descriptif d’avoir les mots-clefs pour les sous dépensés ?</li>
+</ul>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="données-des-réserves-parlementaires.html#cb246-1" tabindex="-1"></a>reserve <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="st">&quot;data/reserve/2014_reserve_parlementaire.json&quot;</span>)</span>
+<span id="cb246-2"><a href="données-des-réserves-parlementaires.html#cb246-2" tabindex="-1"></a></span>
+<span id="cb246-3"><a href="données-des-réserves-parlementaires.html#cb246-3" tabindex="-1"></a><span class="fu">str</span>(reserve)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    13133 obs. of  10 variables:
+##  $ Bénéficiaire        : chr  &quot;Télé Bocal&quot; &quot;Mieux se déplacer à Bicyclette&quot; &quot;Festival du livre et de la presse d&#39;écologie&quot; &quot;ARDHIS&quot; ...
+##  $ Adresse             : chr  &quot;Maison des associations\n1/3 rue Frédérique Lemaître\n75020 Paris&quot; &quot;MDB –\n37 boulevard Bourdon\n75004 Paris&quot; &quot;6 cité de l’Ermitage\n75020 Paris&quot; &quot;76 cours de Vincennes\n75012 Paris&quot; ...
+##  $ Descriptif          : chr  &quot;Mise en œuvre d&#39;ateliers de production locale proposant d’utiliser l&#39;image comme une valorisation du travail des artistes&quot; &quot;Réalisation des supports de communication pour faire connaître ses nouvelles dispositions sur l&#39;usage de la bic&quot;| __truncated__ &quot;Organisation du Festival du livre et de la presse d’écologie Promotion du livre et de l’écrit, information, sen&quot;| __truncated__ &quot;Mise en place d’outils de communication : plaquette multilingue qui pourrait être mise à disposition dans les d&quot;| __truncated__ ...
+##  $ Montant             : int  5000 4000 3500 2500 5000 2000 3000 2000 10000 8000 ...
+##  $ Nom                 : chr  &quot;BAUPIN&quot; &quot;BAUPIN&quot; &quot;BAUPIN&quot; &quot;BAUPIN&quot; ...
+##  $ Prénom              : chr  &quot;Denis&quot; &quot;Denis&quot; &quot;Denis&quot; &quot;Denis&quot; ...
+##  $ Département         : chr  &quot;Paris&quot; &quot;Paris&quot; &quot;Paris&quot; &quot;Paris&quot; ...
+##  $ Groupe              : chr  &quot;Ecolo&quot; &quot;Ecolo&quot; &quot;Ecolo&quot; &quot;Ecolo&quot; ...
+##  $ Programme budgétaire: chr  &quot;313-03&quot; &quot;203-15&quot; &quot;334-01&quot; &quot;177-11&quot; ...
+##  $ ID_Acteur           : chr  &quot;PA609016&quot; &quot;PA609016&quot; &quot;PA609016&quot; &quot;PA609016&quot; ...</code></pre>
+<p>Pourquoi c’est compliqué de faire un gtsummary direct ?</p>
+<p>En fait on va se demander si il y a un bénéficiaire qui apparait plusieurs fois.</p>
+<div id="bénéficiaires" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Bénéficiaires<a href="données-des-réserves-parlementaires.html#bénéficiaires" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="données-des-réserves-parlementaires.html#cb248-1" tabindex="-1"></a>tb <span class="ot">&lt;-</span> <span class="fu">table</span>(reserve<span class="sc">$</span>Bénéficiaire)</span>
+<span id="cb248-2"><a href="données-des-réserves-parlementaires.html#cb248-2" tabindex="-1"></a>tb1 <span class="ot">&lt;-</span> tb[tb<span class="sc">&gt;</span><span class="dv">1</span>]</span>
+<span id="cb248-3"><a href="données-des-réserves-parlementaires.html#cb248-3" tabindex="-1"></a><span class="fu">length</span>(tb1)</span></code></pre></div>
+<pre><code>## [1] 267</code></pre>
+<p>Si oui, est-ce qu’on peut le mettre sous forme de data.frame ? Pourquoi on a
+besoin d’une data.frame pour représenter graphiquement ces informations ?</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="données-des-réserves-parlementaires.html#cb250-1" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nom=</span><span class="fu">names</span>(tb),<span class="at">Nombre=</span><span class="fu">as.numeric</span>(tb))</span>
+<span id="cb250-2"><a href="données-des-réserves-parlementaires.html#cb250-2" tabindex="-1"></a><span class="fu">str</span>(dt)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    12718 obs. of  2 variables:
+##  $ Nom   : chr  &quot;\&quot;Le Tracteur\&quot; - Compagnie Beaudrain de paroi&quot; &quot;\&quot;Petite enfance\net soutien\nà la parentalité\&quot;&quot; &quot;(A.R.A.C.) Section Saint-Marcel&quot; &quot;« La Bande à Michel » section théâtre du Foyer Laïque&quot; ...
+##  $ Nombre: num  1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>Une représentation visuelle de la répartition du nombre sur ceux qui ont plus de
+2 donations et après sur l’ensemble.</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="données-des-réserves-parlementaires.html#cb252-1" tabindex="-1"></a><span class="fu">ggplot</span>(dt,<span class="fu">aes</span>(Nombre))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/reserve1-1.png" width="672" /></p>
+<p>Quels sont les bénéficiaires de plus de 5 donations ? Ce sont des termes génériques
+ou des entités ?</p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="données-des-réserves-parlementaires.html#cb253-1" tabindex="-1"></a>tbt <span class="ot">&lt;-</span> <span class="fu">table</span>(reserve<span class="sc">$</span>Bénéficiaire)</span>
+<span id="cb253-2"><a href="données-des-réserves-parlementaires.html#cb253-2" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nom=</span><span class="fu">names</span>(tbt),<span class="at">Nombre=</span><span class="fu">as.numeric</span>(tbt))</span>
+<span id="cb253-3"><a href="données-des-réserves-parlementaires.html#cb253-3" tabindex="-1"></a>dt[dt<span class="sc">$</span>Nombre<span class="sc">&gt;</span><span class="dv">5</span>,]</span></code></pre></div>
+<pre><code>##                          Nom Nombre
+## 325                    AIDES      6
+## 2927               BRIGNOLES      6
+## 3982        Comité des Fêtes      7
+## 4475        Commune de Crest      8
+## 6416                   FNACA      7
+## 8060               Le Refuge     11
+## 10509         Restos du Cœur      6
+## 11095     Secours catholique      9
+## 11096     Secours Catholique      6
+## 11116      Secours Populaire     12
+## 11527 Sou des Ecoles Laïques      7</code></pre>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="données-des-réserves-parlementaires.html#cb255-1" tabindex="-1"></a>tbt <span class="ot">&lt;-</span> <span class="fu">table</span>(reserve<span class="sc">$</span>Bénéficiaire)</span>
+<span id="cb255-2"><a href="données-des-réserves-parlementaires.html#cb255-2" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nom=</span><span class="fu">names</span>(tbt),<span class="at">Nombre=</span><span class="fu">as.numeric</span>(tbt))</span>
+<span id="cb255-3"><a href="données-des-réserves-parlementaires.html#cb255-3" tabindex="-1"></a><span class="fu">ggplot</span>(dt,<span class="fu">aes</span>(Nombre))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/reserve2-1.png" width="672" /></p>
+</div>
+<div id="par-groupe-politique" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Par groupe politique<a href="données-des-réserves-parlementaires.html#par-groupe-politique" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Si on regarde les dépenses par groupe.</p>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="données-des-réserves-parlementaires.html#cb256-1" tabindex="-1"></a><span class="fu">ggplot</span>(dt,<span class="fu">aes</span>(Nombre))<span class="sc">+</span><span class="fu">geom_histogram</span>()<span class="sc">+</span><span class="fu">scale_y_log10</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/reserve3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="données-des-réserves-parlementaires.html#cb257-1" tabindex="-1"></a><span class="fu">ggplot</span>(reserve,<span class="fu">aes</span>(Groupe,Montant))<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/reserve4-1.png" width="672" /></p>
+<p>Mais que ?</p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="données-des-réserves-parlementaires.html#cb258-1" tabindex="-1"></a><span class="fu">table</span>(reserve<span class="sc">$</span>Groupe)</span></code></pre></div>
+<pre><code>## 
+##       Ecolo   GDR    NI  RRDP   SRC   UDI   UMP 
+##    52   549   148   128   262  5172   741  6081</code></pre>
+<p>Il faut trouver et corriger.</p>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="données-des-réserves-parlementaires.html#cb260-1" tabindex="-1"></a>maisque <span class="ot">&lt;-</span> reserve <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Groupe<span class="sc">==</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb260-2"><a href="données-des-réserves-parlementaires.html#cb260-2" tabindex="-1"></a></span>
+<span id="cb260-3"><a href="données-des-réserves-parlementaires.html#cb260-3" tabindex="-1"></a><span class="fu">table</span>(maisque<span class="sc">$</span>Nom)</span></code></pre></div>
+<pre><code>## 
+## Présidence de l&#39;Assemblée nationale 
+##                                  52</code></pre>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="données-des-réserves-parlementaires.html#cb262-1" tabindex="-1"></a><span class="fu">table</span>(maisque<span class="sc">$</span>Descriptif)</span></code></pre></div>
+<pre><code>## 
+## Agir en faveur de l&#39;emploi des jeunes diplômés issus des quartiers prioritaires ou de milieux sociaux défavorisés. 
+##                                                                                                                  1 
+##                                                            Association de juriste dans la lutte contre l&#39;exclusion 
+##                                                                                                                  1 
+##                                                  Création d&#39;un système d&#39;information pour le réseau Habitat Jeunes 
+##                                                                                                                  1 
+##                                                Equipement du futur 3ème siège de l&#39;Alliance française de la Havane 
+##                                                                                                                  1 
+##                                                                                                     Fonctionnement 
+##                                                                                                                 44 
+##                                                                                  Fonctionnement Mardis de l&#39;Avenir 
+##                                                                                                                  1 
+##                                                                  Insertion sociale et professionnelle par le sport 
+##                                                                                                                  1 
+##                                                                Soutien projet consacré aux femmes de l&#39;immigration 
+##                                                                                                                  1 
+##                                                                                            Travaux d&#39;intérêt local 
+##                                                                                                                  1</code></pre>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="données-des-réserves-parlementaires.html#cb264-1" tabindex="-1"></a>reserve <span class="ot">&lt;-</span> reserve <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Groupe=</span><span class="fu">ifelse</span>(Groupe<span class="sc">==</span><span class="st">&quot;&quot;</span>,<span class="st">&quot;Présidence AN&quot;</span>,Groupe))</span></code></pre></div>
+<p>L’erreur corrigée</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="données-des-réserves-parlementaires.html#cb265-1" tabindex="-1"></a><span class="fu">ggplot</span>(reserve,<span class="fu">aes</span>(Groupe,Montant))<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/reserve5-1.png" width="672" /></p>
+<p>Les résultats par groupe avec gtsummary ou summarize.</p>
+<p>on en profite pour calculer la somme des donations, la donation moyenne par
+Acteur et le nombre d’acteur par groupe</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="données-des-réserves-parlementaires.html#cb266-1" tabindex="-1"></a>groupe <span class="ot">&lt;-</span> reserve <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Groupe)</span>
+<span id="cb266-2"><a href="données-des-réserves-parlementaires.html#cb266-2" tabindex="-1"></a></span>
+<span id="cb266-3"><a href="données-des-réserves-parlementaires.html#cb266-3" tabindex="-1"></a>res <span class="ot">&lt;-</span> groupe <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">min=</span><span class="fu">min</span>(Montant),<span class="at">max=</span><span class="fu">max</span>(Montant),</span>
+<span id="cb266-4"><a href="données-des-réserves-parlementaires.html#cb266-4" tabindex="-1"></a>                     <span class="at">Moyenne=</span><span class="fu">mean</span>(Montant),<span class="at">EC=</span><span class="fu">sd</span>(Montant),</span>
+<span id="cb266-5"><a href="données-des-réserves-parlementaires.html#cb266-5" tabindex="-1"></a>                     <span class="at">Somme=</span><span class="fu">sum</span>(Montant),<span class="at">nbActeur=</span><span class="fu">length</span>(<span class="fu">unique</span>(ID_Acteur)),</span>
+<span id="cb266-6"><a href="données-des-réserves-parlementaires.html#cb266-6" tabindex="-1"></a>                     <span class="at">Somme_par_acteur=</span>Somme<span class="sc">/</span>nbActeur)</span>
+<span id="cb266-7"><a href="données-des-réserves-parlementaires.html#cb266-7" tabindex="-1"></a>res </span></code></pre></div>
+<pre><code>## # A tibble: 8 × 8
+##   Groupe          min    max Moyenne     EC    Somme nbActeur Somme_par_acteur
+##   &lt;chr&gt;         &lt;int&gt;  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;            &lt;dbl&gt;
+## 1 Ecolo           500  50000   4805.  4039.  2637890       18          146549.
+## 2 GDR              67 130000  14198. 18951.  2101366       16          131335.
+## 3 NI              800  90000   8926. 10212.  1142574        9          126953.
+## 4 Présidence AN  1000 250000  54923. 53608.  2856000        1         2856000 
+## 5 RRDP            650  98000   8813. 11365.  2309018       18          128279.
+## 6 SRC             300 190000   7797. 10387. 40323770      290          139047.
+## 7 UDI             960  88000   5523.  6880.  4092383       31          132012.
+## 8 UMP             240 200000   4047.  7410. 24608557      200          123043.</code></pre>
+</div>
+<div id="exportation-1" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Exportation<a href="données-des-réserves-parlementaires.html#exportation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Comment l’exporter pour ses collègues ?</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="données-des-réserves-parlementaires.html#cb268-1" tabindex="-1"></a><span class="fu">require</span>(writexl)</span>
+<span id="cb268-2"><a href="données-des-réserves-parlementaires.html#cb268-2" tabindex="-1"></a><span class="fu">write_xlsx</span>(res,<span class="st">&quot;Résultats/Résultats-Deputes-Reserve.xlsx&quot;</span>)</span></code></pre></div>
+</div>
+<div id="les-sommes-par-acteurs" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Les sommes par acteurs<a href="données-des-réserves-parlementaires.html#les-sommes-par-acteurs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Les sommes par acteurs selon les groupes</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="données-des-réserves-parlementaires.html#cb269-1" tabindex="-1"></a><span class="fu">ggplot</span>(res <span class="sc">%&gt;%</span> <span class="fu">filter</span>(nbActeur <span class="sc">!=</span> <span class="dv">1</span>),<span class="fu">aes</span>(<span class="at">x=</span>Groupe,<span class="at">y=</span>Somme_par_acteur,<span class="at">fill=</span>Groupe))<span class="sc">+</span></span>
+<span id="cb269-2"><a href="données-des-réserves-parlementaires.html#cb269-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(,<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/reserve6-1.png" width="672" /></p>
+</div>
+<div id="quoi-faire-avec-le-descriptif" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Quoi faire avec le descriptif ?<a href="données-des-réserves-parlementaires.html#quoi-faire-avec-le-descriptif" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En utilisant le descriptif :</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="données-des-réserves-parlementaires.html#cb270-1" tabindex="-1"></a>reserve <span class="ot">&lt;-</span> reserve <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">doc_id=</span><span class="fu">paste0</span>(<span class="st">&quot;A&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(reserve)))</span>
+<span id="cb270-2"><a href="données-des-réserves-parlementaires.html#cb270-2" tabindex="-1"></a></span>
+<span id="cb270-3"><a href="données-des-réserves-parlementaires.html#cb270-3" tabindex="-1"></a>reserve_corpus <span class="ot">&lt;-</span> <span class="fu">corpus</span>(</span>
+<span id="cb270-4"><a href="données-des-réserves-parlementaires.html#cb270-4" tabindex="-1"></a>  reserve,</span>
+<span id="cb270-5"><a href="données-des-réserves-parlementaires.html#cb270-5" tabindex="-1"></a>  <span class="at">text_field =</span> <span class="st">&quot;Descriptif&quot;</span>,</span>
+<span id="cb270-6"><a href="données-des-réserves-parlementaires.html#cb270-6" tabindex="-1"></a>  <span class="at">docid_field =</span> <span class="st">&quot;doc_id&quot;</span></span>
+<span id="cb270-7"><a href="données-des-réserves-parlementaires.html#cb270-7" tabindex="-1"></a>)</span>
+<span id="cb270-8"><a href="données-des-réserves-parlementaires.html#cb270-8" tabindex="-1"></a></span>
+<span id="cb270-9"><a href="données-des-réserves-parlementaires.html#cb270-9" tabindex="-1"></a>mystopwords <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;loire-atlantique&quot;</span>,<span class="st">&quot;c&#39;est&quot;</span>)</span>
+<span id="cb270-10"><a href="données-des-réserves-parlementaires.html#cb270-10" tabindex="-1"></a></span>
+<span id="cb270-11"><a href="données-des-réserves-parlementaires.html#cb270-11" tabindex="-1"></a>tok <span class="ot">&lt;-</span> <span class="fu">tokens</span>(reserve_corpus, <span class="at">remove_punct =</span> <span class="cn">TRUE</span>, <span class="at">remove_numbers =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb270-12"><a href="données-des-réserves-parlementaires.html#cb270-12" tabindex="-1"></a>  <span class="fu">tokens_tolower</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb270-13"><a href="données-des-réserves-parlementaires.html#cb270-13" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="at">pattern =</span> mystopwords,<span class="at">valuetype =</span> <span class="st">&#39;fixed&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb270-14"><a href="données-des-réserves-parlementaires.html#cb270-14" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="fu">stopwords</span>(<span class="st">&quot;fr&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb270-15"><a href="données-des-réserves-parlementaires.html#cb270-15" tabindex="-1"></a>  <span class="fu">tokens_wordstem</span>(<span class="at">language=</span><span class="st">&quot;fr&quot;</span>) </span>
+<span id="cb270-16"><a href="données-des-réserves-parlementaires.html#cb270-16" tabindex="-1"></a>  </span>
+<span id="cb270-17"><a href="données-des-réserves-parlementaires.html#cb270-17" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> <span class="fu">dfm</span>(tok)</span>
+<span id="cb270-18"><a href="données-des-réserves-parlementaires.html#cb270-18" tabindex="-1"></a></span>
+<span id="cb270-19"><a href="données-des-réserves-parlementaires.html#cb270-19" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rainette</span>(dtm, <span class="at">k =</span> <span class="dv">5</span>)</span>
+<span id="cb270-20"><a href="données-des-réserves-parlementaires.html#cb270-20" tabindex="-1"></a><span class="co">#rainette_explor(res, dtm, reserve_corpus)</span></span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="données-des-réserves-parlementaires.html#cb271-1" tabindex="-1"></a>tok <span class="ot">&lt;-</span> <span class="fu">tokens</span>(reserve_corpus, <span class="at">remove_punct =</span> <span class="cn">TRUE</span>, <span class="at">remove_numbers =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb271-2"><a href="données-des-réserves-parlementaires.html#cb271-2" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="at">pattern =</span> mystopwords,<span class="at">valuetype =</span> <span class="st">&#39;fixed&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb271-3"><a href="données-des-réserves-parlementaires.html#cb271-3" tabindex="-1"></a>  <span class="fu">tokens_tolower</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb271-4"><a href="données-des-réserves-parlementaires.html#cb271-4" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="fu">stopwords</span>(<span class="st">&quot;fr&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb271-5"><a href="données-des-réserves-parlementaires.html#cb271-5" tabindex="-1"></a>  <span class="fu">tokens_wordstem</span>(<span class="at">language =</span> <span class="st">&quot;fr&quot;</span>)</span>
+<span id="cb271-6"><a href="données-des-réserves-parlementaires.html#cb271-6" tabindex="-1"></a></span>
+<span id="cb271-7"><a href="données-des-réserves-parlementaires.html#cb271-7" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> <span class="fu">dfm</span>(tok)</span>
+<span id="cb271-8"><a href="données-des-réserves-parlementaires.html#cb271-8" tabindex="-1"></a></span>
+<span id="cb271-9"><a href="données-des-réserves-parlementaires.html#cb271-9" tabindex="-1"></a>top<span class="ot">=</span><span class="fu">topfeatures</span>(dtm, <span class="dv">30</span>)</span>
+<span id="cb271-10"><a href="données-des-réserves-parlementaires.html#cb271-10" tabindex="-1"></a>topall<span class="ot">=</span><span class="fu">topfeatures</span>(dtm, <span class="dv">300</span>)</span>
+<span id="cb271-11"><a href="données-des-réserves-parlementaires.html#cb271-11" tabindex="-1"></a>top</span></code></pre></div>
+<pre><code>##  fonction      d&#39;un    traval     local    aménag     achat    associ    cultur d&#39;intérêt  matériel      sall     sport 
+##      5254      1282       813       793       439       425       422       406       404       374       374       366 
+##  création       mis    réfect     rénov        vi      mair  communal construct    l&#39;écol        ru  l&#39;aménag   l&#39;églis 
+##       342       323       321       309       295       294       287       270       235       235       234       234 
+##   scolair   organis   restaur   soutien       aid  acquisit 
+##       232       226       225       196       194       185</code></pre>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="données-des-réserves-parlementaires.html#cb273-1" tabindex="-1"></a>dfreq <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">word=</span><span class="fu">names</span>(topall),<span class="at">freq=</span><span class="fu">as.numeric</span>(topall))</span>
+<span id="cb273-2"><a href="données-des-réserves-parlementaires.html#cb273-2" tabindex="-1"></a></span>
+<span id="cb273-3"><a href="données-des-réserves-parlementaires.html#cb273-3" tabindex="-1"></a><span class="fu">wordcloud2</span>(dfreq,<span class="at">size=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="wordcloud2 html-widget html-fill-item" id="htmlwidget-a42c3e81a0e4be9ebbcb" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a42c3e81a0e4be9ebbcb">{"x":{"word":["fonction","d'un","traval","local","aménag","achat","associ","cultur","d'intérêt","matériel","sall","sport","création","mis","réfect","rénov","vi","mair","communal","construct","l'écol","ru","l'aménag","l'églis","scolair","organis","restaur","soutien","aid","acquisit","réhabilit","projet","culturel","écol","social","l'acquisit","plac","centr","bât","réalis","informat","voir","développ","réseau","public","jeun","action","toitur","fêt","quarti","festival","financ","bourg","norm","mobili","accessibil","solidar","tranch","maison","person","chemin","pédagog","l'associ","sportif","log","sécur","remplac","extens","équip","commun","enfant","handicap","espac","terrain","activ","cimeti","polyvalent","anim","sportiv","rout","group","class","villag","véhicul","sant","format","périscolair","jeux","maternel","install","club","municipal","éduc","educ","d'équip","l'install","l'ancien","l'extens","nouvel","nouveau","sécuris","parking","ateli","promot","femm","loisir","abord","manifest","football","contr","insert","air","cadr","collect","sit","stad","spectacl","restructur","d’un","accompagn","primair","jardin","numer","cour","monu","franc","accueil","servic","musiqu","patrimoin","equip","d'accueil","particip","publiqu","jeuness","mur","lutt","mort","électr","voyag","extérieur","2em","d'aménag","bibliothequ","d'eau","façad","station","cloch","mobil","grand","deux","réaménag","cantin","ancien","port","rural","pôl","vill","chapel","international","techniqu","invest","destin","déplac","l'éclairag","multisport","tableau","enfanc","pratiqu","eau","préau","l'eglis","vestiair","artist","sanitair","élémentair","acces","trottoir","situ","renouvel","famill","cuisin","humanitair","programm","ten","populair","parc","mémoir","l'organis","renforc","isol","chauffag","bois","travers","églis","amélior","musical","droit","rd","couvertur","sensibilis","lien","an","pos","difficult","1er","presbyter","diffus","édit","départemental","l'équip","saint","voi","éven","alimentair","foi","conform","fenêtr","d'accessibil","valoris","entre","élev","panneau","temp","tout","malad","diver","remis","théâtr","part","intergénérationnel","national","incend","d'assain","pluvial","petit","+","intérieur","system","d'activ","dans","état","autour","oper","protect","familial","tous","livr","économ","professionnel","d'acces","potabl","médical","pont","prévent","l'enfou","interact","d'inform","d'éclairag","rythm","l'entr","ecol","enfou","°","anniversair","mall","urbain","guerr","situat","l'accueil","structur","court","a","nord","féminin","âgé","menuiser","requalif","zon","l'invest","bureau","citoyennet","lieu","victim","souten","vitral","d'épur","gymnas","entraid","internet","faveur","exposit","cinem","d'anim","art","cooper","environ","réduit","hameau","phas"],"freq":[5254,1282,813,793,439,425,422,406,404,374,374,366,342,323,321,309,295,294,287,270,235,235,234,234,232,226,225,196,194,185,182,181,181,180,179,156,150,149,145,142,141,139,137,132,130,125,125,120,112,109,107,106,103,102,101,101,99,97,96,94,94,93,91,91,91,89,88,84,83,82,81,81,81,80,77,77,76,75,72,72,70,70,69,69,68,68,68,67,66,65,63,63,62,61,60,60,59,58,57,56,56,56,55,54,54,54,54,53,53,53,53,53,52,51,51,51,50,50,49,49,49,48,48,48,48,47,47,47,47,47,47,47,46,45,45,45,45,45,44,44,44,42,42,39,39,39,38,38,37,37,37,37,37,36,36,36,36,36,36,35,35,35,35,35,35,35,35,35,34,34,34,34,34,33,33,33,32,32,32,31,31,31,31,31,31,30,30,30,30,30,30,30,30,30,30,29,29,29,29,29,28,28,28,28,28,28,28,27,27,27,27,27,27,26,26,26,26,26,26,25,25,25,25,25,25,25,25,24,24,24,24,24,24,24,24,24,23,23,23,23,23,22,22,22,22,22,22,21,21,21,21,21,21,21,21,21,20,20,20,20,20,20,20,20,20,20,19,19,19,19,19,19,19,19,19,19,19,19,19,19,18,18,18,18,18,18,18,18,18,17,17,17,17,17,17,17,17,17,17,17],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":0.06851922344880092,"backgroundColor":"white","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="données-des-lycées-pro..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="enquête-emploi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-nlp.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
